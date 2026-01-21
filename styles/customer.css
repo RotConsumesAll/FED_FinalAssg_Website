@@ -1,0 +1,51 @@
+.Navbar {
+    width: 1512px;
+    height: 129px;
+    background-color: goldenrod;
+}
+
+#WokHeyRamen{
+    filter: brightness(0.35);
+    position: absolute;
+}
+
+#RibbonRec{
+  /* Parent */
+    width:510px;
+    height: 330px;
+    background-color:#FDC741;
+    position: relative ;
+    left: 141px;
+    border-radius: 1%;
+}
+
+
+#TriangleLeft{
+  /* Child */
+  /* Triangle reference: https://www.web4college.com/how-to-make/web4-css-square-isosceles-comment-shape.php */
+  /* Converges both borders */
+  width:0px;
+  /* Height of box */
+  border-bottom: 255px solid #FDC741;
+  /* Width of box */
+  border-right: 170px solid transparent;
+  border-left: 170px solid transparent;
+  rotate: 90deg ; 
+  position:absolute;
+  top:339px; left:107px;
+}
+
+#TriangleRight{
+  /* Child */
+  /* Triangle reference: https://www.web4college.com/how-to-make/web4-css-square-isosceles-comment-shape.php */
+  /* Converges both borders */
+  width:0px;
+  /* Height of box */
+  border-bottom: 255px solid #FDC741;
+  /* Width of box */
+  border-right: 170px solid transparent;
+  border-left: 170px solid transparent;
+  rotate: -90deg ; 
+  position:absolute;
+  top:339px; left: 362px;
+}
