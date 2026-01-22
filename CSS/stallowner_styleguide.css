@@ -1,0 +1,31 @@
+:root {
+  --ios-colors-backgrounds-primary: rgba(255, 255, 255, 1);
+  --ios-colors-colors-blue: rgba(0, 122, 255, 1);
+  --ios-colors-fills-tertiary: rgba(120, 120, 128, 0.12);
+  --ios-colors-labels-primary: rgba(0, 0, 0, 1);
+  --ios-colors-labels-tertiary: rgba(60, 60, 67, 0.3);
+}
+
+[data-ios-colors-mode="light"] {
+  --ios-colors-backgrounds-primary: rgba(255, 255, 255, 1);
+  --ios-colors-colors-blue: rgba(0, 122, 255, 1);
+  --ios-colors-fills-tertiary: rgba(120, 120, 128, 0.12);
+  --ios-colors-labels-primary: rgba(0, 0, 0, 1);
+  --ios-colors-labels-tertiary: rgba(60, 60, 67, 0.3);
+}
+
+[data-ios-colors-mode="dark"] {
+  --ios-colors-backgrounds-primary: rgba(0, 0, 0, 1);
+  --ios-colors-colors-blue: rgba(10, 132, 255, 1);
+  --ios-colors-fills-tertiary: rgba(120, 120, 128, 0.24);
+  --ios-colors-labels-primary: rgba(255, 255, 255, 1);
+  --ios-colors-labels-tertiary: rgba(235, 235, 245, 0.3);
+}
+
+[data-ios-colors-mode="dark-elevated"] {
+  --ios-colors-backgrounds-primary: rgba(28, 28, 30, 1);
+  --ios-colors-colors-blue: rgba(10, 132, 255, 1);
+  --ios-colors-fills-tertiary: rgba(120, 120, 128, 0.24);
+  --ios-colors-labels-primary: rgba(255, 255, 255, 1);
+  --ios-colors-labels-tertiary: rgba(235, 235, 245, 0.3);
+}
