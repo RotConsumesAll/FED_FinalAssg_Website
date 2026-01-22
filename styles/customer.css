@@ -1,26 +1,29 @@
 .Navbar {
-    width: 1512px;
-    height: 129px;
-    background-color: goldenrod;
+  width: 1512px;
+  height: 129px;
+  background-color: goldenrod;
 }
 
-#WokHeyRamen{
-    filter: brightness(0.35);
-    position: absolute;
+.BackgroundPhoto{
+  filter: brightness(0.35);
+  position: absolute;
+  left:0px;
+  z-index: 1;
 }
 
-#RibbonRec{
+.Ribbon-Rec{
   /* Parent */
-    width:510px;
-    height: 330px;
-    background-color:#FDC741;
-    position: relative ;
-    left: 141px;
-    border-radius: 1%;
+  width:510px;
+  height: 330px;
+  background-color:#FDC741;
+  position: relative ;
+  left: 0px;
+  border-radius: 1%;
+  z-index: 2;
 }
 
 
-#TriangleLeft{
+.Triangle-Left{
   /* Child */
   /* Triangle reference: https://www.web4college.com/how-to-make/web4-css-square-isosceles-comment-shape.php */
   /* Converges both borders */
@@ -32,10 +35,11 @@
   border-left: 170px solid transparent;
   rotate: 90deg ; 
   position:absolute;
-  top:339px; left:107px;
+  top:203px; left:-42px;
+  z-index: 2;
 }
 
-#TriangleRight{
+.Triangle-Right{
   /* Child */
   /* Triangle reference: https://www.web4college.com/how-to-make/web4-css-square-isosceles-comment-shape.php */
   /* Converges both borders */
@@ -47,5 +51,61 @@
   border-left: 170px solid transparent;
   rotate: -90deg ; 
   position:absolute;
-  top:339px; left: 362px;
+  top:203px; left: 213px;
+  z-index: 2;
 }
+
+
+.Wokhey-Logo{
+  width: 90px; height: 90px;border-radius: 50%;
+  position:absolute;
+  top:0px;left:0px;
+  z-index:2;
+  background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.carosel-item{
+  height:5px;
+  width: 1512px;
+  background-color: #808080;
+}
+
+
+p.Title{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 45px;
+  position:absolute;
+  left:169px; top:214px;
+  z-index: 3;
+  text-align: center;
+  color: #000000;
+}
+
+p.Body{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  position:absolute;
+  left:192px; top:284px;
+  z-index: 3;
+  text-align: center;
+  color: #000000;
+  line-height: normal;
+  
+}
+
+.promo-btn{
+  background-color: #FAF9F6;
+  font-weight: 550;
+  font-size:20px;
+  position:absolute;
+  left: 185px; top:260px;
+  z-index: 3;
+  color: #000000;
+  box-shadow: 0px 4px 4px #808080;
+}
+
+
