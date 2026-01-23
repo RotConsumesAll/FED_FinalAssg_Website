@@ -132,6 +132,28 @@ header
   justify-content: center;
 }
 
+.stall-owner .frame-2{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 100vh;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.stall-owner .frame-3{
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  height: auto;
+  width: auto;
+  padding: 14px 30px;
+  box-sizing: border-box;
+}
+
 .stall-owner .frame section{
     display: flex;
     flex-direction: column;
@@ -275,6 +297,7 @@ header
   left: 8.33%;
 }
 
+
 .stall-owner .orders-2 {
   position: absolute;
   top: 243px;
@@ -380,4 +403,77 @@ header
 .stall-owner .log-out-button .rectangle:focus {
   outline: 2px solid #5accb5;
   outline-offset: 2px;
+}
+
+
+.rectangle-5{
+  display: flex;
+  flex: 1 1 0;
+  position: relative;
+  width: 50%;
+  min-height: 125px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 27px;
+  padding: 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+  
+}
+
+.rectangle-5 .menu-header {
+    position: absolute;
+    top: 24px;
+    left: 110px;
+    width: calc(100% - 130px);
+    font-size: 16px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: 500;   
+    text-wrap: wrap;
+}
+
+.rectangle-5 .contains-what{
+  position: absolute;
+  top: 64px;
+  left: 110px;
+  font-size: 11px;
+  font-family: 'Inter', Helvetica, sans-serif;
+  font-weight: normal;
+  color: #666;
+}
+
+.menu-item-price {
+    position: absolute;
+    top: 53px;
+    right: 50px;
+    font-size: 15px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: normal;
+    z-index: 1;  
+}
+
+.text-menu
+{
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-size: 27px;
+    font-weight: 600;
+    margin: 0px;    
+    text-align: center;
+}
+
+.text-signatures{
+  font-family: 'Inter', Helvetica, sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.rectangle-5 .img-vector{
+  position: absolute;
+  top: 27px;
+  left: 20px;
+  width: 69px;
+  height: 69px;
+  aspect-ratio: 1;
+  color: #666;
 }
