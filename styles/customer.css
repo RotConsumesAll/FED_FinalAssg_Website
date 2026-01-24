@@ -11,9 +11,8 @@
   z-index: 1;
 }
 
-
 .carousel-item{
-  height:510px;
+  height:755px;
   width: 1512px;
   background-color: #808080;
 }
@@ -22,18 +21,14 @@
   height: 100%; width: 100%; object-fit: cover;
 }
 
-
-.Ribbon-Rec{
-  /* Parent */
-  width:510px;
-  height: 330px;
-  background-color:#FDC741;
-  position: relative ;
-  left: 0px;
-  border-radius: 1%;
-  z-index: 2;
+.carousel-indicators{
+  list-style: none;
 }
-
+.carousel-indicators li {
+  width:20px !important; height: 20px !important;border-radius: 50%;
+  margin:0px 28px;
+  /* flex: 0 0 auto; */
+}
 
 .Triangle-Left{
   /* Child */
@@ -41,7 +36,7 @@
   /* Converges both borders */
   width:0px;
   /* Height of box */
-  border-bottom: 255px solid #FDC741;
+  border-bottom: 255px solid aliceblue;
   /* Width of box */
   border-right: 170px solid transparent;
   border-left: 170px solid transparent;
@@ -57,7 +52,7 @@
   /* Converges both borders */
   width:0px;
   /* Height of box */
-  border-bottom: 255px solid #FDC741;
+  border-bottom: 255px solid aliceblue;
   /* Width of box */
   border-right: 170px solid transparent;
   border-left: 170px solid transparent;
@@ -67,7 +62,7 @@
   z-index: 2;
 }
 
-p.Title{
+.Title{
   font-family:Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 45px;
@@ -78,7 +73,7 @@ p.Title{
   color: #000000;
 }
 
-p.Body{
+.Body{
   font-family:Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 24px;
@@ -102,7 +97,7 @@ p.Body{
   box-shadow: 0px 4px 4px #808080;
 }
 
-.Wokhey-Logo{
+.Logo{
   width: 90px; height: 90px;border-radius: 50%;
   position:absolute;
   top:5px;left:0px;
@@ -110,4 +105,60 @@ p.Body{
   background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.jpeg");
   background-size: cover;
   background-position: center;
+}
+
+/* Wokhey */
+#Ribbon-Rec-Wokhey{
+  /* Parent */
+  width:510px;
+  height: 330px;
+  background-color:#FDC741;
+  position: relative ;
+  left: 0px;
+  border-radius: 1%;
+  z-index: 2;
+}
+
+#Ribbon-Rec-Wokhey .Triangle-Left{
+  border-bottom: 255px solid #FDC741;
+}
+
+#Ribbon-Rec-Wokhey .Triangle-Right{
+  border-bottom: 255px solid #FDC741;
+}
+
+#Ribbon-Rec-Wokhey .Logo{
+  background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.jpeg");
+}
+
+/* YahFu */
+#Ribbon-Rec-Yahfu{
+  /* Parent */
+  width:510px;
+  height: 330px;
+  background-color:#EB1B2B;
+  position: relative ;
+  left: 0px;
+  border-radius: 1%;
+  z-index: 2;
+}
+
+#Ribbon-Rec-Yahfu .Triangle-Left{
+  border-bottom: 255px solid #EB1B2B;
+}
+
+#Ribbon-Rec-Yahfu .Triangle-Right{
+  border-bottom: 255px solid #EB1B2B;
+}
+
+#Ribbon-Rec-Yahfu .Logo{
+  background-image: url("../assets/Images/BaoShenImg/Yah\ Fu\ Kitchen\ logo.jpg");
+}
+
+#Ribbon-Rec-Yahfu .Title{
+  color: #FAF9F6;
+}
+
+#Ribbon-Rec-Yahfu .Body{
+  color: #FAF9F6;
 }
