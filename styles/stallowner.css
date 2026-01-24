@@ -1,10 +1,19 @@
-.stall-owner {
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body{
   background: linear-gradient(
     180deg,
     rgba(91, 205, 182, 1) 0%,
     rgba(171, 235, 222, 1) 50%,
     rgba(223, 255, 249, 1) 100%
   );
+  background-attachment: fixed;
+}
+
+.stall-owner {
   width: 100%;
   min-width: 0;
   min-height: 100vh;
@@ -78,19 +87,21 @@ header
      z-index: 1;
 }
 
-.stall-owner .navbar a {
+.top-nav-bar{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stall-owner .nav-center a {
   text-decoration: none;
-  color: inherit;
   transition: color 0.2s ease;
 }
 
-.stall-owner .navbar a:hover {
+.stall-owner .nav-center a:hover {
   color: #5accb5;
-}
-
-.stall-owner .navbar a:focus {
-  outline: 2px solid #5accb5;
-  outline-offset: 4px;
 }
 
 
@@ -140,8 +151,6 @@ header
   width: 100%;
   padding: 20px 30px;
   box-sizing: border-box;
-  overflow-x: auto;
-  scroll-behavior: smooth;
 }
 
 .stall-owner .frame-3{
@@ -150,6 +159,27 @@ header
   gap: 100px;
   height: auto;
   width: auto;
+  padding: 14px 30px;
+  box-sizing: border-box;
+}
+
+.frame-4{
+  display: flex;
+  flex-direction: row;
+  gap: 23px;
+  width: auto;
+  height: auto;
+  padding: 14px 30px;
+  box-sizing: border-box;
+}
+
+.frame-5{
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: auto;
+  height: auto;
   padding: 14px 30px;
   box-sizing: border-box;
 }
@@ -476,4 +506,44 @@ header
   height: 69px;
   aspect-ratio: 1;
   color: #666;
+}
+
+.rectangle-6{
+  display: flex;
+  flex: 1 1 0;
+  position: relative;
+  width: 33%;
+  max-width: 32%;
+  min-height: 190px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 27px;
+  padding: 15px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.feedback-comment{
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    width: calc(100% - 80px);
+    margin: 0;
+    font-size: 13px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: normal;   
+    text-wrap: wrap;
+}
+
+.commenter{
+    position: absolute;
+    bottom: 45px;
+    left: 40px;
+    width: calc(100% - 80px);
+    font-size: 11px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: normal;
+    margin: 0;
+    text-wrap: wrap;
 }
