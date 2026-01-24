@@ -1,0 +1,479 @@
+.stall-owner {
+  background: linear-gradient(
+    180deg,
+    rgba(91, 205, 182, 1) 0%,
+    rgba(171, 235, 222, 1) 50%,
+    rgba(223, 255, 249, 1) 100%
+  );
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+a{
+  text-decoration: none;
+}
+
+.stall-owner .text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.stall-owner .text-bold {
+  font-weight: bold;
+}
+
+.stall-owner .text-medium{
+    font-weight: 500;
+}
+
+.stall-owner .text-blue{
+    color: #5BCDB6;
+}
+
+header
+{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #ffffff;
+  flex-shrink: 0;
+}
+
+.stall-owner .nav-left
+{
+    font-size: 30px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.stall-owner .nav-center
+{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    min-width: 0;
+    flex: 0 1 auto;
+}
+
+.stall-owner .nav-right
+{
+     flex-shrink: 0;
+     z-index: 1;
+}
+
+.stall-owner .navbar a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.stall-owner .navbar a:hover {
+  color: #5accb5;
+}
+
+.stall-owner .navbar a:focus {
+  outline: 2px solid #5accb5;
+  outline-offset: 4px;
+}
+
+
+.stall-owner .log-out-button {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-left: 20px;
+  flex-shrink: 0;
+  
+}
+
+.stall-owner .rectangle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  min-width: 120px;
+  height: auto;
+  min-height: 48px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-radius: 80px;
+  border: 1px solid;
+  border-color: #5accb5;
+}
+
+.stall-owner .frame {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 100vh;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  justify-content: center;
+}
+
+.stall-owner .frame-2{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 100vh;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.stall-owner .frame-3{
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  height: auto;
+  width: auto;
+  padding: 14px 30px;
+  box-sizing: border-box;
+}
+
+.stall-owner .frame section{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 23px;
+    width: 100%;
+}
+
+.stall-owner .rectangle-2 {
+  flex: 1 1 0;
+  position: relative;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  background-color: #ffffff;
+  border-radius: 27px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  overflow-y: auto;
+}
+
+.rectangle-2 .section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rectangle-2 h2 {
+  font-family: 'Inter', Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0px;    
+  text-align: center;   
+}
+
+.rectangle-2 h3 {
+  font-family: 'Inter', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 50;
+}
+
+.stall-owner .rectangle-3 {
+  position: relative;
+  width: 100%;
+  height: 113px;
+  border-radius: 23px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  border: 0.5px solid;  
+  border-color: #000000;
+  margin-bottom: 17px;
+}
+
+.rectangle-3 .order-title {
+    position: absolute;
+    top: 2px;
+    left: 60px;
+    width: calc(100% - 130px);
+    font-size: 13px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: normal;   
+    text-wrap: wrap;
+}
+
+.rectangle-3 .order-type {
+    position: absolute;
+    top: 17.5px;
+    right: 13px;
+    font-size: 11px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: normal; 
+    color: #666;     
+}
+
+.rectangle-3 .order-items {
+    position: absolute;
+    top: 57px;
+    left: 13px;
+    font-size: 11px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: normal;
+    color: #666;      
+}
+
+.rectangle-3 .order-price {
+    position: absolute;
+    top: 57px;
+    right: 13px;
+    font-size: 11px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: normal;      
+}
+
+.rectangle-3 .order-time-label {
+    position: absolute;
+    top: 83px;
+    left: 13px;
+    font-size: 11px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: normal;
+    color: #666;      
+}
+
+.rectangle-3 .order-time {
+    position: absolute;
+    top: 83px;
+    right: 13px;
+    font-size: 11px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: normal;      
+}
+
+.rectangle-3 .rectangle-4 {
+  position: absolute;
+  top: 13px;
+  left: 10px;
+  width: 40px;
+  height: 34px;
+  background-color: #82dcca;
+  border-radius: 13px;
+}
+
+.stall-owner .ri-takeaway-fill {
+  position: absolute;
+  top: 21px;
+  left: 20px;
+  width: 19px;
+  height: 19px;
+  aspect-ratio: 1;
+}
+
+.stall-owner .vector {
+  position: absolute;
+  width: 87.48%;
+  height: 87.49%;
+  top: 4.17%;
+  left: 8.33%;
+}
+
+
+.stall-owner .orders-2 {
+  position: absolute;
+  top: 243px;
+  left: 30px;
+  width: 342px;
+  height: 113px;
+}
+
+.stall-owner .orders-3 {
+  top: 409px;
+  position: absolute;
+  left: 30px;
+  width: 342px;
+  height: 113px;
+}
+
+.stall-owner .material-symbols {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1;
+}
+
+.stall-owner .img {
+  position: absolute;
+  width: 83.33%;
+  height: 83.33%;
+  top: 8.33%;
+  left: 8.33%;
+}
+
+.stall-owner .vector-wrapper {
+  position: absolute;
+  top: 19px;
+  left: 19px;
+  width: 22px;
+  height: 22px;
+  aspect-ratio: 1;
+}
+
+.stall-owner .vector-2 {
+  position: absolute;
+  width: 58.33%;
+  height: 75.00%;
+  top: 12.50%;
+  left: 20.83%;
+}
+
+.stall-owner .orders-4 {
+  top: 374px;
+  position: absolute;
+  left: 30px;
+  width: 342px;
+  height: 113px;
+}
+
+.stall-owner .orders-5 {
+  top: 505px;
+  position: absolute;
+  left: 30px;
+  width: 342px;
+  height: 113px;
+}
+
+.stall-owner .orders-6 {
+  top: 107px;
+  position: absolute;
+  left: 30px;
+  width: 342px;
+  height: 113px;
+}
+
+.stall-owner .orders-7 {
+  top: 241px;
+  position: absolute;
+  left: 30px;
+  width: 342px;
+  height: 113px;
+}
+
+
+.stall-owner .log-out-button .rectangle {
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.stall-owner .log-out-button .text-wrapper{
+  pointer-events: none;
+}
+
+
+.stall-owner .log-out-button .rectangle:hover {
+  background-color: rgba(90, 204, 181, 0.1);
+}
+
+.stall-owner .log-out-button .rectangle:focus {
+  outline: 2px solid #5accb5;
+  outline-offset: 2px;
+}
+
+
+.rectangle-5{
+  display: flex;
+  flex: 1 1 0;
+  position: relative;
+  width: 50%;
+  min-height: 125px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 27px;
+  padding: 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+  
+}
+
+.rectangle-5 .menu-header {
+    position: absolute;
+    top: 24px;
+    left: 110px;
+    width: calc(100% - 130px);
+    font-size: 16px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: 500;   
+    text-wrap: wrap;
+}
+
+.rectangle-5 .contains-what{
+  position: absolute;
+  top: 64px;
+  left: 110px;
+  font-size: 11px;
+  font-family: 'Inter', Helvetica, sans-serif;
+  font-weight: normal;
+  color: #666;
+}
+
+.menu-item-price {
+    position: absolute;
+    top: 53px;
+    right: 50px;
+    font-size: 15px;
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-weight: normal;
+    z-index: 1;  
+}
+
+.text-menu
+{
+    font-family: 'Inter', Helvetica, sans-serif;
+    font-size: 27px;
+    font-weight: 600;
+    margin: 0px;    
+    text-align: center;
+}
+
+.text-signatures{
+  font-family: 'Inter', Helvetica, sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.rectangle-5 .img-vector{
+  position: absolute;
+  top: 27px;
+  left: 20px;
+  width: 69px;
+  height: 69px;
+  aspect-ratio: 1;
+  color: #666;
+}
