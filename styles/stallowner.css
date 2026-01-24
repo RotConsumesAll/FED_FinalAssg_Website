@@ -70,6 +70,8 @@ header
     font-size: 30px;
     font-weight: bold;
     flex-shrink: 0;
+    white-space: nowrap;
+    line-height: 1.2;
 }
 
 .stall-owner .nav-center
@@ -93,6 +95,7 @@ header
   z-index: 100;
   background: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
 }
 
 .stall-owner .nav-center a {
@@ -138,9 +141,6 @@ header
   width: 100%;
   padding: 20px 30px;
   box-sizing: border-box;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  justify-content: center;
 }
 
 .stall-owner .frame-2{
@@ -428,11 +428,6 @@ header
 
 .stall-owner .log-out-button .rectangle:hover {
   background-color: rgba(90, 204, 181, 0.1);
-}
-
-.stall-owner .log-out-button .rectangle:focus {
-  outline: 2px solid #5accb5;
-  outline-offset: 2px;
 }
 
 
