@@ -6,15 +6,31 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="..\styles\customer.css" rel="stylesheet" type="text/css" />
+    <!-- top nav bar, please insert the following HTML to the top of your <body>-->  
+      <header class="top-nav-bar">
+        <h1 class="default-text nav-left">HawkPortal</h1>
+        <nav class="nav-center" aria-label="Main navigation">
+          <a href="customer_home.html" class="default-text bold-focus" aria-current="page">Home</a>
+          <a href="customer_stalls.html" class="default-text">Stall</a>
+          <a href="customer_feedback.html" class="default-text">Feedback</a>
+          <a href="customer_complaints.html" class="default-text">Complaints</a>
+        </nav>
+
+        <div class="nav-right log-out-button">
+          <button type="button" class="button-shape-1" aria-label="Log out">
+            <span class="text-logout">Log out</span>
+          </button>
+        </div>
+      </header>
   </head>
   
   <body>
     <!-- Nav Bar -->
-    <nav class = "Navbar">
+    <!-- <nav class = "Navbar">
       <a href = "customer_home.html">Home</a>
       <a href = "Stalls.html">Stalls</a>
       <a href = "Feedback.html">Feedback</a>
-    </nav>
+    </nav> -->
 
     <!-- WokHey Bookmark, logo and desc -->
     <!-- <section >
@@ -36,6 +52,7 @@
         <li data-bs-target = "#PromoCarousel" data-bs-slide-to="1"></li>
         <li data-bs-target = "#PromoCarousel" data-bs-slide-to="2"></li>
       </ol> 
+
       <div class="carousel-inner">
         <!-- Promo slide 1  -->
         <div class="carousel-item active">
@@ -43,7 +60,7 @@
             <!-- Wokhey -->
             <section >
                 <img class = "BackgroundPhoto" src = "../assets/Images/BaoShenImg/wok-hey-chickenramen.jpg" alt="Wok Hey Chicken Ramen" height = "auto"  width="1512">
-                <div id = "Ribbon-Rec-Wokhey">
+                <div id = "Bookmark-Wokhey">
                   <p class = "Title">Lunch Time 10% Off!</p> 
                   <p class = "Body">Enjoy 10% off while you savour your<br>favourite stir-fried meals<br>from Wok Hey! </p>                  
                   <div class = "Logo"></div> 
@@ -54,15 +71,16 @@
             </section>
           </div>
       </div> 
+
         <!-- Promo slide 2 -->
           <div class="carousel-item">
             <div class = "container">
               <!-- Insert Store name -->
               <section >
                   <img class = "BackgroundPhoto" src = "../assets/Images/BaoShenImg/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.jpg" alt="Ya Fu Salted Egg Chicken" height = "auto"  width="1512">
-                  <div id = "Ribbon-Rec-Yahfu">
+                  <div id = "Bookmark-Yahfu">
                     <p class = "Title">$2 Off $8 Min. Spend!</p> 
-                    <p class = "Body">Enjoy 10% off while you savour your<br>favourite stir-fried meals<br>from Wok Hey! </p>
+                    <p class = "Body">Mini wok flavours accompanied<br>with cheap prices from<br>YahFu Miniwok! </p>
                     <div class = "Logo"></div> 
                     <div class = "Triangle-Left"></div>
                     <div class ="Triangle-Right"></div>
@@ -71,15 +89,16 @@
             </section>
           </div>
         </div> 
+
         <!-- Promo slide 3 -->
           <div class="carousel-item">
             <div class = "container">
               <!-- Insert Store name -->
               <section >
-                  <img class = "BackgroundPhoto" src = "../assets/Images/BaoShenImg/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.jpg" alt="Ya Fu Salted Egg Chicken" height = "auto"  width="1512">
-                  <div id = "Ribbon-Rec-Yahfu">
-                    <p class = "Title">$2 Off $8 Min. Spend!</p> 
-                    <p class = "Body">Enjoy 10% off while you savour your<br>favourite stir-fried meals<br>from Wok Hey! </p>
+                  <img class = "BackgroundPhoto" src = "../assets/Images/BaoShenImg/monstercurryBestofbothworlds.jpg" alt="Monster Curry Best Of Both Worlds" height = "auto"  width="1512">
+                  <div id = "Bookmark-Monstercurry">
+                    <p class = "Title">Dine-In 5% Cashback!</p> 
+                    <p class = "Body">Flaming hot rewards while<br>enduring the Level 5 heat<br>from Monster Curry! </p>
                     <div class = "Logo"></div> 
                     <div class = "Triangle-Left"></div>
                     <div class ="Triangle-Right"></div>
@@ -89,6 +108,8 @@
           </div>
         </div> 
       </div>
+
+      <!-- Carousel arrow buttons -->
       <a href = "#PromoCarousel" class = "carousel-control-prev" role = "button" data-bs-slide="prev">
         <span class = "visually-hidden">Previous</span>
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -1,14 +1,129 @@
-.Navbar {
+/* .Navbar {
   width: 1512px;
   height: 129px;
-  background-color: goldenrod;
+  background-color: #808080;
+} */
+
+/* navbar */
+.default-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
 }
 
+.nav-left{
+    font-size: 30px;
+    font-weight: bold;
+    flex-shrink: 0;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+
+.nav-center{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    min-width: 0;
+    flex: 0 1 auto;
+  }
+
+.nav-right
+  {
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+.top-nav-bar{
+    display: flex;
+    position: sticky;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #ffffff;
+    flex-shrink: 0;
+    min-height: 110px;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+  }
+
+.nav-center a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-center a:hover {
+  color: #74B84B;
+}
+
+
+.log-out-button {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.text-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #74B84B;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.button-shape-1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  min-width: 120px;
+  height: auto;
+  min-height: 48px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-radius: 80px;
+  border: 1px solid;
+  border-color: #74B84B;
+  background-color: transparent;
+}
+
+.bold-focus{
+  color: #74B84B;
+  font-weight: bold;
+}
+
+.log-out-button .button-shape-1:hover {
+  background-color: rgba(90, 204, 181, 0.1);
+}
+
+
 .BackgroundPhoto{
-  filter: brightness(0.35);
+  filter: brightness(0.5);
   position: absolute;
   left:0px;
   z-index: 1;
+  width: 1530px;
 }
 
 .carousel-item{
@@ -24,41 +139,63 @@
 .carousel-indicators{
   list-style: none;
 }
+
 .carousel-indicators li {
   width:20px !important; height: 20px !important;border-radius: 50%;
   margin:0px 28px;
   /* flex: 0 0 auto; */
 }
 
+.carousel-control-next {
+  background-color: #d9d9d9 !important;
+  width: 80px !important; height: 80px!important; border-radius: 50%!important;
+  align-self: center;
+  opacity: 1;
+}
+
+.carousel-control-next-icon {
+  background-image: url(../assets/Images/BaoShenImg/right-arrow.png);
+}
+
+.carousel-control-prev {
+  background-color: #d9d9d9 !important;
+  width: 80px !important; height: 80px!important; border-radius: 50%!important;
+  align-self: center;
+  opacity: 1;
+}
+
+.carousel-control-prev-icon {
+  background-image: url(../assets/Images/BaoShenImg/left-arrow.png);
+
+}
+
 .Triangle-Left{
-  /* Child */
   /* Triangle reference: https://www.web4college.com/how-to-make/web4-css-square-isosceles-comment-shape.php */
   /* Converges both borders */
   width:0px;
   /* Height of box */
-  border-bottom: 255px solid aliceblue;
+  border-bottom: 260px solid aliceblue;
   /* Width of box */
-  border-right: 170px solid transparent;
-  border-left: 170px solid transparent;
+  border-right: 125px solid transparent;
+  border-left: 125px solid transparent;
   rotate: 90deg ; 
   position:absolute;
-  top:203px; left:-42px;
+  top:220px; left:5px;
   z-index: 2;
 }
 
 .Triangle-Right{
-  /* Child */
   /* Triangle reference: https://www.web4college.com/how-to-make/web4-css-square-isosceles-comment-shape.php */
   /* Converges both borders */
   width:0px;
   /* Height of box */
-  border-bottom: 255px solid aliceblue;
+  border-bottom: 260px solid aliceblue;
   /* Width of box */
-  border-right: 170px solid transparent;
-  border-left: 170px solid transparent;
+  border-right: 125px solid transparent;
+  border-left: 125px solid transparent;
   rotate: -90deg ; 
   position:absolute;
-  top:203px; left: 213px;
+  top:220px; left: 255.5px;
   z-index: 2;
 }
 
@@ -67,10 +204,11 @@
   font-weight: bold;
   font-size: 45px;
   position:absolute;
-  left:31px; top:80px;
   z-index: 3;
   text-align: center;
   color: #000000;
+  margin-top: 85px;
+  align-self: center;
 }
 
 .Body{
@@ -78,12 +216,12 @@
   font-weight: 500;
   font-size: 24px;
   position:absolute;
-  left:51px; top:156px;
   z-index: 3;
   text-align: center;
   color: #000000;
   line-height: normal;
-  
+  margin-top: 155px;
+  align-self: center;
 }
 
 .promo-btn{
@@ -91,10 +229,11 @@
   font-weight: 550;
   font-size:20px;
   position:absolute;
-  left: 185px; top:265px;
   z-index: 3;
   color: #000000;
   box-shadow: 0px 4px 4px #808080;
+  margin-top: 265px;
+  align-self: center;
 }
 
 .Logo{
@@ -107,58 +246,93 @@
   background-position: center;
 }
 
+
+
 /* Wokhey */
-#Ribbon-Rec-Wokhey{
+#Bookmark-Wokhey{
   /* Parent */
   width:510px;
-  height: 330px;
+  height: 350px;
   background-color:#FDC741;
   position: relative ;
   left: 0px;
   border-radius: 1%;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
 }
 
-#Ribbon-Rec-Wokhey .Triangle-Left{
-  border-bottom: 255px solid #FDC741;
+#Bookmark-Wokhey .Triangle-Left{
+  border-bottom: 260px solid #FDC741;
 }
 
-#Ribbon-Rec-Wokhey .Triangle-Right{
-  border-bottom: 255px solid #FDC741;
+#Bookmark-Wokhey .Triangle-Right{
+  border-bottom: 260px solid #FDC741;
 }
 
-#Ribbon-Rec-Wokhey .Logo{
+#Bookmark-Wokhey .Logo{
   background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.jpeg");
 }
 
+
+
+
 /* YahFu */
-#Ribbon-Rec-Yahfu{
+#Bookmark-Yahfu{
   /* Parent */
   width:510px;
-  height: 330px;
+  height: 350px;
   background-color:#EB1B2B;
   position: relative ;
   left: 0px;
   border-radius: 1%;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
 }
 
-#Ribbon-Rec-Yahfu .Triangle-Left{
-  border-bottom: 255px solid #EB1B2B;
+#Bookmark-Yahfu .Triangle-Left{
+  border-bottom: 260px solid #EB1B2B;
 }
 
-#Ribbon-Rec-Yahfu .Triangle-Right{
-  border-bottom: 255px solid #EB1B2B;
+#Bookmark-Yahfu .Triangle-Right{
+  border-bottom: 260px solid #EB1B2B;
 }
 
-#Ribbon-Rec-Yahfu .Logo{
+#Bookmark-Yahfu .Logo{
   background-image: url("../assets/Images/BaoShenImg/Yah\ Fu\ Kitchen\ logo.jpg");
 }
 
-#Ribbon-Rec-Yahfu .Title{
+#Bookmark-Yahfu .Title{
   color: #FAF9F6;
 }
 
-#Ribbon-Rec-Yahfu .Body{
+#Bookmark-Yahfu .Body{
   color: #FAF9F6;
+}
+
+
+
+/* MonsterCurry */
+#Bookmark-Monstercurry{
+  width:510px;
+  height: 350px;
+  background-color: #FFCB70;  
+  position: relative ;
+  left: 0px;
+  border-radius: 1%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;  
+}
+#Bookmark-Monstercurry .Triangle-Left{
+  border-bottom: 260px solid #FFCB70;
+}
+
+#Bookmark-Monstercurry .Triangle-Right{
+  border-bottom: 260px solid #FFCB70;
+}
+
+#Bookmark-Monstercurry .Logo{
+  background-image: url("../assets/Images/BaoShenImg/Monster\ curry\ logo.png");
 }
