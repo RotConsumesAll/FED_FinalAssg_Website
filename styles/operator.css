@@ -1,0 +1,225 @@
+* {
+  font-family: "Inter", Helvetica, sans-serif;
+}
+
+/*
+Jarell
+
+I chose to apply the Blocks, Elements and Modifiers (BEM) methodology
+because it allows me to immediately determine the purpose of a class
+from its name alone. I can also see that chunks of the html code will seem related.
+See https://getbem.com/introduction/
+https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html
+*/
+
+/* VARIABLES */
+:root {
+  /* COLOURS */
+  --white: white;
+  --black: black;
+  --grey: lightgrey;
+  --light-blue: #58b6dc;
+  --linear-gradient-white-blue: linear-gradient(
+    0deg,
+    #b5eaff 0%,
+    #5da0c8 79%,
+    #055690 100%
+  );
+
+  /* SIZES */
+  --border-radius: 10px;
+}
+
+/* NON BEM STYLES */
+body {
+  background: var(--linear-gradient-white-blue);
+}
+
+main {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button {
+  border-radius: var(--border-radius);
+  color: var(--light-blue);
+  background-color: var(--white);
+  border: 1px solid var(--light-blue);
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: var(--white);
+  background-color: var(--light-blue);
+}
+
+
+
+/*    BEM styles   */
+/* =============== */
+
+/* flex-container */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex-container--column {
+  flex-direction: column;
+}
+
+/* section */
+.section--row {
+  flex-direction: row;
+  /* align-items: flex-start; */
+}
+
+.section--column {
+  flex-direction: column;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: var(--white);
+}
+
+.header__brand {
+  font-weight: bold;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__navmenu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.header__navmenu__item {
+  font-size: 15px;
+}
+
+.header__navmenu__item--selected a {
+  color: var(--light-blue);
+  font-weight: 500;
+}
+
+.header__navmenu__item:hover a {
+  color: var(--light-blue);
+}
+
+.header__button {
+  font-size: 20px;
+}
+
+/* figure-card */
+.figure-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+
+  flex: 1 2 100px;
+  /* flex: 1 1 auto; */
+  text-align: center;
+}
+
+.figure-card h1 {
+  font-size: medium;
+  font-weight: 500;
+}
+
+.figure-card__change--increase-highlight {
+  color: green;
+}
+
+.figure-card__change--decrease-highlight {
+  color: red;
+}
+
+.figure-card__single-statistics {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.figure-card__list {
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.figure-card__list li p {
+  margin: 0px;
+  width: 90%;
+}
+
+.figure-card__list li svg {
+  margin: 0px;
+}
+
+.figure-card__list__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* sidebar */
+.sidebar {
+  background-color: var(--white);
+  width: 100px;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  flex: 0 1 150px;
+  height: 100%;
+}
+
+.sidebar__menu {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar__menu__item {
+  font-size: 15px;
+}
+
+.sidebar__menu__item--selected a {
+  color: var(--light-blue);
+}
+
+.sidebar__button {
+  font-size: 15px;
+}
