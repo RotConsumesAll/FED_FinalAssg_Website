@@ -72,8 +72,6 @@ button:hover {
   background-color: var(--light-blue);
 }
 
-
-
 /*    BEM styles   */
 /* =============== */
 
@@ -214,6 +212,10 @@ button:hover {
 
 .sidebar__menu__item {
   font-size: 15px;
+}
+
+.sidebar__menu__item a:hover {
+  color: var(--light-blue);
 }
 
 .sidebar__menu__item--selected a {
