@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Create a Fixed Sidebar using HTML and CSS
+    </title>
+
+    <style>
+        .flex-list {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: stretch;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: .5rem;
+        }
+
+        .flex-list li {
+            width: 120px;
+            padding: .5rem;
+            border-radius: 1rem;
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="flex-list">
+        <li>title 1</li>
+        <li>title 2</li>
+        <li>title 3<br>new line</li>
+        <li>title 4<br>new line</li>
+        <li>title 5<br>new<br>line</li>
+        <li>title 6</li>
+    </ul>
+</body>
+
+</html>
