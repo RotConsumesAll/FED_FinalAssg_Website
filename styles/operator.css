@@ -104,6 +104,10 @@ button:hover {
   flex-direction: column;
 }
 
+.section--flex-wrap {
+  flex-wrap: wrap;
+}
+
 /* header */
 .header {
   display: flex;
@@ -286,8 +290,7 @@ button:hover {
   width: 100px;
   padding: 25px;
   border-radius: var(--border-radius);
-  flex: 0 1 150px;
-  height: 100%;
+  height: fit-content;
 
   /* temporary fix for sidebar not aligning correctly vertically */
   margin-top: 16px;
