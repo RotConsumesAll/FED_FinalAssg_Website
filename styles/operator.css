@@ -33,6 +33,7 @@ https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html
 /* NON BEM STYLES */
 body {
   background: var(--linear-gradient-white-blue);
+  min-height: 100vh;
 }
 
 main {
