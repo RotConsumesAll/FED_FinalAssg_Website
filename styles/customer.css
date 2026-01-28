@@ -118,6 +118,7 @@
 }
 
 /* Content */
+/* Promotions */
 .Background-Photo{
   filter: brightness(0.5);
   position: absolute;
@@ -172,6 +173,10 @@
   background-image: url(../assets/Images/BaoShenImg/left-arrow.png);
 
 }
+
+/* Frequently visited */
+
+
 
 .Triangle-Left{
   /* Triangle reference: https://www.web4college.com/how-to-make/web4-css-square-isosceles-comment-shape.php */
@@ -403,7 +408,6 @@
 }
 
 .About-Us-Container{
-  max-width: 650px;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -421,10 +425,18 @@
 }
 
 .About-Us-Container .About-Us-Body{
+  max-width: 650px; 
   width: auto; 
   margin: 0px 0px;
   font-weight: 600;
   font-size:20px;    
   color: #4e4e4e;
+}
+
+.Social-Media-Icons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 39px;
+  column-gap: 20px;
 }
 
