@@ -335,3 +335,61 @@ button:hover {
   border-radius: 8px;
   border: 0.5px solid var(--grey);
 }
+
+/* filter-row */
+.filter-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.8rem;
+}
+
+.filter-row__filter-button {
+  width: 3em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.filter-row__filter-button svg {
+  width: 2em;
+  height: 2em;
+}
+
+.filter-row__item {
+  background-color: var(--white);
+  border-radius: 8px;
+  border: 0.5px solid var(--grey);
+  display: flex;
+  justify-self: flex-start;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  gap: 0.5rem;
+  height: 1rem;
+}
+
+.filter-row__item__filter-value {
+  font-weight: 500;
+}
+
+.filter-row__item p {
+  margin: 0px;
+}
+
+.filter-row__item__close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  color: black;
+}
+
+.filter-row__item__close:hover {
+  color: var(--light-blue);
+}
