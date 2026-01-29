@@ -89,9 +89,9 @@ button:hover {
   flex-direction: column;
 }
 
-.flex-container--left {
+/* .flex-container--left {
   justify-content: left;
-}
+} */
 
 .flex-container--flex-grow-1 {
   flex-grow: 1;
@@ -160,9 +160,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   padding: 25px;
-
   flex: 1 2 100px;
-  /* flex: 1 1 auto; */
   text-align: center;
 }
 
@@ -209,22 +207,12 @@ button:hover {
 
 /* TO FIX */
 .figure-card--stall {
-  flex: 1 1 0;
-  padding: 0;
+  padding: 1rem;
   flex-direction: row;
-  flex: 1 0 auto;
+  flex: 0 0 39%;
   flex-wrap: wrap;
-
-  /* max-width: 20%;
-  width: 20%;
-  height: 50%;
-  max-height: 50%; */
-
-  max-width: 300px;
-  width: 300px;
-  height: 200px;
-  max-height: 200px;
-  gap: 50px;
+  justify-content: space-evenly;
+  gap: 2.5rem;
 }
 
 .figure-card--stall__name-and-owner {
