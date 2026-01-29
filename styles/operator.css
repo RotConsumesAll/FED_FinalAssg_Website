@@ -37,8 +37,10 @@ body {
 }
 
 main {
-  margin-left: 100px;
-  margin-right: 100px;
+  /* margin-left: 100px;
+  margin-right: 100px; */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 ul {
