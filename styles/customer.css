@@ -158,7 +158,7 @@
 }
 
 .carousel-control-next-icon {
-  background-image: url(../assets/Images/BaoShenImg/right-arrow.png);
+  background-image: url(../assets/Images/BaoShenImg/right-arrow.svg);
 }
 
 .carousel-control-prev {
@@ -170,7 +170,7 @@
 }
 
 .carousel-control-prev-icon {
-  background-image: url(../assets/Images/BaoShenImg/left-arrow.png);
+  background-image: url(../assets/Images/BaoShenImg/left-arrow.svg);
 
 }
 
@@ -225,7 +225,6 @@
   text-align: center;
   color: #000000;
   line-height: normal;
-  margin-top: 155px;
   align-self: center;
 }
 
@@ -245,7 +244,7 @@
   width: 90px; height: 90px;border-radius: 50%;
   position:absolute;
   z-index:2;
-  background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.jpeg");
+  background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.svg");
   background-size: cover;
   background-position: center;
 }
@@ -275,7 +274,11 @@
 }
 
 #Bookmark-Wokhey .Logo{
-  background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.jpeg");
+  background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.svg");
+}
+
+#Bookmark-Wokhey .Body {
+  margin-top: 155px;
 }
 
 
@@ -304,7 +307,7 @@
 }
 
 #Bookmark-Yahfu .Logo{
-  background-image: url("../assets/Images/BaoShenImg/Yah\ Fu\ Kitchen\ logo.jpg");
+  background-image: url("../assets/Images/BaoShenImg/Yah\ Fu\ Kitchen\ logo.svg");
 }
 
 #Bookmark-Yahfu .Title{
@@ -312,7 +315,7 @@
 }
 
 #Bookmark-Yahfu .Body{
-  color: #FAF9F6;
+  color: #FAF9F6;  margin-top: 155px;
 }
 
 
@@ -338,21 +341,34 @@
 }
 
 #Bookmark-Monstercurry .Logo{
-  background-image: url("../assets/Images/BaoShenImg/Monster\ curry\ logo.png");
+  background-image: url("../assets/Images/BaoShenImg/Monster\ curry\ logo.svg");
+}
+
+#Bookmark-Monstercurry .Body{
+  margin-top: 155px;  
 }
 
 
 /* Frequently visited */
 
 #Freq-Visited{
+  /* display:flex;
+  flex-direction: column; */
   height:auto; width:1512px;
-  margin-bottom: 98px;   
+  margin: 98px 0px;   
+}
+
+#Freq-Visited .Title{
+  color: rgba(0,0, 0, 0.65);
+  font-size: 50px;
+  align-self: flex-end;
+  margin: -150px  28px;
 }
 
 .Podium{
   display:flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: center; 
   /* background-color: #808080; */
   margin-bottom: 5px;
@@ -361,30 +377,70 @@
 .First-Rec{
   display: flex;
   height: 250px; width: 150px;
-  background-color:rgba(116, 184, 75,1);
+  background-color:#F0D52D;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  position:relative;
   justify-content: center;
 }
 
 .First-Rec .Logo {
-  justify-content: center;
-  position:absolute;
+  width: 120px; height: 120px;border-radius: 50%;
+  justify-self: center;
+  margin-top:-140px;
+  background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.svg");
+  background-image: cover;
+}
+
+.First-Rec .Body{
+  margin-top: 5px;
+  align-self: flex-start;
+  color:#1c1c1e; font-size: 40px;
 }
 
 .Second-Rec{
-  height: 167px; width: 150px;
-  background-color:rgba(116, 184, 75,0.875);
+  display: flex;
+  justify-content: center;
+  height: 200px; width: 150px;
+  background-color:#C4C4C4;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
+.Second-Rec .Logo {
+  width: 120px; height: 120px;border-radius: 50%;
+  justify-self: center;
+  margin-top:-140px;
+  background-image: url("../assets/Images/BaoShenImg/Monster\ curry\ logo.svg");  
+  background-image: cover;
+}
+
+.Second-Rec .Body{
+  margin-top: 5px;
+  align-self: flex-start;
+  color:#1c1c1e; font-size: 40px;
+}
+
 .Third-Rec{
-  height: 83px; width: 150px;
-  background-color:rgba(116, 184, 75,0.85);
+  display: flex;
+  justify-content: center;  
+  height: 150px; width: 150px;
+  background-color:#CE8946;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;  
+}
+
+.Third-Rec .Logo {
+  width: 120px; height: 120px;border-radius: 50%;
+  justify-self: center;
+  margin-top:-140px;
+  background-image: url("../assets/Images/BaoShenImg/Yah\ Fu\ Kitchen\ logo.svg");
+  background-image: cover;    
+}
+
+.Third-Rec .Body{
+  margin-top: 5px;
+  align-self: flex-start;
+  color:#1c1c1e; font-size: 40px;
 }
 
 .Runner-Up-Container{
@@ -395,14 +451,14 @@
 }
 
 .Fourth-Rec{
-  height: 83px; width: 225px;
-  background-color:rgba(116, 184, 75,0.85);
+  height: 100px; width: 222.5px;
+  background-color:rgba(116, 184, 75,1);
   border-radius: 10px;  
 }
 
 .Fifth-Rec{
-  height: 83px; width: 225px;
-  background-color:rgba(116, 184, 75,0.85);
+  height: 100px; width: 222.5px;
+  background-color:rgba(116, 184, 75,1);
   border-radius: 10px;  
 }
 
@@ -414,13 +470,19 @@
   position:relative;
 }
 
+.Contact-Us-Container{
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+  margin-top: 108px;
+  margin-left: 198px;
+  row-gap: 50px;
+}
+
 .Hotline-Container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  position:absolute;
-  margin-top: 108px;
-  margin-left:198px;
 }
 
 .Hotline-Container .Hotline-Body{
@@ -436,9 +498,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  position:absolute;
-  margin-top: 205px;
-  margin-left:198px;
+
 }
 
 .Email-Container .Email-Body{
@@ -454,9 +514,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  position:absolute;
-  margin-top: 302px;
-  margin-left:198px;
 }
 
 .Credits-Container .Credits {
@@ -465,6 +522,8 @@
   text-align: center;
   font-weight: 600;
   font-size:20px;  
+  text-decoration: none;
+  color:#FAF9F6
 }
 
 .About-Us-Container{
