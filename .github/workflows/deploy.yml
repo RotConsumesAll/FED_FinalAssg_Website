@@ -29,14 +29,20 @@ jobs:
       # --- STEP: GENERATE THE CONFIG FILE ---
       - name: Generate Config.js
         run: |
-          echo "const firebaseConfig = {" > config.js
-          echo "  apiKey: '${{ secrets.FIREBASE_API_KEY }}'," >> config.js
-          echo "  authDomain: '${{ secrets.FIREBASE_AUTH_DOMAIN }}'," >> config.js
-          echo "  projectId: '${{ secrets.FIREBASE_PROJECT_ID }}'," >> config.js
-          echo "  storageBucket: '${{ secrets.FIREBASE_STORAGE_BUCKET }}'," >> config.js
-          echo "  messagingSenderId: '${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}'," >> config.js
-          echo "  appId: '${{ secrets.FIREBASE_APP_ID }}'" >> config.js
-          echo "};" >> config.js
+          # 1. Make sure the folder exists first!
+          mkdir -p scripts
+
+          # 2. Create the file INSIDE the scripts folder
+          echo "const firebaseConfig = {" > scripts/config.js
+          echo "  apiKey: '${{ secrets.FIREBASE_API_KEY }}'," >> scripts/config.js
+          echo "  authDomain: '${{ secrets.FIREBASE_AUTH_DOMAIN }}'," >> scripts/config.js
+          echo "  databaseURL: '${{ secrets.FIREBASE_DATABASE_URL }}'," >> scripts/config.js
+          echo "  projectId: '${{ secrets.FIREBASE_PROJECT_ID }}'," >> scripts/config.js
+          echo "  storageBucket: '${{ secrets.FIREBASE_STORAGE_BUCKET }}'," >> scripts/config.js
+          echo "  messagingSenderId: '${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}'," >> scripts/config.js
+          echo "  appId: '${{ secrets.FIREBASE_APP_ID }}'," >> scripts/config.js
+          echo "  measurementId: '${{ secrets.FIREBASE_MEASUREMENT_ID }}'" >> scripts/config.js
+          echo "};" >> scripts/config.js
       # --------------------------------------
 
       - name: Setup Pages
