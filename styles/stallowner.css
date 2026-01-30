@@ -196,6 +196,28 @@ a{
   align-items: center;
 }
 
+.frame-7{
+  display: flex;
+  gap: 15px;
+  height: auto;
+  width: auto;
+  padding: 2px;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.frame-7 a{
+  text-decoration: underline;
+}
+
+.edit-button{
+  font-family: 'Inter', Helvetica, sans-serif;
+  font-size: 15px;
+  margin: 0px;
+  width: auto;
+}
+
 .stall-owner .frame section{
     display: flex;
     flex-direction: column;
@@ -503,6 +525,7 @@ a{
   font-size: 23px;
   font-weight: 500;
   margin: 0px;
+  width: auto;
 }
 
 .rectangle-5 .img-vector{
