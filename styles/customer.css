@@ -111,8 +111,20 @@
   background-color: rgba(90, 204, 181, 0.1);
 }
 
+
+/* body{
+  display: flex;
+  flex-direction: column;
+  row-gap: 0px;
+} */
+
 /* Content */
 /* Promotions */
+
+#PromoCarousel{
+  margin-bottom: 98px;
+}
+
 .Background-Photo{
   filter: brightness(0.5);
   position: absolute;
@@ -125,7 +137,6 @@
   height:755px;
   width: 1512px;
   background-color: #808080;
-  margin-bottom: 98px;
 }
 
 .carousel-item img{
@@ -138,8 +149,8 @@
 
 .carousel-indicators li {
   width:20px !important; height: 20px !important;border-radius: 50%;
-  margin:0px 28px;
-  margin-bottom: 98px;
+  /* margin:98px 28px; */
+  /* margin-bottom: 98px; */
   /* flex: 0 0 auto; */
 }
 
@@ -348,24 +359,25 @@
 #Freq-Visited{
   /* display:flex;
   flex-direction: column; */
-  height:auto; width:1512px;
-  margin: 98px 0px;   
+  /* height:auto; width:1512px; */
+  padding-bottom: 98px;   
 }
 
 #Freq-Visited .Title{
   color: rgba(0,0, 0, 0.65);
   font-size: 50px;
   align-self: flex-end;
-  margin: -150px  28px;
+  margin: 0px  28px;
 }
 
 .Podium{
+  min-height: 475px;
   display:flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: center; 
   /* background-color: #808080; */
-  margin-bottom: 5px;
+  margin-bottom: 98px;
 }
 
 .First-Rec{
@@ -462,6 +474,72 @@
   color:#1c1c1e; font-size: 30px;
   font-weight: 500;
 }
+
+
+/* Dicover More */
+#Discover-More{
+  height:auto; width:1512px;
+  margin: 120px 0px;   
+  background-color: #C4C4C4;
+}
+
+#Discover-More .Title{
+  color: rgba(0,0, 0, 0.65);
+  font-size: 50px;
+  align-self: flex-end;
+  margin: -100px  28px;
+}
+
+/* Top Row */
+.Top-Row {
+  display:flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;    
+  /* background-color: #808080; */
+  column-gap: 110px;
+  margin-bottom: 91px;
+}
+
+.Recommendation-1{
+  display: flex;
+  flex-direction: column;  
+  align-items: center;  
+  background-color: #000000;
+  padding:10px;
+  border-radius: 5%;
+}
+
+.Recommendation-1 .Preview-Photo{
+  background-image: url("../assets/Images/BaoShenImg/MonstercurryDemiGlace.svg");
+}
+
+a {
+  text-decoration: none;
+  color: #FAF9F6;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.Preview-Photo{
+  width:200px; min-height: 200px;
+  position: relative;
+  background-size: cover;
+  border-radius: 5%;  
+  margin-bottom: 5px;
+}
+
+/* Bottom row */
+.Bottom-Row {
+  display:flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  /* background-color: #808080; */
+  column-gap: 110px;
+}
+
+
 
 /* Footer */
 #Footer{
