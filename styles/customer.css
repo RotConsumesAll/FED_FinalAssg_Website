@@ -1,8 +1,15 @@
+/* .Navbar {
+  width: 1512px;
+  height: 129px;
+  background-color: #808080;
+} */
+
+/* navbar */
 .default-text{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Inter", Helvetica;
+  font-family: "Inter", Helvetica, sans-serif;
   font-weight: 400;
   color: #000000;
   font-size: 15px;
@@ -74,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Inter", Helvetica;
+  font-family: "Inter", Helvetica, sans-serif;
   font-weight: 400;
   color: #74B84B;
   font-size: 15px;
@@ -110,54 +117,445 @@
   background-color: rgba(90, 204, 181, 0.1);
 }
 
-.Navbar {
-    width: 1512px;
-    height: 129px;
-    background-color: goldenrod;
+/* Content */
+/* Promotions */
+.Background-Photo{
+  filter: brightness(0.5);
+  position: absolute;
+  left:0px;
+  z-index: 1;
+  width: 1530px;
 }
 
-#WokHeyRamen{
-    filter: brightness(0.35);
-    position: absolute;
+.carousel-item{
+  height:755px;
+  width: 1512px;
+  background-color: #808080;
+  margin-bottom: 98px;
 }
 
-#RibbonRec{
-  /* Parent */
-    width:510px;
-    height: 330px;
-    background-color:#FDC741;
-    position: relative ;
-    left: 141px;
-    border-radius: 1%;
+.carousel-item img{
+  height: 100%; width: 100%; object-fit: cover;
 }
 
+.carousel-indicators{
+  list-style: none;
+}
 
-#TriangleLeft{
-  /* Child */
+.carousel-indicators li {
+  width:20px !important; height: 20px !important;border-radius: 50%;
+  margin:0px 28px;
+  margin-bottom: 98px;
+  /* flex: 0 0 auto; */
+}
+
+.carousel-control-next {
+  background-color: #d9d9d9 !important;
+  width: 80px !important; height: 80px!important; border-radius: 50%!important;
+  align-self: center;
+  opacity: 1;
+  margin:0px 30px;
+}
+
+.carousel-control-next-icon {
+  background-image: url(../assets/Images/BaoShenImg/right-arrow.svg);
+}
+
+.carousel-control-prev {
+  background-color: #d9d9d9 !important;
+  width: 80px !important; height: 80px!important; border-radius: 50%!important;
+  align-self: center;
+  opacity: 1;
+  margin:0px 30px;
+}
+
+.carousel-control-prev-icon {
+  background-image: url(../assets/Images/BaoShenImg/left-arrow.svg);
+
+}
+
+.Triangle-Left{
   /* Triangle reference: https://www.web4college.com/how-to-make/web4-css-square-isosceles-comment-shape.php */
   /* Converges both borders */
   width:0px;
   /* Height of box */
-  border-bottom: 255px solid #FDC741;
+  border-bottom: 260px solid aliceblue;
   /* Width of box */
-  border-right: 170px solid transparent;
-  border-left: 170px solid transparent;
+  border-right: 125px solid transparent;
+  border-left: 125px solid transparent;
   rotate: 90deg ; 
   position:absolute;
-  top:339px; left:107px;
+  top:220px; left:5.5px;
+  z-index: 2;
 }
 
-#TriangleRight{
-  /* Child */
+.Triangle-Right{
   /* Triangle reference: https://www.web4college.com/how-to-make/web4-css-square-isosceles-comment-shape.php */
   /* Converges both borders */
   width:0px;
   /* Height of box */
-  border-bottom: 255px solid #FDC741;
+  border-bottom: 260px solid aliceblue;
   /* Width of box */
-  border-right: 170px solid transparent;
-  border-left: 170px solid transparent;
+  border-right: 125px solid transparent;
+  border-left: 125px solid transparent;
   rotate: -90deg ; 
   position:absolute;
-  top:339px; left: 362px;
+  top:220px; left: 255.5px;
+  z-index: 2;
 }
+
+.Title{
+  font-family: "Inter", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 45px;
+  position:absolute;
+  z-index: 3;
+  text-align: center;
+  color: #000000;
+  margin-top: 85px;
+  align-self: center;
+}
+
+.Body{
+  font-family: "Inter", Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  position:absolute;
+  z-index: 3;
+  text-align: center;
+  color: #000000;
+  line-height: normal;
+  align-self: center;
+}
+
+.promo-btn{
+  background-color: #FAF9F6;
+  font-weight: 550;
+  font-size:20px;
+  position:absolute;
+  z-index: 3;
+  color: #000000;
+  box-shadow: 0px 4px 4px #808080;
+  margin-top: 265px;
+  align-self: center;
+}
+
+.Logo{
+  width: 90px; height: 90px;border-radius: 50%;
+  position:absolute;
+  z-index:2;
+  background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+/* Wokhey */
+#Bookmark-Wokhey{
+  /* Parent */
+  width:510px;
+  height: 350px;
+  background-color:#FDC741;
+  position: relative ;
+  left: 30px;
+  border-radius: 1%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+#Bookmark-Wokhey .Triangle-Left{
+  border-bottom: 260px solid #FDC741;
+}
+
+#Bookmark-Wokhey .Triangle-Right{
+  border-bottom: 260px solid #FDC741;
+}
+
+#Bookmark-Wokhey .Logo{
+  background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.svg");
+}
+
+#Bookmark-Wokhey .Body {
+  margin-top: 155px;
+}
+
+
+
+
+/* YahFu */
+#Bookmark-Yahfu{
+  /* Parent */
+  width:510px;
+  height: 350px;
+  background-color:#EB1B2B;
+  position: relative ;
+  left: 30px;
+  border-radius: 1%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+#Bookmark-Yahfu .Triangle-Left{
+  border-bottom: 260px solid #EB1B2B;
+}
+
+#Bookmark-Yahfu .Triangle-Right{
+  border-bottom: 260px solid #EB1B2B;
+}
+
+#Bookmark-Yahfu .Logo{
+  background-image: url("../assets/Images/BaoShenImg/Yah\ Fu\ Kitchen\ logo.svg");
+}
+
+#Bookmark-Yahfu .Title{
+  color: #FAF9F6;
+}
+
+#Bookmark-Yahfu .Body{
+  color: #FAF9F6;  margin-top: 155px;
+}
+
+
+
+/* MonsterCurry */
+#Bookmark-Monstercurry{
+  width:510px;
+  height: 350px;
+  background-color: #FFCB70;  
+  position: relative ;
+  left: 30px;
+  border-radius: 1%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;  
+}
+#Bookmark-Monstercurry .Triangle-Left{
+  border-bottom: 260px solid #FFCB70;
+}
+
+#Bookmark-Monstercurry .Triangle-Right{
+  border-bottom: 260px solid #FFCB70;
+}
+
+#Bookmark-Monstercurry .Logo{
+  background-image: url("../assets/Images/BaoShenImg/Monster\ curry\ logo.svg");
+}
+
+#Bookmark-Monstercurry .Body{
+  margin-top: 155px;  
+}
+
+
+/* Frequently visited */
+
+#Freq-Visited{
+  /* display:flex;
+  flex-direction: column; */
+  height:auto; width:1512px;
+  margin: 98px 0px;   
+}
+
+#Freq-Visited .Title{
+  color: rgba(0,0, 0, 0.65);
+  font-size: 50px;
+  align-self: flex-end;
+  margin: -150px  28px;
+}
+
+.Podium{
+  display:flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center; 
+  /* background-color: #808080; */
+  margin-bottom: 5px;
+}
+
+.First-Rec{
+  display: flex;
+  height: 250px; width: 150px;
+  background-color:#F0D52D;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  justify-content: center;
+}
+
+.First-Rec .Logo {
+  width: 120px; height: 120px;border-radius: 50%;
+  justify-self: center;
+  margin-top:-140px;
+  background-image: url("../assets/Images/BaoShenImg/WokHeyLogo.svg");
+  background-image: cover;
+}
+
+.First-Rec .Body{
+  margin-top: 5px;
+  align-self: flex-start;
+  color:#1c1c1e; font-size: 40px;
+}
+
+.Second-Rec{
+  display: flex;
+  justify-content: center;
+  height: 200px; width: 150px;
+  background-color:#C4C4C4;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.Second-Rec .Logo {
+  width: 120px; height: 120px;border-radius: 50%;
+  justify-self: center;
+  margin-top:-140px;
+  background-image: url("../assets/Images/BaoShenImg/Monster\ curry\ logo.svg");  
+  background-image: cover;
+}
+
+.Second-Rec .Body{
+  margin-top: 5px;
+  align-self: flex-start;
+  color:#1c1c1e; font-size: 40px;
+}
+
+.Third-Rec{
+  display: flex;
+  justify-content: center;  
+  height: 150px; width: 150px;
+  background-color:#CE8946;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;  
+}
+
+.Third-Rec .Logo {
+  width: 120px; height: 120px;border-radius: 50%;
+  justify-self: center;
+  margin-top:-140px;
+  background-image: url("../assets/Images/BaoShenImg/Yah\ Fu\ Kitchen\ logo.svg");
+  background-image: cover;    
+}
+
+.Third-Rec .Body{
+  margin-top: 5px;
+  align-self: flex-start;
+  color:#1c1c1e; font-size: 40px;
+}
+
+.Runner-Up-Container{
+  display: flex; flex-direction: row ;
+  /* background-color: #cfcfcf; */
+  justify-content: center;
+  column-gap: 5px;
+}
+
+.Fourth-Rec{
+  height: 100px; width: 222.5px;
+  background-color:rgba(116, 184, 75,1);
+  border-radius: 10px;  
+}
+
+.Fifth-Rec{
+  height: 100px; width: 222.5px;
+  background-color:rgba(116, 184, 75,1);
+  border-radius: 10px;  
+}
+
+
+/* Footer */
+#Footer{
+  height:463px;width:1512px;
+  background-color: #74B84B;
+  position:relative;
+}
+
+.Contact-Us-Container{
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+  margin-top: 108px;
+  margin-left: 198px;
+  row-gap: 50px;
+}
+
+.Hotline-Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Hotline-Container .Hotline-Body{
+  width: auto; 
+  margin: 0px 0px 0px 17px;
+  text-align: center;
+  font-weight: 600;
+  color: #FAF9F6;
+  font-size:larger;  
+}
+
+.Email-Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.Email-Container .Email-Body{
+  width: auto; 
+  margin: 0px 0px 0px 17px;
+  text-align: center;
+  font-weight: 600;
+  color: #FAF9F6;
+  font-size:20px;  
+}
+
+.Credits-Container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Credits-Container .Credits {
+  width: auto; 
+  margin: 0px 0px 0px 17px;
+  text-align: center;
+  font-weight: 600;
+  font-size:20px;  
+  text-decoration: none;
+  color:#FAF9F6
+}
+
+.About-Us-Container{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  position:absolute;
+  margin-top: 69px;
+  margin-left: 783px;
+}
+
+.About-Us-Container .About-Us-Title{
+  width: auto; 
+  margin: 0px 0px;
+  font-weight: 700;
+  font-size:30px; 
+  color: #FAF9F6;
+}
+
+.About-Us-Container .About-Us-Body{
+  max-width: 650px; 
+  width: auto; 
+  margin: 0px 0px;
+  font-weight: 600;
+  font-size:20px;    
+  color: #FAF9F6;
+}
+
+.Social-Media-Icons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 39px;
+  column-gap: 20px;
+}
+
