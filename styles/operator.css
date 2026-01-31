@@ -98,7 +98,7 @@ button:hover {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 1rem;
 }
 
@@ -112,6 +112,10 @@ button:hover {
 
 .flex-container--gap-0 {
   gap: 0;
+}
+
+.flex-container--justify-content-default {
+  justify-content: unset;
 }
 
 /* section */
@@ -182,6 +186,10 @@ button:hover {
 
   margin: 0px;
   padding: 1rem;
+}
+
+.figure-card--stand-alone {
+  flex: 0 0 auto;
 }
 
 .figure-card h1 {
@@ -287,7 +295,7 @@ button:hover {
   flex: 1 2 100px;
   text-align: left;
   gap: 20px;
-  flex: 1 2 100px;
+  max-height: fit-content;
 }
 
 /* centre-info */
@@ -298,8 +306,8 @@ button:hover {
 /* sidebar */
 .sidebar {
   background-color: var(--white);
-  width: 100px;
-  padding: 25px;
+  width: 20%;
+  padding: 2rem;
   border-radius: var(--border-radius);
   height: fit-content;
 }
@@ -314,9 +322,11 @@ button:hover {
 
 .sidebar__menu__item {
   font-size: 15px;
-  white-space: nowrap;
+  white-space: initial;
+  /* Below is for truncation */
+  /* white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 }
 
 .sidebar__menu__item a:hover {
@@ -341,6 +351,7 @@ button:hover {
 .search-box {
   display: flex;
   flex: 1 1 0;
+  max-height: fit-content;
 }
 
 .search-box__search {
