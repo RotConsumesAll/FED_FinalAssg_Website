@@ -418,6 +418,7 @@ button:hover {
   display: inline-block;
   flex: 1 1 50%;
 }
+
 .select__button {
   font-size: 15px;
   display: flex;
@@ -430,12 +431,14 @@ button:hover {
   background-color: var(--white);
   cursor: pointer;
 }
+
 .select__arrow {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 6px solid var(--black);
   transition: transform ease-in-out 0.3s;
 }
+
 .select__dropdown {
   position: absolute;
   top: 100%;
@@ -450,18 +453,10 @@ button:hover {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   max-height: 200px;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f1f1f1;
 }
-.select__dropdown::-webkit-scrollbar {
-  width: 7px;
-}
-.select__dropdown::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 25px;
-}
-.select__dropdown::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 25px;
-}
+
 .select__dropdown li {
   padding: 10px;
   cursor: pointer;
