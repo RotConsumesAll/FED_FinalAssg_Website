@@ -1,0 +1,2 @@
+# Redirect default path to your actual home page
+/   /pages/customer_home/index.html   301
