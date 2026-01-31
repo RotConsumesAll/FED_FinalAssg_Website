@@ -85,6 +85,13 @@ button:hover {
 /*    BEM styles   */
 /* =============== */
 
+.main--documents-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* flex-container */
 .flex-container {
   display: flex;
@@ -395,7 +402,16 @@ button:hover {
   color: var(--light-blue);
 }
 
-/* Select */
+/* select-container */
+.select-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* select */
 /* https://blog.logrocket.com/creating-custom-select-dropdown-css/ */
 .select {
   position: relative;

@@ -30,116 +30,112 @@
         </nav>
         <button class="header__button">Log out</button>
     </header>
-    <main>
-        <section class="section--column">
-            <section class="section--row" style="gap: 1rem; margin-top: 1rem;">
-                <!-- Custom Dropdown Structure -->
-                <div class="select">
-                    <button class="select__button">
-                        <span class="select__button__selected-value">Open this select menu</span>
-                        <span class="select__arrow"></span>
-                    </button>
-                    <ul class="select__dropdown hidden">
-                        <li>Rental Agreements</li>
-                        <li>Inspection Records</li>
-                    </ul>
-                </div>
-
-            </section>
-
-            <div class="filter-row">
-                <button class="filter-row__filter-button">
-                    <!-- https://icons.getbootstrap.com/icons/filter/ -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-filter" viewBox="0 0 16 16">
-                        <path
-                            d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
-                    </svg>
+    <main class="main--documents-page">
+        <div class="select-container">
+            <div class="select">
+                <button class="select__button">
+                    <span class="select__button__selected-value">Open this select menu</span>
+                    <span class="select__arrow"></span>
                 </button>
-                <figure class="filter-row__item">
-                    <p><span class="filter-row__item__filter-value">Halal</span></p>
-                    <div class="filter-row__item__close">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                        </svg>
-                    </div>
-                </figure>
-
-                <figure class="filter-row__item">
-                    <p>Owner <span class="filter-row__item__filter-value">Ms lee</span></p>
-                    <div class="filter-row__item__close">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                        </svg>
-                    </div>
-                </figure>
-                <figure class="filter-row__item">
-                    <p>Hygiene Grade <span class="filter-row__item__filter-value">A</span></p>
-                    <div class="filter-row__item__close">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                        </svg>
-                    </div>
-                </figure>
-                <figure class="filter-row__item">
-                    <p>Name contains <span class="filter-row__item__filter-value">Mei</span></p>
-                    <div class="filter-row__item__close">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                        </svg>
-                    </div>
-                </figure>
-
+                <ul class="select__dropdown hidden">
+                    <li>Rental Agreements</li>
+                    <li>Inspection Records</li>
+                </ul>
             </div>
+        </div>
 
-
-            <div class="record-container">
-                <div class="record-container__record">
-                    <p>My Hainanese Chicken Rice</p>
-                    <p class="record-container__record__minor-info record-container__record__minor-info--centre">Maxwell
-                        Food Centre</p>
-                    <div class="record-container__record__grade-score">
-                        <p>Grade: <span class="record-container__record__grade-score__grade semi-bold">A</span></p>
-                        <p>Avg: <span class="semi-bold">92</span></p>
-                    </div>
-                    <div class="record-container__record__score-list">
-                        <p class="record-container__record__score-list__score">Hygiene: <span
-                                class="semi-bold">92</span></p>
-                        <p class="record-container__record__score-list__score">Cleanliness: <span
-                                class="semi-bold">92</span></p>
-                        <p class="record-container__record__score-list__score">Housekeeping: <span
-                                class="semi-bold">92</span></p>
-                    </div>
-                    <p>Inspected on: 12 Jan 2026</p>
-                    <p class="record-container__record__minor-info">Officer: Lim Wei Ming</p>
+        <div class="filter-row">
+            <button class="filter-row__filter-button">
+                <!-- https://icons.getbootstrap.com/icons/filter/ -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </button>
+            <figure class="filter-row__item">
+                <p><span class="filter-row__item__filter-value">Halal</span></p>
+                <div class="filter-row__item__close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                    </svg>
                 </div>
+            </figure>
 
-                <div class="record-container__record">
-                    <p>With <span class="semi-bold">Mr Johnosn</span></p>
-                    <p class="record-container__record__minor-info record-container__record__minor-info--centre">Maxwell
-                        Food Centre #01-02</p>
-                    <p><span class="semi-bold">$1002</span> monthly rent</p>
-                    <p><span class="semi-bold">12 Jan 2025</span> to <span class="semi-bold">12 Jan 2026</span></p>
-                    <p class="record-container__record__validity record-container__record__validity--expired">Expired
+            <figure class="filter-row__item">
+                <p>Owner <span class="filter-row__item__filter-value">Ms lee</span></p>
+                <div class="filter-row__item__close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </div>
+            </figure>
+            <figure class="filter-row__item">
+                <p>Hygiene Grade <span class="filter-row__item__filter-value">A</span></p>
+                <div class="filter-row__item__close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </div>
+            </figure>
+            <figure class="filter-row__item">
+                <p>Name contains <span class="filter-row__item__filter-value">Mei</span></p>
+                <div class="filter-row__item__close">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </div>
+            </figure>
+
+        </div>
+
+
+        <div class="record-container">
+            <div class="record-container__record">
+                <p>My Hainanese Chicken Rice</p>
+                <p class="record-container__record__minor-info record-container__record__minor-info--centre">Maxwell
+                    Food Centre</p>
+                <div class="record-container__record__grade-score">
+                    <p>Grade: <span class="record-container__record__grade-score__grade semi-bold">A</span></p>
+                    <p>Avg: <span class="semi-bold">92</span></p>
+                </div>
+                <div class="record-container__record__score-list">
+                    <p class="record-container__record__score-list__score">Hygiene: <span class="semi-bold">92</span>
                     </p>
+                    <p class="record-container__record__score-list__score">Cleanliness: <span
+                            class="semi-bold">92</span></p>
+                    <p class="record-container__record__score-list__score">Housekeeping: <span
+                            class="semi-bold">92</span></p>
                 </div>
-
-                <div class="record-container__record">
-                    <p>With <span class="semi-bold">Mr Johnosn</span></p>
-                    <p class="record-container__record__minor-info record-container__record__minor-info--centre">Maxwell
-                        Food Centre #01-02</p>
-                    <p><span class="semi-bold">$1002</span> monthly rent</p>
-                    <p><span class="semi-bold">12 Jan 2025</span> to <span class="semi-bold">12 Jan 2026</span></p>
-                    <p class="record-container__record__validity record-container__record__validity--valid">Valid</p>
-                </div>
+                <p>Inspected on: 12 Jan 2026</p>
+                <p class="record-container__record__minor-info">Officer: Lim Wei Ming</p>
             </div>
 
+            <div class="record-container__record">
+                <p>With <span class="semi-bold">Mr Johnosn</span></p>
+                <p class="record-container__record__minor-info record-container__record__minor-info--centre">Maxwell
+                    Food Centre #01-02</p>
+                <p><span class="semi-bold">$1002</span> monthly rent</p>
+                <p><span class="semi-bold">12 Jan 2025</span> to <span class="semi-bold">12 Jan 2026</span></p>
+                <p class="record-container__record__validity record-container__record__validity--expired">Expired
+                </p>
+            </div>
 
-        </section>
+            <div class="record-container__record">
+                <p>With <span class="semi-bold">Mr Johnosn</span></p>
+                <p class="record-container__record__minor-info record-container__record__minor-info--centre">Maxwell
+                    Food Centre #01-02</p>
+                <p><span class="semi-bold">$1002</span> monthly rent</p>
+                <p><span class="semi-bold">12 Jan 2025</span> to <span class="semi-bold">12 Jan 2026</span></p>
+                <p class="record-container__record__validity record-container__record__validity--valid">Valid</p>
+            </div>
+        </div>
+
+
 
     </main>
     <script src="../scripts/main.js"></script>
