@@ -1,9 +1,3 @@
-/* .Navbar {
-  width: 1512px;
-  height: 129px;
-  background-color: #808080;
-} */
-
 /* navbar */
 .default-text{
   display: flex;
@@ -450,7 +444,7 @@
   column-gap: 5px;
 }
 
-.Fourth-Rec{
+/* .Fourth-Rec{
   height: 100px; width: 222.5px;
   background-color:rgba(116, 184, 75,1);
   border-radius: 10px;  
@@ -460,8 +454,14 @@
   height: 100px; width: 222.5px;
   background-color:rgba(116, 184, 75,1);
   border-radius: 10px;  
-}
+} */
 
+.Num-Times-Visited {
+  margin-top: 55px;
+  align-self: flex-start;
+  color:#1c1c1e; font-size: 30px;
+  font-weight: 500;
+}
 
 /* Footer */
 #Footer{

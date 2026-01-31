@@ -1,16 +1,191 @@
-<!-- top nav bar, please insert the following HTML to the top of your <body>-->  
-      <header class="top-nav-bar">
-        <h1 class="default-text nav-left">HawkPortal</h1>
-        <nav class="nav-center" aria-label="Main navigation">
-          <a href="operator_dashboard.html" class="default-text">Dashboard</a>
-          <a href="operator_centres.html" class="default-text bold-focus" aria-current="page">Centres</a>
-          <a href="operator_documents.html" class="default-text">Documents</a>
-          <a href="operator_settings.html" class="default-text">Settings</a>
-        </nav>
+<!DOCTYPE html>
+<html lang="en">
 
-        <div class="nav-right log-out-button">
-          <button type="button" class="button-shape-1" aria-label="Log out">
-            <span class="text-logout">Log out</span>
-          </button>
-        </div>
-      </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/operator.css">
+
+    <!-- https://cdnjs.com/libraries/normalize CSS RESET normalize.css -->
+    <!-- I chose to use this because it helps to normalise styles for many html elements. -->
+    <!-- See https://nicolasgallagher.com/about-normalize-css/ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Centres</title>
+</head>
+
+<body>
+    <header class="header">
+        <span class="header__brand"><b>HawkPortal</b></span>
+        <nav>
+            <ul class="header__navmenu">
+                <li class="header__navmenu__item"><a href="./operator_dashboard.html">Dashboard</a></li>
+                <li class="header__navmenu__item header__navmenu__item--selected"><a
+                        href="./operator_centres.html">Centres</a></li>
+                <li class="header__navmenu__item"><a href="./operator_documents.html">Documents</a></li>
+                <li class="header__navmenu__item"><a href="./operator_settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        <button class="header__button">Log out</button>
+    </header>
+    <main>
+
+        <section class="section--row">
+            <aside class="sidebar">
+                <ul class="sidebar__menu">
+                    <li class="sidebar__menu__item sidebar__menu__item--selected"><a href="#">Ci Yuan Hawker Centre</a>
+                    </li>
+                    <li class="sidebar__menu__item"><a href="#">Woodleigh Village Hawker Centre</a></li>
+                    <li class="sidebar__menu__item"><a href="#">Bukit Batok West Hawker Centre</a></li>
+                </ul>
+                <button class="sidebar__button">Go to Ci Yuan Hawker Centre</button>
+            </aside>
+            <div class="flex-container flex-container--column flex-container--flex-grow-1">
+                <figure class="figure-card figure-card--centre-info">
+                    <div class="flex-container flex-container--column flex-container--flex-grow-1">
+                        <h2>Ci Yuan Hawker Centre</h2>
+                        <p>51, Hougang Ave 9, S(538776)</p>
+                        <p><span id="centre-info--stall-quantity">31</span> stalls</p>
+                        <button class="centre-info--schedule-button">Schedule closure</button>
+                    </div>
+                    <img src="https://farm2.staticflickr.com/1594/24261417872_f9832dd5c8_b.jpg"
+                        alt="Ci Yuan Hawker Centre Image" class="hawker-centre-image">
+
+                </figure>
+
+                <div class="search-box">
+                    <input class="search-box__search" id="centre-search" type="text" placeholder="Search..">
+                </div>
+
+                <div class="filter-row">
+                    <button class="filter-row__filter-button">
+                        <!-- https://icons.getbootstrap.com/icons/filter/ -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-filter" viewBox="0 0 16 16">
+                            <path
+                                d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                        </svg>
+                    </button>
+                    <figure class="filter-row__item">
+                        <p><span class="filter-row__item__filter-value">Halal</span></p>
+                        <div class="filter-row__item__close">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </div>
+                    </figure>
+
+                    <figure class="filter-row__item">
+                        <p>Owner <span class="filter-row__item__filter-value">Ms lee</span></p>
+                        <div class="filter-row__item__close">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </div>
+                    </figure>
+                    <figure class="filter-row__item">
+                        <p>Hygiene Grade <span class="filter-row__item__filter-value">A</span></p>
+                        <div class="filter-row__item__close">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </div>
+                    </figure>
+                    <figure class="filter-row__item">
+                        <p>Name contains <span class="filter-row__item__filter-value">Mei</span></p>
+                        <div class="filter-row__item__close">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                        </div>
+                    </figure>
+
+                </div>
+
+                <div class="flex-container">
+                    <figure class="figure-card figure-card--stall">
+                        <div class="figure-card--stall__name-and-owner">
+                            <h2>Mei Shi Quan</h2>
+                            <p class="figure-card--stall__name-and-owner__name">Ms Lee Kok Kiang</p>
+                        </div>
+                        <div class="figure-card--stall__extra-info">
+                            <p class="figure-card--stall__extra-info__element">#01-04</p>
+                            <p
+                                class="figure-card--stall__extra-info__element figure-card--stall__extra-info__grade figure-card--stall__extra-info__grade--C">
+                                C
+                            </p>
+                            <img class="figure-card--stall__extra-info__element figure-card--stall__extra-info__element__faded"
+                                src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Halal_logo.svg"
+                                alt="Halal logo" height="50" width="50">
+                        </div>
+                    </figure>
+
+                    <figure class="figure-card figure-card--stall">
+                        <div class="figure-card--stall__name-and-owner">
+                            <h2>Mei Shi Quan</h2>
+                            <p class="figure-card--stall__name-and-owner__name">Ms Lee Kok Kiang</p>
+                        </div>
+                        <div class="figure-card--stall__extra-info">
+                            <p class="figure-card--stall__extra-info__element">#01-04</p>
+                            <p
+                                class="figure-card--stall__extra-info__element figure-card--stall__extra-info__grade figure-card--stall__extra-info__grade--A">
+                                A
+                            </p>
+                            <img class="figure-card--stall__extra-info__element figure-card--stall__extra-info__element__faded"
+                                src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Halal_logo.svg"
+                                alt="Halal logo" height="50" width="50">
+                        </div>
+                    </figure>
+
+                    <figure class="figure-card figure-card--stall">
+                        <div class="figure-card--stall__name-and-owner">
+                            <h2>Mei Shi Quan</h2>
+                            <p class="figure-card--stall__name-and-owner__name">Ms Lee Kok Kiang</p>
+                        </div>
+                        <div class="figure-card--stall__extra-info">
+                            <p class="figure-card--stall__extra-info__element">#01-04</p>
+                            <p
+                                class="figure-card--stall__extra-info__element figure-card--stall__extra-info__grade figure-card--stall__extra-info__grade--B">
+                                B
+                            </p>
+                            <img class="figure-card--stall__extra-info__element"
+                                src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Halal_logo.svg"
+                                alt="Halal logo" height="50" width="50">
+                        </div>
+                    </figure>
+
+                    <figure class="figure-card figure-card--stall">
+                        <div class="figure-card--stall__name-and-owner">
+                            <h2>Mei Shi Quan</h2>
+                            <p class="figure-card--stall__name-and-owner__name">Ms Lee Kok Kiang</p>
+                        </div>
+                        <div class="figure-card--stall__extra-info">
+                            <p class="figure-card--stall__extra-info__element">#01-04</p>
+                            <p
+                                class="figure-card--stall__extra-info__element figure-card--stall__extra-info__grade figure-card--stall__extra-info__grade--D">
+                                D
+                            </p>
+                            <img class="figure-card--stall__extra-info__element"
+                                src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Halal_logo.svg"
+                                alt="Halal logo" height="50" width="50">
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
