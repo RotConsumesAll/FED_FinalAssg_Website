@@ -40,10 +40,11 @@ body {
 }
 
 main {
-  /* margin-left: 100px;
-  margin-right: 100px; */
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 1rem auto 0px auto;
+  display: flex !important;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 ul {
@@ -62,6 +63,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1rem;
 }
 
 button {
@@ -97,18 +99,19 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .flex-container--column {
   flex-direction: column;
 }
 
-/* .flex-container--left {
-  justify-content: left;
-} */
+.flex-container--flex-1-1-auto {
+  flex: 1 1 auto;
+}
 
-.flex-container--flex-grow-1 {
-  flex-grow: 1;
+.flex-container--gap-0 {
+  gap: 0;
 }
 
 /* section */
@@ -176,6 +179,9 @@ button:hover {
   padding: 25px;
   flex: 1 2 100px;
   text-align: center;
+
+  margin: 0px;
+  padding: 1rem;
 }
 
 .figure-card h1 {
@@ -296,9 +302,6 @@ button:hover {
   padding: 25px;
   border-radius: var(--border-radius);
   height: fit-content;
-
-  /* temporary fix for sidebar not aligning correctly vertically */
-  margin-top: 16px;
 }
 
 .sidebar__menu {
@@ -311,6 +314,9 @@ button:hover {
 
 .sidebar__menu__item {
   font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sidebar__menu__item a:hover {
@@ -350,16 +356,14 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: stretch;
   gap: 0.8rem;
 }
 
 .filter-row__filter-button {
-  width: 3em;
-  height: 3em;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0;
 }
 
 .filter-row__filter-button svg {
@@ -372,12 +376,10 @@ button:hover {
   border-radius: 8px;
   border: 0.5px solid var(--grey);
   display: flex;
-  justify-self: flex-start;
-  align-self: center;
   padding: 0.5rem;
-  margin: 1rem 0;
+  margin: 0;
   gap: 0.5rem;
-  height: 1rem;
+  align-items: center;
 }
 
 .filter-row__item__filter-value {
@@ -407,7 +409,6 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 1rem;
   width: 100%;
 }
 
