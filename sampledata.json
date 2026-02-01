@@ -1,0 +1,127 @@
+{
+  "users": {
+    "AUTH_UID_CUST_1": {
+      "role": "customer",
+      "CustNRIC": "S1234567A",
+      "CustName": "Alice Tan",
+      "CustContactNo": "98765432",
+      "CustEmail": "alice@example.com",
+      "likes": {
+        "stall_01_item_01": true
+      }
+    },
+    "AUTH_UID_OWNER_1": {
+      "role": "stall_owner",
+      "OwnerName": "John Doe",
+      "OwnerNRIC": "S7654321B",
+      "OwnerContactNo": "91234567"
+    },
+    "AUTH_UID_OFFICER_1": {
+      "role": "nea_officer",
+      "OfficerName": "Officer Lim",
+      "OfficerContactNo": "65432100"
+    },
+    "AUTH_UID_OPERATOR_1": {
+      "role": "operator",
+      "OperatorName": "HC Management",
+      "ContactPerson": "Mr. Lee"
+    }
+  },
+
+  "hawker_centres": {
+    "hc_01": {
+      "HCName": "Maxwell Food Centre",
+      "HCAddress": "1 Kadayanallur St",
+      "OperatorID": "AUTH_UID_OPERATOR_1"
+    }
+  },
+
+  "stalls": {
+    "stall_01": {
+      "StallUnitNo": "01-10",
+      "StallName": "Tian Tian Chicken Rice",
+      "StallDesc": "Famous chicken rice",
+      "HawkerCentreID": "hc_01",
+      "ownerUid": "AUTH_UID_OWNER_1",
+      "cuisines": { "cuisine_01": true }
+    }
+  },
+
+  "menu_items": {
+    "stall_01": {
+      "item_01": {
+        "ItemDesc": "Chicken Rice",
+        "ItemPrice": 5.00,
+        "ItemCategory": "Mains",
+        "cuisines": { "cuisine_01": "Chinese" }
+      }
+    }
+  },
+
+  "inspections": {
+    "ins_01": {
+      "StallID": "stall_01",
+      "OfficerID": "AUTH_UID_OFFICER_1",
+      "InspectionDate": "2026-02-01",
+      "HygieneGrade": "A",
+      "GradeExpiry": "2027-02-01",
+      "remarks": {
+        "rem_01": "Excellent hygiene standards maintained."
+      }
+    }
+  },
+
+  "orders": {
+    "order_01": {
+      "OrderDate": "2026-02-01T10:00:00Z",
+      "PmtType": "Credit Card",
+      "CustomerID": "AUTH_UID_CUST_1",
+      "items": {
+        "1": {
+          "StallID": "stall_01",
+          "ItemCode": "item_01",
+          "Quantity": 2,
+          "UnitPrice": 5.00
+        }
+      }
+    }
+  },
+
+  "promotions": {
+    "promo_01": {
+      "PromoDesc": "CNY Special",
+      "PromoStartDate": "2026-02-01",
+      "PromoEndDate": "2026-02-15",
+      "StallID": "stall_01"
+    }
+  },
+
+  "rental_agreements": {
+    "agr_01": {
+      "AgrStartDate": "2026-01-01",
+      "AgrEndDate": "2027-01-01",
+      "AgrTermCondition": "Standard commercial terms",
+      "RentalPrice": 2500,
+      "OwnerID": "AUTH_UID_OWNER_1",
+      "StallID": "stall_01"
+    }
+  },
+
+  "cuisines": {
+    "cuisine_01": { "CuisineDesc": "Chinese" },
+    "cuisine_02": { "CuisineDesc": "Malay" }
+  },
+
+  "feedback": {
+    "fbk_01": {
+      "FbkComment": "Very tasty!",
+      "FbkDateTime": "2026-02-01T12:00:00Z",
+      "FbkRating": 5,
+      "CustomerID": "AUTH_UID_CUST_1",
+      "StallID": "stall_01",
+      "complaints": {
+        "comp_01": { "Category": "Cleanliness" }
+      }
+    }
+  }
+}
