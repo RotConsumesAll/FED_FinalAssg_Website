@@ -192,7 +192,7 @@ button:hover {
   flex: 0 0 auto;
 }
 
-.figure-card h1 {
+.figure-card h2 {
   font-size: medium;
   font-weight: 500;
 }
@@ -233,8 +233,14 @@ button:hover {
   justify-content: space-between;
 }
 
-/* TO FIX */
-.figure-card--stall {
+/* stall-card */
+.stall-card {
+  text-align: center;
+  margin: 0px;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  display: flex;
   padding: 1rem;
   flex-direction: row;
   flex: 0 0 39%;
@@ -243,38 +249,17 @@ button:hover {
   gap: 2.5rem;
 }
 
-.figure-card--stall__name-and-owner {
+.stall-card__name-and-owner {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.figure-card--stall__name-and-owner__name {
+.stall-card__name-and-owner__name {
   font-weight: 200;
 }
 
-.figure-card--stall__extra-info__grade {
-  font-size: xx-large;
-  font-weight: bold;
-}
-
-.figure-card--stall__extra-info__grade--A {
-  color: green;
-}
-
-.figure-card--stall__extra-info__grade--B {
-  color: rgb(188, 188, 46);
-}
-
-.figure-card--stall__extra-info__grade--C {
-  color: orangered;
-}
-
-.figure-card--stall__extra-info__grade--D {
-  color: red;
-}
-
-.figure-card--stall__extra-info {
+.stall-card__extra-info {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -282,24 +267,52 @@ button:hover {
   margin: 0px;
 }
 
-.figure-card--stall__extra-info__element {
+.stall-card__extra-info__grade {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.stall-card__extra-info__grade--A {
+  color: green;
+}
+
+.stall-card__extra-info__grade--B {
+  color: rgb(188, 188, 46);
+}
+
+.stall-card__extra-info__grade--C {
+  color: orangered;
+}
+
+.stall-card__extra-info__grade--D {
+  color: red;
+}
+
+.stall-card__extra-info__element {
   margin: auto;
 }
 
-.figure-card--stall__extra-info__element__faded {
+.stall-card__extra-info__element__faded {
   opacity: 25%;
 }
 
-.figure-card--centre-info {
+/* centre-info */
+.centre-info {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 1rem;
   flex: 1 2 100px;
   text-align: left;
   gap: 20px;
   max-height: fit-content;
 }
 
-/* centre-info */
-.centre-info--schedule-button {
+.centre-info__schedule-button {
   width: 12em;
 }
 
@@ -391,6 +404,12 @@ button:hover {
   margin: 0;
   gap: 0.5rem;
   align-items: center;
+  color: var(--black);
+}
+
+.filter-row__item:hover {
+  color: var(--black);
+  background-color: #f1f1f1;
 }
 
 .filter-row__item__filter-value {
@@ -494,10 +513,10 @@ button:hover {
 
 /* record-container */
 .record-container {
-  display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
   flex: 0 0 20%;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .record-container__record {
