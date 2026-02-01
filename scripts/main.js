@@ -1,2 +1,2 @@
-// can add more js files if needed
-firebase.initializeApp(firebaseConfig);
+// This is prob gonnne be renamed to login.js
+// entry point for index.html (which will contain our login page)

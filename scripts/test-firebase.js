@@ -1,8 +1,9 @@
 // Gemini code
 // 1. Initialize Firebase using the variable from config.js
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-}
+// if (!firebase.apps.length) {
+//     firebase.initializeApp(firebaseConfig);
+// }
+import { ref, set, db } from "./firebase/index.js";
 
 // 2. Define the JSON data you want to test
 const testData = {
@@ -36,10 +37,11 @@ function runConnectionTest() {
     console.log("🔵 Starting Firebase Connection Test...");
 
     // Get a reference to the database service
-    const db = firebase.database();
+    // const db = firebase.database();
+    // NEW: db already imported from firebase/index.js
     
     // Write to a specific path: '_TestConnection'
-    db.ref('_TestConnection').set(testData)
+    set(ref(db, '_TestConnection'), testData)
     .then(() => {
         console.log("✅ SUCCESS! Connected to Firebase.");
         console.log("🚀 Data was written to the '_TestConnection' node.");
