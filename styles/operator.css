@@ -421,9 +421,6 @@ button:hover {
 }
 
 .filter-row__item__close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   width: 1rem;
   height: 1rem;
@@ -517,6 +514,9 @@ button:hover {
   flex: 0 0 20%;
   flex-direction: row;
   justify-content: flex-start;
+  gap: 1rem;
+  display: flex;
+  width: 100%;
 }
 
 .record-container__record {
@@ -594,4 +594,12 @@ button:hover {
 
 .record-container__record__validity--expired {
   background-color: var(--red);
+}
+
+.hawker-centre-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
 }
