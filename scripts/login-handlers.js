@@ -1,5 +1,5 @@
 // Handlers
-import { authenticateSignin } from "./services/login-service.js";
+import { authenticateSignin, createUser } from "./services/login-service.js";
 
 export function handleForm(e) {
   e.preventDefault();
@@ -8,7 +8,7 @@ export function handleForm(e) {
 export function handleLoginAttempt(e) {
   const emailInput = document.getElementById("login-email-input");
   const passwordInput = document.getElementById("login-password-input");
-  
+
   let email, password;
   if (emailInput.value.length > 0) {
     email = emailInput.value;
@@ -18,4 +18,24 @@ export function handleLoginAttempt(e) {
   }
 
   authenticateSignin(email, password);
+}
+
+export function handleSignUpAttempt(e) {
+  const emailInput = document.getElementById("sign-up-email-input");
+  const passwordInput = document.getElementById("sign-up-password-input");
+  const nameInput = document.getElementById("sign-up-name-input");
+  const roleInput = document.getElementById("sign-up-role-select");
+
+  let email, password, name;
+  if (emailInput.value.length > 0) {
+    email = emailInput.value;
+  }
+  if (passwordInput.value.length > 0) {
+    password = passwordInput.value;
+  }
+  if (nameInput.value.length > 0) {
+    name = nameInput.value;
+  }
+
+  createUser(email, name, password);
 }
