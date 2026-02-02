@@ -1,3 +1,5 @@
+@import url("./navbar.css");
+
 * {
   font-family: "Inter", Helvetica, sans-serif;
 }
@@ -84,6 +86,18 @@ button:hover {
   font-weight: 600;
 }
 
+/* common nav-bar */
+.nav-center a:hover,
+.text-logout,
+.button-shape-1,
+.bold-focus {
+  color: var(--light-blue);
+}
+
+.button-shape-1 {
+  border-color: var(--light-blue);
+}
+
 /*    BEM styles   */
 /* =============== */
 
@@ -130,46 +144,6 @@ button:hover {
 
 .section--flex-wrap {
   flex-wrap: wrap;
-}
-
-/* header */
-.header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 30px;
-  background-color: var(--white);
-}
-
-.header__brand {
-  font-weight: bold;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header__navmenu {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-.header__navmenu__item {
-  font-size: 15px;
-}
-
-.header__navmenu__item--selected a {
-  color: var(--light-blue);
-  font-weight: 500;
-}
-
-.header__navmenu__item:hover a {
-  color: var(--light-blue);
-}
-
-.header__button {
-  font-size: 20px;
 }
 
 /* figure-card */

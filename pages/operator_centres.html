@@ -17,18 +17,20 @@
 </head>
 
 <body>
-    <header class="header">
-        <span class="header__brand"><b>HawkPortal</b></span>
-        <nav>
-            <ul class="header__navmenu">
-                <li class="header__navmenu__item"><a href="./operator_dashboard.html">Dashboard</a></li>
-                <li class="header__navmenu__item header__navmenu__item--selected"><a
-                        href="./operator_centres.html">Centres</a></li>
-                <li class="header__navmenu__item"><a href="./operator_documents.html">Documents</a></li>
-                <li class="header__navmenu__item"><a href="./operator_settings.html">Settings</a></li>
-            </ul>
+    <header class="top-nav-bar">
+        <h1 class="default-text nav-left">HawkPortal</h1>
+        <nav class="nav-center" aria-label="Main navigation">
+            <a href="./operator_dashboard.html" class="default-text">Dashboard</a>
+            <a href="./operator_centres.html" class="default-text bold-focus">Centres</a>
+            <a href="./operator_documents.html" class="default-text" aria-current="page">Documents</a>
+            <a href="./operator_settings.html" class="default-text">Settings</a>
         </nav>
-        <button class="header__button">Log out</button>
+
+        <div class="nav-right log-out-button">
+            <button type="button" class="button-shape-1" aria-label="Log out">
+                <span class="text-logout">Log out</span>
+            </button>
+        </div>
     </header>
     <main>
 
