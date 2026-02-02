@@ -24,12 +24,33 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./styles/navbar.css" /> -->
+    <link rel="stylesheet" href="./index.css" />
 </head>
+
 <body>
-    <script type="module" src="/scripts/test-firebase.js"></script>
+    <header class="top-nav-bar">
+        <h1 class="default-text nav-left">HawkPortal</h1>
+        <nav class="nav-center" aria-label="Main navigation">
+          <a href="#" class="default-text">Aaaaaa</a>
+          <a href="#" class="default-text">Bbbbbb</a>
+          <a href="#" class="default-text bold-focus" aria-current="page">Ccccc</a>
+          <a href="#" class="default-text">Dddddd</a>
+        </nav>
+
+        <div class="nav-right log-out-button">
+          <button type="button" class="button-shape-1" aria-label="Log out">
+            <span class="text-logout">Log out</span>
+          </button>
+        </div>
+    </header>
+    <!-- <script type="module" src="/scripts/test-firebase.js"></script> -->
 </body>
+
 </html>

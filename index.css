@@ -1,0 +1,13 @@
+@import url("./styles/navbar.css");
+
+/* OVERRIDE NAVBAR */
+.nav-center a:hover,
+.text-logout,
+.button-shape-1,
+.bold-focus {
+  color: red;
+}
+
+.button-shape-1 {
+  border-color: red;
+}
