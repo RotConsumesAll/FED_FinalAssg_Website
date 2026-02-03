@@ -7,28 +7,29 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="..\styles\customer.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!--top nav bar, please insert the following HTML to the top of your <body>-->
-    <header class="top-nav-bar">
-        <h1 class="default-text nav-left">HawkPortal</h1>
-        <nav class="nav-center" aria-label="Main navigation">
-          <a href="customer_home.html" class="default-text">Home</a>
-          <a href="customer_stalls.html" class="default-text bold-focus" aria-current="page">Stall</a>
-          <a href="customer_feedback.html" class="default-text">Feedback</a>
-          <a href="customer_complaints.html" class="default-text">Complaints</a>
-        </nav>
-
-        <div class="nav-right log-out-button">
-          <button type="button" class="button-shape-1" aria-label="Log out">
-            <span class="text-logout">Log out</span>
-          </button>
-        </div>
-      </header>
 </head>
 
 <body>
+  <!--top nav bar, please insert the following HTML to the top of your <body>-->
+  <header class="top-nav-bar">
+      <h1 class="default-text nav-left">HawkPortal</h1>
+      <nav class="nav-center" aria-label="Main navigation">
+        <a href="customer_home.html" class="default-text">Home</a>
+        <a href="customer_stalls.html" class="default-text bold-focus" aria-current="page">Stall</a>
+        <a href="customer_feedback.html" class="default-text">Feedback</a>
+        <a href="customer_complaints.html" class="default-text">Complaints</a>
+      </nav>
+
+      <div class="nav-right log-out-button">
+        <button type="button" class="button-shape-1" aria-label="Log out">
+          <span class="text-logout">Log out</span>
+        </button>
+      </div>
+    </header>  
+
+    
   <!-- Stall info and promo container -->
-  <section id = "stall-info-container">
+  <section id = "stall-container">
 
     <!-- Directory link container -->
     <section class = "directory-link">
@@ -66,41 +67,76 @@
             <button type="button" class="btn btn-secondary">See Reviews</button>        
             <p class = "review-qty">400 reviews</p>          
           </div>  
-          <!-- <p class = "review-qty">400 reviews</p> -->
-          <!-- See reviews button -->
-          <!-- <button type="button" class="btn btn-secondary">See Reviews</button>                  -->
         </div>
-    
-      </div>
-
-      <!-- Info overlay button -->
-      <!-- <div class = "info-icon" alt = "Info icon" data-bs-toggle="modal" data-bs-target="#stall-info-modal"></div>       -->
-      <!-- <button type="button" class="btn btn-primary ">Primary</button> -->
-      <!-- <img src="../assets/Icons/Info.svg" class = "info-icon" alt = "Info icon" data-bs-toggle="modal" data-bs-target="#stall-info-modal"> -->
-      
-
+      </div>      
     </section>
 
     <!-- Promotions -->
-    <section class = "Promotions">
-
+    <section class = "promotions-container">
+      <p class = "promotions-title">Promotions</p>
+      <div class = "promotion-cards-container">
+        <section class = "item-card" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+          <div class = "item-image"></div>
+          <div class = "item-details">
+            <p class="item-title">Signature Whole Fish Set</p>
+            <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+            <div class="item-cost">$6.90  
+              <div class = "item-tag">
+                <p class = "discount-amt">10%</p>
+              </div>                            
+            </div>            
+          </div>        
+        </section>            
+        
+        <section class = "item-card" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+          <div class = "item-image"></div>
+          <div class = "item-details">
+            <p class="item-title">Signature Whole Fish Set</p>
+            <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+            <div class="item-cost">$6.90
+              <div class = "item-tag">
+                <p class = "discount-amt">10%</p>
+              </div>              
+            </div>
+          </div>
+        </section>  
+      </div>
     </section>
 
     <!-- Menu nav -->
-    <section class = "Menu-Nav">
-
-    </section>
-
+    <!-- <section class = "menu-nav-container">
+      <div class="menu-nav">
+        <input type="text" placeholder="  Search menu">
+        <a href="customer_home.html" class="menu-nav-default-text bold-focus current">Mains</a>
+        <a href="customer_stalls.html" class="menu-nav-default-text">Drinks</a>
+        <a href="customer_feedback.html" class="menu-nav-default-text">Add-ons</a>
+      </div>    
+      <div class="divider"></div>   
+    </section>  -->
   </section>
 
+  <!-- Menu nav -->
+  <section class = "menu-nav-container">
+    <div class="menu-nav">
+      <!-- Searchbar. Reference: https://www.w3schools.com/howto/howto_css_searchbar.asp-->        
+      <input type="text" placeholder="Search menu">
+      <a href="customer_home.html" class="menu-nav-default-text bold-focus current">Mains</a>
+      <a href="customer_stalls.html" class="menu-nav-default-text">Drinks</a>
+      <a href="customer_feedback.html" class="menu-nav-default-text">Add-ons</a>
+    </div>    
+    <div class="divider"></div>   
+  </section> 
+
   <!-- Menu Items container -->
-
-
-  <!-- Cart container -->
-
+  <section class = "menu-items-container">
+    <!-- Cart container -->
+    <section class = "cart-container">
+    
+    </section>    
+  </section>
 
   <!-- Footer -->
-  <!-- <section id = "Footer">
+  <section id = "Footer">
     <div class = "Contact-Us-Container">
       <div class="Hotline-Container">
         <img class = "Hotline-Icon" src = "../assets/Icons/Phone icon.svg" alt="Hotline icon" height = "auto"  width="50">
@@ -130,13 +166,33 @@
         <img class = "Youtube" src = "../assets/Icons/Youtube.svg" alt="Youtube icon" height = "auto"  width="50">         
       </div>        
     </div>
-  </section> -->
+  </section>
     
 
 
 
-  <!-- Modal. Modal reference: https://getbootstrap.com/docs/4.0/components/modal/ -->
+  <!-- Info Modal. Modal reference: https://getbootstrap.com/docs/4.0/components/modal/ -->
   <div class="modal fade" id="stall-info-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">StallName</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          If you read this, you're smart
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu Item Modal. Modal reference: https://getbootstrap.com/docs/4.0/components/modal/ -->
+  <div class="modal fade" id="menu-item-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">

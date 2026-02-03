@@ -51,7 +51,6 @@
     z-index: 100;
     background: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    flex-shrink: 0;
   }
 
 .nav-center a {
@@ -535,129 +534,32 @@
 
 
 
-/* Footer */
-#Footer{
-  height:463px;width:1512px;
-  background-color: #74B84B;
-  position:relative;
-}
-
-.Contact-Us-Container{
-  display: flex;
-  flex-direction: column;
-  position:absolute;
-  margin-top: 108px;
-  margin-left: 198px;
-  row-gap: 50px;
-}
-
-.Hotline-Container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.Hotline-Container .Hotline-Body{
-  width: auto; 
-  margin: 0px 0px 0px 17px;
-  text-align: center;
-  font-weight: 600;
-  color: #FAF9F6;
-  font-size:larger;  
-}
-
-.Email-Container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-}
-
-.Email-Container .Email-Body{
-  width: auto; 
-  margin: 0px 0px 0px 17px;
-  text-align: center;
-  font-weight: 600;
-  color: #FAF9F6;
-  font-size:20px;  
-}
-
-.Credits-Container{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.Credits-Container .Credits {
-  width: auto; 
-  margin: 0px 0px 0px 17px;
-  text-align: center;
-  font-weight: 600;
-  font-size:20px;  
-  text-decoration: none;
-  color:#FAF9F6
-}
-
-.About-Us-Container{
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  position:absolute;
-  margin-top: 69px;
-  margin-left: 783px;
-}
-
-.About-Us-Container .About-Us-Title{
-  width: auto; 
-  margin: 0px 0px;
-  font-weight: 700;
-  font-size:30px; 
-  color: #FAF9F6;
-}
-
-.About-Us-Container .About-Us-Body{
-  max-width: 650px; 
-  width: auto; 
-  margin: 0px 0px;
-  font-weight: 600;
-  font-size:20px;    
-  color: #FAF9F6;
-}
-
-.Social-Media-Icons {
-  display: flex;
-  flex-direction: row;
-  margin-top: 39px;
-  column-gap: 20px;
-}
-
-
 
 /* Customer stall menu */
-#stall-info-container{
-  padding: 1.5em 5.5em;
+#stall-container{
+  padding: 1.5em 0;
   width: 1512px;height: auto;
   display: flex;
   flex-direction: column;  
 }
 
 .directory-link{
-  padding-bottom: 1.5rem;
+  margin:0 0 1.5rem 5.5em;
 }
 
-#stall-info-container .directory-link{
+#stall-container .directory-link{
   display: flex;
   flex-direction: row;
   column-gap: 0.5rem;
 }
 
-#stall-info-container .directory-link .Body{
+#stall-container .directory-link .Body{
   position:static;
   margin:0;
   align-self: auto;
 }
 
-#stall-info-container .directory-link .a{
+#stall-container .directory-link .a{
   text-decoration: underline;
 }
 
@@ -665,6 +567,7 @@
 .stall-info{
   display:flex;
   flex-direction: row;
+  margin:0 0 5.625rem 5.5em;  
 }
 
 .stall-thumbnail{
@@ -775,4 +678,241 @@
   align-self: center;
   margin:0 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Promotions */
+.promotions-title{
+  margin:0;
+  color:#1c1c1e;
+  font-size: 2.5rem;
+  font-weight: 600;
+  column-gap: 1.188rem;
+}
+
+/* Menu item cards skeleton */
+.item-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  width: 26.875rem; height: 9.563rem;
+  border:0.2rem solid #1c1c1e;
+  border-radius: 1rem;
+}
+
+.item-image{
+  width:7.75rem;height: 9.438rem;
+  background-image: url(../assets/Images/BaoShenImg/I\ Sel-Fish\ picture.svg);
+  background-size:cover;
+  background-position:center;
+  background-color: #1c1c1e;
+  border:0.2rem none #d9d9d9 ;
+  border-radius: 1rem;  
+  border-top-right-radius: 0;  
+  border-bottom-right-radius: 0;
+  border-right: 0.2rem solid #1c1c1e;
+}
+
+.item-details{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 1.188rem;  
+}
+
+.item-title{
+  margin:0 0 0.3rem;
+  font-size: 1.5rem;
+  font-weight:600;
+}
+
+.item-body{
+  max-width: 15rem;
+  color:#808080;
+  font-weight:600;
+  font-size: 1.25rem ;
+  line-height: 1.2rem;
+  margin: 0 0 0.5rem ;
+}
+
+.item-cost{
+  display: flex;flex-direction: row; align-items: center; column-gap: 10.6rem;
+  color:#1c1c1e;
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin:0;
+}
+
+.item-tag{
+  display: flex; align-items: center; justify-content: center;
+  width:3.375rem;height:3.375rem;border-radius: 50%;
+  background-color:#74B84B;
+}
+
+.item-tag .discount-amt{
+  color:#FAF9F6;
+  font-size: 1.563rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.promotions-container{
+  display: flex;
+  flex-direction: column;
+  margin:0 0 3.5rem 5.5rem;
+}
+
+.promotion-cards-container{
+  display: flex;
+  flex-direction: row;
+  column-gap: 2.5rem ;
+}
+
+/* Menu nav */
+/* Searchbar. Reference: https://www.w3schools.com/howto/howto_css_searchbar.asp */
+.menu-nav-container{
+  position:sticky; top:110px; 
+  z-index: 99;
+}
+
+.menu-nav {
+  width:1512px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10rem;
+  justify-content: left;
+  align-items: center;
+  margin: 0 0 0 5.5rem;
+}
+
+.menu-nav a {
+  display: block;
+  color: #1c1c1e;
+  text-align: center;
+  padding: 0.875rem;
+  text-decoration: none;
+  font-size: 2.188rem;
+}
+
+.menu-nav a.current {
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  color:#74B84B;
+}
+
+.menu-nav input[type=text] {
+  width:13.219rem;height: 2.5rem;
+  border: none;
+  margin:0.875rem 0; padding-left: 1rem;
+  font-size: 1rem;
+  border-radius: 0.625rem;
+  background-color: #BEBEBE;
+  color:#1c1c1e;
+  font-weight: 550;
+}
+
+.divider{
+  width:1512px;height:1rem;
+  box-shadow: 0 0.75rem 0.75rem rgba(0, 0, 0, 0.08);
+  margin-bottom: 4.375rem;
+}
+
+
+
+/* Footer */
+#Footer{
+  height:463px;width:1512px;
+  background-color: #74B84B;
+  position:relative;
+  margin-top: 1000px;
+}
+
+.Contact-Us-Container{
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+  margin-top: 108px;
+  margin-left: 198px;
+  row-gap: 50px;
+}
+
+.Hotline-Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Hotline-Container .Hotline-Body{
+  width: auto; 
+  margin: 0px 0px 0px 17px;
+  text-align: center;
+  font-weight: 600;
+  color: #FAF9F6;
+  font-size:larger;  
+}
+
+.Email-Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.Email-Container .Email-Body{
+  width: auto; 
+  margin: 0px 0px 0px 17px;
+  text-align: center;
+  font-weight: 600;
+  color: #FAF9F6;
+  font-size:20px;  
+}
+
+.Credits-Container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Credits-Container .Credits {
+  width: auto; 
+  margin: 0px 0px 0px 17px;
+  text-align: center;
+  font-weight: 600;
+  font-size:20px;  
+  text-decoration: none;
+  color:#FAF9F6
+}
+
+.About-Us-Container{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  position:absolute;
+  margin-top: 69px;
+  margin-left: 783px;
+}
+
+.About-Us-Container .About-Us-Title{
+  width: auto; 
+  margin: 0px 0px;
+  font-weight: 700;
+  font-size:30px; 
+  color: #FAF9F6;
+}
+
+.About-Us-Container .About-Us-Body{
+  max-width: 650px; 
+  width: auto; 
+  margin: 0px 0px;
+  font-weight: 600;
+  font-size:20px;    
+  color: #FAF9F6;
+}
+
+.Social-Media-Icons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 39px;
+  column-gap: 20px;
 }
