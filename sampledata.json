@@ -2,156 +2,164 @@
   "centres": {
     "Adam Food Centre": {
       "address": "2, Adam Road, S(289876)",
+      "image": "https://www.roots.gov.sg/-/media/Roots/Images/landmarks/bukit-timah-heritage-trail/2018/adam-food-centre.ashx",
       "stalls": {
-        "Mr Lee's Noodle Soup": {
-          "unitNumber": "#01-01",
-          "description": "Fresh from the noodle factory",
-          "cuisine": "Chinese",
-          "menuItems": {
-            "Plain noodle soup": {
-              "price": 3.45,
-              "category": "main"
-            }
-          }
-        },
         "Dragon Wok": {
-          "unitNumber": "#01-02",
-          "description": "Chinese stir fry",
           "cuisine": "Chinese",
+          "description": "Chinese stir fry",
           "menuItems": {
-            "Fried rice": {
-              "price": 3,
-              "category": "main"
-            },
             "Char Kuey Teow": {
-              "price": 3,
-              "category": "main"
+              "category": "main",
+              "price": 3
+            },
+            "Fried rice": {
+              "category": "main",
+              "price": 3
             },
             "Hokkien Mee": {
-              "price": 3,
-              "category": "main"
+              "category": "main",
+              "price": 3
             }
-          }
-        },
-        "Tokyo Ramen": {
-          "unitNumber": "#01-03",
-          "description": "Japanese ramen",
-          "cuisine": "Japanese",
-          "menuItems": {
-            "Shouyu Ramen": {
-              "price": 5,
-              "category": "main"
-            },
-            "Shio Ramen": {
-              "price": 5.1,
-              "category": "main"
-            },
-            "Miso Ramen": {
-              "price": 4.9,
-              "category": "main"
-            }
-          }
+          },
+          "unitNumber": "#01-02"
         },
         "Korean BBQ Express": {
-          "unitNumber": "#01-04",
-          "description": "BBQ meats",
           "cuisine": "Korean",
+          "description": "BBQ meats",
           "menuItems": {
-            "Samgyeopsal": {
-              "price": 5,
-              "category": "main"
-            },
             "Galbi": {
-              "price": 6,
-              "category": "main"
+              "category": "main",
+              "price": 6
             },
             "Moksal": {
-              "price": 7,
-              "category": "main"
+              "category": "main",
+              "price": 7
+            },
+            "Samgyeopsal": {
+              "category": "main",
+              "price": 5
             }
-          }
+          },
+          "unitNumber": "#01-04"
+        },
+        "Mr Lee's Noodle Soup": {
+          "cuisine": "Chinese",
+          "description": "Fresh from the noodle factory",
+          "menuItems": {
+            "Plain noodle soup": {
+              "category": "main",
+              "price": 3.45
+            }
+          },
+          "unitNumber": "#01-01"
+        },
+        "Tokyo Ramen": {
+          "cuisine": "Japanese",
+          "description": "Japanese ramen",
+          "menuItems": {
+            "Miso Ramen": {
+              "category": "main",
+              "price": 4.9
+            },
+            "Shio Ramen": {
+              "category": "main",
+              "price": 5.1
+            },
+            "Shouyu Ramen": {
+              "category": "main",
+              "price": 5
+            }
+          },
+          "unitNumber": "#01-03"
         }
       }
     },
     "Amoy Street Food Centre": {
       "address": "National Development Building, Annex B, Telok Ayer Street, S(069111)",
+      "image": "https://static.thehoneycombers.com/wp-content/uploads/sites/2/2018/04/amoy-street-food-centre-singapore-jnzls-photos-flickr.jpg",
       "stalls": {
         "Ayam Penyet GO!": {
-          "unitNumber": "#01-01",
-          "description": "Authentic Indonesians food.",
           "cuisine": "Indonesians",
+          "description": "Authentic Indonesians food.",
           "menuItems": {
             "Ayam Penyet": {
-              "price": 5.5,
-              "category": "main"
+              "category": "main",
+              "price": 5.5
             },
             "Ikan Penyet": {
-              "price": 5.3,
-              "category": "main"
+              "category": "main",
+              "price": 5.3
             }
-          }
-        },
-        "Siti Nasi Lemak": {
-          "unitNumber": "#01-02",
-          "description": "Traditional nasi lemak.",
-          "cuisine": "Malay",
-          "menuItems": {
-            "Small nasi lemak": {
-              "price": 4,
-              "category": "main"
-            },
-            "Large nasi lemak": {
-              "price": 5,
-              "category": "main"
-            }
-          }
+          },
+          "unitNumber": "#01-01"
         },
         "Bombay Biryani": {
-          "unitNumber": "#01-03",
-          "description": "Spicy biryani",
           "cuisine": "Indian",
+          "description": "Spicy biryani",
           "menuItems": {
             "Chicken briyani": {
-              "price": 7,
-              "category": "main"
+              "category": "main",
+              "price": 7
             },
             "Super briyani": {
-              "price": 8,
-              "category": "main"
+              "category": "main",
+              "price": 8
             }
-          }
+          },
+          "unitNumber": "#01-03"
+        },
+        "Siti Nasi Lemak": {
+          "cuisine": "Malay",
+          "description": "Traditional nasi lemak.",
+          "menuItems": {
+            "Large nasi lemak": {
+              "category": "main",
+              "price": 5
+            },
+            "Small nasi lemak": {
+              "category": "main",
+              "price": 4
+            }
+          },
+          "unitNumber": "#01-02"
         }
       }
     },
     "Bedok Food Centre": {
       "address": "1, Bedok Road, S(469572)",
+      "image": "https://eatshopplay.sg/wp-content/uploads/2019/03/011_01.jpg",
       "stalls": {
         "Ah Seng Chicken Rice": {
-          "unitNumber": "#01-01",
-          "description": "Hainanese chicken rice.",
           "cuisine": "Chinese",
+          "description": "Hainanese chicken rice.",
           "menuItems": {
             "Braised chicken rice": {
-              "price": 2.5,
-              "category": "main"
+              "category": "main",
+              "price": 2.5
             },
             "Roasted chicken rice": {
-              "price": 2.6,
-              "category": "main"
+              "category": "main",
+              "price": 2.6
             }
-          }
+          },
+          "unitNumber": "#01-01"
         }
       }
     }
   },
   "users": {
     "OPERATOR_UID_1": {
-      "role": "operator",
-      "managedCentres": ["Adam Food Centre", "Amoy Street Food Centre"]
+      "managedCentres": [
+        "Adam Food Centre",
+        "Amoy Street Food Centre"
+      ],
+      "role": "operator"
     },
     "OPERATOR_UID_2": {
-      "role": "operator",
-      "managedCentres": ["Bedok Food Centre"]
+      "managedCentres": [
+        "Bedok Food Centre"
+      ],
+      "role": "operator"
     }
   }
 }
