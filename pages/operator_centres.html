@@ -42,14 +42,14 @@
                     <li class="sidebar__menu__item"><a href="#">Woodleigh Village Hawker Centre</a></li>
                     <li class="sidebar__menu__item"><a href="#">Bukit Batok West Hawker Centre</a></li>
                 </ul>
-                <button class="sidebar__button">Go to Ci Yuan Hawker Centre</button>
+                <button class="sidebar__button" id="sidebar__button">Go to <span id="sidebar__button__centre">Ci Yuan Hawker Centre</span></button>
             </aside>
             <div class="flex-container flex-container--column flex-container--justify-content-default">
                 <article class="centre-info">
                     <div
                         class="flex-container flex-container--column flex-container--flex-1-1-auto flex-container--gap-0">
-                        <h2>Ci Yuan Hawker Centre</h2>
-                        <p>51, Hougang Ave 9, S(538776)</p>
+                        <h2 id="centre-info__name">Ci Yuan Hawker Centre</h2>
+                        <p id="centre-info__address">51, Hougang Ave 9, S(538776)</p>
                         <p><span id="centre-info__stall-quantity">31</span> stalls</p>
                         <button class="centre-info__schedule-button">Schedule closure</button>
                     </div>
@@ -108,7 +108,7 @@
 
                 </div>
 
-                <div class="flex-container">
+                <div class="flex-container" id="stall-container">
                     <article class="stall-card">
                         <div class="stall-card__name-and-owner">
                             <h2>Mei Shi Quan</h2>
@@ -182,6 +182,7 @@
         </div>
 
     </main>
+    <script src="../scripts/operator/centres.js" type="module"></script>
 
 </body>
 
