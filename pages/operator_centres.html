@@ -23,8 +23,8 @@
         <h1 class="default-text nav-left">HawkPortal</h1>
         <nav class="nav-center" aria-label="Main navigation">
             <a href="./operator_dashboard.html" class="default-text">Dashboard</a>
-            <a href="./operator_centres.html" class="default-text bold-focus">Centres</a>
-            <a href="./operator_documents.html" class="default-text" aria-current="page">Documents</a>
+            <a href="./operator_centres.html" class="default-text bold-focus" aria-current="page">Centres</a>
+            <a href="./operator_documents.html" class="default-text">Documents</a>
             <a href="./operator_settings.html" class="default-text">Settings</a>
         </nav>
 
@@ -66,8 +66,8 @@
                 </form>
 
                 <div class="filter-row">
-                    <button class="filter-row__filter-button" class="btn btn-primary" type="button"
-                        data-bs-toggle="modal" data-bs-target="#filterModal">
+                    <button class="filter-row__filter-button" type="button" data-bs-toggle="modal"
+                        data-bs-target="#filterModal">
                         <img src="../assets/icons/filter.svg" alt="Filter icon" height="16" width="16">
                     </button>
                 </div>
@@ -142,7 +142,7 @@
         </div>
 
         <!-- Modal from Bootstrap -->
-        <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+        <div class="modal fade" id="filterModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -154,7 +154,7 @@
                             <div class="mb-3">
                                 <label for="inputStallName" class="form-label">Stall name</label>
                                 <input type="text" class="form-control" id="inputStallName"
-                                    aria-describedby="emailHelp">
+                                    aria-describedby="inputStallName">
                             </div>
                             <div class="mb-3">
                                 <label for="inputOwnerName" class="form-label">Owner name</label>
@@ -162,7 +162,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="inputHygieneGrade" class="form-label">Hygiene Grade</label>
+                                <label class="form-label">Hygiene Grade</label>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" id="inputHygieneGradeA" value="A">
                                     <label class="form-check-label" for="inputHygieneGradeA">A</label>
@@ -182,14 +182,12 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="inputStallNumber" class="form-label">Stall number</label>
+                                <label class="form-label">Stall number</label>
                                 <div class="input-group">
                                     <span class="input-group-text">#</span>
-                                    <input type="text" aria-label="First name" class="form-control"
-                                        id="stallNumberPrefix">
+                                    <input type="text" class="form-control" id="stallNumberPrefix">
                                     <span class="input-group-text">-</span>
-                                    <input type="text" aria-label="Last name" class="form-control"
-                                        id="stallNumberSuffix">
+                                    <input type="text" class="form-control" id="stallNumberSuffix">
                                 </div>
                                 <div class="invalid-feedback">
                                     Please input a valid stall number.
