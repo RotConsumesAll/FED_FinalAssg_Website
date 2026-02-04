@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // TODO get UID
   await renderSidebar("OPERATOR_UID_1");
   await assignEventHandlers();
+  sessionStorage.clear();
 
   document.querySelector("ul.sidebar__menu").firstElementChild.click();
 });

@@ -1,5 +1,6 @@
 const validStallNumberLength = 6; // e.g. #01-12
 
+
 // Elements
 const chipContainer = document.querySelector(".filter-row");
 
@@ -12,15 +13,40 @@ const hygieneGradeOptions = document.querySelectorAll(
   "#inputHygieneGradeA,#inputHygieneGradeB,#inputHygieneGradeC,#inputHygieneGradeD",
 );
 const halalOption = document.querySelector("#checkHalal");
+
 // - Others
 const feedback = document.querySelector(".invalid-feedback");
 const applyButton = document.querySelector("#apply-button");
 
-function createFilterChip(filterPreText, filterText) {
-  return `<button class="filter-row__item">
-      <span>${filterPreText}<span class="filter-row__item__filter-value">${filterText}</span></span>
-      <img src="../assets/icons/x.svg" alt="Filter icon" height="16" width="16" class="filter-row__item__close">
-  </button>`;
+
+function createFilterChip(filterPreText, filterKey, filterValue) {
+  let chip = document.createElement("button");
+  chip.classList.add("filter-row__item");
+  chip.setAttribute("data-key", filterKey);
+  chip.setAttribute("data-value", filterValue);
+
+  let outerSpan = document.createElement("span");
+  outerSpan.appendChild(document.createTextNode(filterPreText));
+
+  let innerSpan = document.createElement("span");
+  innerSpan.classList.add("filter-row__item__filter-value");
+  innerSpan.textContent = filterValue;
+
+  outerSpan.appendChild(innerSpan);
+  chip.appendChild(outerSpan);
+
+  let img = document.createElement("img");
+  img.setAttribute("src", "../assets/icons/x.svg");
+  img.setAttribute("alt", "Filter icon");
+  img.setAttribute("height", 16);
+  img.setAttribute("width", 16);
+  img.classList.add("filter-row__item__close");
+  img.addEventListener("click", removeFilterChipHandler);
+
+  chip.appendChild(outerSpan);
+  chip.appendChild(img);
+
+  return chip;
 }
 
 function getFilterinfo() {
@@ -40,10 +66,25 @@ function getFilterinfo() {
     }
   }
 
-  const stallNumber = `#${prefixInput.value}-${suffixInput.value}`;
+  let stallNumber = null;
+  if (prefixInput.value && suffixInput.value) {
+    stallNumber = `#${prefixInput.value}-${suffixInput.value}`;
+  }
+
   const isHalal = halalOption.checked;
+  setFilterInfo({
+    stallName,
+    ownerName,
+    hygieneGradesChosen,
+    stallNumber,
+    isHalal,
+  });
 
   return { stallName, ownerName, hygieneGradesChosen, stallNumber, isHalal };
+}
+
+function setFilterInfo(filters) {
+  sessionStorage.setItem("stallsFilters", JSON.stringify(filters));
 }
 
 function isStallNumberSubStringValid(substring) {
@@ -71,13 +112,17 @@ function checkIfAllFiltersEmpty(filterResults) {
     filterResults.stallName === null &&
     filterResults.ownerName === null &&
     filterResults.hygieneGradesChosen.length === 0 &&
-    filterResults.stallNumber === "#-" &&
+    filterResults.stallNumber === null &&
     filterResults.isHalal === false
   );
 }
 
-function renderStallsWithFilter() {
+function filterButtonHandler() {
   const filterResults = getFilterinfo();
+  renderStallsWithFilter(filterResults);
+}
+
+function renderStallsWithFilter(filterResults) {
   renderFilterChips(filterResults);
   const container = document.getElementById("stall-container");
   const stalls = container.getElementsByTagName("article");
@@ -136,36 +181,73 @@ function removeExistingFilterChips() {
 
 function renderFilterChips(filterResults) {
   removeExistingFilterChips();
+  let chip;
   if (filterResults.stallName) {
-    chipContainer.innerHTML += createFilterChip(
-      "Stall name includes ",
-      filterResults.stallName,
+    chipContainer.appendChild(
+      createFilterChip(
+        "Stall name includes ",
+        "stallName",
+        filterResults.stallName,
+      ),
     );
   }
   if (filterResults.ownerName) {
-    chipContainer.innerHTML += createFilterChip(
-      "Owner name includes ",
-      filterResults.ownerName,
+    chipContainer.appendChild(
+      createFilterChip(
+        "Owner name includes ",
+        "ownerName",
+        filterResults.ownerName,
+      ),
     );
   }
   if (filterResults.hygieneGradesChosen.length != 0) {
     for (const grade of filterResults.hygieneGradesChosen) {
-      chipContainer.innerHTML += createFilterChip("Grade = ", grade);
+      chipContainer.appendChild(createFilterChip("Grade = ", "grade", grade));
     }
   }
-  if (filterResults.stallNumber.length === validStallNumberLength) {
-    chipContainer.innerHTML += createFilterChip(
-      "Stall Number = ",
-      filterResults.stallNumber,
+  if (
+    filterResults.stallNumber &&
+    filterResults.stallNumber.length === validStallNumberLength
+  ) {
+    chipContainer.appendChild(
+      createFilterChip(
+        "Stall Number = ",
+        "stallNumber",
+        filterResults.stallNumber,
+      ),
     );
   }
   if (filterResults.isHalal) {
-    chipContainer.innerHTML += createFilterChip("", "Halal");
+    chipContainer.appendChild(createFilterChip("", "isHalal", "Halal"));
   }
 }
 
+function removeFilterChipHandler(e) {
+  let stallsFilters = JSON.parse(sessionStorage.getItem("stallsFilters"));
+  const chip = e.currentTarget.parentElement;
+  const key = chip.getAttribute("data-key");
+  const value = chip.getAttribute("data-value");
+  const newFilters = getNewFilterAfterRemoval(stallsFilters, key, value);
+
+  renderStallsWithFilter(newFilters);
+}
+
+function getNewFilterAfterRemoval(filters, key, value) {
+  let newFilters = filters;
+
+  if (key === "isHalal") {
+    newFilters[key] = false;
+  } else if (key === "grade") {
+    newFilters["hygieneGradesChosen"].pop(value);
+  } else {
+    newFilters[key] = null;
+  }
+  setFilterInfo(newFilters);
+  return newFilters;
+}
+
 export function assignFilterButtonHandler() {
-  applyButton.addEventListener("click", renderStallsWithFilter);
+  applyButton.addEventListener("click", filterButtonHandler);
 }
 
 export function assignStallNumberInputHandler() {
