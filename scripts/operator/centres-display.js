@@ -5,17 +5,42 @@ function createMenuItem(centreName) {
 }
 
 function createStallCard(name, stall) {
-  return `
-    <article class="stall-card">
-      <div class="stall-card__name-and-owner">
-        <h2>${name}</h2>
-        <p class="stall-card__name-and-owner__name">Ms Lee Kok Kiang</p>
-      </div>
-      <div class="stall-card__extra-info">
-        <p class="stall-card__extra-info__element">${stall.unitNumber}</p>
-        <p class="stall-card__extra-info__element stall-card__extra-info__grade stall-card__extra-info__grade--C">C</p>
-      </div>
-    </article>`;
+  let article = document.createElement("article");
+  article.classList.add("stall-card");
+
+  let nameAndOwner = document.createElement("div");
+  nameAndOwner.classList.add("stall-card__name-and-owner");
+
+  let h2 = document.createElement("h2");
+  h2.textContent = name;
+
+  // TODO query owner name from DB
+  let owner = document.createElement("p");
+  owner.classList.add("stall-card__name-and-owner__name");
+  owner.textContent = "Ms Lee Kok Kiang";
+
+  nameAndOwner.append(h2, owner);
+
+  let extraInfo = document.createElement("div");
+  extraInfo.classList.add("stall-card__extra-info");
+
+  let unitNumber = document.createElement("p");
+  unitNumber.classList.add("stall-card__extra-info__element");
+  unitNumber.textContent = stall.unitNumber;
+
+  // TODO query grade from DB
+  let grade = document.createElement("p");
+  grade.classList.add(
+    "stall-card__extra-info__element",
+    "stall-card__extra-info__grade",
+    "stall-card__extra-info__grade--C",
+  );
+  grade.textContent = "C";
+
+  extraInfo.append(unitNumber, grade);
+  article.append(nameAndOwner, extraInfo);
+
+  return article;
 }
 
 export async function renderSidebar(uid) {
@@ -80,7 +105,7 @@ async function renderStalls(centreName) {
   let stallCount = 0;
   container.innerHTML = "";
   for (const name in stalls) {
-    container.innerHTML += createStallCard(name, stalls[name]);
+    container.appendChild(createStallCard(name, stalls[name]))
     stallCount += 1;
   }
 
