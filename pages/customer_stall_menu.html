@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="..\styles\customer.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!--top nav bar, please insert the following HTML to the top of your <body>-->
+  <header class="top-nav-bar">
+      <h1 class="default-text nav-left">HawkPortal</h1>
+      <nav class="nav-center" aria-label="Main navigation">
+        <a href="customer_home.html" class="default-text">Home</a>
+        <a href="customer_stalls.html" class="default-text bold-focus" aria-current="page">Stall</a>
+        <a href="customer_feedback.html" class="default-text">Feedback</a>
+        <a href="customer_complaints.html" class="default-text">Complaints</a>
+      </nav>
+
+      <div class="nav-right log-out-button">
+        <button type="button" class="button-shape-1" aria-label="Log out">
+          <span class="text-logout">Log out</span>
+        </button>
+      </div>
+    </header>  
+
+    
+  <!-- Stall info and promo container -->
+  <section id = "stall-container">
+
+    <!-- Directory link container -->
+    <section class = "directory-link">
+      <a href = "customer_home.html" class = "Body">Home</a>
+      <p class="Body">></p>
+      <a href = "customer_stalls.html" class = "Body">Stalls</a>
+      <p class="Body">></p>
+      <a href = "customer_stall_menu.html" class = "Body">StallName</a>             
+    </section>
+
+    <!-- Stall info container-->
+    <section class = "stall-info">
+      <div class = "stall-thumbnail" alt = "Thumbnail photo"></div>
+      
+      <!-- Stall details refers to stall name, info button, tags and reviews -->
+      <div class = "stall-details">
+        <div class = "stall-name-container">
+          <p class = "stall-name">StallName</p>
+          <!-- Info overlay button -->
+          <div class = "info-icon" alt = "Info icon" data-bs-toggle="modal" data-bs-target="#stall-info-modal"></div>                                         
+        </div>                
+
+        <!-- Consider creating stall tags using js when needed -->
+        <!-- Stall tag container -->
+        <div class = "stall-tags-container">
+          <div class = "stall-tag"><p class = "tag-desc">Chinese</p></div>
+          <div class = "stall-tag"><p class = "tag-desc">Seafood</p></div>     
+        </div>           
+
+        <!-- Reviews master container -->
+        <div class = "master-stall-reviews">
+          <div class = "stall-reviews">
+            <p class = "review-rating">4.5</p>
+            <img class = "star-icon" src = "../assets/Icons/Star.svg" alt = "★">
+            <button type="button" class="btn btn-secondary">See Reviews</button>        
+            <p class = "review-qty">400 reviews</p>          
+          </div>  
+        </div>
+      </div>      
+    </section>
+
+    <!-- Promotions -->
+    <section class = "promotions-container">
+      <p class = "promotions-title">Promotions</p>
+      <div class = "promotion-cards-container">
+        <section class = "item-card" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+          <div class = "item-image"></div>
+          <div class = "item-details">
+            <p class="item-title">Signature Whole Fish Set</p>
+            <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+            <div class="item-cost">$6.90  
+              <div class = "promo-item-tag">
+                <p class = "discount-amt">10%</p>
+              </div>                            
+            </div>            
+          </div>        
+        </section>            
+        
+        <section class = "item-card" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+          <div class = "item-image"></div>
+          <div class = "item-details">
+            <p class="item-title">Signature Whole Fish Set</p>
+            <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+            <div class="item-cost">$6.90
+              <div class = "promo-item-tag">
+                <p class = "discount-amt">10%</p>
+              </div>              
+            </div>
+          </div>
+        </section>  
+      </div>
+    </section>
+  </section>
+
+  <!-- Menu nav -->
+  <section class = "menu-nav-container">
+    <div class="menu-nav">
+      <!-- Searchbar. Reference: https://www.w3schools.com/howto/howto_css_searchbar.asp-->        
+      <input type="text" placeholder="Search menu">
+      <a href="customer_home.html" class="menu-nav-default-text bold-focus current">Mains</a>
+      <a href="customer_stalls.html" class="menu-nav-default-text">Drinks</a>
+      <a href="customer_feedback.html" class="menu-nav-default-text">Add-ons</a>
+    </div>    
+    <div class="divider"></div>   
+  </section> 
+
+  <!-- Menu Items container -->
+  <section class = "menu-list-container">
+    <section class = "menu-list-col-1">
+
+      <section class = "item-card card-1" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                            
+          </div>            
+        </div>        
+      </section>
+
+      <section class = "item-card card-3" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                           
+          </div>            
+        </div>        
+      </section>   
+      
+      <section class = "item-card card-5" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                              
+          </div>            
+        </div>        
+      </section>       
+
+      <section class = "item-card card-7" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                           
+          </div>            
+        </div>        
+      </section> 
+
+      <section class = "item-card card-9" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                            
+          </div>            
+        </div>        
+      </section> 
+
+    </section>
+
+    <section class = "menu-list-col-2">
+
+      <section class = "item-card card-2" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                            
+          </div>            
+        </div>        
+      </section>
+
+      <section class = "item-card card-4" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                           
+          </div>            
+        </div>        
+      </section>   
+      
+      <section class = "item-card card-6" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                              
+          </div>            
+        </div>        
+      </section>       
+
+      <section class = "item-card card-8" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                           
+          </div>            
+        </div>        
+      </section> 
+
+      <section class = "item-card card-10" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                            
+          </div>            
+        </div>        
+      </section> 
+
+    </section>    
+
+    <!-- Cart overflow container. Reference:https://www.w3schools.com/css/css_overflow.asp -->
+    <section class = "cart-container">
+      <div class = cart-title>Cart Items</div>
+      <section class = "cart-item-list">
+        <section class = "item-card item-card-1">
+          <div class = "item-image"></div>
+          <div class = "item-details">
+            <p class="item-title" data-bs-toggle="modal" data-bs-target="#menu-item-modal">Signature Whole Fish Set</p>
+            <div class="item-cost"> 
+              <div class = "quantity-container">
+                <button class = "btn btn-decrease" type = "button">-</button>
+                <p class = "quantity">1</p>
+                <button class = "btn btn-increase" type = "button">+</button>
+              </div>   
+              <div class = "price-text">$6.90</div>                                     
+            </div>            
+          </div>        
+        </section>
+             
+      </section>     
+      <section class ="checkout-container">
+        <div class = "subtotal-container">
+          <p class = "subtotal-text">Subtotal</p>
+          <div class = "subtotal-amt">$0.00</div>
+        </div>
+        <div class = "grandtotal-container">
+          <p class = "grandtotal-text">Grand Total</p>
+          <div class = "grandtotal-amt">$0.00</div>
+        </div>     
+        <button class = "btn btn-checkout" type = "button">Checkout</button>
+      </section>         
+    </section>    
+  </section>
+
+  <!-- Footer -->
+  <section id = "Footer">
+    <div class = "Contact-Us-Container">
+      <div class="Hotline-Container">
+        <img class = "Hotline-Icon" src = "../assets/Icons/Phone icon.svg" alt="Hotline icon" height = "auto"  width="50">
+        <p class="Hotline-Body">1800-HawkPortal-Hotline</p>
+      </div>
+      
+      <div class="Email-Container">
+        <img class = "Email-Icon" src = "../assets/Icons/Letter icon.svg" alt="Letter icon" height = "auto"  width="50">
+        <p class="Email-Body">HawkerPortal@gmail.com</p>
+      </div>
+
+      <div class = "Credits-Container">
+        <img class = "Sources-Icon" src = "../assets/Icons/Link.svg" alt="sources icon" height = "auto"  width="50"> 
+        <a href = "sources.html" class = "Credits">Credits and references</a> 
+      </div>
+    </div>
+
+    <div class = "About-Us-Container">
+      <p class = "About-Us-Title">About Us</p>
+      <p class = "About-Us-Body">HawkerPortal is a one stop platform for all your needs, developed by our team at NEA. Our goal is to increase convenince when it comes to ordering food items at a hawker centre. We are dedicated to streamlining the ordering process, infusing your meals with a touch of technology.</p>
+      <div class = "Social-Media-Icons">
+        <img class = "Facebook" src = "../assets/Icons/Facebook.svg" alt="Facebook icon" height = "auto"  width="50"> 
+        <img class = "Twitter" src = "../assets/Icons/Twitter.svg" alt="Twitter icon" height = "auto"  width="50"> 
+        <img class = "Instagram" src = "../assets/Icons/Instagram.svg" alt="Instagram icon" height = "auto"  width="50"> 
+        <img class = "Linkedin" src = "../assets/Icons/Linkedin.svg" alt="Linkedin icon" height = "auto"  width="50"> 
+        <img class = "Google" src = "../assets/Icons/Google.svg" alt="Google icon" height = "auto"  width="50"> 
+        <img class = "Youtube" src = "../assets/Icons/Youtube.svg" alt="Youtube icon" height = "auto"  width="50">         
+      </div>        
+    </div>
+  </section>
+    
+  <!-- Info Modal. Modal reference: https://getbootstrap.com/docs/4.0/components/modal/ -->
+  <section class="modal fade" id="stall-info-modal" tabindex="-1" role="dialog" aria-labelledby="stall-info-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">StallName</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          If you read this, you're smart
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Item Modal. Modal reference: https://getbootstrap.com/docs/4.0/components/modal/ -->
+  <section class="modal fade" id="menu-item-modal" tabindex="-1" role="dialog" aria-labelledby="menu-item-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class = "modal-item-image"></div>                    
+        </div>
+        <div class="modal-body">
+          <div class = "item-details">
+            <div class="modal-title-container">
+              <div class = "item-title">Signature Whole Fish Set</div>
+              <!-- Add tags here -->
+              <!-- <div class = "promo-item-tag">
+                <p class = "discount-amt">10%</p>
+              </div>  -->
+            </div>
+            <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+            <div class="item-cost"><p>$6.90</p></div>             
+            <div class = "quantity-container">
+              <button class = "btn btn-decrease" type = "button">-</button>
+              <p class = "quantity">1</p>
+              <button class = "btn btn-increase" type = "button">+</button>
+            </div>                                                
+          </div>         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="main.js"></script>
+  <script src="../scripts/config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
