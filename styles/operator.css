@@ -270,8 +270,9 @@ button:hover {
   opacity: 25%;
 }
 
-/* centre-info */
-.centre-info {
+/* centre-info, stall-info */
+.centre-info,
+.stall-info {
   background-color: var(--white);
   border-radius: var(--border-radius);
   display: flex;
@@ -328,8 +329,9 @@ button:hover {
   font-size: 15px;
 }
 
-/* hawker-centre-image */
-.hawker-centre-image {
+/* hawker-centre-image, stall-image */
+.hawker-centre-image,
+.stall-image {
   border-radius: 8px;
   width: 250px;
 }
@@ -570,7 +572,8 @@ button:hover {
   background-color: var(--red);
 }
 
-.hawker-centre-container {
+.hawker-centre-container,
+.stall-detai-container {
   width: 100%;
   display: flex;
   flex-direction: row;
