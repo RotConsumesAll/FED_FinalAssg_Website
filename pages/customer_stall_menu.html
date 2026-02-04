@@ -102,17 +102,6 @@
         </section>  
       </div>
     </section>
-
-    <!-- Menu nav -->
-    <!-- <section class = "menu-nav-container">
-      <div class="menu-nav">
-        <input type="text" placeholder="  Search menu">
-        <a href="customer_home.html" class="menu-nav-default-text bold-focus current">Mains</a>
-        <a href="customer_stalls.html" class="menu-nav-default-text">Drinks</a>
-        <a href="customer_feedback.html" class="menu-nav-default-text">Add-ons</a>
-      </div>    
-      <div class="divider"></div>   
-    </section>  -->
   </section>
 
   <!-- Menu nav -->
@@ -128,10 +117,146 @@
   </section> 
 
   <!-- Menu Items container -->
-  <section class = "menu-items-container">
-    <!-- Cart container -->
+  <section class = "menu-list-container">
+    <section class = "menu-list-col-1">
+
+      <section class = "item-card card-1" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                            
+          </div>            
+        </div>        
+      </section>
+
+      <section class = "item-card card-3" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                           
+          </div>            
+        </div>        
+      </section>   
+      
+      <section class = "item-card card-5" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                              
+          </div>            
+        </div>        
+      </section>       
+
+      <section class = "item-card card-7" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                           
+          </div>            
+        </div>        
+      </section> 
+
+      <section class = "item-card card-9" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                            
+          </div>            
+        </div>        
+      </section> 
+
+    </section>
+
+    <section class = "menu-list-col-2">
+
+      <section class = "item-card card-2" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                            
+          </div>            
+        </div>        
+      </section>
+
+      <section class = "item-card card-4" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                           
+          </div>            
+        </div>        
+      </section>   
+      
+      <section class = "item-card card-6" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                              
+          </div>            
+        </div>        
+      </section>       
+
+      <section class = "item-card card-8" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                           
+          </div>            
+        </div>        
+      </section> 
+
+      <section class = "item-card card-10" data-bs-toggle="modal" data-bs-target="#menu-item-modal">
+        <div class = "item-image"></div>
+        <div class = "item-details">
+          <p class="item-title">Signature Whole Fish Set</p>
+          <p class="item-body">Tangy tomato sauce w our signature Channel Catfish</p>
+          <div class="item-cost">$6.90                            
+          </div>            
+        </div>        
+      </section> 
+
+    </section>    
+
+    <!-- Cart overflow container. Reference:https://www.w3schools.com/css/css_overflow.asp -->
     <section class = "cart-container">
-    
+      <div class = cart-title>Cart Items</div>
+      <section class = "cart-item-list">
+        <section class = "item-card item-card-1">
+          <div class = "item-image"></div>
+          <div class = "item-details">
+            <p class="item-title" data-bs-toggle="modal" data-bs-target="#menu-item-modal">Signature Whole Fish Set</p>
+            <div class="item-cost"> 
+              <div class = "quantity-container">
+                <button class = "btn btn-decrease" type = "button">-</button>
+                <p class = "quantity">1</p>
+                <button class = "btn btn-increase" type = "button">+</button>
+              </div>   
+              <div class = "price-text">$6.90</div>                                     
+            </div>            
+          </div>        
+        </section>
+             
+      </section>     
+      <section class ="checkout-container">
+        <div class = "subtotal-container">
+          <p class = "subtotal-text">Subtotal</p>
+          <div class = "subtotal-amt">$0.00</div>
+        </div>
+        <div class = "grandtotal-container">
+          <p class = "grandtotal-text">Grand Total</p>
+          <div class = "grandtotal-amt">$0.00</div>
+        </div>     
+        <button class = "btn btn-checkout" type = "button">Checkout</button>
+      </section>         
     </section>    
   </section>
 
@@ -168,11 +293,8 @@
     </div>
   </section>
     
-
-
-
   <!-- Info Modal. Modal reference: https://getbootstrap.com/docs/4.0/components/modal/ -->
-  <div class="modal fade" id="stall-info-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <section class="modal fade" id="stall-info-modal" tabindex="-1" role="dialog" aria-labelledby="stall-info-modal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -189,10 +311,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Menu Item Modal. Modal reference: https://getbootstrap.com/docs/4.0/components/modal/ -->
-  <div class="modal fade" id="menu-item-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <section class="modal fade" id="menu-item-modal" tabindex="-1" role="dialog" aria-labelledby="menu-item-modal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -209,7 +331,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
   <script src="main.js"></script>
   <script src="../scripts/config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
