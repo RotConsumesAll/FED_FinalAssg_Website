@@ -29,7 +29,7 @@ jobs:
       # --- STEP: GENERATE THE CONFIG FILE ---
       - name: Generate Config.js
         run: |
-          echo "const firebaseConfig = {" > config.js
+          echo "export const firebaseConfig = {" > config.js
           echo "  apiKey: '${{ secrets.FIREBASE_API_KEY }}'," >> config.js
           echo "  authDomain: '${{ secrets.FIREBASE_AUTH_DOMAIN }}'," >> config.js
           echo "  projectId: '${{ secrets.FIREBASE_PROJECT_ID }}'," >> config.js

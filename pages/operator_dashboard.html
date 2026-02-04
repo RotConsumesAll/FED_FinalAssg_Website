@@ -1,16 +1,137 @@
-<!-- top nav bar, please insert the following HTML to the top of your <body>-->  
-      <header class="top-nav-bar">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/operator.css">
+
+    <!-- https://cdnjs.com/libraries/normalize CSS RESET normalize.css -->
+    <!-- I chose to use this because it helps to normalise styles for many html elements. -->
+    <!-- See https://nicolasgallagher.com/about-normalize-css/ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <header class="top-nav-bar">
         <h1 class="default-text nav-left">HawkPortal</h1>
         <nav class="nav-center" aria-label="Main navigation">
-          <a href="operator_dashboard.html" class="default-text bold-focus" aria-current="page">Dashboard</a>
-          <a href="operator_centres.html" class="default-text">Centres</a>
-          <a href="operator_documents.html" class="default-text">Documents</a>
-          <a href="operator_settings.html" class="default-text">Settings</a>
+            <a href="./operator_dashboard.html" class="default-text bold-focus">Dashboard</a>
+            <a href="./operator_centres.html" class="default-text">Centres</a>
+            <a href="./operator_documents.html" class="default-text" aria-current="page">Documents</a>
+            <a href="./operator_settings.html" class="default-text">Settings</a>
         </nav>
 
         <div class="nav-right log-out-button">
-          <button type="button" class="button-shape-1" aria-label="Log out">
-            <span class="text-logout">Log out</span>
-          </button>
+            <button type="button" class="button-shape-1" aria-label="Log out">
+                <span class="text-logout">Log out</span>
+            </button>
         </div>
-      </header>
+    </header>
+    <main>
+        <!-- Overall centre statistics -->
+        <section class="section--column">
+            <!-- (non graphs) -->
+            <div class="flex-container">
+                <article class="figure-card">
+                    <h2>Top Performing Hawker Centre in Sales</h2>
+                    <p class="figure-card__single-statistics">Woodleigh Village Hawker Centre</p>
+                </article>
+                <article class="figure-card">
+                    <h2>Total sales this Week</h2>
+                    <div class="figure-card__change--increase-highlight">+6.5%</div>
+                    <p class="figure-card__single-statistics">$60,500</p>
+                </article>
+                <article class="figure-card">
+                    <h2>Average Customer Rating Across Centres</h2>
+                    <div class="figure-card__change--decrease-highlight">−5.4%</div>
+                    <p class="figure-card__single-statistics">4.65</p>
+                </article>
+            </div>
+
+            <!-- (graphs) -->
+            <div class="flex-container">
+                <figure class="figure-card">
+                    <h2>Sales per Centre this week</h2>
+                    <div>(Insert diagram)</div>
+                </figure>
+                <figure class="figure-card">
+                    <h2>Average Customer Rating per Centre</h2>
+                    <div>(Insert diagram)</div>
+                </figure>
+            </div>
+        </section>
+
+
+        <section class="section--row section--flex-wrap">
+            <!-- Side bar -->
+            <aside class="sidebar">
+                <ul class="sidebar__menu">
+                    <li class="sidebar__menu__item sidebar__menu__item--selected"><a href="#">Ci Yuan Hawker Centre</a>
+                    </li>
+                    <li class="sidebar__menu__item"><a href="#">Woodleigh Village Hawker Centre</a></li>
+                    <li class="sidebar__menu__item"><a href="#">Bukit Batok West Hawker Centre</a></li>
+                </ul>
+                <button class="sidebar__button">Go to Ci Yuan Hawker Centre</button>
+            </aside>
+
+            <!-- Centre-specific statistics -->
+            <div class="flex-container flex-container--column flex-container--flex-1-1-auto">
+                <div class="flex-container">
+                    <article class="figure-card">
+                        <h2>Top Performing Stall</h2>
+                        <p>Hok Li Chicken Rice</p>
+                    </article>
+                    <article class="figure-card">
+                        <h2>Average Customer Rating</h2>
+                        <div class="figure-card__change--increase-highlight">+6.5%</div>
+                        <p class="figure-card__single-statistics">4.5</p>
+                    </article>`
+                    <article class="figure-card">
+                        <h2>Total Sales</h2>
+                        <div class="figure-card__change--decrease-highlight">−5.4%</div>
+                        <p class="figure-card__single-statistics">$20,394</p>
+                    </article>
+                </div>
+
+                <!-- Total sales -->
+                <figure class="figure-card figure-card--stand-alone">
+                    <h2>Total Sales over Time</h2>
+                    <div>Insert chart</div>
+                </figure>
+
+                <!-- Hygiene grades & Latest complaints received -->
+                <div class="flex-container">
+                    <figure class="figure-card">
+                        <h2>Current Hygiene Grades of Stalls</h2>
+                        <div>Insert chart</div>
+                    </figure>
+                    <article class="figure-card">
+                        <h2>Latest complaints received</h2>
+                        <ul class="figure-card__list">
+                            <li class="figure-card__list__item">
+                                <p>The uncle at this store was rude to me when I asked
+                                    for more rice!</p>
+                                <img src="../assets/icons/arrow-right.svg" alt="Filter icon" height="16" width="16">
+                            </li>
+                            <li class="figure-card__list__item">
+                                <p>the auntie wasn’t wearing a mask while cooking! so
+                                    unhygienic!</p>
+                                <img src="../assets/icons/arrow-right.svg" alt="Filter icon" height="16" width="16">
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+</body>
+
+</html>

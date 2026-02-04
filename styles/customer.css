@@ -1,4 +1,86 @@
-/* Customer Home */
+/* body bg css */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.feedback, .complaint{
+  background: linear-gradient(
+    180deg,
+    #72955D 14%,
+    #B9DBA5 67%,
+    #C1F6C7 100%
+  );
+  background-attachment: fixed;
+}
+
+/* feedback and complaint css */
+.frame{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+
+.frame-2{
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  align-self: center;
+}
+
+.rectangle{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+  width: 50%;
+  height: auto;
+  padding: 40px;
+  gap: 15px;
+}
+
+.rectangle h1{
+  font-family: "Inter", Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  color: #000000;
+  text-align: center;
+}
+
+.rectangle h2{
+  font-family: "Inter", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: #000000;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.opinion-text{
+  margin-top: 15px;
+}
+
+
+.star path {
+  fill: #666;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+}
+
+.star.filled path {
+  fill: gold;
+}
+
+
 /* navbar */
 
 /* Gemini fix to prevent elements from shrinking when modals open. */

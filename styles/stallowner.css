@@ -207,6 +207,15 @@ a{
   align-items: center;
 }
 
+.edit-photo-button{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #666;
+  border-radius: 50%;
+  border: none;
+}
+
 .frame-7 a{
   text-decoration: underline;
 }
@@ -259,7 +268,7 @@ a{
   font-family: 'Inter', Helvetica, sans-serif;
   font-size: 16px;
   font-weight: normal;
-  margin: 50;
+  margin: 15px 5px 15px 0px;
 }
 
 .stall-owner .rectangle-3 {
@@ -536,6 +545,13 @@ a{
   height: 69px;
   aspect-ratio: 1;
   color: #666;
+}
+
+.rectangle-7 .img-vector{
+  position: relative;
+  aspect-ratio: 1;
+  color: #666;
+  margin: 50px 0px 80px 0px;
 }
 
 .rectangle-6{
