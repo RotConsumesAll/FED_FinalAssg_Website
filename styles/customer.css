@@ -1,5 +1,18 @@
 /* Customer Home */
 /* navbar */
+
+/* Gemini fix to prevent elements from shrinking when modals open. */
+/* 1. Keep the scrollbar track visible (or reserved) at all times */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* 2. OVERRIDE Bootstrap's default behavior */
+/* This tells the browser: "When the modal is open, DO NOT add extra padding." */
+body.modal-open {
+  padding-right: 0 !important;
+}
+
 .default-text{
   display: flex;
   align-items: center;
@@ -890,6 +903,7 @@
   justify-content: flex-start;
   border:0.2rem solid #1c1c1e;
   border-radius: 1rem;  
+  flex-shrink: 0;
 }
 
 .cart-title{
