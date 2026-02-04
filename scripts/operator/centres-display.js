@@ -5,7 +5,7 @@ function createMenuItem(centreName) {
   return `<li class="sidebar__menu__item"><a href="#">${centreName}</a></li>`;
 }
 
-function createStallCard(name, stall) {
+function createStallCard(name, stall, ownerName, grade) {
   let article = document.createElement("article");
   article.classList.add("stall-card");
 
@@ -18,7 +18,7 @@ function createStallCard(name, stall) {
   // TODO query owner name from DB
   let owner = document.createElement("p");
   owner.classList.add("stall-card__name-and-owner__name");
-  owner.textContent = "Ms Lee Kok Kiang";
+  owner.textContent = ownerName;
 
   nameAndOwner.append(h2, owner);
 
@@ -29,16 +29,19 @@ function createStallCard(name, stall) {
   unitNumber.classList.add("stall-card__extra-info__element");
   unitNumber.textContent = stall.unitNumber;
 
-  // TODO query grade from DB
-  let grade = document.createElement("p");
-  grade.classList.add(
+  let gradeElement = document.createElement("p");
+  gradeElement.classList.add(
     "stall-card__extra-info__element",
     "stall-card__extra-info__grade",
-    "stall-card__extra-info__grade--C",
   );
-  grade.textContent = "C";
+  if (!grade) {
+    gradeElement.textContent = "-";
+  } else {
+    gradeElement.textContent = grade;
+    gradeElement.classList.add(`stall-card__extra-info__grade--${grade}`);
+  }
 
-  extraInfo.append(unitNumber, grade);
+  extraInfo.append(unitNumber, gradeElement);
   article.append(nameAndOwner, extraInfo);
 
   return article;
@@ -99,6 +102,27 @@ async function handleCentreSelect(e) {
   renderStalls(centreName);
 }
 
+function getCurrentDate() {
+  // see https://www.freecodecamp.org/news/javascript-get-current-date-todays-date-in-js/
+  const date = new Date();
+
+  const day = date.getDate();
+  const month = date.getMonth();
+  const year = date.getFullYear();
+
+  return `${year}-${month}-${day}`;
+}
+
+function findValidHygieneGrade(inspectionRecords) {
+  for (const record of inspectionRecords) {
+    const expiryDate = Date.parse(record.gradeExpiry);
+    const currentDate = getCurrentDate();
+    if (Date.parse(currentDate) <= expiryDate) {
+      return record.hygieneGrade;
+    }
+  }
+}
+
 async function renderStalls(centreName) {
   const stalls = await database.getStallsByCentreName(centreName);
   const container = document.getElementById("stall-container");
@@ -106,9 +130,22 @@ async function renderStalls(centreName) {
   let stallCount = 0;
   container.innerHTML = "";
   for (const name in stalls) {
-    let card = createStallCard(name, stalls[name]);
+    const owner = await database.getUserDetails(stalls[name].ownerUID);
+    const ownerName = owner.ownerName;
+
+    const inspectionRecords =
+      await database.getInspectionRecordsByHawkerCentre_StallName(
+        centreName,
+        name,
+      );
+
+    const grade = findValidHygieneGrade(inspectionRecords);
+
+    let card = createStallCard(name, stalls[name], ownerName, grade);
     card.addEventListener("click", redirectToStallDetailPage);
-    card.addEventListener("click", function(e){ redirectToStallDetailPage(e, centreName); });
+    card.addEventListener("click", function (e) {
+      redirectToStallDetailPage(e, centreName);
+    });
 
     container.appendChild(card);
     stallCount += 1;
