@@ -67,6 +67,9 @@ async function handleCentreSelect(e) {
     item.classList.remove("sidebar__menu__item--selected");
   }
 
+  // clear search bar
+  document.querySelector("#centre-search").value = "";
+
   renderStalls(centreName);
 }
 
