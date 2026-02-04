@@ -1,0 +1,122 @@
+body, html {
+  height: 100%;
+  font-family: "Inter", Helvetica, sans-serif;
+}
+
+.bg-home {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(88,182,220,0.8)), 
+  url('../assets/Images/OfficerImages/Home/tekka-market.jpg');
+  height: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.h1-home {
+  color: white;
+  text-align: center;
+  padding:40px;
+}
+
+.text-blue{
+  color: #58B6DC;
+}
+/* Make the tile a positioning container */
+#home1, #home2, #home3 {
+  position: relative;
+  overflow: hidden;      /* keeps the bg layer inside rounded corners */
+  border-radius: 12px;
+}
+
+/* Put the BACKGROUND IMAGE on a pseudo-element and only fade that */
+#home1::before, #home2::before, #home3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;          /* <-- ONLY the image becomes transparent */
+  z-index: 0;
+}
+
+/* Assign the images to the pseudo-elements */
+#home1::before { background-image: url('../assets/Images/OfficerImages/Home/leslie-2.jpg'); }
+#home2::before { background-image: url('../assets/Images/OfficerImages/Home/nea-hawker-centre.avif'); }
+#home3::before { background-image: url('../assets/Images/OfficerImages/Home/7bb0cec5cd2664d9a3582d6b6f621388.webp'); }
+
+/* Keep all text/content above the image */
+#home1 > *, #home2 > *, #home3 > * {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  opacity: 1;
+}
+.buttons {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button {
+  width: 360px;
+  height: 220px;
+
+  background-color: #000000;
+  border: none;
+  border-radius: 12px;
+
+  color: white;
+  font-size: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  margin: 10px 80px 80px 80px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.back-button {
+  background-image: url('../assets/Images/OfficerImages/General/arrow-left.svg');
+  background-size:contain;
+  width: 50px;
+  height: 50px;
+
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+
+  color: black;
+  font-size: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+ 
+  margin-left:80px;
+  margin-top: 80px;
+  padding-left: 100px;
+
+  border-radius: 12px;
+  cursor: pointer;
+}
+#h1-scheduling {
+  padding-top: 0px;
+}
+a{
+  color:white;
+  text-decoration: none;
+}
+
+.searchbar-temp {
+  width: 600px;
+  height: 50px;
+  border-radius: 12px;
+
+  display: block;
+  margin: 0 auto 40px auto; /* ← centers it */
+}
