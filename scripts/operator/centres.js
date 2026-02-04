@@ -1,5 +1,5 @@
-import { renderSidebar } from "./centres-handlers.js";
-import { assignEventHandlers } from "./centre-assign-handlers.js";
+import { renderSidebar } from "./centres-display.js";
+import { assignEventHandlers } from "./centres-assign-handlers.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   // TODO get UID
