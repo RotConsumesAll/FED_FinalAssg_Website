@@ -1,5 +1,3 @@
-import { app } from "../firebase/app.js";
-
 const validStallNumberLength = 6; // e.g. #01-12
 
 // Elements

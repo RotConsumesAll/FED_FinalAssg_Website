@@ -1,5 +1,5 @@
 import { assignSearchBarHandler } from "./centres-search.js";
-import { assignCentreSelectHandlers } from "./centres-handlers.js";
+import { assignCentreSelectHandlers } from "./centres-display.js";
 import { assignFilterButtonHandler, assignStallNumberInputHandler, assignStallNumberInputGroupHandler } from "./centres-filter.js";
 
 export async function assignEventHandlers() {

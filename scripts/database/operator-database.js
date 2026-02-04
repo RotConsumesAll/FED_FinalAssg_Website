@@ -44,3 +44,7 @@ export async function getStallsByCentreName(centreName) {
 
   return stallsList;
 }
+
+export async function getInspectionRecordsByHawkerCentre_StallName(centreName, stallName) {
+  const inspectionRecords = await fetchData(`/inspectionRecords/${centreName}/stalls/${stallName}`);
+}
