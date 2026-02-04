@@ -21,7 +21,8 @@
               "price": 3
             }
           },
-          "unitNumber": "#01-02"
+          "unitNumber": "#01-02",
+          "ownerUID": "OWNER_UID_1"
         },
         "Korean BBQ Express": {
           "cuisine": "Korean",
@@ -40,7 +41,8 @@
               "price": 5
             }
           },
-          "unitNumber": "#01-04"
+          "unitNumber": "#01-04",
+          "ownerUID": "OWNER_UID_2"
         },
         "Mr Lee's Noodle Soup": {
           "cuisine": "Chinese",
@@ -51,7 +53,8 @@
               "price": 3.45
             }
           },
-          "unitNumber": "#01-01"
+          "unitNumber": "#01-01",
+          "ownerUID": "OWNER_UID_2"
         },
         "Tokyo Ramen": {
           "cuisine": "Japanese",
@@ -70,7 +73,8 @@
               "price": 5
             }
           },
-          "unitNumber": "#01-03"
+          "unitNumber": "#01-03",
+          "ownerUID": "OWNER_UID_3"
         }
       }
     },
@@ -91,7 +95,8 @@
               "price": 5.3
             }
           },
-          "unitNumber": "#01-01"
+          "unitNumber": "#01-01",
+          "ownerUID": "OWNER_UID_4"
         },
         "Bombay Biryani": {
           "cuisine": "Indian",
@@ -106,7 +111,8 @@
               "price": 8
             }
           },
-          "unitNumber": "#01-03"
+          "unitNumber": "#01-03",
+          "ownerUID": "OWNER_UID_5"
         },
         "Siti Nasi Lemak": {
           "cuisine": "Malay",
@@ -121,7 +127,8 @@
               "price": 4
             }
           },
-          "unitNumber": "#01-02"
+          "unitNumber": "#01-02",
+          "ownerUID": "OWNER_UID_5"
         }
       }
     },
@@ -142,24 +149,159 @@
               "price": 2.6
             }
           },
-          "unitNumber": "#01-01"
+          "unitNumber": "#01-01",
+          "ownerUID": "OWNER_UID_6"
         }
       }
     }
   },
   "users": {
     "OPERATOR_UID_1": {
-      "managedCentres": [
-        "Adam Food Centre",
-        "Amoy Street Food Centre"
-      ],
+      "managedCentres": ["Adam Food Centre", "Amoy Street Food Centre"],
       "role": "operator"
     },
     "OPERATOR_UID_2": {
-      "managedCentres": [
-        "Bedok Food Centre"
-      ],
+      "managedCentres": ["Bedok Food Centre"],
       "role": "operator"
+    },
+    "OWNER_UID_1": {
+      "role": "stall_owner",
+      "ownerName": "John Doe",
+      "ownerContactNo": "91234567"
+    },
+    "OWNER_UID_2": {
+      "role": "stall_owner",
+      "ownerName": "Tan Wei",
+      "ownerContactNo": "81234567"
+    },
+    "OWNER_UID_3": {
+      "role": "stall_owner",
+      "ownerName": "Siti Aminah",
+      "ownerContactNo": "82345678"
+    },
+    "OWNER_UID_4": {
+      "role": "stall_owner",
+      "ownerName": "Raj Kumar",
+      "ownerContactNo": "83456789"
+    },
+    "OWNER_UID_5": {
+      "role": "stall_owner",
+      "ownerName": "Lee Hong",
+      "ownerContactNo": "84567890"
+    },
+    "OWNER_UID_6": {
+      "role": "stall_owner",
+      "ownerName": "Ahmad Ali",
+      "ownerContactNo": "85678901"
+    },
+    "OFFICER_UID_1": {
+      "role": "nea_officer",
+      "OfficerName": "Tan Boon Hock",
+      "OfficerContactNo": "91112222"
+    },
+    "OFFICER_UID_2": {
+      "role": "nea_officer",
+      "OfficerName": "Sarah Wijaya",
+      "OfficerContactNo": "93334444"
+    },
+    "OFFICER_UID_3": {
+      "role": "nea_officer",
+      "OfficerName": "M. Subramaniam",
+      "OfficerContactNo": "95556666"
+    }
+  },
+  "inspectionRecords": {
+    "Adam Food Centre": {
+      "stalls": {
+        "Dragon Wok": [
+          {
+            "inspectionID": "INS_002",
+            "inspectionDate": "2026-01-10",
+            "hygieneGrade": "A",
+            "gradeExpiry": "2027-01-10",
+            "inspectionRemark": "Food storage temperatures are well-maintained.",
+            "officer": "OFFICER_UID_1"
+          }
+        ],
+        "Korean BBQ Express": [
+          {
+            "inspectionID": "INS_003",
+            "inspectionDate": "2025-11-15",
+            "hygieneGrade": "B",
+            "gradeExpiry": "2026-11-15",
+            "inspectionRemark": "Advised to improve grease trap cleaning frequency.",
+            "officer": "OFFICER_UID_2"
+          }
+        ],
+        "Mr Lee's Noodle Soup": [
+          {
+            "inspectionID": "INS_004",
+            "inspectionDate": "2026-02-01",
+            "hygieneGrade": "A",
+            "gradeExpiry": "2027-02-01",
+            "inspectionRemark": "Excellent floor cleanliness.",
+            "officer": "OFFICER_UID_1"
+          }
+        ],
+        "Tokyo Ramen": [
+          {
+            "inspectionID": "INS_005",
+            "inspectionDate": "2025-12-20",
+            "hygieneGrade": "A",
+            "gradeExpiry": "2026-12-20",
+            "inspectionRemark": "Staff hygiene certificates are up to date.",
+            "officer": "OFFICER_UID_3"
+          }
+        ]
+      }
+    },
+    "Amoy Street Food Centre": {
+      "stalls": {
+        "Ayam Penyet GO!": [
+          {
+            "inspectionID": "INS_006",
+            "inspectionDate": "2026-01-05",
+            "hygieneGrade": "A",
+            "gradeExpiry": "2027-01-05",
+            "inspectionRemark": "Strict cross-contamination prevention observed.",
+            "officer": "OFFICER_UID_2"
+          }
+        ],
+        "Bombay Biryani": [
+          {
+            "inspectionID": "INS_007",
+            "inspectionDate": "2026-01-22",
+            "hygieneGrade": "B",
+            "gradeExpiry": "2027-01-22",
+            "inspectionRemark": "Reminded to cover dry ingredient containers.",
+            "officer": "OFFICER_UID_3"
+          }
+        ],
+        "Siti Nasi Lemak": [
+          {
+            "inspectionID": "INS_008",
+            "inspectionDate": "2025-10-30",
+            "hygieneGrade": "A",
+            "gradeExpiry": "2026-10-30",
+            "inspectionRemark": "Proper display of hygiene grade label.",
+            "officer": "OFFICER_UID_1"
+          }
+        ]
+      }
+    },
+    "Bedok Food Centre": {
+      "stalls": {
+        "Ah Seng Chicken Rice": [
+          {
+            "inspectionID": "INS_001",
+            "inspectionDate": "2026-01-15",
+            "hygieneGrade": "A",
+            "gradeExpiry": "2027-01-15",
+            "inspectionRemark": "Premises are very tidy.",
+            "officer": "OFFICER_UID_1"
+          }
+        ]
+      }
     }
   }
 }
