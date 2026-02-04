@@ -1,4 +1,5 @@
 import * as database from "../database/operator-database.js";
+import { redirectToStallDetailPage } from "./centres-routing-to-stall-detail.js";
 
 function createMenuItem(centreName) {
   return `<li class="sidebar__menu__item"><a href="#">${centreName}</a></li>`;
@@ -105,7 +106,11 @@ async function renderStalls(centreName) {
   let stallCount = 0;
   container.innerHTML = "";
   for (const name in stalls) {
-    container.appendChild(createStallCard(name, stalls[name]))
+    let card = createStallCard(name, stalls[name]);
+    card.addEventListener("click", redirectToStallDetailPage);
+    card.addEventListener("click", function(e){ redirectToStallDetailPage(e, centreName); });
+
+    container.appendChild(card);
     stallCount += 1;
   }
 

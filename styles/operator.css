@@ -221,6 +221,7 @@ button:hover {
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 2.5rem;
+  cursor: pointer;
 }
 
 .stall-card__name-and-owner {
