@@ -45,7 +45,20 @@ export async function getStallsByCentreName(centreName) {
   return stallsList;
 }
 
-// TO USE
-export async function getInspectionRecordsByHawkerCentre_StallName(centreName, stallName) {
-  const inspectionRecords = await fetchData(`/inspectionRecords/${centreName}/stalls/${stallName}`);
+
+export async function getInspectionRecordsByHawkerCentre_StallName(
+  centreName,
+  stallName,
+) {
+  const inspectionRecords = await fetchData(
+    `/inspectionRecords/${centreName}/stalls/${stallName}`,
+  );
+}
+
+export async function getStallObject(centreName, stallName) {
+  return fetchData(`/centres/${centreName}/stalls/${stallName}`);
+}
+
+export async function getUserDetails(UID) {
+  return fetchData(`/users/${UID}`);
 }

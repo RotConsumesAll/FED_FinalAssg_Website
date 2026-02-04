@@ -49,11 +49,20 @@ async function handleStallSelect(e, centreName) {
     item.classList.remove("sidebar__menu__item--selected");
   }
 
-  renderStallStatistics(stallName);
+  renderStallStatistics(centreName, stallName);
 }
 
-async function renderStallStatistics(stallName) {
-  // TODO
+async function renderStallStatistics(centreName, stallName) {
+  const stall = await database.getStallObject(centreName, stallName);
+  const unitNumber = document.getElementById("stall-info__stall-unitNumber");
+  unitNumber.textContent = stall.unitNumber;
+
+  const ownerNameElement = document.getElementById("stall-info__ownerName");
+  const owner = await database.getUserDetails(stall.ownerUID);
+  ownerNameElement.textContent = owner.ownerName;
+
+  // const image = document.querySelector("img.stall-image");
+  // image["src"] = "";
 }
 
 export function assignStallSelectHandlers(centreName) {
