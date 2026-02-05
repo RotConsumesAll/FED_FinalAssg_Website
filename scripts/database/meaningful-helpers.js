@@ -3,11 +3,12 @@ import { db, get, ref } from "../firebase/index.js";
 import { fetchData, getObjectsByAttribute } from "./helpers.js";
 
 export async function getHawkerCentres() {
-  return fetchData("/centres");
+  return fetchData("/hawkerCentres");
 }
 
 export function getManagedCentresByOperatorUID(uid) {
   return getObjectsByAttribute("hawkerCentres", "operatorId", uid);
+  // SELECT * FROM /hawkerCentres WHERE operatorId = uid;
 }
 
 export function getHawkerCentreByCentreId(centreId) {
