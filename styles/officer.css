@@ -385,44 +385,42 @@ a {
   gap: 18px;
 }
 
-.db-head{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+.db-head {
+  position: relative;
+  width: 100%;
 }
 
-.db-cols{
+
+.db-cols {
   display: grid;
-  grid-template-columns: 110px 2fr 1fr 1fr 1.4fr;
-  gap: 16px;
-  width: 100%;
+  grid-template-columns: 120px 2.5fr 1.2fr 1fr 1.5fr;
+  align-items: center;
+
+  padding: 12px 20px;
 
   font-size: 13px;
   font-weight: 700;
   color: #111;
-  padding: 10px 16px;
 }
 
-.db-filter-btn{
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+.db-filter-btn {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
 
-  border: 1px solid rgba(0,0,0,0.15);
-  background: rgba(255,255,255,0.75);
-  color: #111;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(255,255,255,0.85);
+  border: none;
 
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+
 .db-filter-btn:hover{
-  transform: translateY(-1px);
   box-shadow: 0 10px 18px rgba(0,0,0,0.12);
 }
 
@@ -432,12 +430,12 @@ a {
   gap: 18px;
 }
 
-.db-row{
+.db-row {
   display: grid;
-  grid-template-columns: 110px 2fr 1fr 1fr 1.4fr;
-  gap: 16px;
+  grid-template-columns: 120px 2.5fr 1.2fr 1fr 1.5fr;
+  align-items: center;
 
-  padding: 16px 18px;
+  padding: 16px 20px;
   border-radius: 16px;
 
   background: rgba(255,255,255,0.55);
@@ -446,8 +444,6 @@ a {
   font-size: 14px;
   font-weight: 600;
   color: #111;
-
-  transition: transform 0.12s ease, background 0.12s ease;
 }
 
 .db-row:hover{

@@ -1,16 +1,91 @@
-<!-- top nav bar, please insert the following HTML to the top of your <body>-->  
-      <header class="top-nav-bar">
-        <h1 class="default-text nav-left">HawkPortal</h1>
-        <nav class="nav-center" aria-label="Main navigation">
-          <a href="officer_home.html" class="default-text">Home</a>
-          <a href="officer_scheduling.html" class="default-text">Scheduling</a>
-          <a href="officer_submission.html" class="default-text">Submission</a>
-          <a href="officer_database.html" class="default-text bold-focus" aria-current="page">Database</a>
-        </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspection Database</title>
 
-        <div class="nav-right log-out-button">
-          <button type="button" class="button-shape-1" aria-label="Log out">
-            <span class="text-logout">Log out</span>
-          </button>
+  <link href="../styles/officer.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-home">
+  <div>
+    <header class="top-nav-bar">
+      <h1 class="default-text nav-left">HawkPortal</h1>
+
+      <nav class="nav-center">
+        <a href="officer_home.html" class="default-text">Home</a>
+        <a href="officer_scheduling.html" class="default-text">Scheduling</a>
+        <a href="officer_submission.html" class="default-text">Submission</a>
+        <a href="officer_database.html" class="default-text bold-focus">Database</a>
+      </nav>
+
+      <div class="nav-right log-out-button">
+        <button class="button-shape-1">
+          <span class="text-logout">Log out</span>
+        </button>
+      </div>
+    </header>
+
+    <h1 id="section-title" class="h1-home">Inspection Database</h1>
+
+    <div class="db-bg">
+      <div class="db-head">
+        <div class="db-cols">
+          <span>Inspection ID</span>
+          <span>Hawker Centre Name</span>
+          <span>Stall ID</span>
+          <span>Overall Score</span>
+          <span>Date of Inspection (DD/MM/YY)</span>
         </div>
-      </header>
+
+        <button class="db-filter-btn">⏷</button>
+      </div>
+
+      <div class="db-list">
+        <div class="db-row">
+          <span>93</span>
+          <span>Tekka Centre</span>
+          <span>Stall 017</span>
+          <span>95</span>
+          <span>26/06/2026</span>
+        </div>
+
+        <div class="db-row">
+          <span>90</span>
+          <span>Berseh Food Centre</span>
+          <span>Stall 067</span>
+          <span>90</span>
+          <span>22/05/2026</span>
+        </div>
+
+        <div class="db-row">
+          <span>57</span>
+          <span>Tekka Centre</span>
+          <span>Stall 017</span>
+          <span>57</span>
+          <span>17/04/2026</span>
+        </div>
+
+        <div class="db-row">
+          <span>63</span>
+          <span>Newton Food Centre</span>
+          <span>Stall 001</span>
+          <span>63</span>
+          <span>16/04/2026</span>
+        </div>
+
+        <div class="db-row">
+          <span>93</span>
+          <span>Pandi Ayya Tiffin Centre</span>
+          <span>Stall 041</span>
+          <span>93</span>
+          <span>15/04/2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
