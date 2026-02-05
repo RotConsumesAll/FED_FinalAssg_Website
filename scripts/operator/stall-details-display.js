@@ -41,14 +41,14 @@ async function renderStallTopInfo(stallId) {
 }
 
 // STOPPED HERE 1
-async function renderStallTopInfo(e, centreId) {
+async function handleStallSelect(e, centreId) {
   const li = e.currentTarget;
   const stallId = li.getAttribute("data-stallid");
 
   const centre = await database.getHawkerCentreByCentreId(centreId);
 
   updateSidebarButton(centreId, centre.hcName);
-  await renderStallInfo(stallId);
+  await renderStallTopInfo(stallId);
 
   const allListitems = document.querySelector("ul.sidebar__menu").children;
 
