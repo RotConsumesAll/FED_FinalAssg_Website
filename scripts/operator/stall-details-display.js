@@ -40,7 +40,6 @@ async function renderStallTopInfo(stallId) {
   // image["src"] = "";
 }
 
-// STOPPED HERE 1
 async function handleStallSelect(e, centreId) {
   const li = e.currentTarget;
   const stallId = li.getAttribute("data-stallid");

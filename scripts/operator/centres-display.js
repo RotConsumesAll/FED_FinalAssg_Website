@@ -15,7 +15,6 @@ function createStallCard(stall, ownerName, grade) {
   let h2 = document.createElement("h2");
   h2.textContent = stall.stallName;
 
-  // TODO query owner name from DB
   let owner = document.createElement("p");
   owner.classList.add("stall-card__name-and-owner__name");
   owner.textContent = ownerName;
@@ -47,7 +46,7 @@ function createStallCard(stall, ownerName, grade) {
   return article;
 }
 
-// ✅
+
 export async function renderSidebar(uid) {
   const hawkerCentres = await database.getManagedCentresByOperatorUID(uid);
   const centresMenu = document.querySelector("ul.sidebar__menu");
@@ -59,13 +58,11 @@ export async function renderSidebar(uid) {
   }
 }
 
-// ✅
 function updateSidebarButton(centreName) {
   const centreSpan = document.getElementById("sidebar__button__centre");
   centreSpan.textContent = centreName;
 }
 
-// ✅
 async function renderCentreInfo(centreId) {
   const hawkerCentre = await database.getHawkerCentreByCentreId(centreId);
 
@@ -83,14 +80,13 @@ export async function assignCentreSelectHandlers() {
   }
 }
 
-// LOOKING AT HERE NOW
 async function handleCentreSelect(e) {
   const li = e.currentTarget;
   const centreId = li.getAttribute("data-centreid");
   const centreName = li.textContent;
 
-  updateSidebarButton(centreName); // ✅
-  await renderCentreInfo(centreId); // ✅
+  updateSidebarButton(centreName);
+  await renderCentreInfo(centreId);
 
   const allListitems = document.querySelector("ul.sidebar__menu").children;
 
@@ -159,4 +155,14 @@ async function renderStalls(centreId) {
 
   document.getElementById("centre-info__stall-quantity").textContent =
     stallCount;
+}
+
+export function activateEventForSelectedCentreItem(centreId) {
+  const listItems = document.querySelector("ul.sidebar__menu").children;
+  for (const item of listItems) {
+    const listItemCentreId = item.getAttribute("data-centreid");
+    if (listItemCentreId === centreId) {
+      item.click();
+    }
+  }
 }
