@@ -94,6 +94,10 @@ form.addEventListener("submit", (e) => {
   const comment = document.getElementById("comment").value;
   const stallName = document.getElementById("EnterFoodStall").value;
 
+  if (!stallName) return alert("Please select a stall.");
+  if (!rating) return alert("Please rate your experience.");
+  if (!comment) return alert("Please write a comment.");
+
   const feedbackRef = ref(db, "feedbacks");
 
   push(feedbackRef, {
@@ -106,6 +110,8 @@ form.addEventListener("submit", (e) => {
     .then(() => {
       alert("Feedback submitted!");
       form.reset();
+      currentRating = 0;
+      fillStars(currentRating);
     })
     .catch((error) => {
       console.error(error);

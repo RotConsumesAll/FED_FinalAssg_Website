@@ -172,6 +172,7 @@ a{
   height: auto;
   padding: 14px 30px;
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .frame-5{
