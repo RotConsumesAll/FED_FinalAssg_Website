@@ -249,7 +249,7 @@ a{
 }
 
 .text-logout {
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Inter", Helvetica;
@@ -262,7 +262,7 @@ a{
   white-space: nowrap;
 }
 
-.button-shape-1{
+.button-shape-1 {
   display: flex;
   align-items: center;
   justify-content: center;
