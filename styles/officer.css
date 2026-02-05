@@ -5,59 +5,106 @@ body, html {
   font-family: "Inter", Helvetica, sans-serif;
 }
 
+@keyframes pageFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 .bg-home {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(88,182,220,0.8)), 
-  url('../assets/Images/OfficerImages/Home/tekka-market.jpg');
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(88,182,220,0.8)),
+    url('../assets/Images/OfficerImages/Home/tekka-market.jpg');
+
   height: 90%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+
+  /* page transition */
+  opacity: 0;
+  animation: pageFadeIn 0.5s ease forwards;
 }
+
 
 .h1-home {
   color: white;
   text-align: center;
   padding:40px;
 }
+#section-title {
+  padding-bottom: 0;
+}
+
+#section-detail {
+  padding-top: 0;
+}
 
 .text-blue{
   color: #58B6DC;
 }
-/* Make the tile a positioning container */
-#home1, #home2, #home3 {
-  position: relative;
-  overflow: hidden;      /* keeps the bg layer inside rounded corners */
-  border-radius: 12px;
-}
 
-/* Put the BACKGROUND IMAGE on a pseudo-element and only fade that */
-#home1::before, #home2::before, #home3::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+#home-scheduling, #home-submission, #home-database, #sch-schedule, #sch-pending, #sch-locate {
+  border-radius: 12px;
+  overflow: hidden;
+
   background-size: cover;
   background-position: center;
-  opacity: 0.6;          /* <-- ONLY the image becomes transparent */
-  z-index: 0;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
 }
 
-/* Assign the images to the pseudo-elements */
-#home1::before { background-image: url('../assets/Images/OfficerImages/Home/leslie-2.jpg'); }
-#home2::before { background-image: url('../assets/Images/OfficerImages/Home/nea-hawker-centre.avif'); }
-#home3::before { background-image: url('../assets/Images/OfficerImages/Home/7bb0cec5cd2664d9a3582d6b6f621388.webp'); }
-
-/* Keep all text/content above the image */
-#home1 > *, #home2 > *, #home3 > * {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  opacity: 1;
+#home-scheduling {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('../assets/Images/OfficerImages/Home/leslie-2.jpg');
 }
-.buttons {
+
+#home-submission {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('../assets/Images/OfficerImages/Home/nea-hawker-centre.avif');
+}
+
+#home-database {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('../assets/Images/OfficerImages/Home/7bb0cec5cd2664d9a3582d6b6f621388.webp');
+}
+
+#sch-schedule {
+    background-image:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('../assets/Images/OfficerImages/Scheduling/clock.png');
+}
+
+#sch-pending {
+    background-image:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('../assets/Images/OfficerImages/Scheduling/pending.png');
+}
+
+#sch-locate {
+    background-image:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('../assets/Images/OfficerImages/Scheduling/locate.png');
+}
+
+
+
+.home-buttons, .sch-buttons {
   display: flex;
   text-align: center;
   flex-direction: row;
   justify-content: center;
+}
+.sch-buttons {
+  padding-top:40px;
 }
 
 .button {
@@ -84,7 +131,8 @@ body, html {
 .back-button {
   background-image: url('../assets/Images/OfficerImages/General/arrow-left.svg');
   background-size:contain;
-  width: 50px;
+  background-repeat: no-repeat;
+  width: 200px;
   height: 50px;
 
   background-color: white;
@@ -99,16 +147,21 @@ body, html {
   justify-content: center;
   text-align: center;
  
+  
   margin-left:80px;
   margin-top: 80px;
-  padding-left: 100px;
+  padding-left: 20px;
+  
+  font-size: 25px;
 
   border-radius: 12px;
   cursor: pointer;
 }
-#h1-scheduling {
+
+/* #h1-scheduling {
   padding-top: 0px;
-}
+} */
+
 a{
   color:white;
   text-decoration: none;
