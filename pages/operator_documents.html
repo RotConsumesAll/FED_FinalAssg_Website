@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/operator.css">
+
+    <!-- https://cdnjs.com/libraries/normalize CSS RESET normalize.css -->
+    <!-- I chose to use this because it helps to normalise styles for many html elements. -->
+    <!-- See https://nicolasgallagher.com/about-normalize-css/ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Documents</title>
+</head>
+
+<body>
+    <header class="top-nav-bar">
+        <h1 class="default-text nav-left">HawkPortal</h1>
+        <nav class="nav-center" aria-label="Main navigation">
+            <a href="./operator_dashboard.html" class="default-text">Dashboard</a>
+            <a href="./operator_centres.html" class="default-text">Centres</a>
+            <a href="./operator_documents.html" class="default-text bold-focus" aria-current="page">Documents</a>
+            <a href="./operator_settings.html" class="default-text">Settings</a>
+        </nav>
+
+        <div class="nav-right log-out-button">
+            <button type="button" class="button-shape-1" aria-label="Log out">
+                <span class="text-logout">Log out</span>
+            </button>
+        </div>
+    </header>
+    <main class="main--documents-page">
+        <div class="select-container">
+            <div class="select">
+                <button class="select__button">
+                    <span class="select__button__selected-value">Open this select menu</span>
+                    <span class="select__arrow"></span>
+                </button>
+                <ul class="select__dropdown hidden">
+                    <li>Rental Agreements</li>
+                    <li>Inspection Records</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="filter-row">
+            <button class="filter-row__filter-button">
+                <img src="../assets/icons/filter.svg" alt="Filter icon" height="16" width="16">
+            </button>
+            <button class="filter-row__item">
+                <span><span class="filter-row__item__filter-value">Halal</span></span>
+                <img src="../assets/icons/x.svg" alt="Filter icon" height="16" width="16">
+            </button>
+
+            <button class="filter-row__item">
+                <span>Owner <span class="filter-row__item__filter-value">Ms lee</span></span>
+                <img src="../assets/icons/x.svg" alt="Filter icon" height="16" width="16">
+            </button>
+            <button class="filter-row__item">
+                <span>Hygiene Grade <span class="filter-row__item__filter-value">A</span></span>
+                <img src="../assets/icons/x.svg" alt="Filter icon" height="16" width="16">
+            </button>
+            <button class="filter-row__item">
+                <span>Name contains <span class="filter-row__item__filter-value">Mei</span></span>
+                <img src="../assets/icons/x.svg" alt="Filter icon" height="16" width="16">
+            </button>
+
+        </div>
+
+
+        <div class="record-container">
+            <article class="record-container__record">
+                <h2>My Hainanese Chicken Rice</h2>
+                <p class="record-container__record__minor-info record-container__record__minor-info--centre">Maxwell
+                    Food Centre</p>
+                <div class="record-container__record__grade-score">
+                    <p class="record-container__record__grade-score__grade">Grade: <span
+                            class="record-container__record__grade-score__grade semi-bold">A</span></p>
+                    <p>Avg: <span class="semi-bold">92</span></p>
+                </div>
+                <div class="record-container__record__score-list" style="flex: 1 1 auto;">
+                    <div style="display: flex;">
+                        <p
+                            class="record-container__record__score-list__score record-container__record__score-list__score__type">
+                            Hygiene:</p>
+                        <p class="record-container__record__score-list__score semi-bold">92</p>
+                    </div>
+                    <div style="display: flex;">
+                        <p
+                            class="record-container__record__score-list__score record-container__record__score-list__score__type">
+                            Cleanliness:</p>
+                        <p class="record-container__record__score-list__score semi-bold">92</p>
+                    </div>
+                    <div style="display: flex;">
+                        <p
+                            class="record-container__record__score-list__score record-container__record__score-list__score__type">
+                            Housekeeping:</p>
+                        <p class="record-container__record__score-list__score semi-bold">92</p>
+                    </div>
+                </div>
+                <p>Inspected on: 12 Jan 2026</p>
+                <p class="record-container__record__minor-info">Officer: Lim Wei Ming</p>
+            </article>
+
+            <article class="record-container__record">
+                <h2>With <span class="semi-bold">Mr Johnosn</span></h2>
+                <p class="record-container__record__minor-info record-container__record__minor-info--centre">Maxwell
+                    Food Centre #01-02</p>
+                <p><span class="semi-bold">$1002</span> monthly rent</p>
+                <p><span class="semi-bold">12 Jan 2025</span> to <span class="semi-bold">12 Jan 2026</span></p>
+                <p class="record-container__record__validity record-container__record__validity--expired">Expired
+                </p>
+            </article>
+
+            <article class="record-container__record">
+                <h2>With <span class="semi-bold">Mr Johnosn</span></h2>
+                <p class="record-container__record__minor-info record-container__record__minor-info--centre">Maxwell
+                    Food Centre #01-02</p>
+                <p><span class="semi-bold">$1002</span> monthly rent</p>
+                <p><span class="semi-bold">12 Jan 2025</span> to <span class="semi-bold">12 Jan 2026</span></p>
+                <p class="record-container__record__validity record-container__record__validity--valid">Valid</p>
+            </article>
+        </div>
+
+
+
+    </main>
+    <script src="../scripts/main.js"></script>
+</body>
+
+</html>

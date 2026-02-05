@@ -172,6 +172,7 @@ a{
   height: auto;
   padding: 14px 30px;
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .frame-5{
@@ -194,6 +195,37 @@ a{
   padding: 20px 30px;
   box-sizing: border-box;
   align-items: center;
+}
+
+.frame-7{
+  display: flex;
+  gap: 15px;
+  height: auto;
+  width: auto;
+  padding: 2px;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.edit-photo-button{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #666;
+  border-radius: 50%;
+  border: none;
+}
+
+.frame-7 a{
+  text-decoration: underline;
+}
+
+.edit-button{
+  font-family: 'Inter', Helvetica, sans-serif;
+  font-size: 15px;
+  margin: 0px;
+  width: auto;
 }
 
 .stall-owner .frame section{
@@ -237,7 +269,7 @@ a{
   font-family: 'Inter', Helvetica, sans-serif;
   font-size: 16px;
   font-weight: normal;
-  margin: 50;
+  margin: 15px 5px 15px 0px;
 }
 
 .stall-owner .rectangle-3 {
@@ -503,6 +535,7 @@ a{
   font-size: 23px;
   font-weight: 500;
   margin: 0px;
+  width: auto;
 }
 
 .rectangle-5 .img-vector{
@@ -513,6 +546,13 @@ a{
   height: 69px;
   aspect-ratio: 1;
   color: #666;
+}
+
+.rectangle-7 .img-vector{
+  position: relative;
+  aspect-ratio: 1;
+  color: #666;
+  margin: 50px 0px 80px 0px;
 }
 
 .rectangle-6{
