@@ -1,4 +1,4 @@
-import * as database from "../database/operator-database.js";
+import * as database from "../database/meaningful-helpers.js";
 import { redirectToStallDetailPage } from "./centres-routing-to-stall-detail.js";
 
 function createMenuItem(centreId, centreName) {

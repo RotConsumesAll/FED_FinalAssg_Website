@@ -1,4 +1,4 @@
-import * as database from "../database/operator-database.js";
+import * as database from "../database/meaningful-helpers.js";
 
 const licenceTable = document.getElementById("licence-table");
 const rentalAgreementCard = document.getElementById("rental-agreement-card");

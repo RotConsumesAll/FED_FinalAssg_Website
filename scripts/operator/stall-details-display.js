@@ -1,4 +1,4 @@
-import * as database from "../database/operator-database.js";
+import * as database from "../database/meaningful-helpers.js";
 import { renderLicences, renderRentalAgreement } from "./stall-detail-statistics.js";
 
 function createMenuItem(stallId, stallName) {
