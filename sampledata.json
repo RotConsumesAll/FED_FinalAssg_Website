@@ -5,21 +5,14 @@
       "custNric": "S1234567A",
       "custName": "Alice Tan",
       "custContactNo": "98765432",
-      "custEmail": "alice@example.com",
-      "likes": {
-        "stall_01_item_01": true,
-        "stall_05_item_01": true
-      }
+      "custEmail": "alice@example.com"
     },
     "CUST_002": {
       "role": "customer",
       "custNric": "S2345678B",
       "custName": "Bob Lim",
       "custContactNo": "81234567",
-      "custEmail": "bob@example.com",
-      "likes": {
-        "stall_02_item_02": true
-      }
+      "custEmail": "bob@example.com"
     },
     "CUST_003": {
       "role": "customer",
