@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/operator.css">
 
@@ -17,18 +19,20 @@
 </head>
 
 <body>
-    <header class="header">
-        <span class="header__brand"><b>HawkPortal</b></span>
-        <nav>
-            <ul class="header__navmenu">
-                <li class="header__navmenu__item"><a href="./operator_dashboard.html">Dashboard</a></li>
-                <li class="header__navmenu__item header__navmenu__item--selected"><a
-                        href="./operator_centres.html">Centres</a></li>
-                <li class="header__navmenu__item"><a href="./operator_documents.html">Documents</a></li>
-                <li class="header__navmenu__item"><a href="./operator_settings.html">Settings</a></li>
-            </ul>
+    <header class="top-nav-bar">
+        <h1 class="default-text nav-left">HawkPortal</h1>
+        <nav class="nav-center" aria-label="Main navigation">
+            <a href="./operator_dashboard.html" class="default-text">Dashboard</a>
+            <a href="./operator_centres.html" class="default-text bold-focus" aria-current="page">Centres</a>
+            <a href="./operator_documents.html" class="default-text">Documents</a>
+            <a href="./operator_settings.html" class="default-text">Settings</a>
         </nav>
-        <button class="header__button">Log out</button>
+
+        <div class="nav-right log-out-button">
+            <button type="button" class="button-shape-1" aria-label="Log out">
+                <span class="text-logout">Log out</span>
+            </button>
+        </div>
     </header>
     <main>
 
@@ -40,14 +44,15 @@
                     <li class="sidebar__menu__item"><a href="#">Woodleigh Village Hawker Centre</a></li>
                     <li class="sidebar__menu__item"><a href="#">Bukit Batok West Hawker Centre</a></li>
                 </ul>
-                <button class="sidebar__button">Go to Ci Yuan Hawker Centre</button>
+                <button class="sidebar__button" id="sidebar__button">Go to <span id="sidebar__button__centre">Ci Yuan
+                        Hawker Centre</span></button>
             </aside>
             <div class="flex-container flex-container--column flex-container--justify-content-default">
                 <article class="centre-info">
                     <div
                         class="flex-container flex-container--column flex-container--flex-1-1-auto flex-container--gap-0">
-                        <h2>Ci Yuan Hawker Centre</h2>
-                        <p>51, Hougang Ave 9, S(538776)</p>
+                        <h2 id="centre-info__name">Ci Yuan Hawker Centre</h2>
+                        <p id="centre-info__address">51, Hougang Ave 9, S(538776)</p>
                         <p><span id="centre-info__stall-quantity">31</span> stalls</p>
                         <button class="centre-info__schedule-button">Schedule closure</button>
                     </div>
@@ -61,51 +66,13 @@
                 </form>
 
                 <div class="filter-row">
-                    <button class="filter-row__filter-button">
-                        <!-- https://icons.getbootstrap.com/icons/filter/ -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-filter" viewBox="0 0 16 16">
-                            <path
-                                d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
-                        </svg>
+                    <button class="filter-row__filter-button" type="button" data-bs-toggle="modal"
+                        data-bs-target="#filterModal">
+                        <img src="../assets/icons/filter.svg" alt="Filter icon" height="16" width="16">
                     </button>
-                    <button class="filter-row__item">
-                        <span><span class="filter-row__item__filter-value">Halal</span></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="filter-row__item__close"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                        </svg>
-                    </button>
-
-                    <button class="filter-row__item">
-                        <span>Owner <span class="filter-row__item__filter-value">Ms lee</span></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="filter-row__item__close"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                        </svg>
-                    </button>
-                    <button class="filter-row__item">
-                        <span>Hygiene Grade <span class="filter-row__item__filter-value">A</span></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="filter-row__item__close"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                        </svg>
-                    </button>
-                    <button class="filter-row__item">
-                        <span>Name contains <span class="filter-row__item__filter-value">Mei</span></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="filter-row__item__close"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                        </svg>
-                    </button>
-
                 </div>
 
-                <div class="flex-container">
+                <div class="flex-container" id="stall-container">
                     <article class="stall-card">
                         <div class="stall-card__name-and-owner">
                             <h2>Mei Shi Quan</h2>
@@ -118,8 +85,7 @@
                                 C
                             </p>
                             <img class="stall-card__extra-info__element stall-card__extra-info__element__faded"
-                                src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Halal_logo.svg"
-                                alt="Halal logo" height="50" width="50">
+                                src="../assets//icons/halal_logo.svg" alt="Halal logo" height="50" width="50">
                         </div>
                     </article>
 
@@ -135,8 +101,7 @@
                                 C
                             </p>
                             <img class="stall-card__extra-info__element stall-card__extra-info__element__faded"
-                                src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Halal_logo.svg"
-                                alt="Halal logo" height="50" width="50">
+                                src="../assets//icons/halal_logo.svg" alt="Halal logo" height="50" width="50">
                         </div>
                     </article>
 
@@ -152,8 +117,7 @@
                                 C
                             </p>
                             <img class="stall-card__extra-info__element stall-card__extra-info__element__faded"
-                                src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Halal_logo.svg"
-                                alt="Halal logo" height="50" width="50">
+                                src="../assets//icons/halal_logo.svg" alt="Halal logo" height="50" width="50">
                         </div>
                     </article>
 
@@ -169,8 +133,7 @@
                                 C
                             </p>
                             <img class="stall-card__extra-info__element stall-card__extra-info__element__faded"
-                                src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Halal_logo.svg"
-                                alt="Halal logo" height="50" width="50">
+                                src="../assets//icons/halal_logo.svg" alt="Halal logo" height="50" width="50">
                         </div>
                     </article>
 
@@ -178,7 +141,80 @@
             </div>
         </div>
 
+        <!-- Modal from Bootstrap -->
+        <div class="modal fade" id="filterModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="filterModalLabel">Filter by</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="inputStallName" class="form-label">Stall name</label>
+                                <input type="text" class="form-control" id="inputStallName"
+                                    aria-describedby="inputStallName">
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputOwnerName" class="form-label">Owner name</label>
+                                <input type="text" class="form-control" id="inputOwnerName">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Hygiene Grade</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inputHygieneGradeA" value="A">
+                                    <label class="form-check-label" for="inputHygieneGradeA">A</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inputHygieneGradeB" value="B">
+                                    <label class="form-check-label" for="inputHygieneGradeB">B</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inputHygieneGradeC" value="C">
+                                    <label class="form-check-label" for="inputHygieneGradeC">C</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inputHygieneGradeD" value="D">
+                                    <label class="form-check-label" for="inputHygieneGradeD">D</label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Stall number</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">#</span>
+                                    <input type="text" class="form-control" id="stallNumberPrefix">
+                                    <span class="input-group-text">-</span>
+                                    <input type="text" class="form-control" id="stallNumberSuffix">
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please input a valid stall number.
+                                </div>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="checkHalal">
+                                <label class="form-check-label" for="checkHalal">Halal</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                            id="apply-button">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="../scripts/operator/centres.js" type="module"></script>
 
 </body>
 

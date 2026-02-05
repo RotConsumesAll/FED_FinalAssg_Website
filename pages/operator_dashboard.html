@@ -17,18 +17,20 @@
 </head>
 
 <body>
-    <header class="header">
-        <span class="header__brand"><b>HawkPortal</b></span>
-        <nav>
-            <ul class="header__navmenu">
-                <li class="header__navmenu__item header__navmenu__item--selected"><a
-                        href="./operator_dashboard.html">Dashboard</a></li>
-                <li class="header__navmenu__item"><a href="./operator_centres.html">Centres</a></li>
-                <li class="header__navmenu__item"><a href="./operator_documents.html">Documents</a></li>
-                <li class="header__navmenu__item"><a href="./operator_settings.html">Settings</a></li>
-            </ul>
+    <header class="top-nav-bar">
+        <h1 class="default-text nav-left">HawkPortal</h1>
+        <nav class="nav-center" aria-label="Main navigation">
+            <a href="./operator_dashboard.html" class="default-text bold-focus" aria-current="page">Dashboard</a>
+            <a href="./operator_centres.html" class="default-text">Centres</a>
+            <a href="./operator_documents.html" class="default-text">Documents</a>
+            <a href="./operator_settings.html" class="default-text">Settings</a>
         </nav>
-        <button class="header__button">Log out</button>
+
+        <div class="nav-right log-out-button">
+            <button type="button" class="button-shape-1" aria-label="Log out">
+                <span class="text-logout">Log out</span>
+            </button>
+        </div>
     </header>
     <main>
         <!-- Overall centre statistics -->
@@ -111,24 +113,15 @@
                     <article class="figure-card">
                         <h2>Latest complaints received</h2>
                         <ul class="figure-card__list">
-                            <!-- Source of arrow svg: https://icons.getbootstrap.com/icons/arrow-right/ -->
                             <li class="figure-card__list__item">
                                 <p>The uncle at this store was rude to me when I asked
                                     for more rice!</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
-                                </svg>
+                                <img src="../assets/icons/arrow-right.svg" alt="Filter icon" height="16" width="16">
                             </li>
                             <li class="figure-card__list__item">
                                 <p>the auntie wasn’t wearing a mask while cooking! so
                                     unhygienic!</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
-                                </svg>
+                                <img src="../assets/icons/arrow-right.svg" alt="Filter icon" height="16" width="16">
                             </li>
                         </ul>
                     </article>

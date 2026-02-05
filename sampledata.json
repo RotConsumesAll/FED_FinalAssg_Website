@@ -1,127 +1,405 @@
 {
   "users": {
-    "AUTH_UID_CUST_1": {
+    "CUST_001": {
       "role": "customer",
-      "CustNRIC": "S1234567A",
-      "CustName": "Alice Tan",
-      "CustContactNo": "98765432",
-      "CustEmail": "alice@example.com",
+      "custNric": "S1234567A",
+      "custName": "Alice Tan",
+      "custContactNo": "98765432",
+      "custEmail": "alice@example.com",
       "likes": {
-        "stall_01_item_01": true
+        "stall_01_item_01": true,
+        "stall_05_item_01": true
       }
     },
-    "AUTH_UID_OWNER_1": {
-      "role": "stall_owner",
-      "OwnerName": "John Doe",
-      "OwnerNRIC": "S7654321B",
-      "OwnerContactNo": "91234567"
+    "CUST_002": {
+      "role": "customer",
+      "custNric": "S2345678B",
+      "custName": "Bob Lim",
+      "custContactNo": "81234567",
+      "custEmail": "bob@example.com",
+      "likes": {
+        "stall_02_item_02": true
+      }
     },
-    "AUTH_UID_OFFICER_1": {
-      "role": "nea_officer",
-      "OfficerName": "Officer Lim",
-      "OfficerContactNo": "65432100"
+    "CUST_003": {
+      "role": "customer",
+      "custNric": "S3456789C",
+      "custName": "Charlie Ang",
+      "custContactNo": "92345678",
+      "custEmail": "charlie@example.com"
     },
-    "AUTH_UID_OPERATOR_1": {
+    "OWNER_001": {
+      "role": "stallOwner",
+      "ownerName": "John Doe",
+      "ownerNric": "S7654321B",
+      "ownerContactNo": "91234567"
+    },
+    "OWNER_002": {
+      "role": "stallOwner",
+      "ownerName": "Siti Aminah",
+      "ownerNric": "S8765432C",
+      "ownerContactNo": "98887777"
+    },
+    "OWNER_003": {
+      "role": "stallOwner",
+      "ownerName": "Raj Kumar",
+      "ownerNric": "S9876543D",
+      "ownerContactNo": "87776666"
+    },
+    "OWNER_004": {
+      "role": "stallOwner",
+      "ownerName": "Tan Wei",
+      "ownerNric": "S1122334E",
+      "ownerContactNo": "96665555"
+    },
+    "OFFICER_001": {
+      "role": "neaOfficer",
+      "officerName": "Officer Lim",
+      "officerContactNo": "65432100"
+    },
+    "OFFICER_002": {
+      "role": "neaOfficer",
+      "officerName": "Officer Wong",
+      "officerContactNo": "64443333"
+    },
+    "OPERATOR_001": {
       "role": "operator",
-      "OperatorName": "HC Management",
-      "ContactPerson": "Mr. Lee"
+      "operatorName": "HC Management Pte Ltd",
+      "contactPerson": "Mr. Lee"
+    },
+    "OPERATOR_002": {
+      "role": "operator",
+      "operatorName": "Prime Hawker Management",
+      "contactPerson": "Ms. Tan"
     }
   },
-
-  "hawker_centres": {
+  "hawkerCentres": {
     "hc_01": {
-      "HCName": "Maxwell Food Centre",
-      "HCAddress": "1 Kadayanallur St",
-      "OperatorID": "AUTH_UID_OPERATOR_1"
+      "hcName": "Maxwell Food Centre",
+      "hcAddress": "1 Kadayanallur St, Singapore 069184",
+      "operatorId": "OPERATOR_001",
+      "image": "https://placeholder.com/maxwell.jpg"
+    },
+    "hc_02": {
+      "hcName": "Newton Food Centre",
+      "hcAddress": "500 Clemenceau Ave N, Singapore 229495",
+      "operatorId": "OPERATOR_001",
+      "image": "https://placeholder.com/newton.jpg"
+    },
+    "hc_03": {
+      "hcName": "Old Airport Road Food Centre",
+      "hcAddress": "51 Old Airport Rd, Singapore 390051",
+      "operatorId": "OPERATOR_002",
+      "image": "https://placeholder.com/oldairport.jpg"
     }
   },
-
   "stalls": {
     "stall_01": {
-      "StallUnitNo": "01-10",
-      "StallName": "Tian Tian Chicken Rice",
-      "StallDesc": "Famous chicken rice",
-      "HawkerCentreID": "hc_01",
-      "ownerUid": "AUTH_UID_OWNER_1",
-      "cuisines": { "cuisine_01": true }
+      "stallUnitNo": "01-10",
+      "stallName": "Tian Tian Chicken Rice",
+      "stallDesc": "World famous Hainanese chicken rice.",
+      "hawkerCentreId": "hc_01",
+      "ownerUid": "OWNER_001",
+      "image": "https://placeholder.com/tiantian.jpg"
+    },
+    "stall_02": {
+      "stallUnitNo": "01-05",
+      "stallName": "Zhen Zhen Porridge",
+      "stallDesc": "Traditional Cantonese porridge.",
+      "hawkerCentreId": "hc_01",
+      "ownerUid": "OWNER_002",
+      "image": "https://placeholder.com/zhenzhen.jpg"
+    },
+    "stall_03": {
+      "stallUnitNo": "01-15",
+      "stallName": "Maxwell Fuzhou Oyster Cake",
+      "stallDesc": "Crispy oyster cakes with peanuts.",
+      "hawkerCentreId": "hc_01",
+      "ownerUid": "OWNER_003",
+      "image": "https://placeholder.com/oystercake.jpg"
+    },
+    "stall_04": {
+      "stallUnitNo": "01-01",
+      "stallName": "Newton BBQ Seafood",
+      "stallDesc": "Famous sambal stingray and prawns.",
+      "hawkerCentreId": "hc_02",
+      "ownerUid": "OWNER_004",
+      "image": "https://placeholder.com/newtonbbq.jpg"
+    },
+    "stall_05": {
+      "stallUnitNo": "01-20",
+      "stallName": "Heng Carrot Cake",
+      "stallDesc": "Michelin Bib Gourmand carrot cake.",
+      "hawkerCentreId": "hc_02",
+      "ownerUid": "OWNER_001",
+      "image": "https://placeholder.com/hengcarrot.jpg"
+    },
+    "stall_06": {
+      "stallUnitNo": "01-30",
+      "stallName": "Alliance Seafood",
+      "stallDesc": "Chilli crab and seafood delights.",
+      "hawkerCentreId": "hc_02",
+      "ownerUid": "OWNER_002",
+      "image": "https://placeholder.com/alliance.jpg"
+    },
+    "stall_07": {
+      "stallUnitNo": "01-40",
+      "stallName": "Lao Fu Zi Fried Kway Teow",
+      "stallDesc": "Old school fried kway teow.",
+      "hawkerCentreId": "hc_03",
+      "ownerUid": "OWNER_003",
+      "image": "https://placeholder.com/laofuzi.jpg"
+    },
+    "stall_08": {
+      "stallUnitNo": "01-50",
+      "stallName": "Roast Paradise",
+      "stallDesc": "Premium char siew and roast pork.",
+      "hawkerCentreId": "hc_03",
+      "ownerUid": "OWNER_004",
+      "image": "https://placeholder.com/roastparadise.jpg"
+    },
+    "stall_09": {
+      "stallUnitNo": "01-60",
+      "stallName": "Blanco Court Prawn Mee",
+      "stallDesc": "Rich and savory prawn noodle soup.",
+      "hawkerCentreId": "hc_03",
+      "ownerUid": "OWNER_001",
+      "image": "https://placeholder.com/blanco.jpg"
+    },
+    "stall_10": {
+      "stallUnitNo": "01-70",
+      "stallName": "Nam Sing Hokkien Mee",
+      "stallDesc": "Traditional dry-style Hokkien Mee.",
+      "hawkerCentreId": "hc_03",
+      "ownerUid": "OWNER_002",
+      "image": "https://placeholder.com/namsing.jpg"
     }
   },
-
-  "menu_items": {
+  "menuItems": {
     "stall_01": {
       "item_01": {
-        "ItemDesc": "Chicken Rice",
-        "ItemPrice": 5.00,
-        "ItemCategory": "Mains",
-        "cuisines": { "cuisine_01": "Chinese" }
+        "itemDesc": "Half Chicken",
+        "itemPrice": 15.0,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_02": {
+        "itemDesc": "Chicken Rice (Small)",
+        "itemPrice": 5.0,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
       }
-    }
-  },
-
-  "inspections": {
-    "ins_01": {
-      "StallID": "stall_01",
-      "OfficerID": "AUTH_UID_OFFICER_1",
-      "InspectionDate": "2026-02-01",
-      "HygieneGrade": "A",
-      "GradeExpiry": "2027-02-01",
-      "remarks": {
-        "rem_01": "Excellent hygiene standards maintained."
-      }
-    }
-  },
-
-  "orders": {
-    "order_01": {
-      "OrderDate": "2026-02-01T10:00:00Z",
-      "PmtType": "Credit Card",
-      "CustomerID": "AUTH_UID_CUST_1",
-      "items": {
-        "1": {
-          "StallID": "stall_01",
-          "ItemCode": "item_01",
-          "Quantity": 2,
-          "UnitPrice": 5.00
+    },
+    "stall_04": {
+      "item_01": {
+        "itemDesc": "Sambal Stingray",
+        "itemPrice": 18.0,
+        "itemCategory": "Seafood",
+        "cuisines": {
+          "cui_02": "Malay/Local"
+        }
+      },
+      "item_02": {
+        "itemDesc": "BBQ Tiger Prawns",
+        "itemPrice": 25.0,
+        "itemCategory": "Seafood",
+        "cuisines": {
+          "cui_02": "Malay/Local"
         }
       }
     }
   },
-
-  "promotions": {
-    "promo_01": {
-      "PromoDesc": "CNY Special",
-      "PromoStartDate": "2026-02-01",
-      "PromoEndDate": "2026-02-15",
-      "StallID": "stall_01"
-    }
-  },
-
-  "rental_agreements": {
-    "agr_01": {
-      "AgrStartDate": "2026-01-01",
-      "AgrEndDate": "2027-01-01",
-      "AgrTermCondition": "Standard commercial terms",
-      "RentalPrice": 2500,
-      "OwnerID": "AUTH_UID_OWNER_1",
-      "StallID": "stall_01"
-    }
-  },
-
   "cuisines": {
-    "cuisine_01": { "CuisineDesc": "Chinese" },
-    "cuisine_02": { "CuisineDesc": "Malay" }
+    "cui_01": {
+      "cuisineDesc": "Chinese"
+    },
+    "cui_02": {
+      "cuisineDesc": "Malay"
+    },
+    "cui_03": {
+      "cuisineDesc": "Indian"
+    },
+    "cui_04": {
+      "cuisineDesc": "Western"
+    }
   },
-
+  "licences": {
+    "lic_001": {
+      "licenceNumber": "NEA-FSL-10001",
+      "type": "Food Stall Licence",
+      "licenseeName": "John Doe",
+      "dateOfEffect": "2025-01-01",
+      "dateOfExpiry": "2026-01-01",
+      "licenseeUid": "OWNER_001",
+      "stallId": "stall_01"
+    },
+    "lic_002": {
+      "licenceNumber": "MUIS-HAL-20001",
+      "type": "Halal Certification",
+      "licenseeName": "Siti Aminah",
+      "dateOfEffect": "2025-03-01",
+      "dateOfExpiry": "2026-03-01",
+      "licenseeUid": "OWNER_002",
+      "stallId": "stall_02"
+    },
+    "lic_003": {
+      "licenceNumber": "SPF-LIQ-30001",
+      "type": "Liquor Licence",
+      "licenseeName": "Tan Wei",
+      "dateOfEffect": "2025-06-01",
+      "dateOfExpiry": "2026-06-01",
+      "licenseeUid": "OWNER_004",
+      "stallId": "stall_04"
+    },
+    "lic_004": {
+      "licenceNumber": "HSA-TOB-40001",
+      "type": "Tobacco Retail Licence",
+      "licenseeName": "Raj Kumar",
+      "dateOfEffect": "2025-05-01",
+      "dateOfExpiry": "2026-05-01",
+      "licenseeUid": "OWNER_003",
+      "stallId": "stall_07"
+    }
+  },
+  "inspections": {
+    "ins_01": {
+      "stallId": "stall_01",
+      "officerId": "OFFICER_001",
+      "inspectionDate": "2026-02-01",
+      "hygieneGrade": "A",
+      "gradeExpiry": "2027-02-01",
+      "remarks": {
+        "rem_01": "Premises are extremely clean."
+      }
+    },
+    "ins_02": {
+      "stallId": "stall_04",
+      "officerId": "OFFICER_002",
+      "inspectionDate": "2026-01-15",
+      "hygieneGrade": "B",
+      "gradeExpiry": "2027-01-15",
+      "remarks": {
+        "rem_01": "Needs to improve on pest control measures."
+      }
+    }
+  },
+  "orders": {
+    "ord_001": {
+      "orderDate": "2026-02-01T12:00:00Z",
+      "pmtType": "PayLah",
+      "customerId": "CUST_001",
+      "items": {
+        "1": {
+          "stallId": "stall_01",
+          "itemCode": "item_02",
+          "quantity": 2,
+          "unitPrice": 5.0
+        }
+      }
+    }
+  },
   "feedback": {
     "fbk_01": {
-      "FbkComment": "Very tasty!",
-      "FbkDateTime": "2026-02-01T12:00:00Z",
-      "FbkRating": 5,
-      "CustomerID": "AUTH_UID_CUST_1",
-      "StallID": "stall_01",
-      "complaints": {
-        "comp_01": { "Category": "Cleanliness" }
-      }
+      "fbkComment": "Best chicken rice in town!",
+      "fbkDateTime": "2026-02-01T13:00:00Z",
+      "fbkRating": 5,
+      "customerId": "CUST_001",
+      "stallId": "stall_01",
+      "complaints": {}
+    }
+  },
+  "promotions": {
+    "pro_01": {
+      "promoDesc": "Lunch Special: 10% off",
+      "promoStartDate": "2026-02-01",
+      "promoEndDate": "2026-02-28",
+      "stallId": "stall_01"
+    }
+  },
+  "rentalAgreements": {
+    "agr_01": {
+      "agrStartDate": "2025-01-01",
+      "agrEndDate": "2027-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "rentalPrice": 2600,
+      "ownerUid": "OWNER_001",
+      "stallId": "stall_01"
+    },
+    "agr_02": {
+      "agrStartDate": "2025-01-01",
+      "agrEndDate": "2027-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "rentalPrice": 2700,
+      "ownerUid": "OWNER_002",
+      "stallId": "stall_02"
+    },
+    "agr_03": {
+      "agrStartDate": "2025-01-01",
+      "agrEndDate": "2027-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "rentalPrice": 2800,
+      "ownerUid": "OWNER_003",
+      "stallId": "stall_03"
+    },
+    "agr_04": {
+      "agrStartDate": "2025-01-01",
+      "agrEndDate": "2027-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "rentalPrice": 2900,
+      "ownerUid": "OWNER_004",
+      "stallId": "stall_04"
+    },
+    "agr_05": {
+      "agrStartDate": "2025-01-01",
+      "agrEndDate": "2027-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "rentalPrice": 3000,
+      "ownerUid": "OWNER_001",
+      "stallId": "stall_05"
+    },
+    "agr_06": {
+      "agrStartDate": "2025-01-01",
+      "agrEndDate": "2027-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "rentalPrice": 3100,
+      "ownerUid": "OWNER_002",
+      "stallId": "stall_06"
+    },
+    "agr_07": {
+      "agrStartDate": "2025-01-01",
+      "agrEndDate": "2027-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "rentalPrice": 3200,
+      "ownerUid": "OWNER_003",
+      "stallId": "stall_07"
+    },
+    "agr_08": {
+      "agrStartDate": "2025-01-01",
+      "agrEndDate": "2027-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "rentalPrice": 3300,
+      "ownerUid": "OWNER_004",
+      "stallId": "stall_08"
+    },
+    "agr_09": {
+      "agrStartDate": "2025-01-01",
+      "agrEndDate": "2027-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "rentalPrice": 3400,
+      "ownerUid": "OWNER_001",
+      "stallId": "stall_09"
+    },
+    "agr_10": {
+      "agrStartDate": "2025-01-01",
+      "agrEndDate": "2027-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "rentalPrice": 3500,
+      "ownerUid": "OWNER_002",
+      "stallId": "stall_10"
     }
   }
 }
