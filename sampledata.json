@@ -78,19 +78,19 @@
       "hcName": "Maxwell Food Centre",
       "hcAddress": "1 Kadayanallur St, Singapore 069184",
       "operatorId": "OPERATOR_001",
-      "image": "https://placeholder.com/maxwell.jpg"
+      "image": "https://feastoftravel.com/wp-content/uploads/2022/10/943E9846-53A6-4A3B-92CB-0E8DE039696B-scaled.jpg"
     },
     "hc_02": {
       "hcName": "Newton Food Centre",
       "hcAddress": "500 Clemenceau Ave N, Singapore 229495",
       "operatorId": "OPERATOR_001",
-      "image": "https://placeholder.com/newton.jpg"
+      "image": "https://newtonfoodcentre.com/wp-content/uploads/2024/01/newton-food-centre-photos.jpg"
     },
     "hc_03": {
       "hcName": "Old Airport Road Food Centre",
       "hcAddress": "51 Old Airport Rd, Singapore 390051",
       "operatorId": "OPERATOR_002",
-      "image": "https://placeholder.com/oldairport.jpg"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEoJOvpCI0wLVm3GZnC1xNFpGBzjfhQWxysg&s"
     }
   },
   "stalls": {
