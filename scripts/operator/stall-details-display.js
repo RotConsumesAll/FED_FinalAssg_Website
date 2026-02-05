@@ -1,5 +1,5 @@
 import * as database from "../database/meaningful-helpers.js";
-import { renderLicences, renderRentalAgreement } from "./stall-detail-statistics.js";
+import { renderLicences, renderRentalAgreement, renderInspectionRecordStatistics } from "./stall-detail-statistics.js";
 
 function createMenuItem(stallId, stallName) {
   return `<li class="sidebar__menu__item" data-stallid="${stallId}"><a href="#">${stallName}</a></li>`;
@@ -28,7 +28,6 @@ function updateSidebarButton(centreId, centreName) {
 }
 
 async function renderStallTopInfo(stallId) {
-  // TO GET STALLL INFO
   const stall = await database.getStallByStallId(stallId);
   const owner = await database.getUserDetails(stall.ownerUid);
 
@@ -37,8 +36,8 @@ async function renderStallTopInfo(stallId) {
     owner.ownerName;
   document.getElementById("stall-info__stall-unitNumber").textContent =
     `#${stall.stallUnitNo}`;
-  // const image = document.querySelector("img.stall-image");
-  // image["src"] = stall.image;
+  const image = document.querySelector("img.stall-image");
+  image["src"] = stall.image;
 }
 
 async function handleStallSelect(e, centreId) {
@@ -66,6 +65,7 @@ async function handleStallSelect(e, centreId) {
 async function renderStallStatistics(stallId) {
   await renderLicences(stallId);
   await renderRentalAgreement(stallId);
+  await renderInspectionRecordStatistics(stallId);
 }
 
 export function assignStallSelectHandlers(centreId) {

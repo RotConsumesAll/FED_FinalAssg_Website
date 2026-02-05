@@ -99,18 +99,24 @@
                 </div>
                 <div class="flex-container">
                     <figure class="figure-card figure-card--stand-alone">
-                        <p>A</p>
-                        <p>Hygiene Grade</p>
-                        <p>(as of Feb 2025)</p>
+                        <p id="hygiene-grade">A</p>
+                        <p>Current Hygiene Grade</p>
+                        <p>Expires <span id="grade-expiry">2 Feb 2025</span></p>
                     </figure>
-                    <figure class="figure-card">
-                        <h2>Total Sales over Time</h2>
-                        <div>Insert chart</div>
+                    <figure class="figure-card" id="average-score-chart-chart">
+                        <h2>Average Inspection Scores over Time</h2>
+                        <canvas id="average-score-chart"></canvas>
+                        <div class="btn-group" role="group" aria-label="scoreSelector" id="score-selector">
+                            <button type="button" class="btn btn-primary" id="average-button">Average</button>
+                            <button type="button" class="btn btn-primary" id="hygiene-button">Hygiene</button>
+                            <button type="button" class="btn btn-primary" id="cleanliness-button">Cleanliness</button>
+                            <button type="button" class="btn btn-primary" id="housekeeping-button">Housekeeping</button>
+                        </div>
                     </figure>
                 </div>
                 <div class="flex-container">
-                    <article class="figure-card">
-                        <h2>Average Customer Rating</h2>
+                    <article class="figure-card figure-card--stand-alone">
+                        <h2>Average Customer Rating this week</h2>
                         <div class="figure-card__change--increase-highlight">+6.5%</div>
                         <p class="figure-card__single-statistics">4.5</p>
                     </article>
@@ -150,6 +156,9 @@
 
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"
+        integrity="sha512-Y51n9mtKTVBh3Jbx5pZSJNDDMyY+yGe77DGtBPzRlgsf/YLCh13kSZ3JmfHGzYFCmOndraf0sQgfM654b7dJ3w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>

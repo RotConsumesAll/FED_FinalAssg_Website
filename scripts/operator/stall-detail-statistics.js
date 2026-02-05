@@ -1,38 +1,78 @@
 import * as database from "../database/meaningful-helpers.js";
+import {
+  findValidRecord,
+  isValid,
+  formateDateToLocal,
+  calculateAverage,
+  calcualteDifferenceInMonths,
+} from "./general-helper.js";
 
+// Elemeents
 const licenceTable = document.getElementById("licence-table");
 const rentalAgreementCard = document.getElementById("rental-agreement-card");
 
+// Configurations
 const SGDollar = new Intl.NumberFormat("en-SG", {
   style: "currency",
   currency: "SGD",
 });
 
-const dateFormatOptions = {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+const chartCard = document.getElementById("average-score-chart-chart");
+
+const scoreChartConfig = {
+  type: "line",
+  data: {
+    labels: [],
+    datasets: [
+      {
+        label: "Average",
+        borderColor: "rgb(255, 9, 9)",
+        backgroundColor: "transparent",
+        borderWidth: 2,
+        data: [],
+        hidden: false,
+      },
+      {
+        label: "Hygiene",
+        borderColor: "rgb(255, 0, 242)",
+        backgroundColor: "transparent",
+        borderWidth: 2,
+        data: [],
+        hidden: true,
+      },
+      {
+        label: "Cleanliness",
+        borderColor: "rgb(0, 255, 200)",
+        backgroundColor: "transparent",
+        borderWidth: 2,
+        data: [],
+        hidden: true,
+      },
+      {
+        label: "Housekeeping",
+        borderColor: "rgb(0, 0, 255)",
+        backgroundColor: "transparent",
+        borderWidth: 2,
+        data: [],
+        hidden: true,
+      },
+    ],
+  },
+  options: {
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
 };
 
-// COPY
-function getCurrentDate() {
-  // see https://www.freecodecamp.org/news/javascript-get-current-date-todays-date-in-js/
-  const date = new Date();
-
-  const day = date.getDate();
-  const month = date.getMonth();
-  const year = date.getFullYear();
-
-  return `${year}-${month}-${day}`;
-}
-
 // Licence
-function isValid(expiryDateString) {
-  const expiryDate = Date.parse(expiryDateString);
-  const currentDate = getCurrentDate();
-  return Date.parse(currentDate) <= expiryDate;
-}
-
 function createLicenceTableRow(licenceType, validity) {
   const row = document.createElement("tr");
   const typeData = document.createElement("td");
@@ -74,16 +114,6 @@ function selectLatestAgreement(agreements) {
   return latestAgreement;
 }
 
-function calcualteDifferenceInMonths(startDate, endDate) {
-  let difference = (endDate.getTime() - startDate.getTime()) / 1000;
-  difference /= 60 * 60 * 24 * 7 * 4;
-  return Math.abs(Math.round(difference));
-}
-
-function formateDateToLocal(date) {
-  return date.toLocaleDateString("en-SG", dateFormatOptions);
-}
-
 export async function renderRentalAgreement(stallId) {
   const rentalAgreements = await database.getRentalAgreementsByStallId(stallId);
   rentalAgreementCard.innerHTML = "";
@@ -114,4 +144,110 @@ export async function renderRentalAgreement(stallId) {
     duration,
     status,
   );
+}
+
+// Inspection records
+async function renderHygieneGrade(inspectionRecords) {
+  const record = findValidRecord(inspectionRecords);
+
+  document.getElementById("hygiene-grade").textContent = record.hygieneGrade;
+  const expiryDate = new Date(record.gradeExpiry);
+  document.getElementById("grade-expiry").textContent =
+    formateDateToLocal(expiryDate);
+}
+
+// Score line graphs
+function extractScores(inspectionRecords) {
+  let extractedScoresByDate = {};
+  for (const record of Object.values(inspectionRecords)) {
+    extractedScoresByDate[record.inspectionDate] = record.scores;
+  }
+  return extractedScoresByDate;
+}
+
+function createScoreAxes(scores) {
+  let averageScoreAxis = [];
+  let hygieneScoreAxis = [];
+  let cleanlinessScoreAxis = [];
+  let housekeepingScoreAxis = [];
+
+  for (const score of Object.values(scores)) {
+    const scoreList = [score.hygiene, score.cleanliness, score.housekeeping];
+    averageScoreAxis.push(calculateAverage(scoreList));
+    hygieneScoreAxis.push(score.hygiene);
+    cleanlinessScoreAxis.push(score.cleanliness);
+    housekeepingScoreAxis.push(score.housekeeping);
+  }
+  return {
+    averageScoreAxis,
+    hygieneScoreAxis,
+    cleanlinessScoreAxis,
+    housekeepingScoreAxis,
+  };
+}
+
+function createScoreChartConfig(dateAxis, axesData) {
+  const config = scoreChartConfig;
+  config.data.labels = dateAxis;
+  for (let index = 0; index < config.data.datasets.length; index++) {
+    config.data.datasets[index].data = Object.values(axesData)[index];
+  }
+  return config;
+}
+
+function resetChartCardHTML() {
+  chartCard.innerHTML = `<h2>Average Inspection Scores over Time</h2>
+                        <canvas id="average-score-chart"></canvas>
+                        <div class="btn-group" role="group" aria-label="scoreSelector" id="score-selector">
+                            <button type="button" class="btn btn-primary" id="average-button">Average</button>
+                            <button type="button" class="btn btn-primary" id="hygiene-button">Hygiene</button>
+                            <button type="button" class="btn btn-primary" id="cleanliness-button">Cleanliness</button>
+                            <button type="button" class="btn btn-primary" id="housekeeping-button">Housekeeping</button>
+                        </div>`;
+}
+
+async function renderAverageScoreGraph(inspectionRecords) {
+  const scoresWithDate = extractScores(inspectionRecords);
+
+  const dateAxis = Object.keys(scoresWithDate);
+  const axesData = createScoreAxes(scoresWithDate);
+
+  resetChartCardHTML();
+
+  const canvas = document.getElementById("average-score-chart");
+  const chart = new Chart(canvas, createScoreChartConfig(dateAxis, axesData));
+
+  const buttons = document.getElementById("score-selector").children;
+  for (const button of buttons) {
+    button.addEventListener("click", function (e) {
+      handleScoreSelector(e, chart);
+    });
+  }
+}
+
+function handleScoreSelector(e, chart) {
+  const selectedScore = e.currentTarget.textContent.trim().toLowerCase();
+
+  for (let index = 0; index < chart.data.datasets.length; index++) {
+    const dataset = chart.data.datasets[index];
+    const datasetLabel = dataset.label.toLowerCase();
+    chart.data.datasets[index].hidden = datasetLabel !== selectedScore;
+  }
+
+  chart.update();
+}
+
+export async function renderInspectionRecordStatistics(stallId) {
+  const inspectionRecords = await database.getInspectionByStallId(stallId);
+  await renderHygieneGrade(inspectionRecords);
+  await renderAverageScoreGraph(inspectionRecords);
+}
+
+// -----------------------------------------------------------------------------------
+// Average customer rating (this week) TODO
+
+function findFeedbackForThisWeek(feedbacks) {}
+
+export async function renderAverageCustomerRating(stallId) {
+  const feedbacks = await database.getFeedbackByStallId(stallId);
 }
