@@ -1,11 +1,11 @@
 import * as database from "../database/operator-database.js";
 import { redirectToStallDetailPage } from "./centres-routing-to-stall-detail.js";
 
-function createMenuItem(centreName) {
-  return `<li class="sidebar__menu__item"><a href="#">${centreName}</a></li>`;
+function createMenuItem(centreId, centreName) {
+  return `<li class="sidebar__menu__item" data-centreid="${centreId}"><a href="#">${centreName}</a></li>`;
 }
 
-function createStallCard(name, stall, ownerName, grade) {
+function createStallCard(stall, ownerName, grade) {
   let article = document.createElement("article");
   article.classList.add("stall-card");
 
@@ -13,7 +13,7 @@ function createStallCard(name, stall, ownerName, grade) {
   nameAndOwner.classList.add("stall-card__name-and-owner");
 
   let h2 = document.createElement("h2");
-  h2.textContent = name;
+  h2.textContent = stall.stallName;
 
   // TODO query owner name from DB
   let owner = document.createElement("p");
@@ -27,7 +27,7 @@ function createStallCard(name, stall, ownerName, grade) {
 
   let unitNumber = document.createElement("p");
   unitNumber.classList.add("stall-card__extra-info__element");
-  unitNumber.textContent = stall.unitNumber;
+  unitNumber.textContent = stall.stallUnitNo;
 
   let gradeElement = document.createElement("p");
   gradeElement.classList.add(
@@ -47,29 +47,33 @@ function createStallCard(name, stall, ownerName, grade) {
   return article;
 }
 
+// ✅
 export async function renderSidebar(uid) {
-  const hawkerCentres = await database.getHawkerCentresByUID(uid);
+  const hawkerCentres = await database.getManagedCentresByOperatorUID(uid);
   const centresMenu = document.querySelector("ul.sidebar__menu");
 
   centresMenu.innerHTML = "";
-  for (const name in hawkerCentres) {
-    centresMenu.innerHTML += createMenuItem(name);
+  for (const centreId in hawkerCentres) {
+    const centre = hawkerCentres[centreId];
+    centresMenu.innerHTML += createMenuItem(centreId, centre.hcName);
   }
 }
 
+// ✅
 function updateSidebarButton(centreName) {
   const centreSpan = document.getElementById("sidebar__button__centre");
   centreSpan.textContent = centreName;
 }
 
-async function renderCentreInfo(centreName) {
-  const hawkerCentres = await database.getHawkerCentres();
+// ✅
+async function renderCentreInfo(centreId) {
+  const hawkerCentre = await database.getHawkerCentreByCentreId(centreId);
 
-  document.getElementById("centre-info__name").textContent = centreName;
+  document.getElementById("centre-info__name").textContent =
+    hawkerCentre.hcName;
   document.getElementById("centre-info__address").textContent =
-    hawkerCentres[centreName].address;
-  document.querySelector("img.hawker-centre-image")["src"] =
-    hawkerCentres[centreName].image;
+    hawkerCentre.hcAddress;
+  document.querySelector("img.hawker-centre-image")["src"] = hawkerCentre.image;
 }
 
 export async function assignCentreSelectHandlers() {
@@ -79,12 +83,14 @@ export async function assignCentreSelectHandlers() {
   }
 }
 
+// LOOKING AT HERE NOW
 async function handleCentreSelect(e) {
   const li = e.currentTarget;
+  const centreId = li.getAttribute("data-centreid");
   const centreName = li.textContent;
 
-  updateSidebarButton(centreName);
-  await renderCentreInfo(centreName);
+  updateSidebarButton(centreName); // ✅
+  await renderCentreInfo(centreId); // ✅
 
   const allListitems = document.querySelector("ul.sidebar__menu").children;
 
@@ -99,7 +105,7 @@ async function handleCentreSelect(e) {
   // clear search bar
   document.querySelector("#centre-search").value = "";
 
-  renderStalls(centreName);
+  renderStalls(centreId);
 }
 
 function getCurrentDate() {
@@ -114,7 +120,10 @@ function getCurrentDate() {
 }
 
 function findValidHygieneGrade(inspectionRecords) {
-  for (const record of inspectionRecords) {
+  if (!inspectionRecords) {
+    return null;
+  }
+  for (const record of Object.values(inspectionRecords)) {
     const expiryDate = Date.parse(record.gradeExpiry);
     const currentDate = getCurrentDate();
     if (Date.parse(currentDate) <= expiryDate) {
@@ -123,28 +132,25 @@ function findValidHygieneGrade(inspectionRecords) {
   }
 }
 
-async function renderStalls(centreName) {
-  const stalls = await database.getStallsByCentreName(centreName);
+async function renderStalls(centreId) {
+  const stalls = await database.getStallsByCentreId(centreId);
   const container = document.getElementById("stall-container");
 
   let stallCount = 0;
   container.innerHTML = "";
-  for (const name in stalls) {
-    const owner = await database.getUserDetails(stalls[name].ownerUID);
+
+  for (const stallId in stalls) {
+    const stall = stalls[stallId];
+
+    const owner = await database.getUserDetails(stall.ownerUid);
     const ownerName = owner.ownerName;
 
-    const inspectionRecords =
-      await database.getInspectionRecordsByHawkerCentre_StallName(
-        centreName,
-        name,
-      );
-
+    const inspectionRecords = await database.getInspectionByStallId(stallId);
     const grade = findValidHygieneGrade(inspectionRecords);
 
-    let card = createStallCard(name, stalls[name], ownerName, grade);
-    card.addEventListener("click", redirectToStallDetailPage);
+    let card = createStallCard(stall, ownerName, grade);
     card.addEventListener("click", function (e) {
-      redirectToStallDetailPage(e, centreName);
+      redirectToStallDetailPage(e, stallId);
     });
 
     container.appendChild(card);

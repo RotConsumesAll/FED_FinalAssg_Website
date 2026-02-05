@@ -68,7 +68,7 @@ function getFilterinfo() {
 
   let stallNumber = null;
   if (prefixInput.value && suffixInput.value) {
-    stallNumber = `#${prefixInput.value}-${suffixInput.value}`;
+    stallNumber = `${prefixInput.value}-${suffixInput.value}`;
   }
 
   const isHalal = halalOption.checked;

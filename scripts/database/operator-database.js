@@ -1,62 +1,55 @@
 import { db, get, ref } from "../firebase/index.js";
 
-// General
-async function fetchData(path) {
-  try {
-    const snapshot = await get(ref(db, path));
-    if (snapshot.exists()) {
-      return snapshot.val();
-    }
-  } catch (error) {
-    console.error(`Error fetching ${path}:`, error);
-    return;
-  }
-}
+import { fetchData, getObjectsByAttribute } from "./helpers.js";
 
 // Specific
 export async function getHawkerCentres() {
   return fetchData("/centres");
 }
 
-async function getManagedCentresByUID(uid) {
-  return fetchData(`/users/${uid}/managedCentres`);
+export function getManagedCentresByOperatorUID(uid) {
+  return getObjectsByAttribute("hawkerCentres", "operatorId", uid);
 }
 
-export async function getHawkerCentresByUID(uid) {
-  const centreNames = await getManagedCentresByUID(uid);
-  const allCentres = await getHawkerCentres();
-
-  let managedCentres = {};
-  for (const name of centreNames) {
-    managedCentres[name] = allCentres[name];
-  }
-
-  return managedCentres;
+export function getHawkerCentreByCentreId(centreId) {
+  return fetchData(`hawkerCentres/${centreId}`);
 }
 
-export async function getStallsByCentreName(centreName) {
-  const stalls = await fetchData(`/centres/${centreName}/stalls`);
-
-  let stallsList = {};
-  for (const stallId in stalls) {
-    stallsList[stallId] = stalls[stallId];
-  }
-
-  return stallsList;
+export async function getStallsByCentreId(centreId) {
+  return getObjectsByAttribute("stalls", "hawkerCentreId", centreId);
 }
 
-export async function getInspectionRecordsByHawkerCentre_StallName(
-  centreName,
-  stallName,
-) {
-  return await fetchData(
-    `/inspectionRecords/${centreName}/stalls/${stallName}`,
-  );
+// export async function getStallsByCentreName(centreName) {
+//   const stalls = await fetchData(`/centres/${centreName}/stalls`);
+
+//   let stallsList = {};
+//   for (const stallId in stalls) {
+//     stallsList[stallId] = stalls[stallId];
+//   }
+
+//   return stallsList;
+// }
+
+export async function getInspectionByStallId(stallId) {
+  return getObjectsByAttribute("inspections", "stallId", stallId);
 }
 
-export async function getStallObject(centreName, stallName) {
-  return fetchData(`/centres/${centreName}/stalls/${stallName}`);
+// export async function getInspectionRecordsByHawkerCentre_StallName(
+//   centreName,
+//   stallName,
+// ) {
+//   return await fetchData(
+//     `/inspectionRecords/${centreName}/stalls/${stallName}`,
+//   );
+// }
+
+export async function getStallByStallId(stallId) {
+  return fetchData(`stalls/${stallId}`);
 }
+
+// export async function getStallObject(centreName, stallName) {
+//   return fetchData(`/centres/${centreName}/stalls/${stallName}`);
+// }
 
 export async function getUserDetails(UID) {
   return fetchData(`/users/${UID}`);

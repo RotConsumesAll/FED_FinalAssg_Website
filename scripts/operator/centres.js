@@ -3,7 +3,7 @@ import { assignEventHandlers } from "./centres-assign-handlers.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   // TODO get UID
-  await renderSidebar("OPERATOR_UID_1");
+  await renderSidebar("OPERATOR_001");
   await assignEventHandlers();
   sessionStorage.clear();
 
