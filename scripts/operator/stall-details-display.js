@@ -38,7 +38,7 @@ async function renderStallTopInfo(stallId) {
   document.getElementById("stall-info__stall-unitNumber").textContent =
     `#${stall.stallUnitNo}`;
   // const image = document.querySelector("img.stall-image");
-  // image["src"] = "";
+  // image["src"] = stall.image;
 }
 
 async function handleStallSelect(e, centreId) {
