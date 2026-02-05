@@ -2,10 +2,10 @@ import { renderSidebar, assignStallSelectHandlers, activateEventForSelectedStall
 
 document.addEventListener("DOMContentLoaded", async () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const centreName = urlParams.get("centreName");
-  const stallName = urlParams.get("stallName");
+  const centreId = urlParams.get("centreId");
+  const stallId = urlParams.get("stallId");
 
-  await renderSidebar(centreName);
-  assignStallSelectHandlers(centreName);
-  activateEventForSelectedStallItem(stallName);
+  await renderSidebar(centreId);
+  assignStallSelectHandlers(centreId);
+  activateEventForSelectedStallItem(stallId);
 });
