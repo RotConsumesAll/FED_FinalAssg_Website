@@ -1,4 +1,5 @@
 import * as database from "../database/operator-database.js";
+import { renderLicences, renderRentalAgreement } from "./stall-detail-statistics.js";
 
 function createMenuItem(stallId, stallName) {
   return `<li class="sidebar__menu__item" data-stallid="${stallId}"><a href="#">${stallName}</a></li>`;
@@ -59,18 +60,13 @@ async function handleStallSelect(e, centreId) {
     item.classList.remove("sidebar__menu__item--selected");
   }
 
-  // renderStallStatistics(centreName, stallName);
+  renderStallStatistics(stallId);
 }
 
-// async function renderStallStatistics(centreName, stallName) {
-//   const stall = await database.getStallObject(centreName, stallName);
-//   const unitNumber = document.getElementById("stall-info__stall-unitNumber");
-//   unitNumber.textContent = stall.unitNumber;
-
-//   const ownerNameElement = document.getElementById("stall-info__ownerName");
-//   const owner = await database.getUserDetails(stall.ownerUID);
-//   ownerNameElement.textContent = owner.ownerName;
-// }
+async function renderStallStatistics(stallId) {
+  await renderLicences(stallId);
+  await renderRentalAgreement(stallId);
+}
 
 export function assignStallSelectHandlers(centreId) {
   const menuItems = document.querySelectorAll(".sidebar__menu__item");
