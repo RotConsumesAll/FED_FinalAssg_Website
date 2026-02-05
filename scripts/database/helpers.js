@@ -7,7 +7,7 @@ import {
   onValue,
   equalTo,
   get,
-} from "./scripts/firebase/database.js";
+} from "../firebase/database.js";
 
 // General functions to interact with the database
 
