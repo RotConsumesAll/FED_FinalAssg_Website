@@ -185,6 +185,23 @@ html, body {
   background-color: transparent;
 }
 
+.button-shape-2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  min-width: 120px;
+  height: auto;
+  min-height: 48px;
+  padding: 0 20px;
+  align-self: center;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 80px;
+  background-color: #74B84B;
+}
+
 .bold-focus{
   color: #74B84B;
   font-weight: bold;
@@ -192,6 +209,23 @@ html, body {
 
 .log-out-button .button-shape-1:hover {
   background-color: rgba(90, 204, 181, 0.1);
+}
+
+.button-shape-2:hover {
+  background-color: #4f882b;
+}
+
+#stallSuggestions {
+  position: absolute;
+  width: 89%;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+form {
+  margin: 0;
+  padding: 0;
 }
 
 
