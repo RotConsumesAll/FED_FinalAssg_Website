@@ -4,7 +4,7 @@ html, body {
   padding: 0;
 }
 
-.feedback, .complaint{
+.feedback, .complaint, .sign-up{
   background: linear-gradient(
     180deg,
     #72955D 14%,
@@ -152,6 +152,10 @@ html, body {
   height: auto;
   margin-left: 20px;
   flex-shrink: 0;
+}
+
+.invisible{
+  visibility: hidden;
 }
 
 .text-logout {
