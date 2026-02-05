@@ -150,7 +150,7 @@ async function renderStalls(centreId) {
 
     let card = createStallCard(stall, ownerName, grade);
     card.addEventListener("click", function (e) {
-      redirectToStallDetailPage(e, stallId);
+      redirectToStallDetailPage(e, centreId, stallId);
     });
 
     container.appendChild(card);
