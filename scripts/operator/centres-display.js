@@ -1,5 +1,6 @@
 import * as database from "../database/meaningful-helpers.js";
 import { redirectToStallDetailPage } from "./centres-routing-to-stall-detail.js";
+import { findValidRecord } from "./general-helper.js";
 
 function createMenuItem(centreId, centreName) {
   return `<li class="sidebar__menu__item" data-centreid="${centreId}"><a href="#">${centreName}</a></li>`;
@@ -104,30 +105,6 @@ async function handleCentreSelect(e) {
   renderStalls(centreId);
 }
 
-function getCurrentDate() {
-  // see https://www.freecodecamp.org/news/javascript-get-current-date-todays-date-in-js/
-  const date = new Date();
-
-  const day = date.getDate();
-  const month = date.getMonth();
-  const year = date.getFullYear();
-
-  return `${year}-${month}-${day}`;
-}
-
-function findValidHygieneGrade(inspectionRecords) {
-  if (!inspectionRecords) {
-    return null;
-  }
-  for (const record of Object.values(inspectionRecords)) {
-    const expiryDate = Date.parse(record.gradeExpiry);
-    const currentDate = getCurrentDate();
-    if (Date.parse(currentDate) <= expiryDate) {
-      return record.hygieneGrade;
-    }
-  }
-}
-
 async function renderStalls(centreId) {
   const stalls = await database.getStallsByCentreId(centreId);
   const container = document.getElementById("stall-container");
@@ -142,7 +119,8 @@ async function renderStalls(centreId) {
     const ownerName = owner.ownerName;
 
     const inspectionRecords = await database.getInspectionByStallId(stallId);
-    const grade = findValidHygieneGrade(inspectionRecords);
+    const recordFound = findValidRecord(inspectionRecords);
+    const grade = recordFound ? recordFound.hygieneGrade : null;
 
     let card = createStallCard(stall, ownerName, grade);
     card.addEventListener("click", function (e) {
