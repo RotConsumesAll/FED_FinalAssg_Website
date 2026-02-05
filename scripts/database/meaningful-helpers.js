@@ -38,3 +38,7 @@ export async function getLicenceByStallId(stallId) {
 export async function getRentalAgreementsByStallId(stallId) {
   return getObjectsByAttribute("rentalAgreements", "stallId", stallId);
 }
+
+export async function getFeedbackByStallId(stallId) {
+  return getObjectsByAttribute("feedback", "stallId", stallId);
+}

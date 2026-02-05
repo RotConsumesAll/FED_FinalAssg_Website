@@ -1,4 +1,8 @@
-import { renderSidebar, assignStallSelectHandlers, activateEventForSelectedStallItem } from "./stall-details-display.js";
+import {
+  renderSidebar,
+  assignStallSelectHandlers,
+  activateEventForSelectedStallItem,
+} from "./stall-details-display.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const urlParams = new URLSearchParams(window.location.search);
