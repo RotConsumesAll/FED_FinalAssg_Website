@@ -26,28 +26,29 @@
         </div>
     </header>
 
-    <main class="frame">
+    <form class="frame">
         <section class="rectangle">
             <h1>Create an account</h1>
             <div class="mb-3">
-                <input type="text" class="form-control" id="Name" placeholder="Your name">
+                <input type="text" class="form-control" id="sign-up-name-input" placeholder="Your name">
             </div>
 
             <div class="mb-3">
-                <input type="email" class="form-control" id="Email" placeholder="Email">
+                <input type="email" class="form-control" id="sign-up-email-input" placeholder="Email">
             </div>
 
             <div class="mb-3">
-                <input type="password" class="form-control" id="Password" placeholder="Password">
+                <input type="password" class="form-control" id="sign-up-password-input" placeholder="Password">
             </div>
 
-            <button type="submit" class="button-shape-2">Create account</button>
+            <button type="submit" class="button-shape-2" id="sign-up-button">Create account</button>
 
             <div class="frame-3">
                 <span class="small-gray-text">Already have an account?</span>
-                <a href="signin.html" class="sign-in-link">Sign up</a>
+                <a href="signin.html" class="sign-in-link">Sign in</a>
             </div>
         </section>
-    </main>
+    </form>
+    <script type="module" src="../scripts/login.js"></script>
 </body>
 </html>

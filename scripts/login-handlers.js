@@ -24,7 +24,6 @@ export function handleSignUpAttempt(e) {
   const emailInput = document.getElementById("sign-up-email-input");
   const passwordInput = document.getElementById("sign-up-password-input");
   const nameInput = document.getElementById("sign-up-name-input");
-  const roleInput = document.getElementById("sign-up-role-select");
 
   let email, password, name;
   if (emailInput.value.length > 0) {
