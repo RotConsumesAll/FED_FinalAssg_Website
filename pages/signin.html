@@ -28,11 +28,7 @@
 
     <main class="frame">
         <section class="rectangle">
-            <h1>Create an account</h1>
-            <div class="mb-3">
-                <input type="text" class="form-control" id="Name" placeholder="Your name">
-            </div>
-
+            <h1>Welcome back!</h1>
             <div class="mb-3">
                 <input type="email" class="form-control" id="Email" placeholder="Email">
             </div>
@@ -41,11 +37,18 @@
                 <input type="password" class="form-control" id="Password" placeholder="Password">
             </div>
 
-            <button type="submit" class="button-shape-2">Create account</button>
+            <select class="form-select" aria-label="Default select example">
+                <option value="1">Customer</option>
+                <option value="2">Operator</option>
+                <option value="3">Stall owner</option>
+                <option value="4">NEA Officer</option>
+            </select>
+
+            <button type="submit" class="button-shape-2">Sign in</button>
 
             <div class="frame-3">
                 <span class="small-gray-text">Already have an account?</span>
-                <a href="signin.html" class="sign-in-link">Sign up</a>
+                <a href="signup.html" class="sign-in-link">Sign up</a>
             </div>
         </section>
     </main>
