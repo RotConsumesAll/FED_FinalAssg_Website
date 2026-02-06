@@ -47,3 +47,20 @@ export async function getObjectsByAttribute(path, key, value) {
 }
 
 // feel free to add more helper functions here
+
+// new helper function to get roles of stakeholders!
+export async function getUserRole(uid) {
+  try {
+    const roleRef = ref(db, `users/${uid}/role`);
+    const snapshot = await get(roleRef);
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      console.warn("Role not found for user:", uid);
+      return null;
+    }
+  } catch (error) {
+    console.error("Error fetching user role:", error);
+    return null;
+  }
+}
