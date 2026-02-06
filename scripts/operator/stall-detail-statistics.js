@@ -5,11 +5,14 @@ import {
   formateDateToLocal,
   calculateAverage,
   calcualteDifferenceInMonths,
+  isDateInThisWeek,
+  roundTo2DecimalPlaces,
 } from "./general-helper.js";
 
 // Elemeents
 const licenceTable = document.getElementById("licence-table");
 const rentalAgreementCard = document.getElementById("rental-agreement-card");
+const scoreSelectButtons = document.getElementById("score-selector").children;
 
 // Configurations
 const SGDollar = new Intl.NumberFormat("en-SG", {
@@ -206,8 +209,20 @@ function resetChartCardHTML() {
                         </div>`;
 }
 
+function showScoreSelectButtons(show) {
+  for (const button of scoreSelectButtons) {
+    button.style.display = show ? "flex" : "none";
+  }
+}
+
 async function renderAverageScoreGraph(inspectionRecords) {
   const scoresWithDate = extractScores(inspectionRecords);
+  if (Object.keys(scoresWithDate).length === 0) {
+    showScoreSelectButtons(false);
+    return;
+  } else {
+    showScoreSelectButtons(true);
+  }
 
   const dateAxis = Object.keys(scoresWithDate);
   const axesData = createScoreAxes(scoresWithDate);
@@ -217,8 +232,7 @@ async function renderAverageScoreGraph(inspectionRecords) {
   const canvas = document.getElementById("average-score-chart");
   const chart = new Chart(canvas, createScoreChartConfig(dateAxis, axesData));
 
-  const buttons = document.getElementById("score-selector").children;
-  for (const button of buttons) {
+  for (const button of scoreSelectButtons) {
     button.addEventListener("click", function (e) {
       handleScoreSelector(e, chart);
     });
@@ -243,11 +257,28 @@ export async function renderInspectionRecordStatistics(stallId) {
   await renderAverageScoreGraph(inspectionRecords);
 }
 
-// -----------------------------------------------------------------------------------
-// Average customer rating (this week) TODO
-
-function findFeedbackForThisWeek(feedbacks) {}
+// Average customer rating (this week)
+function findFeedbackForThisWeek(feedbacks) {
+  let ratingsThisWeek = [];
+  if (feedbacks) {
+    for (const feedback of Object.values(feedbacks)) {
+      if (isDateInThisWeek(feedback.fbkDate)) {
+        ratingsThisWeek.push(feedback.fbkRating);
+      }
+    }
+  }
+  return ratingsThisWeek;
+}
 
 export async function renderAverageCustomerRating(stallId) {
   const feedbacks = await database.getFeedbackByStallId(stallId);
+  const ratingList = findFeedbackForThisWeek(feedbacks);
+  const averageRating = calculateAverage(ratingList);
+
+  if (isNaN(averageRating)) {
+    document.getElementById("average-rating").textContent = "-";
+  } else {
+    document.getElementById("average-rating").textContent =
+      roundTo2DecimalPlaces(averageRating);
+  }
 }
