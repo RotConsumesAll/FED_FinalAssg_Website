@@ -86,8 +86,16 @@ import { db, ref, push, auth } from "../firebase/index.js";
 import { getAuth, onAuthStateChanged } 
 from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
-const auth = getAuth();
-console.log(auth.currentUser)
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("Logged in user:", user.displayName, user.email);
+    // Now you can enable feedback form submission
+  } else {
+    console.log("No user logged in");
+    // Optionally redirect to login page
+    window.location.href = "signin.html";
+  }
+});
 
 const form = document.getElementById("feedbackForm");
 

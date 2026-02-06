@@ -11,6 +11,7 @@ export function authenticateSignin(email, password) {
       // Signed in
       const user = userCredential.user;
       console.log(user);
+      window.location.href = "customer_home.html";
     })
     .catch((error) => {
       if (error.code === "auth/user-not-found") {
@@ -36,15 +37,13 @@ export function createUser(email, name, password) {
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user;
+      console.log(user);
 
       // to store user info in firebase
       return updateProfile(user, {
       displayName: name,
       });
     })
-  .then(() => {
-    console.log(user);
-  })
     .catch((error) => {
        if (error.code === "auth/email-already-in-use") {
     alert("This email is already registered. Try signing in instead.");
