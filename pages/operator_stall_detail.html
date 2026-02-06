@@ -63,11 +63,11 @@
                 <div class="flex-container">
                     <article class="figure-card" id="rental-agreement-card">
                         <h2>Rental Agreement Status</h2>
-                        <p>$1230</p>
-                        <p>monthly rent</p>
-                        <p>20 Jan 2025 → 20 Jan 2026</p>
-                        <p>(12 months)</p>
-                        <p>Renewed</p>
+                        <p class="rental__amount">$1230</p>
+                        <p class="rental__subtitle">monthly rent</p>
+                        <p class="rental__dates">20 Jan 2025 → 20 Jan 2026</p>
+                        <p class="rental__duration">(12 months)</p>
+                        <p class="rental__status">Renewed</p>
                     </article>
                     <article class="figure-card">
                         <h2>Licences Filled</h2>
@@ -89,17 +89,17 @@
                     <article class="figure-card">
                         <h2>Total sales this Week</h2>
                         <div class="figure-card__change--increase-highlight">+6.5%</div>
-                        <p class="figure-card__single-statistics">$60,500</p>
+                        <p class="figure-card__single-statistics">NOT DONE</p>
                     </article>
                     <figure class="figure-card">
                         <h2>Total Sales over Time</h2>
-                        <div>Insert chart</div>
+                        <div>NOT DONE</div>
                     </figure>
 
                 </div>
                 <div class="flex-container">
-                    <figure class="figure-card figure-card--stand-alone">
-                        <p id="hygiene-grade">A</p>
+                    <figure class="figure-card figure-card--stand-alone hygiene-grade-card">
+                        <p class="hygiene-grade-card__grade" id="hygiene-grade">A</p>
                         <p>Current Hygiene Grade</p>
                         <p>Expires <span id="grade-expiry">2 Feb 2025</span></p>
                     </figure>
@@ -108,17 +108,17 @@
                         <!-- <canvas id="average-score-chart">No scores are available</canvas> -->
                         <p>No scores are available</p>
                         <div class="btn-group" role="group" aria-label="scoreSelector" id="score-selector">
-                            <button type="button" class="btn btn-primary" id="average-button">Average</button>
-                            <button type="button" class="btn btn-primary" id="hygiene-button">Hygiene</button>
-                            <button type="button" class="btn btn-primary" id="cleanliness-button">Cleanliness</button>
-                            <button type="button" class="btn btn-primary" id="housekeeping-button">Housekeeping</button>
+                            <button type="button" class="btn" id="average-button">Average</button>
+                            <button type="button" class="btn" id="hygiene-button">Hygiene</button>
+                            <button type="button" class="btn" id="cleanliness-button">Cleanliness</button>
+                            <button type="button" class="btn" id="housekeeping-button">Housekeeping</button>
                         </div>
                     </figure>
                 </div>
                 <div class="flex-container">
                     <article class="figure-card figure-card--stand-alone">
                         <h2>Average Customer Rating this week</h2>
-                        <div class="figure-card__change--increase-highlight">+6.5%</div>
+                        <!-- <div class="figure-card__change--increase-highlight">+6.5%</div> -->
                         <p class="figure-card__single-statistics" id="average-rating">4.5</p>
                     </article>
                     <figure class="figure-card">

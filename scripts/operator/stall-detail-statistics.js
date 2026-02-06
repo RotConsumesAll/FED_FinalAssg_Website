@@ -14,6 +14,7 @@ const licenceTable = document.getElementById("licence-table");
 const rentalAgreementCard = document.getElementById("rental-agreement-card");
 const chartCard = document.getElementById("average-score-chart-chart");
 const feedbackTable = document.getElementById("feedback-table");
+const gradeCard = document.querySelector(".hygiene-grade-card");
 
 // Configurations
 const SGDollar = new Intl.NumberFormat("en-SG", {
@@ -127,16 +128,21 @@ export async function renderRentalAgreement(stallId) {
   const title = document.createElement("h2");
   title.textContent = "Rental Agreement Status";
   const amount = document.createElement("p");
+  amount.classList.add("rental__amount");
   amount.textContent = SGDollar.format(latestAgreement.rentalPrice);
   const subtitle = document.createElement("p");
   subtitle.textContent = "monthly rent";
+  subtitle.classList.add("rental__subtitle");
   const validityRange = document.createElement("p");
   validityRange.textContent = `${formateDateToLocal(startDate)} - ${formateDateToLocal(endDate)}`;
+  validityRange.classList.add("rental__dates");
 
   const duration = document.createElement("p");
   duration.textContent = `(${calcualteDifferenceInMonths(startDate, endDate)} months)`;
+  duration.classList.add("rental__duration");
   const status = document.createElement("p");
-  status.textContent = "Renewed??";
+  status.textContent = latestAgreement.status;
+  status.classList.add("rental__status", `rental__status--${latestAgreement.status.toLowerCase()}`);
 
   rentalAgreementCard.append(
     title,
@@ -151,6 +157,10 @@ export async function renderRentalAgreement(stallId) {
 // Inspection records
 async function renderHygieneGrade(inspectionRecords) {
   const record = findValidRecord(inspectionRecords);
+  const grade = record.hygieneGrade;
+
+  gradeCard.classList = "";
+  gradeCard.classList.add(`hygiene-grade-card--${grade}`, "figure-card", "figure-card--stand-alone");
 
   document.getElementById("hygiene-grade").textContent = record.hygieneGrade;
   const expiryDate = new Date(record.gradeExpiry);
