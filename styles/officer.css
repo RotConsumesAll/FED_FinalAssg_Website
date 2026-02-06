@@ -179,13 +179,19 @@ body, html {
 
 .form .form-group {
   margin-bottom: 16px;
-  width: 100%;
 }
 
 .form-group label {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 6px;
+}
+
+.fg-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
 .form .form-control {
@@ -230,6 +236,22 @@ body, html {
   transform: translateY(0);
   box-shadow: 0 6px 14px rgba(37, 99, 235, 0.30);
 }
+
+.form .row {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.form .row > * {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.form .btn-group .btn {
+  border-radius: 10px;
+}
+
 
 .back-button {
   background-image: url('../assets/Images/OfficerImages/General/arrow-left.svg');
