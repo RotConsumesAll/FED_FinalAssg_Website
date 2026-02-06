@@ -45,5 +45,3 @@ export async function getObjectsByAttribute(path, key, value) {
     return;
   }
 }
-
-// feel free to add more helper functions here
