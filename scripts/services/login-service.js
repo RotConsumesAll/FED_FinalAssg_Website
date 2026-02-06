@@ -4,28 +4,6 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from "../firebase/index.js";
-import { getUserRole } from "../database/meaningful-helpers.js";
-
-async function redirectToPageWithUID(uid) {
-  const role = await getUserRole(uid);
-  if (role === "operator") {
-    window.location.href = "./operator/dashboard.html";
-    return;
-  }
-  if (role === "neaOfficer") {
-    window.location.href = "./officer_home.html";
-    return;
-  }
-  if (role === "stallOwner") {
-    window.location.href = "./stallowner_stall.html";
-    return;
-  }
-  if (role === "customer") {
-    window.location.href = "./customer_home.html";
-    return;
-  }
-  alert(`Invalid role (${role}). Can't redirect to appropriate page.`);
-}
 
 import { getUserRole } from "../database/meaningful-helpers.js";
 
@@ -50,16 +28,16 @@ export async function authenticateSignin(email, password) {
     // Redirect based on role yay
     switch (role) {
       case "customer":
-        window.location.href = "customer_home.html";
+        window.location.href = "./customer_home.html";
         break;
       case "stallOwner":
-        window.location.href = "stallowner_menu.html";
+        window.location.href = "./stallowner_menu.html";
         break;
       case "neaOfficer":
-        window.location.href = "officer_home.html";
+        window.location.href = "./officer_home.html";
         break;
       case "operator":
-        window.location.href = "operator_dashboard.html";
+        window.location.href = "./operator_dashboard.html";
         break;
       default:
         alert("Unknown role. Cannot redirect.");
