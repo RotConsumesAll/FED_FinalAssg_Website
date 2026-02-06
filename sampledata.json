@@ -111,7 +111,7 @@
       "stallDesc": "Traditional wok hei filled dishes.",
       "hawkerCentreId": "hc_01",
       "ownerUid": "OWNER_003",
-      "inage": "/assets/Images/BSImg/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
+      "image": "/assets/Images/BSImg/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
       "visitCount": "20"
     },
     "stall_04": {
@@ -3092,7 +3092,7 @@
   "feedback": {
     "fbk_01": {
       "fbkComment": "Best chicken rice in town!",
-      "fbkDateTime": "2026-02-01T13:00:00Z",
+      "fbkDateTime": "2026-02-01",
       "fbkRating": 5,
       "customerId": "CUST_001",
       "stallId": "stall_01",
