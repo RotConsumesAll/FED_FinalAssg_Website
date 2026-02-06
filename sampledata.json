@@ -89,27 +89,30 @@
   "stalls": {
     "stall_01": {
       "stallUnitNo": "01-10",
-      "stallName": "Tian Tian Chicken Rice",
-      "stallDesc": "World famous Hainanese chicken rice.",
+      "stallName": "Wok Hey",
+      "stallDesc": "Stir fried delicacies in a cup",
       "hawkerCentreId": "hc_01",
       "ownerUid": "OWNER_001",
-      "image": "https://placeholder.com/tiantian.jpg"
+      "image": "../assets/Images/BSImg/wok-hey-chickenramen.svg",
+      "visitCount": "27"
     },
     "stall_02": {
       "stallUnitNo": "01-05",
-      "stallName": "Zhen Zhen Porridge",
-      "stallDesc": "Traditional Cantonese porridge.",
+      "stallName": "Monster Curry",
+      "stallDesc": "Traditional wok hei filled dishes.",
       "hawkerCentreId": "hc_01",
       "ownerUid": "OWNER_002",
-      "image": "https://placeholder.com/zhenzhen.jpg"
+      "image": "../assets/Images/BSImg/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
+      "visitCount": "25"
     },
     "stall_03": {
       "stallUnitNo": "01-15",
-      "stallName": "Maxwell Fuzhou Oyster Cake",
-      "stallDesc": "Crispy oyster cakes with peanuts.",
+      "stallName": "Yah Fu Miniwok",
+      "stallDesc": "Traditional wok hei filled dishes.",
       "hawkerCentreId": "hc_01",
       "ownerUid": "OWNER_003",
-      "image": "https://placeholder.com/oystercake.jpg"
+      "inage": "../assets/Images/BSImg/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
+      "visitCount": "20"
     },
     "stall_04": {
       "stallUnitNo": "01-01",
@@ -117,15 +120,17 @@
       "stallDesc": "Famous sambal stingray and prawns.",
       "hawkerCentreId": "hc_02",
       "ownerUid": "OWNER_004",
-      "image": "https://placeholder.com/newtonbbq.jpg"
+      "image": "https://placeholder.com/newtonbbq.jpg",
+      "visitCount": "16"
     },
     "stall_05": {
       "stallUnitNo": "01-20",
-      "stallName": "Heng Carrot Cake",
-      "stallDesc": "Michelin Bib Gourmand carrot cake.",
+      "stallName": "Western Grill",
+      "stallDesc": "Affordable western food and grills.",
       "hawkerCentreId": "hc_02",
       "ownerUid": "OWNER_001",
-      "image": "https://placeholder.com/hengcarrot.jpg"
+      "image": "https://placeholder.com/western.jpg",
+      "visitCount": "14"
     },
     "stall_06": {
       "stallUnitNo": "01-30",
@@ -133,7 +138,8 @@
       "stallDesc": "Chilli crab and seafood delights.",
       "hawkerCentreId": "hc_02",
       "ownerUid": "OWNER_002",
-      "image": "https://placeholder.com/alliance.jpg"
+      "image": "https://placeholder.com/alliance.jpg",
+      "visitCount": "13"
     },
     "stall_07": {
       "stallUnitNo": "01-40",
@@ -141,7 +147,8 @@
       "stallDesc": "Old school fried kway teow.",
       "hawkerCentreId": "hc_03",
       "ownerUid": "OWNER_003",
-      "image": "https://placeholder.com/laofuzi.jpg"
+      "image": "https://placeholder.com/laofuzi.jpg",
+      "visitCount": "11"
     },
     "stall_08": {
       "stallUnitNo": "01-50",
@@ -149,7 +156,8 @@
       "stallDesc": "Premium char siew and roast pork.",
       "hawkerCentreId": "hc_03",
       "ownerUid": "OWNER_004",
-      "image": "https://placeholder.com/roastparadise.jpg"
+      "image": "https://placeholder.com/roastparadise.jpg",
+      "visitCount": "9"
     },
     "stall_09": {
       "stallUnitNo": "01-60",
@@ -157,7 +165,8 @@
       "stallDesc": "Rich and savory prawn noodle soup.",
       "hawkerCentreId": "hc_03",
       "ownerUid": "OWNER_001",
-      "image": "https://placeholder.com/blanco.jpg"
+      "image": "https://placeholder.com/blanco.jpg",
+      "visitCount": "5"
     },
     "stall_10": {
       "stallUnitNo": "01-70",
@@ -165,23 +174,93 @@
       "stallDesc": "Traditional dry-style Hokkien Mee.",
       "hawkerCentreId": "hc_03",
       "ownerUid": "OWNER_002",
-      "image": "https://placeholder.com/namsing.jpg"
+      "image": "https://placeholder.com/namsing.jpg",
+      "visitCount": "3"
     }
   },
   "menuItems": {
     "stall_01": {
       "item_01": {
-        "itemDesc": "Half Chicken",
-        "itemPrice": 15.0,
+        "itemName": "Chicken Ramen",
+        "itemDesc": "Rich broth served with tender chicken slices.",
+        "itemPrice": 7.9,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_03": "Japanese"
+        }
+      },
+      "item_02": {
+        "itemName": "Egg Fried Rice",
+        "itemDesc": "Wok-tossed rice with golden egg and scallions.",
+        "itemPrice": 7.0,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_03": {
+        "itemName": "Prawn Udon",
+        "itemDesc": "Thick udon noodles in savory soup with fresh prawns.",
+        "itemPrice": 7.9,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_03": "Japanese"
+        }
+      }
+    },
+    "stall_02": {
+      "item_01": {
+        "itemName": "Katsu Curry Rice",
+        "itemDesc": "Crispy fried pork cutlet with savory Japanese curry.",
+        "itemPrice": 12.5,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_03": "Japanese"
+        }
+      },
+      "item_02": {
+        "itemName": "Ebi Fry Curry",
+        "itemDesc": "Breaded deep-fried prawns served with rich curry sauce.",
+        "itemPrice": 13.5,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_03": "Japanese"
+        }
+      },
+      "item_03": {
+        "itemName": "Cheese Curry Omurice",
+        "itemDesc": "Fluffy omelette rice topped with melted cheese and curry.",
+        "itemPrice": 14.5,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_03": "Japanese"
+        }
+      }
+    },
+    "stall_03": {
+      "item_01": {
+        "itemName": "Wonton Noodle Dry",
+        "itemDesc": "Springy noodles tossed in dark sauce with dumplings.",
+        "itemPrice": 4.5,
         "itemCategory": "Mains",
         "cuisines": {
           "cui_01": "Chinese"
         }
       },
       "item_02": {
-        "itemDesc": "Chicken Rice (Small)",
+        "itemName": "Minced Meat Noodle",
+        "itemDesc": "Classic Bak Chor Mee with vinegar and minced pork.",
         "itemPrice": 5.0,
         "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_03": {
+        "itemName": "Fried Wonton (8pcs)",
+        "itemDesc": "Crispy golden dumplings with savory meat filling.",
+        "itemPrice": 4.0,
+        "itemCategory": "Sides",
         "cuisines": {
           "cui_01": "Chinese"
         }
@@ -189,7 +268,8 @@
     },
     "stall_04": {
       "item_01": {
-        "itemDesc": "Sambal Stingray",
+        "itemName": "Sambal Stingray",
+        "itemDesc": "Grilled stingray slathered in spicy sambal paste.",
         "itemPrice": 18.0,
         "itemCategory": "Seafood",
         "cuisines": {
@@ -197,11 +277,195 @@
         }
       },
       "item_02": {
-        "itemDesc": "BBQ Tiger Prawns",
+        "itemName": "BBQ Tiger Prawns",
+        "itemDesc": "Smoky grilled tiger prawns with garlic butter.",
         "itemPrice": 25.0,
         "itemCategory": "Seafood",
         "cuisines": {
           "cui_02": "Malay/Local"
+        }
+      },
+      "item_03": {
+        "itemName": "Sambal Sotong",
+        "itemDesc": "Fresh squid stir-fried in aromatic spicy chili paste.",
+        "itemPrice": 15.0,
+        "itemCategory": "Seafood",
+        "cuisines": {
+          "cui_02": "Malay/Local"
+        }
+      }
+    },
+    "stall_05": {
+      "item_01": {
+        "itemName": "Grilled Chicken Chop",
+        "itemDesc": "Juicy chicken chop served with fries and coleslaw.",
+        "itemPrice": 8.5,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_04": "Western"
+        }
+      },
+      "item_02": {
+        "itemName": "Fish and Chips",
+        "itemDesc": "Crispy battered dory fish with tartar sauce.",
+        "itemPrice": 9.0,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_04": "Western"
+        }
+      },
+      "item_03": {
+        "itemName": "Sirloin Steak",
+        "itemDesc": "200g New Zealand beef served with black pepper sauce.",
+        "itemPrice": 14.5,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_04": "Western"
+        }
+      }
+    },
+    "stall_06": {
+      "item_01": {
+        "itemName": "Chilli Crab Set",
+        "itemDesc": "Mud crab cooked in a sweet, savory, and spicy tomato gravy.",
+        "itemPrice": 45.0,
+        "itemCategory": "Seafood",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_02": {
+        "itemName": "Cereal Prawns",
+        "itemDesc": "Whole prawns coated in crispy, buttery cereal flakes.",
+        "itemPrice": 22.0,
+        "itemCategory": "Seafood",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_03": {
+        "itemName": "Seafood Fried Rice",
+        "itemDesc": "Wok-fried rice with crab meat, prawns, and squid.",
+        "itemPrice": 8.0,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      }
+    },
+    "stall_07": {
+      "item_01": {
+        "itemName": "Fried Kway Teow (Small)",
+        "itemDesc": "Wok-fried flat noodles with cockles, sausage, and egg.",
+        "itemPrice": 5.0,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_02": {
+        "itemName": "Fried Kway Teow (Medium)",
+        "itemDesc": "A larger portion of the classic dish with extra cockles.",
+        "itemPrice": 6.0,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_03": {
+        "itemName": "Fried Kway Teow (Large)",
+        "itemDesc": "Family-sized platter of savory, smoky fried noodles.",
+        "itemPrice": 8.0,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      }
+    },
+    "stall_08": {
+      "item_01": {
+        "itemName": "Char Siew Rice",
+        "itemDesc": "Sweet and savory caramelized BBQ pork served over rice.",
+        "itemPrice": 5.5,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_02": {
+        "itemName": "Roast Pork Rice",
+        "itemDesc": "Crispy skin pork belly slices served with fragrant rice.",
+        "itemPrice": 5.5,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_03": {
+        "itemName": "Duo Roast Meat Platter",
+        "itemDesc": "A combination platter of Char Siew and Roast Pork.",
+        "itemPrice": 12.0,
+        "itemCategory": "Sharing",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      }
+    },
+    "stall_09": {
+      "item_01": {
+        "itemName": "Prawn Noodle Soup",
+        "itemDesc": "Yellow noodles served in a rich, umami prawn broth.",
+        "itemPrice": 6.5,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_02": {
+        "itemName": "Pork Rib Prawn Noodle",
+        "itemDesc": "Prawn noodles topped with tender braised pork ribs.",
+        "itemPrice": 7.5,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_03": {
+        "itemName": "Ngoh Hiang Platter",
+        "itemDesc": "Assorted traditional fried fritters and meat rolls.",
+        "itemPrice": 8.0,
+        "itemCategory": "Sides",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      }
+    },
+    "stall_10": {
+      "item_01": {
+        "itemName": "Hokkien Mee (Small)",
+        "itemDesc": "Stir-fried noodles simmered in aromatic prawn stock.",
+        "itemPrice": 5.0,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_02": {
+        "itemName": "Hokkien Mee (Medium)",
+        "itemDesc": "Medium serving with generous fresh prawns and squid.",
+        "itemPrice": 8.0,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
+        }
+      },
+      "item_03": {
+        "itemName": "Hokkien Mee (Large)",
+        "itemDesc": "Large serving of wet-style noodles, perfect for sharing.",
+        "itemPrice": 10.0,
+        "itemCategory": "Mains",
+        "cuisines": {
+          "cui_01": "Chinese"
         }
       }
     }
@@ -214,7 +478,7 @@
       "cuisineDesc": "Malay"
     },
     "cui_03": {
-      "cuisineDesc": "Indian"
+      "cuisineDesc": "Japanese"
     },
     "cui_04": {
       "cuisineDesc": "Western"
