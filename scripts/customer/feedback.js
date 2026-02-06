@@ -87,6 +87,7 @@ import { getAuth, onAuthStateChanged }
 from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
 const auth = getAuth();
+console.log(auth.currentUser)
 
 const form = document.getElementById("feedbackForm");
 
