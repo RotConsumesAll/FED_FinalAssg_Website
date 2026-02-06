@@ -98,7 +98,7 @@ onAuthStateChanged(auth, (user) => {
     console.log("Logged in user:", user.displayName, user.email);
   } else {
     console.log("No user logged in");
-    window.location.href = "signin.html";
+    window.location.href = "./index.html";
   }
 });
 

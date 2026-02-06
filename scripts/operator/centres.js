@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     } else {
       alert("You are signed out. Redirecting to HawkPortal login page.");
-      window.location.href = "../signin.html";
+      window.location.href = "../../index.html";
     }
   });
 });
