@@ -16,7 +16,7 @@ export async function renderSidebar(centreId) {
 }
 
 function redirectToCentresPage(e, centreId) {
-  window.location.href = `./operator_centres.html?centreId=${centreId}`;
+  window.location.href = `./centres.html?centreId=${centreId}`;
 }
 
 function updateSidebarButton(centreId, centreName) {
