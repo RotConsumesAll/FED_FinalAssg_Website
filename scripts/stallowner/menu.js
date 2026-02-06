@@ -37,12 +37,10 @@ async function loadMenu() {
     // grouping items by category
     const categories = {};
 
-    Object.values(items).forEach(item => {
+    Object.entries(items).forEach(([itemId, item]) => {
       const category = item.itemCategory || "Others";
-      if (!categories[category]) {
-        categories[category] = [];
-      }
-      categories[category].push(item);
+      if (!categories[category]) categories[category] = [];
+      categories[category].push({ itemId, item });
     });
 
     // loadingggggg categoriesssss (and items)
@@ -61,7 +59,7 @@ async function loadMenu() {
       const itemsSection = document.createElement("section");
       itemsSection.className = "frame-3";
 
-      categoryItems.forEach(item => {
+      categoryItems.forEach(({itemId, item}) => {
         const itemCard = document.createElement("section");
         itemCard.className = "rectangle-5";
 
@@ -72,6 +70,23 @@ async function loadMenu() {
         <p class="menu-header">${item.itemName}</p>
           <span class="menu-item-price">$${Number(item.itemPrice).toFixed(2)}</span>
         `;
+
+        itemCard.addEventListener("click", async () => {
+            const confirmDelete = confirm(
+            `Delete "${item.itemName}"?\nThis cannot be undone.`
+            );
+
+            if (!confirmDelete) return;
+
+            try {
+            await remove(ref(db, `menuItems/${stallId}/${itemId}`));
+            itemCard.remove(); // instant UI feedback
+            } catch (error) {
+            console.error("Failed to delete item:", error);
+            alert("Failed to delete item. Try again.");
+            }
+        });
+
 
         itemsSection.appendChild(itemCard);
       });
