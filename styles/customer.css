@@ -1284,3 +1284,319 @@ form {
   margin-top: 2.438rem;
   column-gap: 1.25rem;
 }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  justify-content: flex-start;
+}
+
+.search-bar input {
+  width: 500px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.search-btn {
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.filters h2 {
+  margin-top: 0;
+}
+
+.filters h3 {
+  margin-top: 30px;
+}
+
+.tags, .ratings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tags span, .ratings span {
+  background: #e0e0e0;
+  padding: 14px 20px;
+  border-radius: 999px;
+  font-weight: 500;
+  cursor: pointer;
+  max-width: 180px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ratings {
+  grid-template-columns: repeat(5, 180px);
+}
+
+.star {
+  width: 18px;
+  height: 18px;
+  vertical-align: text-top;
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+  vertical-align: text-top;
+}
+
+.breadcrumb {
+  margin-bottom: 20px;
+}
+
+.breadcrumb a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.reviews-section {
+  margin-left: 0 auto;
+  padding: 0 40px;
+  max-width: 1100px;
+}
+
+.rating-summary {
+  display: flex;
+  justify-content: space-between;
+  background: #e0e0e0;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.rating-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rating-score {
+  font-size: 48px;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rating-score .star {
+  width: 45px;
+  height: 45px;
+
+}
+
+.rating-count {
+  color: #555;
+  font-weight: 500;
+}
+
+.rating-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 55%;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rating-row span {
+  width: 40px;
+  font-weight: 500;
+}
+
+.bar {
+  flex: 1;
+  height: 8px;
+  background: #cfcfcf;
+  border-radius: 999px;
+}
+
+.fill {
+  height: 100%;
+  background: gold;
+  border-radius: 999px;
+}
+
+.w-90 { width: 90%; }
+.w-70 { width: 70%; }
+.w-30 { width: 30%; }
+.w-10 { width: 10%; }
+.w-5  { width: 5%; }
+
+.review-filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filter {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  background: #d9d9d9;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filter.active {
+  background: #000;
+  color: #fff;
+}
+
+.review-card {
+  background: #e0e0e0;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-user {
+  font-weight: 600;
+  margin: 0;
+}
+
+.review-text {
+  margin: 15px 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+.review-actions {
+  display: flex;
+  gap: 20px;
+  font-weight: 500;
+  color: #333;
+}
+
+#stall-container {
+  padding: 1.5em 0;
+  width: 1512px;height: auto;
+  display: flex;
+  flex-direction: column;  
+}
+
+.reviews #stall-container {
+  width: 100% !important;
+  max-width: 1100px;
+}
+
+.filters .modal-content {
+  overflow: hidden;
+}
+
+.modal-header {
+  margin: 20px;
+  padding-bottom: 10px;
+}
+
+.modal-dialog {
+  max-width: 600px;
+}
+
+.stall-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.stall-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.stall-section .stall-card {
+  position: relative;
+  height: 180px;
+  border: 1.5px solid #000;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.stall-section .stall-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.stall-section .stall-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.stall-title {
+  font-weight: 600;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70%;
+}
+
+.stall-rating {
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.stall-card.placeholder {
+  background: #fff;
+}
+
+.stall-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 6px 8px;
+  font-size: 0.85rem;
+}
+
+.rating-star {
+  width: 16px !important;
+  height: 16px !important;
+  vertical-align: text-top;
+}
