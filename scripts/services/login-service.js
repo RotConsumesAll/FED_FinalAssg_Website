@@ -24,6 +24,13 @@ export function createUser(email, name, password) {
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user;
+
+      // to store user info in firebase
+      set(ref(db, "users/" + user.uid), {
+        name: name,
+        email: email,
+      });
+
       console.log(user);
     })
     .catch((error) => {
