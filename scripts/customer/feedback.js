@@ -1,5 +1,55 @@
+
+// searching stalls
+
+const stalls = [
+  "Ah Seng Chicken Rice",
+  "Siti Nasi Lemak",
+  "Bombay Biryani",
+  "Dragon Wok",
+  "Tokyo Ramen",
+  "Korean BBQ Express",
+  "Western Grill",
+  "Thai Basil",
+  "Veg Delight",
+  "Uncle Lim Fish Soup",
+  "BBQ King",
+  "Dessert Corner",
+  "Teh Tarik House",
+  "Seafood Wok",
+  "Noodle Bar"
+];
+
+const input = document.getElementById("EnterFoodStall");
+const suggestionBox = document.getElementById("stallSuggestions");
+
+input.addEventListener("input", () => {
+  const query = input.value.toLowerCase();
+  suggestionBox.innerHTML = "";
+
+  if (!query) return;
+
+  const matches = stalls.filter(stall =>
+    stall.toLowerCase().includes(query)
+  );
+
+  matches.forEach(stall => {
+    const li = document.createElement("li");
+    li.className = "list-group-item list-group-item-action";
+    li.textContent = stall;
+
+    li.addEventListener("click", () => {
+      input.value = stall;
+      suggestionBox.innerHTML = "";
+    });
+
+    suggestionBox.appendChild(li);
+  });
+});
+
+// star rating system
+
 const stars = document.querySelectorAll('.star');
-const ratingInput = document.getElementById('ratingValue');
+const ratingInput = document.getElementById('rating');
 let currentRating = 0;
 
 stars.forEach(star => {
@@ -29,3 +79,62 @@ function fillStars(rating) {
     star.classList.toggle('filled', starValue <= rating);
   });
 }
+
+// receving feedback form submission
+
+import { db, ref, push, auth } from "../firebase/index.js";
+import { getAuth, onAuthStateChanged } 
+from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("Logged in user:", user.displayName, user.email);
+    // Now you can enable feedback form submission
+  } else {
+    console.log("No user logged in");
+    // Optionally redirect to login page
+    window.location.href = "signin.html";
+  }
+});
+
+const form = document.getElementById("feedbackForm");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // stops page reload
+
+  const user = auth.currentUser;
+  const rating = document.getElementById("rating").value;
+  const comment = document.getElementById("comment").value;
+  const stallName = document.getElementById("EnterFoodStall").value;
+
+  if (!stallName) return alert("Please select a stall.");
+  if (!rating) return alert("Please rate your experience.");
+  if (!comment) return alert("Please write a comment.");
+  onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    alert("Please sign in first");
+    return;
+  }
+});
+
+
+  const feedbackRef = ref(db, "feedbacks");
+
+  push(feedbackRef, {
+    stallName,
+    rating: Number(rating),
+    comment,
+    userName: user.displayName ?? "Anonymous",
+    createdAt: Date.now(), // optional I guess but good to have
+  })
+    .then(() => {
+      alert("Feedback submitted!");
+      form.reset();
+      currentRating = 0;
+      fillStars(currentRating);
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Something went wrong");
+    });
+});
