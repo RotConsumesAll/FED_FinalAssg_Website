@@ -82,7 +82,7 @@ function fillStars(rating) {
 
 // receving feedback form submission
 
-import { db, ref, push } from "../firebase/index.js";
+import { db, ref, push, auth } from "../firebase/index.js";
 import { getAuth, onAuthStateChanged } 
 from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
@@ -93,7 +93,7 @@ const form = document.getElementById("feedbackForm");
 form.addEventListener("submit", (e) => {
   e.preventDefault(); // stops page reload
 
-  // const email = document.getElementById("email").value;
+  const user = auth.currentUser;
   const rating = document.getElementById("rating").value;
   const comment = document.getElementById("comment").value;
   const stallName = document.getElementById("EnterFoodStall").value;
@@ -106,16 +106,12 @@ form.addEventListener("submit", (e) => {
     alert("Please sign in first");
     return;
   }
-
-  // user.uid
-  // user.displayName (if you used Case A)
 });
 
 
   const feedbackRef = ref(db, "feedbacks");
 
   push(feedbackRef, {
-    // email, // to get the name of user, needs implementation of auth branch first, hence *WIP*
     stallName,
     rating: Number(rating),
     comment,
