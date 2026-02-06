@@ -8,7 +8,6 @@ import { getUserRole } from "../database/meaningful-helpers.js";
 
 async function redirectToPageWithUID(uid) {
   const role = await getUserRole(uid);
-  console.warn(role);
   if (role === "operator") {
     window.location.href = "./operator_dashboard.html";
     return;
@@ -25,7 +24,7 @@ async function redirectToPageWithUID(uid) {
     window.location.href = "./customer_home.html";
     return;
   }
-  console.warn(`Invalid role (${role}). Can't redirect to appropriate page.`);
+  alert(`Invalid role (${role}). Can't redirect to appropriate page.`);
 }
 
 export function authenticateSignin(email, password) {
