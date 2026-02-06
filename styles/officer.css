@@ -371,7 +371,7 @@ a {
 }
 
 .db-bg{
-  width: min(980px, 92vw);
+  width: 80vw;
   height: auto;
   border-radius: 20px;
 
@@ -380,34 +380,13 @@ a {
 
   background-color: rgba(217, 217, 217, 0.5);
 
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.db-head {
   position: relative;
-  width: 100%;
-}
-
-
-.db-cols {
-  display: grid;
-  grid-template-columns: 120px 2.5fr 1.2fr 1fr 1.5fr;
-  align-items: center;
-
-  padding: 12px 20px;
-
-  font-size: 13px;
-  font-weight: 700;
-  color: #111;
 }
 
 .db-filter-btn {
   position: absolute;
-  top: 50%;
+  top: 18px;
   right: 18px;
-  transform: translateY(-50%);
 
   width: 42px;
   height: 42px;
@@ -419,37 +398,127 @@ a {
   cursor: pointer;
 }
 
-
 .db-filter-btn:hover{
-  box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+  box-shadow: 0px 10px 18px rgba(0,0,0,0.12);
 }
 
-.db-list{
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+.db-table {
+  width: 100%;
+  border-spacing: 0px 18px;
 }
 
-.db-row {
-  display: grid;
-  grid-template-columns: 120px 2.5fr 1.2fr 1fr 1.5fr;
-  align-items: center;
+.db-table th {
+  text-align: left;
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+  white-space: nowrap;
+}
 
-  padding: 16px 20px;
-  border-radius: 16px;
-
-  background: rgba(255,255,255,0.55);
-  border: 1px solid rgba(255,255,255,0.30);
-
+.db-table td {
+  padding: 16px 18px;
   font-size: 14px;
   font-weight: 600;
   color: #111;
+
+  background: rgba(255,255,255,0.55);
+  border-top: 1px solid rgba(255,255,255,0.30);
+  border-bottom: 1px solid rgba(255,255,255,0.30);
 }
 
-.db-row:hover{
-  transform: translateY(-1px);
+.db-table tr td:first-child {
+  border-left: 1px solid rgba(255,255,255,0.30);
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.db-table tr td:last-child {
+  border-right: 1px solid rgba(255,255,255,0.30);
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.db-table tr:hover td {
   background: rgba(255,255,255,0.70);
 }
+
+.pending-card {
+  width: 80vw;
+  margin: 32px auto 0px auto;
+  padding: 26px 28px;
+
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 24px;
+
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.pending-table {
+  width: 100%;
+  border-spacing: 0px 18px;
+}
+
+.pending-table th {
+  text-align: left;
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+  white-space: nowrap;
+}
+
+.pending-table td {
+  padding: 16px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+
+  background: rgba(255,255,255,0.65);
+  border-top: 1px solid rgba(255,255,255,0.30);
+  border-bottom: 1px solid rgba(255,255,255,0.30);
+}
+
+.pending-table tr td:first-child {
+  border-left: 1px solid rgba(255,255,255,0.30);
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.pending-table tr td:last-child {
+  border-right: 1px solid rgba(255,255,255,0.30);
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+
+  text-align: right;
+  white-space: nowrap;
+}
+
+.pending-table tr:hover td {
+  background: rgba(255,255,255,0.75);
+}
+
+.btn-edit {
+  background: #38bdf8;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn-remove {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 
 .date-field {
   display: flex;
@@ -474,10 +543,10 @@ a {
   width: 90vw;
   height: 420px;
 
-  margin: 32px auto 0 auto;
+  margin: 32px auto 0px auto;
 
   background: rgba(255, 255, 255, 0.75);
   border-radius: 24px;
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.25);
 }
