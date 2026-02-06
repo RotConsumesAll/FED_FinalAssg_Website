@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/operator.css">
+
+    <!-- https://cdnjs.com/libraries/normalize CSS RESET normalize.css -->
+    <!-- I chose to use this because it helps to normalise styles for many html elements. -->
+    <!-- See https://nicolasgallagher.com/about-normalize-css/ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Stall Detail</title>
+</head>
+
+<body>
+    <header class="top-nav-bar">
+        <h1 class="default-text nav-left">HawkPortal</h1>
+        <nav class="nav-center" aria-label="Main navigation">
+            <a href="./operator_dashboard.html" class="default-text">Dashboard</a>
+            <a href="./operator_centres.html" class="default-text bold-focus" aria-current="page">Centres</a>
+            <a href="./operator_documents.html" class="default-text">Documents</a>
+            <a href="./operator_settings.html" class="default-text">Settings</a>
+        </nav>
+
+        <div class="nav-right log-out-button">
+            <button type="button" class="button-shape-1" aria-label="Log out">
+                <span class="text-logout">Log out</span>
+            </button>
+        </div>
+    </header>
+    <main>
+
+        <div class="stall-detai-container">
+            <aside class="sidebar">
+                <ul class="sidebar__menu">
+                    <li class="sidebar__menu__item sidebar__menu__item--selected"><a href="#">Ayam Penyet GO!</a>
+                    </li>
+                    <li class="sidebar__menu__item"><a href="#">Mr Lee Chicken Noodles</a></li>
+                    <li class="sidebar__menu__item"><a href="#">Chicken Rice Goodness</a></li>
+                </ul>
+                <button class="sidebar__button" id="sidebar__button">Return <span id="sidebar__button__centre">Bukit
+                        Batok Hawker Centre</span></button>
+            </aside>
+            <div
+                class="flex-container flex-container--column flex-container--justify-content-default flex-container--flex-1-1-auto">
+                <article class="stall-info">
+                    <div
+                        class="flex-container flex-container--column flex-container--flex-1-1-auto flex-container--gap-0">
+                        <h2 id="stall-info__name">Ayam Penyet GO!</h2>
+                        <p id="stall-info__ownerName">Mr Ayam Penyet himself</p>
+                        <p id="stall-info__stall-unitNumber">#01-02</p>
+                    </div>
+                    <img src="https://www.solemateadventures.com/wp-content/uploads/2024/02/The-1950s-Coffee-Hawker-Stall.jpg"
+                        alt="Stall image" class="stall-image">
+
+                </article>
+                <div class="flex-container">
+                    <article class="figure-card" id="rental-agreement-card">
+                        <h2>Rental Agreement Status</h2>
+                        <p class="rental__amount">$1230</p>
+                        <p class="rental__subtitle">monthly rent</p>
+                        <p class="rental__dates">20 Jan 2025 → 20 Jan 2026</p>
+                        <p class="rental__duration">(12 months)</p>
+                        <p class="rental__status">Renewed</p>
+                    </article>
+                    <article class="figure-card">
+                        <h2>Licences Filled</h2>
+                        <table class="table table-bordered table-sm">
+                            <tbody id="licence-table">
+                                <tr>
+                                    <td>Food Stall License</td>
+                                    <td>Valid</td>
+                                </tr>
+                                <tr>
+                                    <td>Halal Certification</td>
+                                    <td>Expired</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+                <div class="flex-container">
+                    <article class="figure-card">
+                        <h2>Total sales this Week</h2>
+                        <div class="figure-card__change--increase-highlight">+6.5%</div>
+                        <p class="figure-card__single-statistics">NOT DONE</p>
+                    </article>
+                    <figure class="figure-card">
+                        <h2>Total Sales over Time</h2>
+                        <div>NOT DONE</div>
+                    </figure>
+
+                </div>
+                <div class="flex-container">
+                    <figure class="figure-card figure-card--stand-alone hygiene-grade-card">
+                        <p class="hygiene-grade-card__grade" id="hygiene-grade">A</p>
+                        <p>Current Hygiene Grade</p>
+                        <p>Expires <span id="grade-expiry">2 Feb 2025</span></p>
+                    </figure>
+                    <figure class="figure-card" id="average-score-chart-chart">
+                        <h2>Average Inspection Scores over Time</h2>
+                        <!-- <canvas id="average-score-chart">No scores are available</canvas> -->
+                        <p>No scores are available</p>
+                        <div class="btn-group" role="group" aria-label="scoreSelector" id="score-selector">
+                            <button type="button" class="btn" id="average-button">Average</button>
+                            <button type="button" class="btn" id="hygiene-button">Hygiene</button>
+                            <button type="button" class="btn" id="cleanliness-button">Cleanliness</button>
+                            <button type="button" class="btn" id="housekeeping-button">Housekeeping</button>
+                        </div>
+                    </figure>
+                </div>
+                <div class="flex-container">
+                    <article class="figure-card figure-card--stand-alone">
+                        <h2>Average Customer Rating this week</h2>
+                        <!-- <div class="figure-card__change--increase-highlight">+6.5%</div> -->
+                        <p class="figure-card__single-statistics" id="average-rating">4.5</p>
+                    </article>
+                    <figure class="figure-card">
+                        <h2>Feedback Received</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Score</th>
+                                    <th scope="col">Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody id="feedback-table">
+                                <tr>
+                                    <td>12/12/25</td>
+                                    <td>4</td>
+                                    <td>This store’s food is good!</td>
+                                </tr>
+                                <tr>
+                                    <td>12/12/25</td>
+                                    <td>4</td>
+                                    <td>This store’s food is good!</td>
+                                </tr>
+                                <tr>
+                                    <td>12/12/25</td>
+                                    <td>4</td>
+                                    <td>This store’s food is good!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"
+        integrity="sha512-Y51n9mtKTVBh3Jbx5pZSJNDDMyY+yGe77DGtBPzRlgsf/YLCh13kSZ3JmfHGzYFCmOndraf0sQgfM654b7dJ3w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="../scripts/operator/stall-details.js" type="module"></script>
+</body>
+
+</html>

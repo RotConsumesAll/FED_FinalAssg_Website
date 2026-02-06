@@ -53,3 +53,7 @@ export async function getStallMenu(stallId){
 export async function getStall(stallId){
   return fetchData(`stalls/${stallId}`); 
 }
+
+export async function getFeedbackByStallId(stallId) {
+  return getObjectsByAttribute("feedback", "stallId", stallId);
+}
