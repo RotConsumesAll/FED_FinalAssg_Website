@@ -66,27 +66,33 @@
       "contactPerson": "Ms. Tan"
     }
   },
-  "hawkerCentres": {
+"hawkerCentres": {
     "hc_01": {
       "hcName": "Maxwell Food Centre",
       "hcAddress": "1 Kadayanallur St, Singapore 069184",
       "operatorId": "OPERATOR_001",
-      "image": "https://feastoftravel.com/wp-content/uploads/2022/10/943E9846-53A6-4A3B-92CB-0E8DE039696B-scaled.jpg"
+      "image": "https://feastoftravel.com/wp-content/uploads/2022/10/943E9846-53A6-4A3B-92CB-0E8DE039696B-scaled.jpg",
+      "openingTime": "08:00",
+      "closingTime": "22:00"
     },
     "hc_02": {
       "hcName": "Newton Food Centre",
       "hcAddress": "500 Clemenceau Ave N, Singapore 229495",
       "operatorId": "OPERATOR_001",
-      "image": "https://newtonfoodcentre.com/wp-content/uploads/2024/01/newton-food-centre-photos.jpg"
+      "image": "https://newtonfoodcentre.com/wp-content/uploads/2024/01/newton-food-centre-photos.jpg",
+      "openingTime": "06:00",
+      "closingTime": "00:00"
     },
     "hc_03": {
       "hcName": "Old Airport Road Food Centre",
       "hcAddress": "51 Old Airport Rd, Singapore 390051",
       "operatorId": "OPERATOR_002",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEoJOvpCI0wLVm3GZnC1xNFpGBzjfhQWxysg&s"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEoJOvpCI0wLVm3GZnC1xNFpGBzjfhQWxysg&s",
+      "openingTime": "07:00",
+      "closingTime": "23:00"
     }
   },
-  "stalls": {
+ "stalls": {
     "stall_01": {
       "stallUnitNo": "01-10",
       "stallName": "Wok Hey",
@@ -94,7 +100,10 @@
       "hawkerCentreId": "hc_01",
       "ownerUid": "OWNER_001",
       "image": "/assets/Images/customerImages/wok-hey-chickenramen.svg",
-      "visitCount": "27"
+      "visitCount": "27",
+      "reviewCount": 45,
+      "avgRating": 4.2,
+      "tags": ["Chinese", "Stir-fry"]
     },
     "stall_02": {
       "stallUnitNo": "01-05",
@@ -103,7 +112,10 @@
       "hawkerCentreId": "hc_01",
       "ownerUid": "OWNER_002",
       "image": "/assets/Images/customerImages/MonstercurryDemiGlace.svg",
-      "visitCount": "25"
+      "visitCount": "25",
+      "reviewCount": 38,
+      "avgRating": 4.5,
+      "tags": ["Japanese", "Curry", "Halal"]
     },
     "stall_03": {
       "stallUnitNo": "01-15",
@@ -112,7 +124,10 @@
       "hawkerCentreId": "hc_01",
       "ownerUid": "OWNER_003",
       "image": "/assets/Images/customerImages/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
-      "visitCount": "20"
+      "visitCount": "20",
+      "reviewCount": 32,
+      "avgRating": 4.0,
+      "tags": ["Chinese", "Wok Hei", "Zi Char"]
     },
     "stall_04": {
       "stallUnitNo": "01-01",
@@ -121,7 +136,10 @@
       "hawkerCentreId": "hc_02",
       "ownerUid": "OWNER_004",
       "image": "https://placeholder.com/newtonbbq.jpg",
-      "visitCount": "16"
+      "visitCount": "16",
+      "reviewCount": 55,
+      "avgRating": 4.7,
+      "tags": ["Seafood", "BBQ", "Spicy"]
     },
     "stall_05": {
       "stallUnitNo": "01-20",
@@ -130,7 +148,10 @@
       "hawkerCentreId": "hc_02",
       "ownerUid": "OWNER_001",
       "image": "https://placeholder.com/western.jpg",
-      "visitCount": "14"
+      "visitCount": "14",
+      "reviewCount": 28,
+      "avgRating": 3.9,
+      "tags": ["Western", "Grill", "Steak"]
     },
     "stall_06": {
       "stallUnitNo": "01-30",
@@ -139,7 +160,10 @@
       "hawkerCentreId": "hc_02",
       "ownerUid": "OWNER_002",
       "image": "https://placeholder.com/alliance.jpg",
-      "visitCount": "13"
+      "visitCount": "13",
+      "reviewCount": 42,
+      "avgRating": 4.6,
+      "tags": ["Seafood", "Crab", "Chinese"]
     },
     "stall_07": {
       "stallUnitNo": "01-40",
@@ -148,7 +172,10 @@
       "hawkerCentreId": "hc_03",
       "ownerUid": "OWNER_003",
       "image": "https://placeholder.com/laofuzi.jpg",
-      "visitCount": "11"
+      "visitCount": "11",
+      "reviewCount": 60,
+      "avgRating": 4.8,
+      "tags": ["Local", "Fried Noodles", "Chinese"]
     },
     "stall_08": {
       "stallUnitNo": "01-50",
@@ -157,7 +184,10 @@
       "hawkerCentreId": "hc_03",
       "ownerUid": "OWNER_004",
       "image": "https://placeholder.com/roastparadise.jpg",
-      "visitCount": "9"
+      "visitCount": "9",
+      "reviewCount": 35,
+      "avgRating": 4.3,
+      "tags": ["Roast Meat", "Pork", "Chinese"]
     },
     "stall_09": {
       "stallUnitNo": "01-60",
@@ -166,7 +196,10 @@
       "hawkerCentreId": "hc_03",
       "ownerUid": "OWNER_001",
       "image": "https://placeholder.com/blanco.jpg",
-      "visitCount": "5"
+      "visitCount": "5",
+      "reviewCount": 22,
+      "avgRating": 4.1,
+      "tags": ["Soup", "Prawns", "Noodles"]
     },
     "stall_10": {
       "stallUnitNo": "01-70",
@@ -175,10 +208,13 @@
       "hawkerCentreId": "hc_03",
       "ownerUid": "OWNER_002",
       "image": "https://placeholder.com/namsing.jpg",
-      "visitCount": "3"
+      "visitCount": "3",
+      "reviewCount": 18,
+      "avgRating": 3.9,
+      "tags": ["Noodles", "Traditional", "Seafood"]
     }
   },
-  "menuItems": {
+"menuItems": {
     "stall_01": {
       "item_01": {
         "itemName": "Chicken Ramen",
@@ -187,7 +223,8 @@
         "itemCategory": "Mains",
         "cuisines": {
           "cui_03": "Japanese"
-        }
+        },
+        "discountPercent": 10
       },
       "item_02": {
         "itemName": "Egg Fried Rice",
@@ -225,7 +262,8 @@
         "itemCategory": "Mains",
         "cuisines": {
           "cui_03": "Japanese"
-        }
+        },
+        "discountPercent": 15
       },
       "item_03": {
         "itemName": "Cheese Curry Omurice",
@@ -254,7 +292,8 @@
         "itemCategory": "Mains",
         "cuisines": {
           "cui_01": "Chinese"
-        }
+        },
+        "discountPercent": 10
       },
       "item_03": {
         "itemName": "Fried Wonton (8pcs)",
@@ -274,7 +313,8 @@
         "itemCategory": "Seafood",
         "cuisines": {
           "cui_02": "Malay/Local"
-        }
+        },
+        "discountPercent": 5
       },
       "item_02": {
         "itemName": "BBQ Tiger Prawns",
@@ -321,7 +361,8 @@
         "itemCategory": "Mains",
         "cuisines": {
           "cui_04": "Western"
-        }
+        },
+        "discountPercent": 10
       }
     },
     "stall_06": {
@@ -341,7 +382,8 @@
         "itemCategory": "Seafood",
         "cuisines": {
           "cui_01": "Chinese"
-        }
+        },
+        "discountPercent": 10
       },
       "item_03": {
         "itemName": "Seafood Fried Rice",
@@ -361,7 +403,8 @@
         "itemCategory": "Mains",
         "cuisines": {
           "cui_01": "Chinese"
-        }
+        },
+        "discountPercent": 10
       },
       "item_02": {
         "itemName": "Fried Kway Teow (Medium)",
@@ -408,7 +451,8 @@
         "itemCategory": "Sharing",
         "cuisines": {
           "cui_01": "Chinese"
-        }
+        },
+        "discountPercent": 15
       }
     },
     "stall_09": {
@@ -428,7 +472,8 @@
         "itemCategory": "Mains",
         "cuisines": {
           "cui_01": "Chinese"
-        }
+        },
+        "discountPercent": 5
       },
       "item_03": {
         "itemName": "Ngoh Hiang Platter",
@@ -448,7 +493,8 @@
         "itemCategory": "Mains",
         "cuisines": {
           "cui_01": "Chinese"
-        }
+        },
+        "discountPercent": 10
       },
       "item_02": {
         "itemName": "Hokkien Mee (Medium)",

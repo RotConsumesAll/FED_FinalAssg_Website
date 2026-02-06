@@ -1,20 +1,57 @@
 //DOM
 import { getStallMenu } from "../database/meaningful-helpers.js";
 import {getStall} from "../database/meaningful-helpers.js";
+import { getHawkerCentres } from "../database/meaningful-helpers.js";
 
 let stallMenu;
 let stallDetails;
+let hawkerCentres;
 async function loadPage(wantedStallId){
   //Get data from database
   stallMenu = await getStallMenu(wantedStallId);
   console.log(stallMenu);
+  let arrayStallMenu = Object.values(stallMenu);  
   stallDetails = await getStall(wantedStallId);
   console.log(stallDetails);  
+  let currentHawkerCentreId = stallDetails.hawkerCentreId;
+  hawkerCentres = await getHawkerCentres();
+  console.log(hawkerCentres);
 
-  //TODO Extract hawker centre ID and get hawkercentre object
+  let arrayHawkercentres = [];
+  let keyValuePair = Object.entries(hawkerCentres)
+  for(let[id, data] of keyValuePair) {
+      arrayHawkercentres.push({
+          id: id,                  // Extracts id
+          name: data.hcName,       // Extracts name
+          address: data.hcAddress, // Extracts address
+          image: data.image,       // Extracts URL
+          openingTime: data.openingTime,
+          closingTime: data.closingTime
+      });
+  };
+  console.log(arrayHawkercentres);
 
-  let modalImage = document.querySelectorAll(".modal-item-image"); //Target overlay+cart image
-  modalImage.forEach(elementItemImage =>{
+  //TODO stall info button. Include name, address, image and open/close timing
+  //Loop through arrayStallMenu to get hc id, if match, put properties in info modal
+
+  //Matching hawkercentre id and loading info 
+  arrayHawkercentres.forEach(hawker => {
+    if (hawker.id===currentHawkerCentreId){
+      let stallModel = document.querySelector("#stall-info-modal");           //container
+      let stallModalImage = stallModel.querySelector(".modal-info-image");    //image
+      let stallModalTitle = stallModel.querySelector(".item-title");          //title
+      let stallModalTimeRange = stallModel.querySelector(".time-range");      //time range
+      let stallModalAddr = stallModel.querySelector(".address");         //Address
+
+      stallModalImage.style.backgroundImage = `url("${hawker.image}")`;
+      stallModalTitle.innerText = hawker.name;
+      stallModalTimeRange.innerText ="Open "+ hawker.openingTime + " to " + hawker.closingTime;
+      stallModalAddr.innerText = hawker.address;
+    }
+  }); 
+
+  let modalItemImage = document.querySelectorAll(".modal-item-image"); //Target overlay+cart image
+  modalItemImage.forEach(elementItemImage =>{
     elementItemImage.style.backgroundImage = `url("${stallDetails.image}")`;
   });
 
@@ -23,17 +60,21 @@ async function loadPage(wantedStallId){
     elementItemImage.style.backgroundImage = `url("${stallDetails.image}")`;
   });
 
+  let stallRating = document.querySelector(".review-rating"); //Stall review rating
+  let numOfReviews = document.querySelector(".review-qty");   //Stall number of reviews
+  stallRating.innerText = parseFloat(stallDetails.avgRating).toFixed(1);
+  numOfReviews.innerText = stallDetails.reviewCount + " reviews";
+
   let stallName = document.querySelector(".stall-name"); //Stall name
   stallName.textContent=stallDetails.stallName;
 
-  //TODO stall info button. Include name, address, image and open/close timing
-
   let cards = document.querySelectorAll(".item-card");
-  let ArrayStallMenu = Object.values(stallMenu)
+  // Check if item has attribute called discountPercent, if yes put at promo area
+  //Loop through all menu cards
   let i=0;
-  while (i!=ArrayStallMenu.length){
+  while (i!=arrayStallMenu.length){
     let currentCard = cards[i];
-    let currentMenuItem = ArrayStallMenu[i];
+    let currentMenuItem = arrayStallMenu[i];
 
     let itemTitle = currentCard.querySelector(".item-title");
     let itemDesc = currentCard.querySelector(".item-body")      
@@ -61,7 +102,7 @@ async function loadPage(wantedStallId){
     i++;
   }
 }
-loadPage("stall_03");
+loadPage("stall_01");
 
 
 function resetModalQty(){
@@ -95,9 +136,8 @@ function incOrDecQty(userInput){
     let elementQty = qtyContainer.querySelector(".quantity");
     let calcQty = parseInt(elementQty.innerText);
     elementQty.innerText = calcQty + 1;   
-    if (isModal !==null){
-      updateCart("add",titleOfItem);
-    }
+    updateCart("add",titleOfItem);
+    
   }
 
   else if (subQtyBtn !== null){
@@ -173,6 +213,7 @@ function updateCart(choice, wantedNameOfitem){
 };
 
 
+
 //Creates a constant itemHTML which will be added to "cart-item-list" container
 function addItemToHTMLCart(itemName, itemPrice, itemImageURL){
   let qtyContainer = document.querySelector("#menu-item-modal .quantity-container"); 
@@ -191,7 +232,7 @@ function addItemToHTMLCart(itemName, itemPrice, itemImageURL){
             <p class="quantity">${currentQty}</p>
             <button class="btn btn-increase" type="button">+</button>
           </div>
-          <div class="price-text">$${itemPrice}</div>                                       
+          <div class="price-text">${itemPrice}</div>                                       
         </div>            
       </div>        
     </section>
@@ -200,7 +241,6 @@ function addItemToHTMLCart(itemName, itemPrice, itemImageURL){
   addItemToCartArray(itemName,itemPrice,currentQty);
   updateCost();
 }
-
 
 let addToCartBtn = document.querySelector("#menu-item-modal .modal-footer .btn");
 addToCartBtn.addEventListener("click",function(){
@@ -220,7 +260,6 @@ cartList.addEventListener("click", function(event){
 modalPage.addEventListener("click", function(event){
   incOrDecQty(event);
 });
-
 
 
 
