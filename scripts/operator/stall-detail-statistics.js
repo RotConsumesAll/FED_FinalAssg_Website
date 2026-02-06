@@ -310,7 +310,7 @@ function createFeedbackRow(rating, comment, complaints) {
 async function renderThisWeekFeedback(feedbacks) {
   const feedbacksThisWeek = findRatingsOrFeedbackThisWeek(feedbacks, "rating");
   feedbackTable.innerHTML = "";
-  if (!feedbacks) {
+  if (!feedbacksThisWeek) {
     feedbackTable.append(createFeedbackRow("-", "-", "-"));
     return;
   }
