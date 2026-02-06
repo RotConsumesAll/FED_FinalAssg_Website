@@ -39,9 +39,6 @@ export async function getRentalAgreementsByStallId(stallId) {
   return getObjectsByAttribute("rentalAgreements", "stallId", stallId);
 }
 
-import { fetchData } from "./path-to-general-functions.js";
-
-// new helper function to get roles of stakeholders c:
 export async function getUserRole(uid) {
     const role = await fetchData(`users/${uid}/role`);
     if (!role) console.warn("Role not found for user:", uid);
