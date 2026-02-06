@@ -43,7 +43,7 @@ body {
 
 main {
   max-width: 1200px;
-  margin: 1rem auto 0px auto;
+  margin: 1rem auto 5rem auto;
   display: flex !important;
   flex-direction: column;
   gap: 1rem;
