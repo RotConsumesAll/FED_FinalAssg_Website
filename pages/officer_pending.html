@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inspection Database</title>
+  <title>Pending Inspections</title>
 
   <link href="../styles/officer.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,9 +16,9 @@
 
       <nav class="nav-center">
         <a href="officer_home.html" class="default-text">Home</a>
-        <a href="officer_scheduling.html" class="default-text">Scheduling</a>
+        <a href="officer_scheduling.html" class="default-text bold-focus">Scheduling</a>
         <a href="officer_submission.html" class="default-text">Submission</a>
-        <a href="officer_database.html" class="default-text bold-focus">Database</a>
+        <a href="officer_database.html" class="default-text">Database</a>
       </nav>
 
       <div class="nav-right log-out-button">
@@ -28,59 +28,66 @@
       </div>
     </header>
 
-    <h1 id="section-title" class="h1-home">Inspection Database</h1>
+    <h1 id="section-title" class="h1-home">Pending Inspections</h1>
 
-    <div class="db-bg">
+    <div class="pending-card">
 
-      <button class="db-filter-btn">⏷</button>
-
-      <table class="db-table">
+      <table class="pending-table">
         <tr>
-          <th>Inspection ID</th>
           <th>Hawker Centre Name</th>
           <th>Stall ID</th>
-          <th>Overall Score</th>
           <th>Date of Inspection (DD/MM/YY)</th>
+          <th></th>
         </tr>
 
         <tr>
-          <td>93</td>
           <td>Tekka Centre</td>
           <td>Stall 017</td>
-          <td>95</td>
-          <td>26/06/2026</td>
+          <td>26/06/2027</td>
+          <td>
+            <button class="btn-edit">Edit</button>
+            <button class="btn-remove">Remove</button>
+          </td>
         </tr>
 
         <tr>
-          <td>90</td>
           <td>Berseh Food Centre</td>
           <td>Stall 067</td>
-          <td>90</td>
-          <td>22/05/2026</td>
+          <td>22/05/2027</td>
+          <td>
+            <button class="btn-edit">Edit</button>
+            <button class="btn-remove">Remove</button>
+          </td>
         </tr>
 
         <tr>
-          <td>57</td>
           <td>Tekka Centre</td>
           <td>Stall 017</td>
-          <td>57</td>
-          <td>17/04/2026</td>
+          <td>17/04/2027</td>
+          <td>
+            <button class="btn-edit">Edit</button>
+            <button class="btn-remove">Remove</button>
+          </td>
         </tr>
 
         <tr>
-          <td>63</td>
           <td>Newton Food Centre</td>
           <td>Stall 001</td>
-          <td>63</td>
-          <td>16/04/2026</td>
+          <td>16/04/2027</td>
+          <td>
+            <button class="btn-edit">Edit</button>
+            <button class="btn-remove">Remove</button>
+          </td>
         </tr>
 
         <tr>
-          <td>93</td>
           <td>Pandi Ayya Tiffin Centre</td>
           <td>Stall 041</td>
-          <td>93</td>
-          <td>15/04/2026</td>
+          <td>15/04/2027</td>
+          <td>
+            <button class="btn-edit">Edit</button>
+            <button class="btn-remove">Remove</button>
+          </td>
         </tr>
       </table>
     </div>
