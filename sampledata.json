@@ -93,25 +93,25 @@
       "stallDesc": "Stir fried delicacies in a cup",
       "hawkerCentreId": "hc_01",
       "ownerUid": "OWNER_001",
-      "image": "/assets/Images/BSImg/wok-hey-chickenramen.svg",
+      "image": "/assets/Images/customerImages/wok-hey-chickenramen.svg",
       "visitCount": "27"
     },
     "stall_02": {
       "stallUnitNo": "01-05",
       "stallName": "Monster Curry",
-      "stallDesc": "Traditional wok hei filled dishes.",
+      "stallDesc": "Authentic Japanese curry rice",
       "hawkerCentreId": "hc_01",
       "ownerUid": "OWNER_002",
-      "image": "/assets/Images/BSImg/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
+      "image": "/assets/Images/customerImages/MonstercurryDemiGlace.svg",
       "visitCount": "25"
     },
     "stall_03": {
       "stallUnitNo": "01-15",
       "stallName": "Yah Fu Miniwok",
-      "stallDesc": "Traditional wok hei filled dishes.",
+      "stallDesc": "Traditional wok hei filled dishes",
       "hawkerCentreId": "hc_01",
       "ownerUid": "OWNER_003",
-      "inage": "/assets/Images/BSImg/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
+      "image": "/assets/Images/customerImages/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
       "visitCount": "20"
     },
     "stall_04": {
@@ -182,7 +182,7 @@
     "stall_01": {
       "item_01": {
         "itemName": "Chicken Ramen",
-        "itemDesc": "Rich broth served with tender chicken slices.",
+        "itemDesc": "Stir fried chicken cubes with signature ramen.",
         "itemPrice": 7.9,
         "itemCategory": "Mains",
         "cuisines": {

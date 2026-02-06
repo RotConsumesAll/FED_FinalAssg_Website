@@ -265,20 +265,21 @@ form {
 }
 
 
-/* body{
+body{
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 0px;
-} */
+}
 
 /* Content */
 /* Promotions */
 
-#PromoCarousel{
+#promocarousel{
   margin-bottom: 6.125rem;
 }
 
-.Background-Photo{
+.background-photo{
   filter: brightness(0.5);
   position: absolute;
   left:0;
@@ -302,9 +303,6 @@ form {
 
 .carousel-indicators li {
   width:1.25rem !important; height: 1.25rem !important;border-radius: 50%;
-  /* margin:6.125rem 1.75rem; */
-  /* margin-bottom: 6.125rem; */
-  /* flex: 0 0 auto; */
 }
 
 .carousel-control-next {
@@ -332,7 +330,7 @@ form {
 
 }
 
-.Triangle-Left{
+.triangle-left{
   /* Triangle reference: https://www.web4college.com/how-to-make/web4-css-square-isosceles-comment-shape.php */
   /* Converges both borders */
   width:0;
@@ -343,11 +341,11 @@ form {
   border-left: 7.813rem solid transparent;
   rotate: 90deg ; 
   position:absolute;
-  top:13.75rem; left:5.0.313rem;
+  top:13.75rem; left:0.3rem;
   z-index: 2;
 }
 
-.Triangle-Right{
+.triangle-right{
   /* Triangle reference: https://www.web4college.com/how-to-make/web4-css-square-isosceles-comment-shape.php */
   /* Converges both borders */
   width:0;
@@ -358,11 +356,11 @@ form {
   border-left: 7.813rem solid transparent;
   rotate: -90deg ; 
   position:absolute;
-  top:13.75rem; left: 255.0.313rem;
+  top:13.75rem; left: 16rem;
   z-index: 2;
 }
 
-.Title{
+.title{
   font-family: "Inter", Helvetica, sans-serif;
   font-weight: bold;
   font-size: 2.813rem;
@@ -374,7 +372,7 @@ form {
   align-self: center;
 }
 
-.Body{
+.body{
   font-family: "Inter", Helvetica, sans-serif;
   font-weight: 500;
   font-size: 1.5rem;
@@ -398,7 +396,7 @@ form {
   align-self: center;
 }
 
-.Logo{
+.logo{
   width: 5.625rem; height: 5.625rem;border-radius: 50%;
   position:absolute;
   z-index:2;
@@ -409,8 +407,8 @@ form {
 
 
 
-/* Wokhey */
-#Bookmark-Wokhey{
+/* wokhey */
+#bookmark-wokhey{
   width:31.875rem;
   height: 21.875rem;
   background-color:#FDC741;
@@ -422,27 +420,27 @@ form {
   flex-direction: column;
 }
 
-#Bookmark-Wokhey .Triangle-Left{
+#bookmark-wokhey .triangle-left{
   border-bottom: 16.25rem solid #FDC741;
 }
 
-#Bookmark-Wokhey .Triangle-Right{
+#bookmark-wokhey .triangle-right{
   border-bottom: 16.25rem solid #FDC741;
 }
 
-#Bookmark-Wokhey .Logo{
+#bookmark-wokhey .logo{
   background-image: url("../assets/Icons/WokHeyLogo.svg");
 }
 
-#Bookmark-Wokhey .Body {
+#bookmark-wokhey .body {
   margin-top: 9.688rem;
 }
 
 
 
 
-/* YahFu */
-#Bookmark-Yahfu{
+/* yahfu */
+#bookmark-yahfu{
   width:31.875rem;
   height: 21.875rem;
   background-color:#EB1B2B;
@@ -454,30 +452,30 @@ form {
   flex-direction: column;
 }
 
-#Bookmark-Yahfu .Triangle-Left{
+#bookmark-yahfu .triangle-left{
   border-bottom: 16.25rem solid #EB1B2B;
 }
 
-#Bookmark-Yahfu .Triangle-Right{
+#bookmark-yahfu .triangle-right{
   border-bottom: 16.25rem solid #EB1B2B;
 }
 
-#Bookmark-Yahfu .Logo{
+#bookmark-yahfu .logo{
   background-image: url("../assets/Icons/YahFuKitchenlogo.svg");
 }
 
-#Bookmark-Yahfu .Title{
+#bookmark-yahfu .title{
   color: #FAF9F6;
 }
 
-#Bookmark-Yahfu .Body{
+#bookmark-yahfu .body{
   color: #FAF9F6;  margin-top: 9.688rem;
 }
 
 
 
-/* MonsterCurry */
-#Bookmark-Monstercurry{
+/* monstercurry */
+#bookmark-monstercurry{
   width:31.875rem;
   height: 21.875rem;
   background-color: #FFCB70;  
@@ -488,36 +486,37 @@ form {
   display: flex;
   flex-direction: column;  
 }
-#Bookmark-Monstercurry .Triangle-Left{
+#bookmark-monstercurry .triangle-left{
   border-bottom: 16.25rem solid #FFCB70;
 }
 
-#Bookmark-Monstercurry .Triangle-Right{
+#bookmark-monstercurry .triangle-right{
   border-bottom: 16.25rem solid #FFCB70;
 }
 
-#Bookmark-Monstercurry .Logo{
+#bookmark-monstercurry .logo{
   background-image: url("../assets/Icons/Monstercurrylogo.svg");
 }
 
-#Bookmark-Monstercurry .Body{
+#bookmark-monstercurry .body{
   margin-top: 9.688rem;  
 }
 
 
 /* Frequently visited */
-#Freq-Visited{
-  padding-bottom: 6.125rem;   
+#freq-visited{
+  padding-bottom: 6.125rem;
+  display: flex;
+  flex-direction: column; 
 }
 
-#Freq-Visited .Title{
+#freq-visited .title{
   color: rgba(0,0, 0, 0.65);
   font-size: 3.125rem;
-  align-self: flex-end;
   margin: 0  1.75rem;
 }
 
-.Podium{
+.podium{
   min-height: 29.688rem;
   display:flex;
   flex-direction: row;
@@ -526,7 +525,7 @@ form {
   margin-bottom: 6.125rem;
 }
 
-.First-Rec{
+.first-rec{
   display: flex;
   height: 15.625rem; width: 9.375rem;
   background-color:#F0D52D;
@@ -535,7 +534,7 @@ form {
   justify-content: center;
 }
 
-.First-Rec .Logo {
+.first-rec .logo {
   width: 7.5rem; height: 7.5rem;border-radius: 50%;
   justify-self: center;
   margin-top:-8.75rem;
@@ -543,13 +542,13 @@ form {
   background-image: cover;
 }
 
-.First-Rec .Body{
+.first-rec .body{
   margin-top: 0.313rem;
   align-self: flex-start;
   color:#1c1c1e; font-size: 2.5rem;
 }
 
-.Second-Rec{
+.second-rec{
   display: flex;
   justify-content: center;
   height: 12.5rem; width: 9.375rem;
@@ -558,7 +557,7 @@ form {
   border-bottom-right-radius: 0.625rem;
 }
 
-.Second-Rec .Logo {
+.second-rec .logo {
   width: 7.5rem; height: 7.5rem;border-radius: 50%;
   justify-self: center;
   margin-top:-8.75rem;
@@ -566,13 +565,13 @@ form {
   background-image: cover;
 }
 
-.Second-Rec .Body{
+.second-rec .body{
   margin-top: 0.313rem;
   align-self: flex-start;
   color:#1c1c1e; font-size: 2.5rem;
 }
 
-.Third-Rec{
+.third-rec{
   display: flex;
   justify-content: center;  
   height: 9.375rem; width: 9.375rem;
@@ -581,7 +580,7 @@ form {
   border-bottom-left-radius: 0.625rem;  
 }
 
-.Third-Rec .Logo {
+.third-rec .logo {
   width: 7.5rem; height: 7.5rem;border-radius: 50%;
   justify-self: center;
   margin-top:-8.75rem;
@@ -589,7 +588,7 @@ form {
   background-image: cover;    
 }
 
-.Third-Rec .Body{
+.third-rec .body{
   margin-top: 0.313rem;
   align-self: flex-start;
   color:#1c1c1e; font-size: 2.5rem;
@@ -597,24 +596,11 @@ form {
 
 .Runner-Up-Container{
   display: flex; flex-direction: row ;
-  /* background-color: #d9d9d9; */
   justify-content: center;
   column-gap: 0.313rem;
 }
 
-/* .Fourth-Rec{
-  height: 6.25rem; width: 222.0.313rem;
-  background-color:rgba(116, 184, 75,1);
-  border-radius: 0.625rem;  
-}
-
-.Fifth-Rec{
-  height: 6.25rem; width: 222.0.313rem;
-  background-color:rgba(116, 184, 75,1);
-  border-radius: 0.625rem;  
-} */
-
-.Num-Times-Visited {
+.num-times-visited {
   margin-top: 3.438rem;
   align-self: flex-start;
   color:#1c1c1e; font-size: 1.875rem;
@@ -623,51 +609,66 @@ form {
 
 
 /* Dicover More */
-#Discover-More{
+#discover-more{
+  display: flex;
+  flex-direction: column;
   height:auto; width:94.5rem;
   margin: 7.5rem 0;   
-  background-color: #C4C4C4;
 }
 
-#Discover-More .Title{
+#discover-more .title{
   color: rgba(0,0, 0, 0.65);
   font-size: 3.125rem;
-  align-self: flex-end;
   margin: -6.25rem  1.75rem;
+  /* justify-self: left ; */
+}
+
+#discover-more p{
+  margin:0;
 }
 
 /* Top Row */
 .Top-Row {
   display:flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;    
-  /* background-color: #808080; */
   column-gap: 6.875rem;
   margin-bottom: 5.688rem;
 }
 
-.Recommendation-1{
+.recommendation-1{
   display: flex;
   flex-direction: column;  
   align-items: center;  
-  background-color: #000000;
   padding:0.625rem;
   border-radius: 5%;
 }
 
-.Recommendation-1 .Preview-Photo{
-  background-image: url("../assets/Images/BSImg/MonstercurryDemiGlace.svg");
+.recommendation{
+  display: flex;
+  flex-direction: column;  
+  align-items: center;  
+  background-color: #1c1c1e;
+  padding:0.625rem;
+  border-radius: 5%;
 }
 
-#Discover-More a {
+.recommendation-1 .preview-photo{
+  background-image: url("../assets/Images/CustomerImages/MonstercurryDemiGlace.svg");
+}
+
+#discover-more a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
   color: #FAF9F6;
   font-weight: 600;
   font-size: 1.5rem;
 }
 
-.Preview-Photo{
+.preview-photo{
   width:12.5rem; min-height: 12.5rem;
   position: relative;
   background-size: cover;
@@ -681,7 +682,6 @@ form {
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
-  /* background-color: #808080; */
   column-gap: 6.875rem;
 }
 
@@ -706,7 +706,7 @@ form {
   column-gap: 0.5rem;
 }
 
-#stall-container .directory-link .Body{
+#stall-container .directory-link .body{
   position:static;
   margin:0;
   align-self: auto;
@@ -726,7 +726,7 @@ form {
 .stall-thumbnail{
   border:0.2rem solid #d9d9d9 ;border-radius: 1rem;
   height: 12.5rem; width:12.5rem;
-  background-image: url(../assets/Images/BSImg/I\ Sel-Fish\ picture.svg);
+  background-image: url(../assets/Images/CustomerImages/I\ Sel-Fish\ picture.svg);
   background-size: cover;
   background-position: center;
 }
@@ -852,11 +852,12 @@ form {
   width: 26.875rem; height: 9.563rem;
   border:0.2rem solid #1c1c1e;
   border-radius: 1rem;
+  position:relative;
 }
 
 .item-image{
   width:7.75rem;height: 9.438rem;
-  background-image: url(../assets/Images/BSImg/I\ Sel-Fish\ picture.svg);
+  background-image: url(../assets/Images/CustomerImages/I\ Sel-Fish\ picture.svg);
   background-size:cover;
   background-position:center;
   background-color: #1c1c1e;
@@ -936,6 +937,9 @@ form {
   display: flex; align-items: center; justify-content: space-between;
   width:3.375rem;height:3.375rem;border-radius: 50%;
   background-color:#74B84B;
+  position:absolute;
+  bottom:0.5rem;
+  right:0.5rem;
 }
 
 .discount-amt{
@@ -1138,7 +1142,7 @@ form {
 
 .modal-item-image{
   width:37.813rem;height: 17.5rem;
-  background-image: url(../assets/Images/BSImg/I\ Sel-Fish\ picture.svg);
+  background-image: url(../assets/Images/CustomerImages/I\ Sel-Fish\ picture.svg);
   background-size:cover;
   background-position:center;
   background-color: #1c1c1e;
@@ -1188,15 +1192,15 @@ form {
   margin:1.5rem 0;
 }
 
-/* Footer */
-#Footer{
+/* footer */
+#footer{
   height:28.938rem;width:94.5rem;
   background-color: #74B84B;
   position:relative;
   margin-top: 6.438rem;
 }
 
-.Contact-Us-Container{
+.contact-us-container{
   display: flex;
   flex-direction: column;
   position:absolute;
@@ -1205,13 +1209,13 @@ form {
   row-gap: 3.125rem;
 }
 
-.Hotline-Container {
+.hotline-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.Hotline-Container .Hotline-Body{
+.hotline-container .hotline-body{
   width: auto; 
   margin: 0 0 0 1.063rem;
   text-align: center;
@@ -1220,14 +1224,14 @@ form {
   font-size:larger;  
 }
 
-.Email-Container {
+.email-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 
 }
 
-.Email-Container .Email-Body{
+.email-container .email-body{
   width: auto; 
   margin: 0 0 0 1.063rem;
   text-align: center;
@@ -1236,13 +1240,13 @@ form {
   font-size:1.25rem;  
 }
 
-.Credits-Container{
+.credits-container{
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.Credits-Container .Credits {
+.credits-container .credits {
   width: auto; 
   margin: 0 0 0 1.063rem;
   text-align: center;
@@ -1252,7 +1256,7 @@ form {
   color:#FAF9F6
 }
 
-.About-Us-Container{
+.about-us-container{
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -1261,7 +1265,7 @@ form {
   margin-left: 48.938rem;
 }
 
-.About-Us-Container .About-Us-Title{
+.about-us-container .about-us-title{
   width: auto; 
   margin: 0 0;
   font-weight: 700;
@@ -1269,7 +1273,7 @@ form {
   color: #FAF9F6;
 }
 
-.About-Us-Container .About-Us-Body{
+.about-us-container .about-us-body{
   max-width: 40.625rem; 
   width: auto; 
   margin: 0 0;
@@ -1278,7 +1282,7 @@ form {
   color: #FAF9F6;
 }
 
-.Social-Media-Icons {
+.social-media-icons {
   display: flex;
   flex-direction: row;
   margin-top: 2.438rem;

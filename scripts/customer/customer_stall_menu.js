@@ -1,12 +1,73 @@
 //DOM
 import { getStallMenu } from "../database/meaningful-helpers.js";
+import {getStall} from "../database/meaningful-helpers.js";
 
-async function asyncGetStallMenu(wantedStallId){
-  let stallMenu = await getStallMenu(wantedStallId);
+let stallMenu;
+let stallDetails;
+async function loadPage(wantedStallId){
+  //Get data from database
+  stallMenu = await getStallMenu(wantedStallId);
   console.log(stallMenu);
-}
+  stallDetails = await getStall(wantedStallId);
+  console.log(stallDetails);  
 
-asyncGetStallMenu("stall_01");
+  //TODO Extract hawker centre ID and get hawkercentre object
+
+  let modalImage = document.querySelectorAll(".modal-item-image"); //Target overlay+cart image
+  modalImage.forEach(elementItemImage =>{
+    elementItemImage.style.backgroundImage = `url("${stallDetails.image}")`;
+  });
+
+  let thumbnailImage = document.querySelectorAll(".stall-thumbnail");   //Target stall thumbnail
+  thumbnailImage.forEach(elementItemImage =>{
+    elementItemImage.style.backgroundImage = `url("${stallDetails.image}")`;
+  });
+
+  let stallName = document.querySelector(".stall-name"); //Stall name
+  stallName.textContent=stallDetails.stallName;
+
+  //TODO stall info button. Include name, address, image and open/close timing
+
+  let cards = document.querySelectorAll(".item-card");
+  let ArrayStallMenu = Object.values(stallMenu)
+  let i=0;
+  while (i!=ArrayStallMenu.length){
+    let currentCard = cards[i];
+    let currentMenuItem = ArrayStallMenu[i];
+
+    let itemTitle = currentCard.querySelector(".item-title");
+    let itemDesc = currentCard.querySelector(".item-body")      
+    let itemCost = currentCard.querySelector(".item-cost");
+    let itemImage = currentCard.querySelector(".item-image");
+
+    itemTitle.textContent = currentMenuItem.itemName;
+    itemDesc.textContent = currentMenuItem.itemDesc;
+    itemCost.textContent = "$"+parseFloat(currentMenuItem.itemPrice).toFixed(2);
+
+    currentCard.addEventListener("click", function(){
+      let modal = document.querySelector("#menu-item-modal");
+      let modalTitle = modal.querySelector(".item-title");
+      let modalDesc = modal.querySelector(".item-body");
+      let modalCost = modal.querySelector(".item-cost"); 
+
+      modalTitle.textContent = currentMenuItem.itemName;
+      modalDesc.textContent = currentMenuItem.itemDesc;
+      modalCost.textContent = "$"+parseFloat(currentMenuItem.itemPrice).toFixed(2);
+
+      resetModalQty();
+    });
+
+    itemImage.style.backgroundImage = `url("${stallDetails.image}")`
+    i++;
+  }
+}
+loadPage("stall_03");
+
+
+function resetModalQty(){
+  let modalQtyText = document.querySelector("#menu-item-modal .quantity-container .quantity");
+  modalQtyText.innerText = "1";
+}
 
 
 //+ or - function, used in menu item overlay and cart container.
@@ -43,7 +104,6 @@ function incOrDecQty(userInput){
     let qtyContainer = subQtyBtn.closest(".quantity-container");
     let elementQty = qtyContainer.querySelector(".quantity");
     let calcQty = parseInt(elementQty.innerText); 
-    // let isModal = subQtyBtn.closest("#menu-item-modal");  
 
     //Does not allow qty to be 0 in menu item overlay, 
     if (isModal !== null){
@@ -180,5 +240,3 @@ function rmvItemFromCartArray(wantedItemName){
     }
   });
 }
-
-
