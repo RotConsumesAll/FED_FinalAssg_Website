@@ -1,3 +1,14 @@
+//DOM
+import { getStallMenu } from "../database/meaningful-helpers.js";
+
+async function asyncGetStallMenu(wantedStallId){
+  let stallMenu = await getStallMenu(wantedStallId);
+  console.log(stallMenu);
+}
+
+asyncGetStallMenu("stall_01");
+
+
 //+ or - function, used in menu item overlay and cart container.
 function incOrDecQty(userInput){
   let btnClicked = userInput.target.closest("button");    //Get the button element clicked
