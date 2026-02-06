@@ -47,7 +47,6 @@ function createStallCard(stall, ownerName, grade) {
   return article;
 }
 
-
 export async function renderSidebar(uid) {
   const hawkerCentres = await database.getManagedCentresByOperatorUID(uid);
   const centresMenu = document.querySelector("ul.sidebar__menu");
@@ -116,7 +115,12 @@ async function renderStalls(centreId) {
     const stall = stalls[stallId];
 
     const owner = await database.getUserDetails(stall.ownerUid);
-    const ownerName = owner.ownerName;
+    let ownerName;
+    if (!owner) {
+      ownerName = "Unavailable";
+    } else {
+      ownerName = owner.ownerName;
+    }
 
     const inspectionRecords = await database.getInspectionByStallId(stallId);
     const recordFound = findValidRecord(inspectionRecords);
