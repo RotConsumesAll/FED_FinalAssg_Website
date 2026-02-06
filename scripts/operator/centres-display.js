@@ -102,7 +102,7 @@ async function handleCentreSelect(e) {
   // clear search bar
   document.querySelector("#centre-search").value = "";
 
-  renderStalls(centreId);
+  await renderStalls(centreId);
 }
 
 async function renderStalls(centreId) {

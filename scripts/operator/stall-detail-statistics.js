@@ -9,18 +9,17 @@ import {
   roundTo2DecimalPlaces,
 } from "./general-helper.js";
 
-// Elemeents
+// Elements
 const licenceTable = document.getElementById("licence-table");
 const rentalAgreementCard = document.getElementById("rental-agreement-card");
-const scoreSelectButtons = document.getElementById("score-selector").children;
+const chartCard = document.getElementById("average-score-chart-chart");
+const feedbackTable = document.getElementById("feedback-table");
 
 // Configurations
 const SGDollar = new Intl.NumberFormat("en-SG", {
   style: "currency",
   currency: "SGD",
 });
-
-const chartCard = document.getElementById("average-score-chart-chart");
 
 const scoreChartConfig = {
   type: "line",
@@ -210,6 +209,7 @@ function resetChartCardHTML() {
 }
 
 function showScoreSelectButtons(show) {
+  const scoreSelectButtons = document.getElementById("score-selector").children;
   for (const button of scoreSelectButtons) {
     button.style.display = show ? "flex" : "none";
   }
@@ -232,6 +232,7 @@ async function renderAverageScoreGraph(inspectionRecords) {
   const canvas = document.getElementById("average-score-chart");
   const chart = new Chart(canvas, createScoreChartConfig(dateAxis, axesData));
 
+  const scoreSelectButtons = document.getElementById("score-selector").children;
   for (const button of scoreSelectButtons) {
     button.addEventListener("click", function (e) {
       handleScoreSelector(e, chart);
@@ -258,21 +259,29 @@ export async function renderInspectionRecordStatistics(stallId) {
 }
 
 // Average customer rating (this week)
-function findFeedbackForThisWeek(feedbacks) {
-  let ratingsThisWeek = [];
+function findRatingsOrFeedbackThisWeek(feedbacks, type) {
+  let result = [];
   if (feedbacks) {
     for (const feedback of Object.values(feedbacks)) {
       if (isDateInThisWeek(feedback.fbkDate)) {
-        ratingsThisWeek.push(feedback.fbkRating);
+        switch (type) {
+          case "feedback":
+            result.push(feedback);
+            break;
+          case "rating":
+            result.push(feedback.fbkRating);
+            break;
+          default:
+            continue;
+        }
       }
     }
   }
-  return ratingsThisWeek;
+  return result;
 }
 
-export async function renderAverageCustomerRating(stallId) {
-  const feedbacks = await database.getFeedbackByStallId(stallId);
-  const ratingList = findFeedbackForThisWeek(feedbacks);
+async function renderAverageCustomerRating(feedbacks) {
+  const ratingList = findRatingsOrFeedbackThisWeek(feedbacks, "rating");
   const averageRating = calculateAverage(ratingList);
 
   if (isNaN(averageRating)) {
@@ -281,4 +290,44 @@ export async function renderAverageCustomerRating(stallId) {
     document.getElementById("average-rating").textContent =
       roundTo2DecimalPlaces(averageRating);
   }
+}
+
+// Feedback received
+function createFeedbackRow(rating, comment, complaints) {
+  const row = document.createElement("tr");
+  const ratingData = document.createElement("td");
+  const commentData = document.createElement("td");
+  const complaintData = document.createElement("td");
+
+  ratingData.textContent = rating;
+  commentData.textContent = comment;
+  complaintData.textContent = complaints; // handle complaints
+
+  row.append(ratingData, commentData, complaintData);
+  return row;
+}
+
+async function renderThisWeekFeedback(feedbacks) {
+  const feedbacksThisWeek = findRatingsOrFeedbackThisWeek(feedbacks, "rating");
+  feedbackTable.innerHTML = "";
+  if (!feedbacks) {
+    feedbackTable.append(createFeedbackRow("-", "-", "-"));
+    return;
+  }
+
+  for (const feedback of Object.values(feedbacksThisWeek)) {
+    const row = createFeedbackRow(
+      feedback.fbkRating,
+      feedback.fbkComment,
+      feedback.complaints,
+    );
+    licenceTable.appendChild(row);
+  }
+}
+
+// To handle both rating and feedback
+export async function renderRatingAndFeedbackStatistics(stallId) {
+  const feedbacks = await database.getFeedbackByStallId(stallId);
+  await renderAverageCustomerRating(feedbacks);
+  await renderThisWeekFeedback(feedbacks);
 }

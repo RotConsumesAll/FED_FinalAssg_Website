@@ -1,5 +1,5 @@
 import * as database from "../database/meaningful-helpers.js";
-import { renderLicences, renderRentalAgreement, renderInspectionRecordStatistics, renderAverageCustomerRating } from "./stall-detail-statistics.js";
+import { renderLicences, renderRentalAgreement, renderInspectionRecordStatistics, renderRatingAndFeedbackStatistics } from "./stall-detail-statistics.js";
 
 function createMenuItem(stallId, stallName) {
   return `<li class="sidebar__menu__item" data-stallid="${stallId}"><a href="#">${stallName}</a></li>`;
@@ -59,14 +59,14 @@ async function handleStallSelect(e, centreId) {
     item.classList.remove("sidebar__menu__item--selected");
   }
 
-  renderStallStatistics(stallId);
+  await renderStallStatistics(stallId);
 }
 
 async function renderStallStatistics(stallId) {
   await renderLicences(stallId);
   await renderRentalAgreement(stallId);
   await renderInspectionRecordStatistics(stallId);
-  await renderAverageCustomerRating(stallId);
+  await renderRatingAndFeedbackStatistics(stallId);
 }
 
 export function assignStallSelectHandlers(centreId) {

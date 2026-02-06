@@ -56,31 +56,7 @@ export function roundTo2DecimalPlaces(number) {
   return Math.round(number * 10) / 10;
 }
 
-// DOESN'T WORK
-export function isDayWithinThisWeek() {
-  /// Assume start of week is Sunday and end of week is Saturday
-  // const currentDate = new Date(getCurrentDate());
-  const currentDate = new Date("2026-02-07");
-  const currentDay = currentDate.getDay();
-  console.log("currendAy: ", currentDay);
-  let startDateOfCurrentWeek = new Date();
-  let endDateOfCurrentWeek = new Date();
-
-  if (currentDay === 0) {
-    startDateOfCurrentWeek = currentDate;
-    endDateOfCurrentWeek = currentDate + 6;
-  } else if (currentDay === 6) {
-    startDateOfCurrentWeek = currentDate - 6;
-    endDateOfCurrentWeek = currentDate;
-  } else {
-    const diffInDays = 7 - currentDay - 1;
-    startDateOfCurrentWeek.setDate(currentDate.getDate() - currentDay);
-    endDateOfCurrentWeek.setDate(currentDate.getDate() + diffInDays);
-  }
-  console.log(startDateOfCurrentWeek, " and ", endDateOfCurrentWeek);
-}
-
-// https://stackoverflow.com/questions/36787908/how-to-check-if-date-is-in-this-week-in-javascript
+// from https://stackoverflow.com/questions/36787908/how-to-check-if-date-is-in-this-week-in-javascript
 export function isDateInThisWeek(date) {
   const todayObj = new Date();
   const todayDate = todayObj.getDate();
