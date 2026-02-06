@@ -6,30 +6,33 @@ import {
 } from "../firebase/index.js";
 import { getUserRole } from "../database/meaningful-helpers.js";
 
-async function redirectToPageWithUID(uid) {
-  const role = await getUserRole(uid);
-  if (role === "operator") {
-    window.location.href = "./operator/dashboard.html";
-    return;
+async function redirectToPageWithRole(role) {
+  switch (role) {
+    case "customer":
+      window.location.href = "./pages/customer_home.html";
+      break;
+    case "stallOwner":
+      window.location.href = "./pages/stallowner_menu.html";
+      break;
+    case "neaOfficer":
+      window.location.href = "./pages/officer_home.html";
+      break;
+    case "operator":
+      window.location.href = "./pages/operator/dashboard.html";
+      break;
+    default:
+      alert("Unknown user role. Cannot redirect.");
+      break;
   }
-  if (role === "neaOfficer") {
-    window.location.href = "./officer_home.html";
-    return;
-  }
-  if (role === "stallOwner") {
-    window.location.href = "./stallowner_stall.html";
-    return;
-  }
-  if (role === "customer") {
-    window.location.href = "./customer_home.html";
-    return;
-  }
-  alert(`Invalid role (${role}). Can't redirect to appropriate page.`);
 }
 
 export async function authenticateSignin(email, password) {
-    try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    );
     const user = userCredential.user;
 
     const uid = user.uid;
@@ -40,37 +43,20 @@ export async function authenticateSignin(email, password) {
       return;
     }
 
-    switch (role) {
-      case "customer":
-        window.location.href = "customer_home.html";
-        break;
-      case "stallOwner":
-        window.location.href = "stallowner_menu.html";
-        break;
-      case "neaOfficer":
-        window.location.href = "officer_home.html";
-        break;
-      case "operator":
-        window.location.href = "operator_dashboard.html";
-        break;
-      default:
-        alert("Unknown role. Cannot redirect.");
-        break;
-    }
-
+    await redirectToPageWithRole(role);
   } catch (error) {
-      if (error.code === "auth/user-not-found") {
-        alert("No account found with this email.");
-      } else if (error.code === "auth/wrong-password") {
-        alert("Incorrect password. Please try again.");
-      } else if (error.code === "auth/invalid-email") {
-        alert("Please enter a valid email address.");
-      } else if (error.code === "auth/missing-password") {
-        alert("Please enter your password.");
-      } else {
-        alert(error.message);
-      }
-    };
+    if (error.code === "auth/user-not-found") {
+      alert("No account found with this email.");
+    } else if (error.code === "auth/wrong-password") {
+      alert("Incorrect password. Please try again.");
+    } else if (error.code === "auth/invalid-email") {
+      alert("Please enter a valid email address.");
+    } else if (error.code === "auth/missing-password") {
+      alert("Please enter your password.");
+    } else {
+      alert(error.message);
+    }
+  }
 }
 
 export function createUser(email, name, password) {
