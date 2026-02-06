@@ -27,16 +27,11 @@ async function redirectToPageWithUID(uid) {
   alert(`Invalid role (${role}). Can't redirect to appropriate page.`);
 }
 
-import { getUserRole } from "../database/meaningful-helpers.js";
-
 export async function authenticateSignin(email, password) {
     try {
-    // Signing in de user
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
-    console.log(user);
 
-    // Get role from the database
     const uid = user.uid;
     const role = await getUserRole(uid);
 
@@ -45,9 +40,6 @@ export async function authenticateSignin(email, password) {
       return;
     }
 
-    console.log("User role:", role);
-
-    // Redirect based on role yay
     switch (role) {
       case "customer":
         window.location.href = "customer_home.html";
