@@ -83,6 +83,10 @@ function fillStars(rating) {
 // receving feedback form submission
 
 import { db, ref, push } from "../firebase/index.js";
+import { getAuth, onAuthStateChanged } 
+from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+
+const auth = getAuth();
 
 const form = document.getElementById("feedbackForm");
 
@@ -97,6 +101,16 @@ form.addEventListener("submit", (e) => {
   if (!stallName) return alert("Please select a stall.");
   if (!rating) return alert("Please rate your experience.");
   if (!comment) return alert("Please write a comment.");
+  onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    alert("Please sign in first");
+    return;
+  }
+
+  // user.uid
+  // user.displayName (if you used Case A)
+});
+
 
   const feedbackRef = ref(db, "feedbacks");
 
@@ -105,6 +119,7 @@ form.addEventListener("submit", (e) => {
     stallName,
     rating: Number(rating),
     comment,
+    userName: user.displayName ?? "Anonymous",
     createdAt: Date.now(), // optional I guess but good to have
   })
     .then(() => {
