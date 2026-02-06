@@ -152,16 +152,18 @@ a{
   width: 100%;
   padding: 20px 30px;
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .stall-owner .frame-3{
   display: flex;
   flex-direction: row;
-  gap: 100px;
+  gap: 50px;
   height: auto;
   width: auto;
   padding: 14px 30px;
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .frame-4{
@@ -477,22 +479,19 @@ a{
 
 .rectangle-5{
   display: flex;
-  flex: 1 1 0;
+  flex: 0 1 calc(50% - 50px);
   position: relative;
-  width: 50%;
   min-height: 125px;
   height: auto;
   background-color: #ffffff;
   border-radius: 27px;
   padding: 30px;
   box-sizing: border-box;
-  flex-direction: column;
-  
 }
 
 .rectangle-5 .menu-header {
     position: absolute;
-    top: 24px;
+    top: 35px;
     left: 110px;
     width: calc(100% - 130px);
     font-size: 16px;
