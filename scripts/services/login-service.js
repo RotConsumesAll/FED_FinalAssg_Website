@@ -9,7 +9,7 @@ import { getUserRole } from "../database/meaningful-helpers.js";
 async function redirectToPageWithUID(uid) {
   const role = await getUserRole(uid);
   if (role === "operator") {
-    window.location.href = "./operator_dashboard.html";
+    window.location.href = "./operator/dashboard.html";
     return;
   }
   if (role === "neaOfficer") {

@@ -27,7 +27,7 @@ function createStallCard(stall, ownerName, grade) {
 
   let unitNumber = document.createElement("p");
   unitNumber.classList.add("stall-card__extra-info__element");
-  unitNumber.textContent = stall.stallUnitNo;
+  unitNumber.textContent = `#${stall.stallUnitNo}`;
 
   let gradeElement = document.createElement("p");
   gradeElement.classList.add(
