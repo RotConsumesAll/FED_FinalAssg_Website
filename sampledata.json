@@ -3215,11 +3215,13 @@
     },
     "DhUUNZuRqqf4OZidlJHNwdeMCIE3": {
       "ownerName": "Siti Aminah",
-      "role": "stallOwner"
+      "role": "stallOwner",
+      "stallId": "stall_02"
     },
     "N5yobDeOFLWW8tK1Akg15MCa0UM2": {
       "ownerName": "John Doe",
-      "role": "stallOwner"
+      "role": "stallOwner",
+      "stallId": "stall_01"
     },
     "Os18BEltTkfVJjCpcTpkF9XG6092": {
       "officerName": "Daniel Tan",
