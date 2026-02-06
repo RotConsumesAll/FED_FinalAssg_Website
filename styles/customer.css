@@ -316,7 +316,7 @@ form {
 }
 
 .carousel-control-next-icon {
-  background-image: url(../assets/Images/BSImg/right-arrow.svg);
+  background-image: url("../assets/Icons/right-arrow.svg");
 }
 
 .carousel-control-prev {
@@ -328,7 +328,7 @@ form {
 }
 
 .carousel-control-prev-icon {
-  background-image: url(../assets/Images/BSImg/left-arrow.svg);
+  background-image: url("../assets/Icons/left-arrow.svg");
 
 }
 
@@ -402,7 +402,7 @@ form {
   width: 5.625rem; height: 5.625rem;border-radius: 50%;
   position:absolute;
   z-index:2;
-  background-image: url("../assets/Images/BSImg/WokHeyLogo.svg");
+  background-image: url("../assets/Icons/WokHeyLogo.svg");
   background-size: cover;
   background-position: center;
 }
@@ -431,7 +431,7 @@ form {
 }
 
 #Bookmark-Wokhey .Logo{
-  background-image: url("../assets/Images/BSImg/WokHeyLogo.svg");
+  background-image: url("../assets/Icons/WokHeyLogo.svg");
 }
 
 #Bookmark-Wokhey .Body {
@@ -463,7 +463,7 @@ form {
 }
 
 #Bookmark-Yahfu .Logo{
-  background-image: url("../assets/Images/BSImg/Yah\ Fu\ Kitchen\ logo.svg");
+  background-image: url("../assets/Icons/YahFuKitchenlogo.svg");
 }
 
 #Bookmark-Yahfu .Title{
@@ -497,7 +497,7 @@ form {
 }
 
 #Bookmark-Monstercurry .Logo{
-  background-image: url("../assets/Images/BSImg/Monster\ curry\ logo.svg");
+  background-image: url("../assets/Icons/Monstercurrylogo.svg");
 }
 
 #Bookmark-Monstercurry .Body{
@@ -539,7 +539,7 @@ form {
   width: 7.5rem; height: 7.5rem;border-radius: 50%;
   justify-self: center;
   margin-top:-8.75rem;
-  background-image: url("../assets/Images/BSImg/WokHeyLogo.svg");
+  background-image: url("../assets/Icons/WokHeyLogo.svg");
   background-image: cover;
 }
 
@@ -562,7 +562,7 @@ form {
   width: 7.5rem; height: 7.5rem;border-radius: 50%;
   justify-self: center;
   margin-top:-8.75rem;
-  background-image: url("../assets/Images/BSImg/Monster\ curry\ logo.svg");  
+  background-image: url("../assets/Icons/Monstercurrylogo.svg");  
   background-image: cover;
 }
 
@@ -585,7 +585,7 @@ form {
   width: 7.5rem; height: 7.5rem;border-radius: 50%;
   justify-self: center;
   margin-top:-8.75rem;
-  background-image: url("../assets/Images/BSImg/Yah\ Fu\ Kitchen\ logo.svg");
+  background-image: url("../assets/Icons/YahFuKitchenlogo.svg");
   background-image: cover;    
 }
 
