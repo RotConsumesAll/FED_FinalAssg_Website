@@ -2,8 +2,30 @@ import {
   auth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  updateProfile
+  updateProfile,
 } from "../firebase/index.js";
+import { getUserRole } from "../database/meaningful-helpers.js";
+
+async function redirectToPageWithUID(uid) {
+  const role = await getUserRole(uid);
+  if (role === "operator") {
+    window.location.href = "./operator_dashboard.html";
+    return;
+  }
+  if (role === "neaOfficer") {
+    window.location.href = "./officer_home.html";
+    return;
+  }
+  if (role === "stallOwner") {
+    window.location.href = "./stallowner_stall.html";
+    return;
+  }
+  if (role === "customer") {
+    window.location.href = "./customer_home.html";
+    return;
+  }
+  alert(`Invalid role (${role}). Can't redirect to appropriate page.`);
+}
 
 import { getUserRole } from "../database/meaningful-helpers.js";
 
@@ -47,17 +69,13 @@ export async function authenticateSignin(email, password) {
   } catch (error) {
       if (error.code === "auth/user-not-found") {
         alert("No account found with this email.");
-      } 
-      else if (error.code === "auth/wrong-password") {
+      } else if (error.code === "auth/wrong-password") {
         alert("Incorrect password. Please try again.");
-      } 
-      else if (error.code === "auth/invalid-email") {
+      } else if (error.code === "auth/invalid-email") {
         alert("Please enter a valid email address.");
-      } 
-      else if (error.code === "auth/missing-password") {
+      } else if (error.code === "auth/missing-password") {
         alert("Please enter your password.");
-      } 
-      else {
+      } else {
         alert(error.message);
       }
     };
@@ -65,25 +83,25 @@ export async function authenticateSignin(email, password) {
 
 export function createUser(email, name, password) {
   createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+    .then(async (userCredential) => {
       // Signed up
       const user = userCredential.user;
-      console.log(user);
+      await redirectToPageWithUID(user.uid);
 
       // to store user info in firebase
       return updateProfile(user, {
-      displayName: name,
+        displayName: name,
       });
     })
     .catch((error) => {
-       if (error.code === "auth/email-already-in-use") {
-    alert("This email is already registered. Try signing in instead.");
-  } else if (error.code === "auth/weak-password") {
-    alert("Password must be at least 6 characters.");
-  } else if (error.code === "auth/invalid-email") {
-    alert("Please enter a valid email address.");
-  } else {
-    alert(error.message);
-  }
+      if (error.code === "auth/email-already-in-use") {
+        alert("This email is already registered. Try signing in instead.");
+      } else if (error.code === "auth/weak-password") {
+        alert("Password must be at least 6 characters.");
+      } else if (error.code === "auth/invalid-email") {
+        alert("Please enter a valid email address.");
+      } else {
+        alert(error.message);
+      }
     });
 }

@@ -1,12 +1,12 @@
-import { handleForm, handleLoginAttempt } from "./user-handlers.js";
+import { handleForm, handleSignUpAttempt } from "./user-handlers.js";
 
 document.addEventListener("DOMContentLoaded", (e) => {
-  const loginButton = document.getElementById("login-button");
+  const signUpButton = document.getElementById("sign-up-button");
   const forms = document.getElementsByTagName("form");
 
   for (const form of forms) {
     form.addEventListener("submit", handleForm);
   }
 
-  loginButton.addEventListener("click", handleLoginAttempt);
+  signUpButton.addEventListener("click", handleSignUpAttempt);
 });

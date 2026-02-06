@@ -1,4 +1,3 @@
-// Handlers
 import { authenticateSignin, createUser } from "./services/login-service.js";
 
 export function handleForm(e) {
