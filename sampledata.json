@@ -3092,7 +3092,7 @@
   "feedback": {
     "fbk_01": {
       "fbkComment": "Best chicken rice in town!",
-      "fbkDateTime": "2026-02-01",
+      "fbkDate": "2026-02-01",
       "fbkRating": 5,
       "customerId": "CUST_001",
       "stallId": "stall_01",
