@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="..\styles\customer.css" rel="stylesheet" type="text/css" />
+  <link href="..\..\styles\customer.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -33,11 +33,11 @@
 
     <!-- Directory link container -->
     <section class = "directory-link">
-      <a href = "customer_home.html" class = "body">Home</a>
-      <p class="Body">></p>
-      <a href = "customer_stalls.html" class = "body">Stalls</a>
-      <p class="Body">></p>
-      <a href = "customer_stall_menu.html" class = "body">StallName</a>             
+      <a href = "./customer_home.html" class = "body dir-home-txt">Home</a>
+      <p class="body">></p>
+      <a href = "./customer_stalls.html" class = "body dir-stalls-txt">Stalls</a>
+      <p class="body">></p>
+      <a href = "./customer_stall_menu.html" class = "body dir-stallname-txt">StallName</a>             
     </section>
 
     <!-- Stall info container-->
@@ -63,7 +63,7 @@
         <div class = "master-stall-reviews">
           <div class = "stall-reviews">
             <p class = "review-rating"> </p>
-            <img class = "star-icon" src = "../assets/Icons/star.svg" alt = "★">
+            <img class = "star-icon" src = "../../assets/Icons/star.svg" alt = "★">
             <button type="button" class="btn btn-secondary">See Reviews</button>        
             <p class = "review-qty"> </p>          
           </div>  
@@ -108,7 +108,7 @@
   <section class = "menu-nav-container">
     <div class="menu-nav">
       <!-- Searchbar. Reference: https://www.w3schools.com/howto/howto_css_searchbar.asp-->        
-      <input type="text" placeholder="Search menu">
+      <input type="text" class = "searchbar" placeholder="Search menu">
       <!-- <a href="customer_home.html" class="menu-nav-default-text bold-focus current">Mains</a> -->
       <!--<a href="customer_stalls.html" class="menu-nav-default-text">Drinks</a>
       <a href="customer_feedback.html" class="menu-nav-default-text">Add-ons</a> -->
@@ -262,17 +262,17 @@
     <section id = "footer">
       <section class = "contact-us-container">
         <section class="hotline-container">
-          <img class = "hotline-icon" src = "../assets/Icons/Phone icon.svg" alt="Hotline icon" height = "auto"  width="50">
+          <img class = "hotline-icon" src = "../../assets/Icons/Phone icon.svg" alt="Hotline icon" height = "auto"  width="50">
           <p class="hotline-body">1800-HawkPortal-Hotline</p>
         </section>
         
         <section class="email-container">
-          <img class = "email-icon" src = "../assets/Icons/Letter icon.svg" alt="Letter icon" height = "auto"  width="50">
+          <img class = "email-icon" src = "../../assets/Icons/Letter icon.svg" alt="Letter icon" height = "auto"  width="50">
           <p class="email-body">HawkerPortal@gmail.com</p>
         </section>
 
         <section class = "credits-container">
-          <img class = "sources-icon" src = "../assets/Icons/Link.svg" alt="sources icon" height = "auto"  width="50"> 
+          <img class = "sources-icon" src = "../../assets/Icons/Link.svg" alt="sources icon" height = "auto"  width="50"> 
           <a href = "sources.html" class = "credits">Credits and references</a> 
         </section>
       </section>
@@ -281,12 +281,12 @@
         <p class = "about-us-title">About Us</p>
         <p class = "about-us-body">HawkerPortal is a one stop platform for all your needs, developed by our team at NEA. Our goal is to increase convenince when it comes to ordering food items at a hawker centre. We are dedicated to streamlining the ordering process, infusing your meals with a touch of technology.</p>
         <section class = "social-media-icons">
-          <img class = "facebook" src = "../assets/Icons/Facebook.svg" alt="Facebook icon" height = "auto"  width="50"> 
-          <img class = "twitter" src = "../assets/Icons/Twitter.svg" alt="Twitter icon" height = "auto"  width="50"> 
-          <img class = "instagram" src = "../assets/Icons/Instagram.svg" alt="Instagram icon" height = "auto"  width="50"> 
-          <img class = "linkedin" src = "../assets/Icons/Linkedin.svg" alt="Linkedin icon" height = "auto"  width="50"> 
-          <img class = "google" src = "../assets/Icons/Google.svg" alt="Google icon" height = "auto"  width="50"> 
-          <img class = "youtube" src = "../assets/Icons/Youtube.svg" alt="Youtube icon" height = "auto"  width="50">         
+          <img class = "facebook" src = "../../assets/Icons/Facebook.svg" alt="Facebook icon" height = "auto"  width="50"> 
+          <img class = "twitter" src = "../../assets/Icons/Twitter.svg" alt="Twitter icon" height = "auto"  width="50"> 
+          <img class = "instagram" src = "../../assets/Icons/Instagram.svg" alt="Instagram icon" height = "auto"  width="50"> 
+          <img class = "linkedin" src = "../../assets/Icons/Linkedin.svg" alt="Linkedin icon" height = "auto"  width="50"> 
+          <img class = "google" src = "../../assets/Icons/Google.svg" alt="Google icon" height = "auto"  width="50"> 
+          <img class = "youtube" src = "../../assets/Icons/Youtube.svg" alt="Youtube icon" height = "auto"  width="50">         
         </section>
       </section>          
     </section>      
@@ -342,7 +342,7 @@
       </div>
     </div>
   </section>
-  <script type = "module" src="../scripts/customer/customer_stall_menu.js"></script>
+  <script type = "module" src="../../scripts/customer/customer_stall_menu.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

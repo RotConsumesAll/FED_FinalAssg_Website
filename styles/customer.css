@@ -697,7 +697,7 @@ body{
 }
 
 .directory-link{
-  margin:0 0 1.5rem 5.5em;
+  margin:0 0 1.5rem 5.5rem;
 }
 
 #stall-container .directory-link{
@@ -720,7 +720,7 @@ body{
 .stall-info{
   display:flex;
   flex-direction: row;
-  margin:0 0 5.625rem 5.5em;  
+  margin:0 0 5.625rem 5.5rem;  
 }
 
 .stall-thumbnail{
@@ -864,7 +864,6 @@ body{
   border-radius: 1rem;  
   border-top-right-radius: 0;  
   border-bottom-right-radius: 0;
-  border-right: 0.2rem solid #1c1c1e;
 }
 
 .item-details{
@@ -975,6 +974,9 @@ body{
   column-gap: 10rem;
   justify-content: left;
   align-items: center;
+}
+
+.menu-nav .searchbar{
   margin: 0 0 0 5.5rem;
 }
 
@@ -996,7 +998,7 @@ body{
 .menu-nav input[type=text] {
   width:13.219rem;height: 2.5rem;
   border: none;
-  margin:0.875rem 0; padding-left: 1rem;
+  padding-left: 1rem;
   font-size: 1rem;
   border-radius: 0.625rem;
   background-color: #BEBEBE;
@@ -1018,7 +1020,7 @@ body{
   display: flex;
   flex-direction: row;
   column-gap: 4rem;
-  margin: 0 0 0 2rem;
+  margin: 0 0 0 1.5rem;
 }
 
 .menu-list-col-1{
