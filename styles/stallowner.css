@@ -157,12 +157,11 @@ a{
 .stall-owner .frame-3{
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 100px;
   height: auto;
   width: auto;
   padding: 14px 30px;
   box-sizing: border-box;
-  flex-wrap: wrap;
 }
 
 .frame-4{
@@ -191,7 +190,7 @@ a{
   display: flex;
   flex-direction: column;
   gap: 5px;
-  height: 100vh;
+  height: auto;
   width: 100%;
   padding: 20px 30px;
   box-sizing: border-box;
@@ -216,32 +215,6 @@ a{
   background-color: #666;
   border-radius: 50%;
   border: none;
-}
-
-.button-shape-2{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: auto;
-  min-width: 120px;
-  height: auto;
-  min-height: 48px;
-  padding: 0 20px;
-  align-self: center;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 80px;
-  background-color: #5BCDB6;
-  margin-top: 30px;
-}
-
-.button-shape-2:hover{
-  background-color:#2dab92;
-}
-
-.white-text{
-  color: #fff;
 }
 
 .frame-7 a{
@@ -504,19 +477,22 @@ a{
 
 .rectangle-5{
   display: flex;
-  flex: 0 1 calc(50% - 50px);
+  flex: 1 1 0;
   position: relative;
+  width: 50%;
   min-height: 125px;
   height: auto;
   background-color: #ffffff;
   border-radius: 27px;
   padding: 30px;
   box-sizing: border-box;
+  flex-direction: column;
+  
 }
 
 .rectangle-5 .menu-header {
     position: absolute;
-    top: 35px;
+    top: 24px;
     left: 110px;
     width: calc(100% - 130px);
     font-size: 16px;
@@ -625,7 +601,6 @@ a{
   position: relative;
   width: 75%;
   max-width: 80%;
-  min-height: 190px;
   height: auto;
   background-color: #ffffff;
   border-radius: 27px;
