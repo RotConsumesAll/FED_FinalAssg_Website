@@ -10,7 +10,6 @@ async function loadPage(wantedStallId){
   //Get data from database
   stallMenu = await getStallMenu(wantedStallId);
   console.log(stallMenu);
-  let arrayStallMenu = Object.values(stallMenu);  
   stallDetails = await getStall(wantedStallId);
   console.log(stallDetails);  
   let currentHawkerCentreId = stallDetails.hawkerCentreId;
@@ -30,9 +29,6 @@ async function loadPage(wantedStallId){
       });
   };
   console.log(arrayHawkercentres);
-
-  //TODO stall info button. Include name, address, image and open/close timing
-  //Loop through arrayStallMenu to get hc id, if match, put properties in info modal
 
   //Matching hawkercentre id and loading info 
   arrayHawkercentres.forEach(hawker => {
@@ -69,8 +65,18 @@ async function loadPage(wantedStallId){
   stallName.textContent=stallDetails.stallName;
 
   let cards = document.querySelectorAll(".item-card");
-  // Check if item has attribute called discountPercent, if yes put at promo area
-  //Loop through all menu cards
+  let arrayStallMenu = Object.values(stallMenu);
+  
+  // Check if item has attribute called discountPercent, if yes, remove item from array and add back to start of array
+  let promoExists = arrayStallMenu.findIndex(menuItem => menuItem.discountPercent !==undefined);
+  if (promoExists!=-1){
+    let [promoItem] = arrayStallMenu.splice(promoExists,1);
+    arrayStallMenu.unshift(promoItem);
+    let elementDiscount = document.querySelector(".promotions-container .discount-amt");
+    elementDiscount.innerText=promoItem.discountPercent + "%";
+  }  
+
+  //Loop through all menu cards. cards[0] is always promo card.
   let i=0;
   while (i!=arrayStallMenu.length){
     let currentCard = cards[i];
@@ -102,7 +108,7 @@ async function loadPage(wantedStallId){
     i++;
   }
 }
-loadPage("stall_01");
+loadPage("stall_02");
 
 
 function resetModalQty(){
