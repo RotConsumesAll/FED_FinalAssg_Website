@@ -1,7 +1,8 @@
-import { db, ref, onValue, remove } from "../firebase/index.js";
+import { db, ref, onValue, remove, auth, get } from "../firebase/index.js";
+import { onAuthStateChanged } from 
+  "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
 
 const feedbackList = document.getElementById("feedbackList");
-const feedbackRef = ref(db, "feedbacks");
 const feedbackHeader = document.querySelector(".text-menu");
 const starSVG = `
 <svg 
@@ -17,73 +18,103 @@ feedbackHeader.textContent = "Loading feedback...";
 
 const startTime = Date.now();
 
-onValue(feedbackRef, (snapshot) => {
-    const elapsed = Date.now() - startTime;
 
-    const renderFeedback = () => {
-        feedbackList.innerHTML = ""; // clear previous feedback
+onAuthStateChanged(auth, async (user) => {
+  if (!user) {
+    window.location.href = "../index.html";
+    return;
+  }
+
+  const uid = user.uid;
+
+  const userGet = await get(ref(db, `users/${uid}`));
+  if (!userGet.exists()) {
+    feedbackHeader.textContent = "User profile not found";
+    return;
+  }
+
+  const { stallId } = userGet.val();
+  if (!stallId) {
+    feedbackHeader.textContent = "No stall assigned";
+    return;
+  }
+
+const feedbackRef = ref(db, `stalls/${stallId}/feedbacks`);
+
+ const renderFeedback = (snapshot) => {
+    feedbackList.innerHTML = ""; // clear previous feedback
 
     if (!snapshot.exists()) {
       feedbackHeader.textContent = "No feedback yet";
+      return;
     } else {
       feedbackHeader.textContent = "Feedback";
     }
 
   const data = snapshot.val();  
 
-  Object.values(data).forEach((feedback) => {
-    const div = document.createElement("div");
-    const section = document.createElement("section");
-    const p = document.createElement("p");
-    const span = document.createElement("span");
-    div.classList.add("rectangle-6"); // white box for feedback
-    section.classList.add("frame-5"); // frame for stars :D
-    p.classList.add("feedback-comment");
-    span.classList.add("commenter");
-    
-    div.appendChild(section);
-    div.appendChild(p);
-    div.appendChild(span);
+    Object.values(data).forEach((feedback) => {
+      const div = document.createElement("div");
+      const section = document.createElement("section");
+      const p = document.createElement("p");
+      const span = document.createElement("span");
+      div.classList.add("rectangle-6"); // white box for feedback
+      section.classList.add("frame-5"); // frame for stars :D
+      p.classList.add("feedback-comment");
+      span.classList.add("commenter");
+      
+      div.appendChild(section);
+      div.appendChild(p);
+      div.appendChild(span);
 
-    // adding star ratings
-    for (let i = 0; i < feedback.rating; i++) {
-        const temp = document.createElement("div");
-        temp.innerHTML = starSVG.trim();
-        section.appendChild(temp.firstChild);
+      // adding star ratings
+      for (let i = 0; i < feedback.rating; i++) {
+          const temp = document.createElement("div");
+          temp.innerHTML = starSVG.trim();
+          section.appendChild(temp.firstChild);
+      }
+
+      // adding comments
+      p.textContent = feedback.comment;
+
+
+      // adding user 
+      span.textContent = `— ${feedback.userName || "Anonymous"}`;
+
+
+      feedbackList.appendChild(div);
+    });
+  };
+
+onValue(feedbackRef, (snapshot) => {
+    if (!snapshot.exists()) return;
+    const elapsed = Date.now() - startTime;
+
+  if (elapsed < 500) {
+      setTimeout(() => renderFeedback(snapshot), 500 - elapsed);
+      renderFeedback(snapshot);
+    } 
+    else {
+      renderFeedback();
     }
 
-    // adding comments
-    p.innerHTML = feedback.comment;
-
-
-    // adding user 
-    span.textContent = `— ${feedback.userName || "Anonymous"}`;
-
-
-    feedbackList.appendChild(div);
-  });
-};
-
-if (elapsed < 500) {
-    setTimeout(renderFeedback, 500 - elapsed);
-  } 
-  else {
-    renderFeedback();
-  }
-
-});
-
+})
 
 // for TESTING, delete later
 
-const clearButton = document.createElement("button");
-clearButton.textContent = "Clear Feedbacks";
-document.body.appendChild(clearButton);
+  const clearButton = document.createElement("button");
+  clearButton.textContent = "Clear Feedbacks";
+  document.body.appendChild(clearButton);
 
-clearButton.addEventListener("click", () => {
-  if (confirm("Are you sure you want to delete all feedbacks?")) {
-    remove(ref(db, "feedbacks"))
-      .then(() => alert("All feedbacks cleared!"))
-      .catch((err) => console.error(err));
-  }
+  clearButton.addEventListener("click", () => {
+    if (confirm("Are you sure you want to delete all feedbacks?")) {
+      remove(ref(db, `stalls/${stallId}/feedbacks`))
+        .then(() => alert("All feedbacks cleared!"))
+        .catch((err) => console.error(err));
+    }
+  });
+
+  console.log(auth.currentUser);
+
 });
+

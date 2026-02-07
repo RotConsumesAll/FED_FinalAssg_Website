@@ -43,7 +43,7 @@ body {
 
 main {
   max-width: 1200px;
-  margin: 1rem auto 0px auto;
+  margin: 1rem auto 5rem auto;
   display: flex !important;
   flex-direction: column;
   gap: 1rem;
@@ -160,6 +160,7 @@ button:hover {
 
   margin: 0px;
   padding: 1rem;
+  box-shadow: 0px 3px 3px 0px #bbbbbb;
 }
 
 .figure-card--stand-alone {
@@ -217,10 +218,13 @@ button:hover {
   display: flex;
   padding: 1rem;
   flex-direction: row;
-  flex: 0 0 39%;
+  flex: 1 0 39%;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 2.5rem;
+  cursor: pointer;
+
+  max-width: 50%;
 }
 
 .stall-card__name-and-owner {
@@ -270,8 +274,9 @@ button:hover {
   opacity: 25%;
 }
 
-/* centre-info */
-.centre-info {
+/* centre-info, stall-info */
+.centre-info,
+.stall-info {
   background-color: var(--white);
   border-radius: var(--border-radius);
   display: flex;
@@ -328,8 +333,9 @@ button:hover {
   font-size: 15px;
 }
 
-/* hawker-centre-image */
-.hawker-centre-image {
+/* hawker-centre-image, stall-image */
+.hawker-centre-image,
+.stall-image {
   border-radius: 8px;
   width: 250px;
 }
@@ -570,10 +576,76 @@ button:hover {
   background-color: var(--red);
 }
 
-.hawker-centre-container {
+.hawker-centre-container,
+.stall-detai-container {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
+}
+
+/* rental statistics */
+.rental__amount {
+  font-size: x-large;
+  font-weight: 600;
+  margin: 0;
+}
+
+.rental__subtitle {
+  font-size: small;
+  font-weight: 200;
+}
+
+.rental__dates {
+  font-size: medium;
+  margin: 0;
+}
+
+.rental__duration {
+  font-size: medium;
+  /* margin: 0; */
+}
+
+.rental__status {
+  font-size: medium;
+  margin: 0;
+}
+
+.rental__status--renewed,
+.rental__status--active {
+  color: green;
+}
+
+.rental__status--expired {
+  color: red;
+}
+
+/* hygiene-grade */
+.hygiene-grade-card__grade {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.hygiene-grade-card--A {
+  background-color: rgb(153 243 153);
+}
+
+.hygiene-grade-card--B {
+  background-color: rgb(158, 224, 247);
+}
+
+.hygiene-grade-card--C {
+  background-color: rgb(255 255 128);
+}
+
+.hygiene-grade-card--D {
+  background-color: rgb(253 152 152);
+}
+
+/* Score selector buttons */
+#score-selector * {
+  background-color: var(--white);
+  border-color: var(--light-blue);
+  color: var(--light-blue);
 }

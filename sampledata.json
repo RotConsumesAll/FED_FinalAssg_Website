@@ -1,521 +1,4 @@
 {
-  "users": {
-    "CUST_001": {
-      "role": "customer",
-      "custNric": "S1234567A",
-      "custName": "Alice Tan",
-      "custContactNo": "98765432",
-      "custEmail": "alice@example.com"
-    },
-    "CUST_002": {
-      "role": "customer",
-      "custNric": "S2345678B",
-      "custName": "Bob Lim",
-      "custContactNo": "81234567",
-      "custEmail": "bob@example.com"
-    },
-    "CUST_003": {
-      "role": "customer",
-      "custNric": "S3456789C",
-      "custName": "Charlie Ang",
-      "custContactNo": "92345678",
-      "custEmail": "charlie@example.com"
-    },
-    "OWNER_001": {
-      "role": "stallOwner",
-      "ownerName": "John Doe",
-      "ownerNric": "S7654321B",
-      "ownerContactNo": "91234567"
-    },
-    "OWNER_002": {
-      "role": "stallOwner",
-      "ownerName": "Siti Aminah",
-      "ownerNric": "S8765432C",
-      "ownerContactNo": "98887777"
-    },
-    "OWNER_003": {
-      "role": "stallOwner",
-      "ownerName": "Raj Kumar",
-      "ownerNric": "S9876543D",
-      "ownerContactNo": "87776666"
-    },
-    "OWNER_004": {
-      "role": "stallOwner",
-      "ownerName": "Tan Wei",
-      "ownerNric": "S1122334E",
-      "ownerContactNo": "96665555"
-    },
-    "OFFICER_001": {
-      "role": "neaOfficer",
-      "officerName": "Officer Lim",
-      "officerContactNo": "65432100"
-    },
-    "OFFICER_002": {
-      "role": "neaOfficer",
-      "officerName": "Officer Wong",
-      "officerContactNo": "64443333"
-    },
-    "OPERATOR_001": {
-      "role": "operator",
-      "operatorName": "HC Management Pte Ltd",
-      "contactPerson": "Mr. Lee"
-    },
-    "OPERATOR_002": {
-      "role": "operator",
-      "operatorName": "Prime Hawker Management",
-      "contactPerson": "Ms. Tan"
-    }
-  },
-"hawkerCentres": {
-    "hc_01": {
-      "hcName": "Maxwell Food Centre",
-      "hcAddress": "1 Kadayanallur St, Singapore 069184",
-      "operatorId": "OPERATOR_001",
-      "image": "https://feastoftravel.com/wp-content/uploads/2022/10/943E9846-53A6-4A3B-92CB-0E8DE039696B-scaled.jpg",
-      "openingTime": "08:00",
-      "closingTime": "22:00"
-    },
-    "hc_02": {
-      "hcName": "Newton Food Centre",
-      "hcAddress": "500 Clemenceau Ave N, Singapore 229495",
-      "operatorId": "OPERATOR_001",
-      "image": "https://newtonfoodcentre.com/wp-content/uploads/2024/01/newton-food-centre-photos.jpg",
-      "openingTime": "06:00",
-      "closingTime": "00:00"
-    },
-    "hc_03": {
-      "hcName": "Old Airport Road Food Centre",
-      "hcAddress": "51 Old Airport Rd, Singapore 390051",
-      "operatorId": "OPERATOR_002",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEoJOvpCI0wLVm3GZnC1xNFpGBzjfhQWxysg&s",
-      "openingTime": "07:00",
-      "closingTime": "23:00"
-    }
-  },
- "stalls": {
-    "stall_01": {
-      "stallUnitNo": "01-10",
-      "stallName": "Wok Hey",
-      "stallDesc": "Stir fried delicacies in a cup",
-      "hawkerCentreId": "hc_01",
-      "ownerUid": "OWNER_001",
-      "image": "../../assets/Images/customerImages/wok-hey-chickenramen.svg",
-      "visitCount": "27",
-      "reviewCount": 45,
-      "avgRating": 4.2,
-      "tags": ["Chinese", "Stir-fry"]
-    },
-    "stall_02": {
-      "stallUnitNo": "01-05",
-      "stallName": "Monster Curry",
-      "stallDesc": "Authentic Japanese curry rice",
-      "hawkerCentreId": "hc_01",
-      "ownerUid": "OWNER_002",
-      "image": "../../assets/Images/customerImages/MonstercurryDemiGlace.svg",
-      "visitCount": "25",
-      "reviewCount": 38,
-      "avgRating": 4.5,
-      "tags": ["Japanese", "Curry", "Halal"]
-    },
-    "stall_03": {
-      "stallUnitNo": "01-15",
-      "stallName": "Yah Fu Miniwok",
-      "stallDesc": "Traditional wok hei filled dishes",
-      "hawkerCentreId": "hc_01",
-      "ownerUid": "OWNER_003",
-      "image": "../../assets/Images/customerImages/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
-      "visitCount": "20",
-      "reviewCount": 32,
-      "avgRating": 4.0,
-      "tags": ["Chinese", "Wok Hei", "Zi Char"]
-    },
-    "stall_04": {
-      "stallUnitNo": "01-01",
-      "stallName": "Newton BBQ Seafood",
-      "stallDesc": "Famous sambal stingray and prawns.",
-      "hawkerCentreId": "hc_02",
-      "ownerUid": "OWNER_004",
-      "image": "https://placeholder.com/newtonbbq.jpg",
-      "visitCount": "16",
-      "reviewCount": 55,
-      "avgRating": 4.7,
-      "tags": ["Seafood", "BBQ", "Spicy"]
-    },
-    "stall_05": {
-      "stallUnitNo": "01-20",
-      "stallName": "Western Grill",
-      "stallDesc": "Affordable western food and grills.",
-      "hawkerCentreId": "hc_02",
-      "ownerUid": "OWNER_001",
-      "image": "https://placeholder.com/western.jpg",
-      "visitCount": "14",
-      "reviewCount": 28,
-      "avgRating": 3.9,
-      "tags": ["Western", "Grill", "Steak"]
-    },
-    "stall_06": {
-      "stallUnitNo": "01-30",
-      "stallName": "Alliance Seafood",
-      "stallDesc": "Chilli crab and seafood delights.",
-      "hawkerCentreId": "hc_02",
-      "ownerUid": "OWNER_002",
-      "image": "https://placeholder.com/alliance.jpg",
-      "visitCount": "13",
-      "reviewCount": 42,
-      "avgRating": 4.6,
-      "tags": ["Seafood", "Crab", "Chinese"]
-    },
-    "stall_07": {
-      "stallUnitNo": "01-40",
-      "stallName": "Lao Fu Zi Fried Kway Teow",
-      "stallDesc": "Old school fried kway teow.",
-      "hawkerCentreId": "hc_03",
-      "ownerUid": "OWNER_003",
-      "image": "https://placeholder.com/laofuzi.jpg",
-      "visitCount": "11",
-      "reviewCount": 60,
-      "avgRating": 4.8,
-      "tags": ["Local", "Fried Noodles", "Chinese"]
-    },
-    "stall_08": {
-      "stallUnitNo": "01-50",
-      "stallName": "Roast Paradise",
-      "stallDesc": "Premium char siew and roast pork.",
-      "hawkerCentreId": "hc_03",
-      "ownerUid": "OWNER_004",
-      "image": "https://placeholder.com/roastparadise.jpg",
-      "visitCount": "9",
-      "reviewCount": 35,
-      "avgRating": 4.3,
-      "tags": ["Roast Meat", "Pork", "Chinese"]
-    },
-    "stall_09": {
-      "stallUnitNo": "01-60",
-      "stallName": "Blanco Court Prawn Mee",
-      "stallDesc": "Rich and savory prawn noodle soup.",
-      "hawkerCentreId": "hc_03",
-      "ownerUid": "OWNER_001",
-      "image": "https://placeholder.com/blanco.jpg",
-      "visitCount": "5",
-      "reviewCount": 22,
-      "avgRating": 4.1,
-      "tags": ["Soup", "Prawns", "Noodles"]
-    },
-    "stall_10": {
-      "stallUnitNo": "01-70",
-      "stallName": "Nam Sing Hokkien Mee",
-      "stallDesc": "Traditional dry-style Hokkien Mee.",
-      "hawkerCentreId": "hc_03",
-      "ownerUid": "OWNER_002",
-      "image": "https://placeholder.com/namsing.jpg",
-      "visitCount": "3",
-      "reviewCount": 18,
-      "avgRating": 3.9,
-      "tags": ["Noodles", "Traditional", "Seafood"]
-    }
-  },
-"menuItems": {
-    "stall_01": {
-      "item_01": {
-        "itemName": "Chicken Ramen",
-        "itemDesc": "Stir fried chicken cubes with signature ramen.",
-        "itemPrice": 7.9,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_03": "Japanese"
-        },
-        "discountPercent": 10
-      },
-      "item_02": {
-        "itemName": "Egg Fried Rice",
-        "itemDesc": "Wok-tossed rice with golden egg and scallions.",
-        "itemPrice": 7.0,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      },
-      "item_03": {
-        "itemName": "Prawn Udon",
-        "itemDesc": "Thick udon noodles in savory soup with fresh prawns.",
-        "itemPrice": 7.9,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_03": "Japanese"
-        }
-      }
-    },
-    "stall_02": {
-      "item_01": {
-        "itemName": "Katsu Curry Rice",
-        "itemDesc": "Crispy fried pork cutlet with savory Japanese curry.",
-        "itemPrice": 12.5,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_03": "Japanese"
-        }
-      },
-      "item_02": {
-        "itemName": "Ebi Fry Curry",
-        "itemDesc": "Breaded deep-fried prawns served with rich curry sauce.",
-        "itemPrice": 13.5,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_03": "Japanese"
-        },
-        "discountPercent": 15
-      },
-      "item_03": {
-        "itemName": "Cheese Curry Omurice",
-        "itemDesc": "Fluffy omelette rice topped with melted cheese and curry.",
-        "itemPrice": 14.5,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_03": "Japanese"
-        }
-      }
-    },
-    "stall_03": {
-      "item_01": {
-        "itemName": "Wonton Noodle Dry",
-        "itemDesc": "Springy noodles tossed in dark sauce with dumplings.",
-        "itemPrice": 4.5,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      },
-      "item_02": {
-        "itemName": "Minced Meat Noodle",
-        "itemDesc": "Classic Bak Chor Mee with vinegar and minced pork.",
-        "itemPrice": 5.0,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        },
-        "discountPercent": 10
-      },
-      "item_03": {
-        "itemName": "Fried Wonton (8pcs)",
-        "itemDesc": "Crispy golden dumplings with savory meat filling.",
-        "itemPrice": 4.0,
-        "itemCategory": "Sides",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      }
-    },
-    "stall_04": {
-      "item_01": {
-        "itemName": "Sambal Stingray",
-        "itemDesc": "Grilled stingray slathered in spicy sambal paste.",
-        "itemPrice": 18.0,
-        "itemCategory": "Seafood",
-        "cuisines": {
-          "cui_02": "Malay/Local"
-        },
-        "discountPercent": 5
-      },
-      "item_02": {
-        "itemName": "BBQ Tiger Prawns",
-        "itemDesc": "Smoky grilled tiger prawns with garlic butter.",
-        "itemPrice": 25.0,
-        "itemCategory": "Seafood",
-        "cuisines": {
-          "cui_02": "Malay/Local"
-        }
-      },
-      "item_03": {
-        "itemName": "Sambal Sotong",
-        "itemDesc": "Fresh squid stir-fried in aromatic spicy chili paste.",
-        "itemPrice": 15.0,
-        "itemCategory": "Seafood",
-        "cuisines": {
-          "cui_02": "Malay/Local"
-        }
-      }
-    },
-    "stall_05": {
-      "item_01": {
-        "itemName": "Grilled Chicken Chop",
-        "itemDesc": "Juicy chicken chop served with fries and coleslaw.",
-        "itemPrice": 8.5,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_04": "Western"
-        }
-      },
-      "item_02": {
-        "itemName": "Fish and Chips",
-        "itemDesc": "Crispy battered dory fish with tartar sauce.",
-        "itemPrice": 9.0,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_04": "Western"
-        }
-      },
-      "item_03": {
-        "itemName": "Sirloin Steak",
-        "itemDesc": "200g New Zealand beef served with black pepper sauce.",
-        "itemPrice": 14.5,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_04": "Western"
-        },
-        "discountPercent": 10
-      }
-    },
-    "stall_06": {
-      "item_01": {
-        "itemName": "Chilli Crab Set",
-        "itemDesc": "Mud crab cooked in a sweet, savory, and spicy tomato gravy.",
-        "itemPrice": 45.0,
-        "itemCategory": "Seafood",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      },
-      "item_02": {
-        "itemName": "Cereal Prawns",
-        "itemDesc": "Whole prawns coated in crispy, buttery cereal flakes.",
-        "itemPrice": 22.0,
-        "itemCategory": "Seafood",
-        "cuisines": {
-          "cui_01": "Chinese"
-        },
-        "discountPercent": 10
-      },
-      "item_03": {
-        "itemName": "Seafood Fried Rice",
-        "itemDesc": "Wok-fried rice with crab meat, prawns, and squid.",
-        "itemPrice": 8.0,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      }
-    },
-    "stall_07": {
-      "item_01": {
-        "itemName": "Fried Kway Teow (Small)",
-        "itemDesc": "Wok-fried flat noodles with cockles, sausage, and egg.",
-        "itemPrice": 5.0,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        },
-        "discountPercent": 10
-      },
-      "item_02": {
-        "itemName": "Fried Kway Teow (Medium)",
-        "itemDesc": "A larger portion of the classic dish with extra cockles.",
-        "itemPrice": 6.0,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      },
-      "item_03": {
-        "itemName": "Fried Kway Teow (Large)",
-        "itemDesc": "Family-sized platter of savory, smoky fried noodles.",
-        "itemPrice": 8.0,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      }
-    },
-    "stall_08": {
-      "item_01": {
-        "itemName": "Char Siew Rice",
-        "itemDesc": "Sweet and savory caramelized BBQ pork served over rice.",
-        "itemPrice": 5.5,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      },
-      "item_02": {
-        "itemName": "Roast Pork Rice",
-        "itemDesc": "Crispy skin pork belly slices served with fragrant rice.",
-        "itemPrice": 5.5,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      },
-      "item_03": {
-        "itemName": "Duo Roast Meat Platter",
-        "itemDesc": "A combination platter of Char Siew and Roast Pork.",
-        "itemPrice": 12.0,
-        "itemCategory": "Sharing",
-        "cuisines": {
-          "cui_01": "Chinese"
-        },
-        "discountPercent": 15
-      }
-    },
-    "stall_09": {
-      "item_01": {
-        "itemName": "Prawn Noodle Soup",
-        "itemDesc": "Yellow noodles served in a rich, umami prawn broth.",
-        "itemPrice": 6.5,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      },
-      "item_02": {
-        "itemName": "Pork Rib Prawn Noodle",
-        "itemDesc": "Prawn noodles topped with tender braised pork ribs.",
-        "itemPrice": 7.5,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        },
-        "discountPercent": 5
-      },
-      "item_03": {
-        "itemName": "Ngoh Hiang Platter",
-        "itemDesc": "Assorted traditional fried fritters and meat rolls.",
-        "itemPrice": 8.0,
-        "itemCategory": "Sides",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      }
-    },
-    "stall_10": {
-      "item_01": {
-        "itemName": "Hokkien Mee (Small)",
-        "itemDesc": "Stir-fried noodles simmered in aromatic prawn stock.",
-        "itemPrice": 5.0,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        },
-        "discountPercent": 10
-      },
-      "item_02": {
-        "itemName": "Hokkien Mee (Medium)",
-        "itemDesc": "Medium serving with generous fresh prawns and squid.",
-        "itemPrice": 8.0,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      },
-      "item_03": {
-        "itemName": "Hokkien Mee (Large)",
-        "itemDesc": "Large serving of wet-style noodles, perfect for sharing.",
-        "itemPrice": 10.0,
-        "itemCategory": "Mains",
-        "cuisines": {
-          "cui_01": "Chinese"
-        }
-      }
-    }
-  },
   "cuisines": {
     "cui_01": {
       "cuisineDesc": "Chinese"
@@ -530,2709 +13,3245 @@
       "cuisineDesc": "Western"
     }
   },
-  "licences": {
-    "lic_001": {
-      "licenceNumber": "NEA-FSL-10001",
-      "type": "Food Stall Licence",
-      "licenseeName": "John Doe",
-      "dateOfEffect": "2025-01-01",
-      "dateOfExpiry": "2026-01-01",
-      "licenseeUid": "OWNER_001",
-      "stallId": "stall_01"
+  "hawkerCentres": {
+    "hc_01": {
+      "closingTime": "22:00",
+      "hcAddress": "1 Kadayanallur St, Singapore 069184",
+      "hcName": "Maxwell Food Centre",
+      "image": "https://feastoftravel.com/wp-content/uploads/2022/10/943E9846-53A6-4A3B-92CB-0E8DE039696B-scaled.jpg",
+      "openingTime": "08:00",
+      "operatorId": "0Eoh1NZVjpZwcPScVzPg30cc9Zf1"
     },
-    "lic_002": {
-      "licenceNumber": "MUIS-HAL-20001",
-      "type": "Halal Certification",
-      "licenseeName": "Siti Aminah",
-      "dateOfEffect": "2025-03-01",
-      "dateOfExpiry": "2026-03-01",
-      "licenseeUid": "OWNER_002",
-      "stallId": "stall_02"
+    "hc_02": {
+      "closingTime": "06:00",
+      "hcAddress": "500 Clemenceau Ave N, Singapore 229495",
+      "hcName": "Newton Food Centre",
+      "image": "https://newtonfoodcentre.com/wp-content/uploads/2024/01/newton-food-centre-photos.jpg",
+      "openingTime": "00:00",
+      "operatorId": "0Eoh1NZVjpZwcPScVzPg30cc9Zf1"
     },
-    "lic_003": {
-      "licenceNumber": "SPF-LIQ-30001",
-      "type": "Liquor Licence",
-      "licenseeName": "Tan Wei",
-      "dateOfEffect": "2025-06-01",
-      "dateOfExpiry": "2026-06-01",
-      "licenseeUid": "OWNER_004",
-      "stallId": "stall_04"
-    },
-    "lic_004": {
-      "licenceNumber": "HSA-TOB-40001",
-      "type": "Tobacco Retail Licence",
-      "licenseeName": "Raj Kumar",
-      "dateOfEffect": "2025-05-01",
-      "dateOfExpiry": "2026-05-01",
-      "licenseeUid": "OWNER_003",
-      "stallId": "stall_07"
+    "hc_03": {
+      "closingTime": "23:00",
+      "hcAddress": "51 Old Airport Rd, Singapore 390051",
+      "hcName": "Old Airport Road Food Centre",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEoJOvpCI0wLVm3GZnC1xNFpGBzjfhQWxysg&s",
+      "openingTime": "07:00",
+      "operatorId": "OPERATOR_002"
     }
   },
   "inspections": {
     "ins_annual_00001": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2010-01-01",
-      "hygieneGrade": "B",
       "gradeExpiry": "2011-01-01",
+      "hygieneGrade": "B",
+      "inspectionDate": "2010-01-01",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00002": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2011-01-02",
-      "hygieneGrade": "A",
       "gradeExpiry": "2012-01-02",
+      "hygieneGrade": "A",
+      "inspectionDate": "2011-01-02",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00003": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2012-01-03",
-      "hygieneGrade": "A",
       "gradeExpiry": "2013-01-03",
+      "hygieneGrade": "A",
+      "inspectionDate": "2012-01-03",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00004": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2013-01-04",
-      "hygieneGrade": "B",
       "gradeExpiry": "2014-01-04",
+      "hygieneGrade": "B",
+      "inspectionDate": "2013-01-04",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00005": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2014-01-05",
-      "hygieneGrade": "A",
       "gradeExpiry": "2015-01-05",
+      "hygieneGrade": "A",
+      "inspectionDate": "2014-01-05",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00006": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2015-01-06",
-      "hygieneGrade": "B",
       "gradeExpiry": "2016-01-06",
+      "hygieneGrade": "B",
+      "inspectionDate": "2015-01-06",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00007": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2016-01-07",
-      "hygieneGrade": "A",
       "gradeExpiry": "2017-01-07",
+      "hygieneGrade": "A",
+      "inspectionDate": "2016-01-07",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00008": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2017-01-08",
-      "hygieneGrade": "B",
       "gradeExpiry": "2018-01-08",
+      "hygieneGrade": "B",
+      "inspectionDate": "2017-01-08",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00009": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2018-01-09",
-      "hygieneGrade": "B",
       "gradeExpiry": "2019-01-09",
+      "hygieneGrade": "B",
+      "inspectionDate": "2018-01-09",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00010": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2019-01-10",
-      "hygieneGrade": "B",
       "gradeExpiry": "2020-01-10",
+      "hygieneGrade": "B",
+      "inspectionDate": "2019-01-10",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00011": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2020-01-11",
-      "hygieneGrade": "A",
       "gradeExpiry": "2021-01-11",
+      "hygieneGrade": "A",
+      "inspectionDate": "2020-01-11",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00012": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2021-01-12",
-      "hygieneGrade": "C",
       "gradeExpiry": "2022-01-12",
+      "hygieneGrade": "C",
+      "inspectionDate": "2021-01-12",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00013": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2022-01-13",
-      "hygieneGrade": "B",
       "gradeExpiry": "2023-01-13",
+      "hygieneGrade": "B",
+      "inspectionDate": "2022-01-13",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00014": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2023-01-14",
-      "hygieneGrade": "A",
       "gradeExpiry": "2024-01-14",
+      "hygieneGrade": "A",
+      "inspectionDate": "2023-01-14",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00015": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2024-01-15",
-      "hygieneGrade": "A",
       "gradeExpiry": "2025-01-15",
+      "hygieneGrade": "A",
+      "inspectionDate": "2024-01-15",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00016": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2025-01-16",
-      "hygieneGrade": "B",
       "gradeExpiry": "2026-01-16",
+      "hygieneGrade": "B",
+      "inspectionDate": "2025-01-16",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00017": {
-      "stallId": "stall_01",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2026-01-17",
-      "hygieneGrade": "A",
       "gradeExpiry": "2027-01-17",
+      "hygieneGrade": "A",
+      "inspectionDate": "2026-01-17",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_01"
     },
     "ins_annual_00018": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2010-01-01",
-      "hygieneGrade": "B",
       "gradeExpiry": "2011-01-01",
+      "hygieneGrade": "B",
+      "inspectionDate": "2010-01-01",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00019": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2011-01-02",
-      "hygieneGrade": "A",
       "gradeExpiry": "2012-01-02",
+      "hygieneGrade": "A",
+      "inspectionDate": "2011-01-02",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00020": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2012-01-03",
-      "hygieneGrade": "B",
       "gradeExpiry": "2013-01-03",
+      "hygieneGrade": "B",
+      "inspectionDate": "2012-01-03",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00021": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2013-01-04",
-      "hygieneGrade": "B",
       "gradeExpiry": "2014-01-04",
+      "hygieneGrade": "B",
+      "inspectionDate": "2013-01-04",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00022": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2014-01-05",
-      "hygieneGrade": "B",
       "gradeExpiry": "2015-01-05",
+      "hygieneGrade": "B",
+      "inspectionDate": "2014-01-05",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00023": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2015-01-06",
-      "hygieneGrade": "A",
       "gradeExpiry": "2016-01-06",
+      "hygieneGrade": "A",
+      "inspectionDate": "2015-01-06",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00024": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2016-01-07",
-      "hygieneGrade": "C",
       "gradeExpiry": "2017-01-07",
+      "hygieneGrade": "C",
+      "inspectionDate": "2016-01-07",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00025": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2017-01-08",
-      "hygieneGrade": "B",
       "gradeExpiry": "2018-01-08",
+      "hygieneGrade": "B",
+      "inspectionDate": "2017-01-08",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00026": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2018-01-09",
-      "hygieneGrade": "A",
       "gradeExpiry": "2019-01-09",
+      "hygieneGrade": "A",
+      "inspectionDate": "2018-01-09",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00027": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2019-01-10",
-      "hygieneGrade": "A",
       "gradeExpiry": "2020-01-10",
+      "hygieneGrade": "A",
+      "inspectionDate": "2019-01-10",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00028": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2020-01-11",
-      "hygieneGrade": "B",
       "gradeExpiry": "2021-01-11",
+      "hygieneGrade": "B",
+      "inspectionDate": "2020-01-11",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00029": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2021-01-12",
-      "hygieneGrade": "A",
       "gradeExpiry": "2022-01-12",
+      "hygieneGrade": "A",
+      "inspectionDate": "2021-01-12",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00030": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2022-01-13",
-      "hygieneGrade": "B",
       "gradeExpiry": "2023-01-13",
+      "hygieneGrade": "B",
+      "inspectionDate": "2022-01-13",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00031": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2023-01-14",
-      "hygieneGrade": "A",
       "gradeExpiry": "2024-01-14",
+      "hygieneGrade": "A",
+      "inspectionDate": "2023-01-14",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00032": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2024-01-15",
-      "hygieneGrade": "B",
       "gradeExpiry": "2025-01-15",
+      "hygieneGrade": "B",
+      "inspectionDate": "2024-01-15",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00033": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2025-01-16",
-      "hygieneGrade": "B",
       "gradeExpiry": "2026-01-16",
+      "hygieneGrade": "B",
+      "inspectionDate": "2025-01-16",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00034": {
-      "stallId": "stall_02",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2026-01-17",
-      "hygieneGrade": "B",
       "gradeExpiry": "2027-01-17",
+      "hygieneGrade": "B",
+      "inspectionDate": "2026-01-17",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_02"
     },
     "ins_annual_00035": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2010-01-01",
-      "hygieneGrade": "A",
       "gradeExpiry": "2011-01-01",
+      "hygieneGrade": "A",
+      "inspectionDate": "2010-01-01",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00036": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2011-01-02",
-      "hygieneGrade": "C",
       "gradeExpiry": "2012-01-02",
+      "hygieneGrade": "C",
+      "inspectionDate": "2011-01-02",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00037": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2012-01-03",
-      "hygieneGrade": "B",
       "gradeExpiry": "2013-01-03",
+      "hygieneGrade": "B",
+      "inspectionDate": "2012-01-03",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00038": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2013-01-04",
-      "hygieneGrade": "A",
       "gradeExpiry": "2014-01-04",
+      "hygieneGrade": "A",
+      "inspectionDate": "2013-01-04",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00039": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2014-01-05",
-      "hygieneGrade": "A",
       "gradeExpiry": "2015-01-05",
+      "hygieneGrade": "A",
+      "inspectionDate": "2014-01-05",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00040": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2015-01-06",
-      "hygieneGrade": "B",
       "gradeExpiry": "2016-01-06",
+      "hygieneGrade": "B",
+      "inspectionDate": "2015-01-06",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00041": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2016-01-07",
-      "hygieneGrade": "A",
       "gradeExpiry": "2017-01-07",
+      "hygieneGrade": "A",
+      "inspectionDate": "2016-01-07",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00042": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2017-01-08",
-      "hygieneGrade": "B",
       "gradeExpiry": "2018-01-08",
+      "hygieneGrade": "B",
+      "inspectionDate": "2017-01-08",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00043": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2018-01-09",
-      "hygieneGrade": "A",
       "gradeExpiry": "2019-01-09",
+      "hygieneGrade": "A",
+      "inspectionDate": "2018-01-09",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00044": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2019-01-10",
-      "hygieneGrade": "B",
       "gradeExpiry": "2020-01-10",
+      "hygieneGrade": "B",
+      "inspectionDate": "2019-01-10",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00045": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2020-01-11",
-      "hygieneGrade": "B",
       "gradeExpiry": "2021-01-11",
+      "hygieneGrade": "B",
+      "inspectionDate": "2020-01-11",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00046": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2021-01-12",
-      "hygieneGrade": "B",
       "gradeExpiry": "2022-01-12",
+      "hygieneGrade": "B",
+      "inspectionDate": "2021-01-12",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00047": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2022-01-13",
-      "hygieneGrade": "A",
       "gradeExpiry": "2023-01-13",
+      "hygieneGrade": "A",
+      "inspectionDate": "2022-01-13",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00048": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2023-01-14",
-      "hygieneGrade": "C",
       "gradeExpiry": "2024-01-14",
+      "hygieneGrade": "C",
+      "inspectionDate": "2023-01-14",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00049": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2024-01-15",
-      "hygieneGrade": "B",
       "gradeExpiry": "2025-01-15",
+      "hygieneGrade": "B",
+      "inspectionDate": "2024-01-15",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00050": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2025-01-16",
-      "hygieneGrade": "A",
       "gradeExpiry": "2026-01-16",
+      "hygieneGrade": "A",
+      "inspectionDate": "2025-01-16",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00051": {
-      "stallId": "stall_03",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2026-01-17",
-      "hygieneGrade": "A",
       "gradeExpiry": "2027-01-17",
+      "hygieneGrade": "A",
+      "inspectionDate": "2026-01-17",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_03"
     },
     "ins_annual_00052": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2010-01-01",
-      "hygieneGrade": "B",
       "gradeExpiry": "2011-01-01",
+      "hygieneGrade": "B",
+      "inspectionDate": "2010-01-01",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00053": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2011-01-02",
-      "hygieneGrade": "A",
       "gradeExpiry": "2012-01-02",
+      "hygieneGrade": "A",
+      "inspectionDate": "2011-01-02",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00054": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2012-01-03",
-      "hygieneGrade": "B",
       "gradeExpiry": "2013-01-03",
+      "hygieneGrade": "B",
+      "inspectionDate": "2012-01-03",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00055": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2013-01-04",
-      "hygieneGrade": "A",
       "gradeExpiry": "2014-01-04",
+      "hygieneGrade": "A",
+      "inspectionDate": "2013-01-04",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00056": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2014-01-05",
-      "hygieneGrade": "B",
       "gradeExpiry": "2015-01-05",
+      "hygieneGrade": "B",
+      "inspectionDate": "2014-01-05",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00057": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2015-01-06",
-      "hygieneGrade": "B",
       "gradeExpiry": "2016-01-06",
+      "hygieneGrade": "B",
+      "inspectionDate": "2015-01-06",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00058": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2016-01-07",
-      "hygieneGrade": "B",
       "gradeExpiry": "2017-01-07",
+      "hygieneGrade": "B",
+      "inspectionDate": "2016-01-07",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00059": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2017-01-08",
-      "hygieneGrade": "A",
       "gradeExpiry": "2018-01-08",
+      "hygieneGrade": "A",
+      "inspectionDate": "2017-01-08",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00060": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2018-01-09",
-      "hygieneGrade": "C",
       "gradeExpiry": "2019-01-09",
+      "hygieneGrade": "C",
+      "inspectionDate": "2018-01-09",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00061": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2019-01-10",
-      "hygieneGrade": "B",
       "gradeExpiry": "2020-01-10",
+      "hygieneGrade": "B",
+      "inspectionDate": "2019-01-10",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00062": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2020-01-11",
-      "hygieneGrade": "A",
       "gradeExpiry": "2021-01-11",
+      "hygieneGrade": "A",
+      "inspectionDate": "2020-01-11",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00063": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2021-01-12",
-      "hygieneGrade": "A",
       "gradeExpiry": "2022-01-12",
+      "hygieneGrade": "A",
+      "inspectionDate": "2021-01-12",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00064": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2022-01-13",
-      "hygieneGrade": "B",
       "gradeExpiry": "2023-01-13",
+      "hygieneGrade": "B",
+      "inspectionDate": "2022-01-13",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00065": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2023-01-14",
-      "hygieneGrade": "A",
       "gradeExpiry": "2024-01-14",
+      "hygieneGrade": "A",
+      "inspectionDate": "2023-01-14",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00066": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2024-01-15",
-      "hygieneGrade": "B",
       "gradeExpiry": "2025-01-15",
+      "hygieneGrade": "B",
+      "inspectionDate": "2024-01-15",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00067": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2025-01-16",
-      "hygieneGrade": "A",
       "gradeExpiry": "2026-01-16",
+      "hygieneGrade": "A",
+      "inspectionDate": "2025-01-16",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00068": {
-      "stallId": "stall_04",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2026-01-17",
-      "hygieneGrade": "B",
       "gradeExpiry": "2027-01-17",
+      "hygieneGrade": "B",
+      "inspectionDate": "2026-01-17",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_04"
     },
     "ins_annual_00069": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2010-01-01",
-      "hygieneGrade": "B",
       "gradeExpiry": "2011-01-01",
+      "hygieneGrade": "B",
+      "inspectionDate": "2010-01-01",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00070": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2011-01-02",
-      "hygieneGrade": "B",
       "gradeExpiry": "2012-01-02",
+      "hygieneGrade": "B",
+      "inspectionDate": "2011-01-02",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00071": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2012-01-03",
-      "hygieneGrade": "A",
       "gradeExpiry": "2013-01-03",
+      "hygieneGrade": "A",
+      "inspectionDate": "2012-01-03",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00072": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2013-01-04",
-      "hygieneGrade": "C",
       "gradeExpiry": "2014-01-04",
+      "hygieneGrade": "C",
+      "inspectionDate": "2013-01-04",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00073": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2014-01-05",
-      "hygieneGrade": "B",
       "gradeExpiry": "2015-01-05",
+      "hygieneGrade": "B",
+      "inspectionDate": "2014-01-05",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00074": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2015-01-06",
-      "hygieneGrade": "A",
       "gradeExpiry": "2016-01-06",
+      "hygieneGrade": "A",
+      "inspectionDate": "2015-01-06",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00075": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2016-01-07",
-      "hygieneGrade": "A",
       "gradeExpiry": "2017-01-07",
+      "hygieneGrade": "A",
+      "inspectionDate": "2016-01-07",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00076": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2017-01-08",
-      "hygieneGrade": "B",
       "gradeExpiry": "2018-01-08",
+      "hygieneGrade": "B",
+      "inspectionDate": "2017-01-08",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00077": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2018-01-09",
-      "hygieneGrade": "A",
       "gradeExpiry": "2019-01-09",
+      "hygieneGrade": "A",
+      "inspectionDate": "2018-01-09",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00078": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2019-01-10",
-      "hygieneGrade": "B",
       "gradeExpiry": "2020-01-10",
+      "hygieneGrade": "B",
+      "inspectionDate": "2019-01-10",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00079": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2020-01-11",
-      "hygieneGrade": "A",
       "gradeExpiry": "2021-01-11",
+      "hygieneGrade": "A",
+      "inspectionDate": "2020-01-11",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00080": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2021-01-12",
-      "hygieneGrade": "B",
       "gradeExpiry": "2022-01-12",
+      "hygieneGrade": "B",
+      "inspectionDate": "2021-01-12",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00081": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2022-01-13",
-      "hygieneGrade": "B",
       "gradeExpiry": "2023-01-13",
+      "hygieneGrade": "B",
+      "inspectionDate": "2022-01-13",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00082": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2023-01-14",
-      "hygieneGrade": "B",
       "gradeExpiry": "2024-01-14",
+      "hygieneGrade": "B",
+      "inspectionDate": "2023-01-14",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00083": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2024-01-15",
-      "hygieneGrade": "A",
       "gradeExpiry": "2025-01-15",
+      "hygieneGrade": "A",
+      "inspectionDate": "2024-01-15",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00084": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2025-01-16",
-      "hygieneGrade": "C",
       "gradeExpiry": "2026-01-16",
+      "hygieneGrade": "C",
+      "inspectionDate": "2025-01-16",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00085": {
-      "stallId": "stall_05",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2026-01-17",
-      "hygieneGrade": "B",
       "gradeExpiry": "2027-01-17",
+      "hygieneGrade": "B",
+      "inspectionDate": "2026-01-17",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_05"
     },
     "ins_annual_00086": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2010-01-01",
-      "hygieneGrade": "A",
       "gradeExpiry": "2011-01-01",
+      "hygieneGrade": "A",
+      "inspectionDate": "2010-01-01",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00087": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2011-01-02",
-      "hygieneGrade": "A",
       "gradeExpiry": "2012-01-02",
+      "hygieneGrade": "A",
+      "inspectionDate": "2011-01-02",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00088": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2012-01-03",
-      "hygieneGrade": "B",
       "gradeExpiry": "2013-01-03",
+      "hygieneGrade": "B",
+      "inspectionDate": "2012-01-03",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00089": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2013-01-04",
-      "hygieneGrade": "A",
       "gradeExpiry": "2014-01-04",
+      "hygieneGrade": "A",
+      "inspectionDate": "2013-01-04",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00090": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2014-01-05",
-      "hygieneGrade": "B",
       "gradeExpiry": "2015-01-05",
+      "hygieneGrade": "B",
+      "inspectionDate": "2014-01-05",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00091": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2015-01-06",
-      "hygieneGrade": "A",
       "gradeExpiry": "2016-01-06",
+      "hygieneGrade": "A",
+      "inspectionDate": "2015-01-06",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00092": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2016-01-07",
-      "hygieneGrade": "B",
       "gradeExpiry": "2017-01-07",
+      "hygieneGrade": "B",
+      "inspectionDate": "2016-01-07",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00093": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2017-01-08",
-      "hygieneGrade": "B",
       "gradeExpiry": "2018-01-08",
+      "hygieneGrade": "B",
+      "inspectionDate": "2017-01-08",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00094": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2018-01-09",
-      "hygieneGrade": "B",
       "gradeExpiry": "2019-01-09",
+      "hygieneGrade": "B",
+      "inspectionDate": "2018-01-09",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00095": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2019-01-10",
-      "hygieneGrade": "A",
       "gradeExpiry": "2020-01-10",
+      "hygieneGrade": "A",
+      "inspectionDate": "2019-01-10",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00096": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2020-01-11",
-      "hygieneGrade": "C",
       "gradeExpiry": "2021-01-11",
+      "hygieneGrade": "C",
+      "inspectionDate": "2020-01-11",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00097": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2021-01-12",
-      "hygieneGrade": "B",
       "gradeExpiry": "2022-01-12",
+      "hygieneGrade": "B",
+      "inspectionDate": "2021-01-12",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00098": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2022-01-13",
-      "hygieneGrade": "A",
       "gradeExpiry": "2023-01-13",
+      "hygieneGrade": "A",
+      "inspectionDate": "2022-01-13",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00099": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2023-01-14",
-      "hygieneGrade": "A",
       "gradeExpiry": "2024-01-14",
+      "hygieneGrade": "A",
+      "inspectionDate": "2023-01-14",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00100": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2024-01-15",
-      "hygieneGrade": "B",
       "gradeExpiry": "2025-01-15",
+      "hygieneGrade": "B",
+      "inspectionDate": "2024-01-15",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00101": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2025-01-16",
-      "hygieneGrade": "A",
       "gradeExpiry": "2026-01-16",
+      "hygieneGrade": "A",
+      "inspectionDate": "2025-01-16",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00102": {
-      "stallId": "stall_06",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2026-01-17",
-      "hygieneGrade": "B",
       "gradeExpiry": "2027-01-17",
+      "hygieneGrade": "B",
+      "inspectionDate": "2026-01-17",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_06"
     },
     "ins_annual_00103": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2010-01-01",
-      "hygieneGrade": "A",
       "gradeExpiry": "2011-01-01",
+      "hygieneGrade": "A",
+      "inspectionDate": "2010-01-01",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00104": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2011-01-02",
-      "hygieneGrade": "B",
       "gradeExpiry": "2012-01-02",
+      "hygieneGrade": "B",
+      "inspectionDate": "2011-01-02",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00105": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2012-01-03",
-      "hygieneGrade": "B",
       "gradeExpiry": "2013-01-03",
+      "hygieneGrade": "B",
+      "inspectionDate": "2012-01-03",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00106": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2013-01-04",
-      "hygieneGrade": "B",
       "gradeExpiry": "2014-01-04",
+      "hygieneGrade": "B",
+      "inspectionDate": "2013-01-04",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00107": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2014-01-05",
-      "hygieneGrade": "A",
       "gradeExpiry": "2015-01-05",
+      "hygieneGrade": "A",
+      "inspectionDate": "2014-01-05",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00108": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2015-01-06",
-      "hygieneGrade": "C",
       "gradeExpiry": "2016-01-06",
+      "hygieneGrade": "C",
+      "inspectionDate": "2015-01-06",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00109": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2016-01-07",
-      "hygieneGrade": "B",
       "gradeExpiry": "2017-01-07",
+      "hygieneGrade": "B",
+      "inspectionDate": "2016-01-07",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00110": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2017-01-08",
-      "hygieneGrade": "A",
       "gradeExpiry": "2018-01-08",
+      "hygieneGrade": "A",
+      "inspectionDate": "2017-01-08",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00111": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2018-01-09",
-      "hygieneGrade": "A",
       "gradeExpiry": "2019-01-09",
+      "hygieneGrade": "A",
+      "inspectionDate": "2018-01-09",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00112": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2019-01-10",
-      "hygieneGrade": "B",
       "gradeExpiry": "2020-01-10",
+      "hygieneGrade": "B",
+      "inspectionDate": "2019-01-10",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00113": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2020-01-11",
-      "hygieneGrade": "A",
       "gradeExpiry": "2021-01-11",
+      "hygieneGrade": "A",
+      "inspectionDate": "2020-01-11",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00114": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2021-01-12",
-      "hygieneGrade": "B",
       "gradeExpiry": "2022-01-12",
+      "hygieneGrade": "B",
+      "inspectionDate": "2021-01-12",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00115": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2022-01-13",
-      "hygieneGrade": "A",
       "gradeExpiry": "2023-01-13",
+      "hygieneGrade": "A",
+      "inspectionDate": "2022-01-13",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00116": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2023-01-14",
-      "hygieneGrade": "B",
       "gradeExpiry": "2024-01-14",
+      "hygieneGrade": "B",
+      "inspectionDate": "2023-01-14",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00117": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2024-01-15",
-      "hygieneGrade": "B",
       "gradeExpiry": "2025-01-15",
+      "hygieneGrade": "B",
+      "inspectionDate": "2024-01-15",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00118": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2025-01-16",
-      "hygieneGrade": "B",
       "gradeExpiry": "2026-01-16",
+      "hygieneGrade": "B",
+      "inspectionDate": "2025-01-16",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00119": {
-      "stallId": "stall_07",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2026-01-17",
-      "hygieneGrade": "A",
       "gradeExpiry": "2027-01-17",
+      "hygieneGrade": "A",
+      "inspectionDate": "2026-01-17",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_07"
     },
     "ins_annual_00120": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2010-01-01",
-      "hygieneGrade": "C",
       "gradeExpiry": "2011-01-01",
+      "hygieneGrade": "C",
+      "inspectionDate": "2010-01-01",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00121": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2011-01-02",
-      "hygieneGrade": "B",
       "gradeExpiry": "2012-01-02",
+      "hygieneGrade": "B",
+      "inspectionDate": "2011-01-02",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00122": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2012-01-03",
-      "hygieneGrade": "A",
       "gradeExpiry": "2013-01-03",
+      "hygieneGrade": "A",
+      "inspectionDate": "2012-01-03",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00123": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2013-01-04",
-      "hygieneGrade": "A",
       "gradeExpiry": "2014-01-04",
+      "hygieneGrade": "A",
+      "inspectionDate": "2013-01-04",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00124": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2014-01-05",
-      "hygieneGrade": "B",
       "gradeExpiry": "2015-01-05",
+      "hygieneGrade": "B",
+      "inspectionDate": "2014-01-05",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00125": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2015-01-06",
-      "hygieneGrade": "A",
       "gradeExpiry": "2016-01-06",
+      "hygieneGrade": "A",
+      "inspectionDate": "2015-01-06",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00126": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2016-01-07",
-      "hygieneGrade": "B",
       "gradeExpiry": "2017-01-07",
+      "hygieneGrade": "B",
+      "inspectionDate": "2016-01-07",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00127": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2017-01-08",
-      "hygieneGrade": "A",
       "gradeExpiry": "2018-01-08",
+      "hygieneGrade": "A",
+      "inspectionDate": "2017-01-08",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00128": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2018-01-09",
-      "hygieneGrade": "B",
       "gradeExpiry": "2019-01-09",
+      "hygieneGrade": "B",
+      "inspectionDate": "2018-01-09",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00129": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2019-01-10",
-      "hygieneGrade": "B",
       "gradeExpiry": "2020-01-10",
+      "hygieneGrade": "B",
+      "inspectionDate": "2019-01-10",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00130": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2020-01-11",
-      "hygieneGrade": "B",
       "gradeExpiry": "2021-01-11",
+      "hygieneGrade": "B",
+      "inspectionDate": "2020-01-11",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00131": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2021-01-12",
-      "hygieneGrade": "A",
       "gradeExpiry": "2022-01-12",
+      "hygieneGrade": "A",
+      "inspectionDate": "2021-01-12",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00132": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2022-01-13",
-      "hygieneGrade": "C",
       "gradeExpiry": "2023-01-13",
+      "hygieneGrade": "C",
+      "inspectionDate": "2022-01-13",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00133": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2023-01-14",
-      "hygieneGrade": "B",
       "gradeExpiry": "2024-01-14",
+      "hygieneGrade": "B",
+      "inspectionDate": "2023-01-14",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00134": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2024-01-15",
-      "hygieneGrade": "A",
       "gradeExpiry": "2025-01-15",
+      "hygieneGrade": "A",
+      "inspectionDate": "2024-01-15",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00135": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2025-01-16",
-      "hygieneGrade": "A",
       "gradeExpiry": "2026-01-16",
+      "hygieneGrade": "A",
+      "inspectionDate": "2025-01-16",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00136": {
-      "stallId": "stall_08",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2026-01-17",
-      "hygieneGrade": "B",
       "gradeExpiry": "2027-01-17",
+      "hygieneGrade": "B",
+      "inspectionDate": "2026-01-17",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_08"
     },
     "ins_annual_00137": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2010-01-01",
-      "hygieneGrade": "A",
       "gradeExpiry": "2011-01-01",
+      "hygieneGrade": "A",
+      "inspectionDate": "2010-01-01",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00138": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2011-01-02",
-      "hygieneGrade": "B",
       "gradeExpiry": "2012-01-02",
+      "hygieneGrade": "B",
+      "inspectionDate": "2011-01-02",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00139": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2012-01-03",
-      "hygieneGrade": "A",
       "gradeExpiry": "2013-01-03",
+      "hygieneGrade": "A",
+      "inspectionDate": "2012-01-03",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00140": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2013-01-04",
-      "hygieneGrade": "B",
       "gradeExpiry": "2014-01-04",
+      "hygieneGrade": "B",
+      "inspectionDate": "2013-01-04",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00141": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2014-01-05",
-      "hygieneGrade": "B",
       "gradeExpiry": "2015-01-05",
+      "hygieneGrade": "B",
+      "inspectionDate": "2014-01-05",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00142": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2015-01-06",
-      "hygieneGrade": "B",
       "gradeExpiry": "2016-01-06",
+      "hygieneGrade": "B",
+      "inspectionDate": "2015-01-06",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00143": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2016-01-07",
-      "hygieneGrade": "A",
       "gradeExpiry": "2017-01-07",
+      "hygieneGrade": "A",
+      "inspectionDate": "2016-01-07",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00144": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2017-01-08",
-      "hygieneGrade": "C",
       "gradeExpiry": "2018-01-08",
+      "hygieneGrade": "C",
+      "inspectionDate": "2017-01-08",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00145": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2018-01-09",
-      "hygieneGrade": "B",
       "gradeExpiry": "2019-01-09",
+      "hygieneGrade": "B",
+      "inspectionDate": "2018-01-09",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00146": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2019-01-10",
-      "hygieneGrade": "A",
       "gradeExpiry": "2020-01-10",
+      "hygieneGrade": "A",
+      "inspectionDate": "2019-01-10",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00147": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2020-01-11",
-      "hygieneGrade": "A",
       "gradeExpiry": "2021-01-11",
+      "hygieneGrade": "A",
+      "inspectionDate": "2020-01-11",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00148": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2021-01-12",
-      "hygieneGrade": "B",
       "gradeExpiry": "2022-01-12",
+      "hygieneGrade": "B",
+      "inspectionDate": "2021-01-12",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00149": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2022-01-13",
-      "hygieneGrade": "A",
       "gradeExpiry": "2023-01-13",
+      "hygieneGrade": "A",
+      "inspectionDate": "2022-01-13",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00150": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2023-01-14",
-      "hygieneGrade": "B",
       "gradeExpiry": "2024-01-14",
+      "hygieneGrade": "B",
+      "inspectionDate": "2023-01-14",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00151": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2024-01-15",
-      "hygieneGrade": "A",
       "gradeExpiry": "2025-01-15",
+      "hygieneGrade": "A",
+      "inspectionDate": "2024-01-15",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00152": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2025-01-16",
-      "hygieneGrade": "B",
       "gradeExpiry": "2026-01-16",
+      "hygieneGrade": "B",
+      "inspectionDate": "2025-01-16",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00153": {
-      "stallId": "stall_09",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2026-01-17",
-      "hygieneGrade": "B",
       "gradeExpiry": "2027-01-17",
+      "hygieneGrade": "B",
+      "inspectionDate": "2026-01-17",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_09"
     },
     "ins_annual_00154": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2010-01-01",
-      "hygieneGrade": "B",
       "gradeExpiry": "2011-01-01",
+      "hygieneGrade": "B",
+      "inspectionDate": "2010-01-01",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00155": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2011-01-02",
-      "hygieneGrade": "A",
       "gradeExpiry": "2012-01-02",
+      "hygieneGrade": "A",
+      "inspectionDate": "2011-01-02",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00156": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2012-01-03",
-      "hygieneGrade": "C",
       "gradeExpiry": "2013-01-03",
+      "hygieneGrade": "C",
+      "inspectionDate": "2012-01-03",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00157": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2013-01-04",
-      "hygieneGrade": "B",
       "gradeExpiry": "2014-01-04",
+      "hygieneGrade": "B",
+      "inspectionDate": "2013-01-04",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00158": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2014-01-05",
-      "hygieneGrade": "A",
       "gradeExpiry": "2015-01-05",
+      "hygieneGrade": "A",
+      "inspectionDate": "2014-01-05",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00159": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2015-01-06",
-      "hygieneGrade": "A",
       "gradeExpiry": "2016-01-06",
+      "hygieneGrade": "A",
+      "inspectionDate": "2015-01-06",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 3
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00160": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2016-01-07",
-      "hygieneGrade": "B",
       "gradeExpiry": "2017-01-07",
+      "hygieneGrade": "B",
+      "inspectionDate": "2016-01-07",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 4
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00161": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2017-01-08",
-      "hygieneGrade": "A",
       "gradeExpiry": "2018-01-08",
+      "hygieneGrade": "A",
+      "inspectionDate": "2017-01-08",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 5
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00162": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2018-01-09",
-      "hygieneGrade": "B",
       "gradeExpiry": "2019-01-09",
+      "hygieneGrade": "B",
+      "inspectionDate": "2018-01-09",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 3
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00163": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2019-01-10",
-      "hygieneGrade": "A",
       "gradeExpiry": "2020-01-10",
+      "hygieneGrade": "A",
+      "inspectionDate": "2019-01-10",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 4
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00164": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2020-01-11",
-      "hygieneGrade": "B",
       "gradeExpiry": "2021-01-11",
+      "hygieneGrade": "B",
+      "inspectionDate": "2020-01-11",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 5
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00165": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2021-01-12",
-      "hygieneGrade": "B",
       "gradeExpiry": "2022-01-12",
+      "hygieneGrade": "B",
+      "inspectionDate": "2021-01-12",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 3
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00166": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2022-01-13",
-      "hygieneGrade": "B",
       "gradeExpiry": "2023-01-13",
+      "hygieneGrade": "B",
+      "inspectionDate": "2022-01-13",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 3,
-        "housekeeping": 4
-      }
+        "housekeeping": 4,
+        "hygiene": 4
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00167": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2023-01-14",
-      "hygieneGrade": "A",
       "gradeExpiry": "2024-01-14",
+      "hygieneGrade": "A",
+      "inspectionDate": "2023-01-14",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 4,
-        "housekeeping": 5
-      }
+        "housekeeping": 5,
+        "hygiene": 5
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00168": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2024-01-15",
-      "hygieneGrade": "C",
       "gradeExpiry": "2025-01-15",
+      "hygieneGrade": "C",
+      "inspectionDate": "2024-01-15",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 3,
         "cleanliness": 3,
-        "housekeeping": 2
-      }
+        "housekeeping": 2,
+        "hygiene": 3
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00169": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_002",
-      "inspectionDate": "2025-01-16",
-      "hygieneGrade": "B",
       "gradeExpiry": "2026-01-16",
+      "hygieneGrade": "B",
+      "inspectionDate": "2025-01-16",
+      "officerId": "OFFICER_002",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 4,
         "cleanliness": 4,
-        "housekeeping": 3
-      }
+        "housekeeping": 3,
+        "hygiene": 4
+      },
+      "stallId": "stall_10"
     },
     "ins_annual_00170": {
-      "stallId": "stall_10",
-      "officerId": "OFFICER_001",
-      "inspectionDate": "2026-01-17",
-      "hygieneGrade": "A",
       "gradeExpiry": "2027-01-17",
+      "hygieneGrade": "A",
+      "inspectionDate": "2026-01-17",
+      "officerId": "Os18BEltTkfVJjCpcTpkF9XG6092",
       "remarks": {
         "rem_01": "Annual routine inspection completed."
       },
       "scores": {
-        "hygiene": 5,
         "cleanliness": 3,
-        "housekeeping": 4
+        "housekeeping": 4,
+        "hygiene": 5
+      },
+      "stallId": "stall_10"
+    }
+  },
+  "licences": {
+    "lic_001": {
+      "dateOfEffect": "2025-01-01",
+      "dateOfExpiry": "2026-01-01",
+      "licenceNumber": "NEA-FSL-10001",
+      "licenseeName": "John Doe",
+      "licenseeUid": "OWNER_001",
+      "stallId": "stall_01",
+      "type": "Food Stall Licence"
+    },
+    "lic_002": {
+      "dateOfEffect": "2025-03-01",
+      "dateOfExpiry": "2026-03-01",
+      "licenceNumber": "MUIS-HAL-20001",
+      "licenseeName": "Siti Aminah",
+      "licenseeUid": "OWNER_002",
+      "stallId": "stall_02",
+      "type": "Halal Certification"
+    },
+    "lic_003": {
+      "dateOfEffect": "2025-06-01",
+      "dateOfExpiry": "2026-06-01",
+      "licenceNumber": "SPF-LIQ-30001",
+      "licenseeName": "Tan Wei",
+      "licenseeUid": "OWNER_004",
+      "stallId": "stall_04",
+      "type": "Liquor Licence"
+    },
+    "lic_004": {
+      "dateOfEffect": "2025-05-01",
+      "dateOfExpiry": "2026-05-01",
+      "licenceNumber": "HSA-TOB-40001",
+      "licenseeName": "Raj Kumar",
+      "licenseeUid": "OWNER_003",
+      "stallId": "stall_07",
+      "type": "Tobacco Retail Licence"
+    }
+  },
+  "menuItems": {
+    "stall_01": {
+      "item_01": {
+        "cuisines": {
+          "cui_03": "Japanese"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Mains",
+        "itemDesc": "Stir fried chicken cubes with signature ramen.",
+        "itemName": "Chicken Ramen",
+        "itemPrice": 7.9
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Wok-tossed rice with golden egg and scallions.",
+        "itemName": "Egg Fried Rice",
+        "itemPrice": 7
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_03": "Japanese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Thick udon noodles in savory soup with fresh prawns.",
+        "itemName": "Prawn Udon",
+        "itemPrice": 7.9
+      }
+    },
+    "stall_02": {
+      "item_01": {
+        "cuisines": {
+          "cui_03": "Japanese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Crispy fried pork cutlet with savory Japanese curry.",
+        "itemName": "Katsu Curry Rice",
+        "itemPrice": 12.5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_03": "Japanese"
+        },
+        "discountPercent": 15,
+        "itemCategory": "Mains",
+        "itemDesc": "Breaded deep-fried prawns served with rich curry sauce.",
+        "itemName": "Ebi Fry Curry",
+        "itemPrice": 13.5
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_03": "Japanese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Fluffy omelette rice topped with melted cheese and curry.",
+        "itemName": "Cheese Curry Omurice",
+        "itemPrice": 14.5
+      }
+    },
+    "stall_03": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Springy noodles tossed in dark sauce with dumplings.",
+        "itemName": "Wonton Noodle Dry",
+        "itemPrice": 4.5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Mains",
+        "itemDesc": "Classic Bak Chor Mee with vinegar and minced pork.",
+        "itemName": "Minced Meat Noodle",
+        "itemPrice": 5
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Sides",
+        "itemDesc": "Crispy golden dumplings with savory meat filling.",
+        "itemName": "Fried Wonton (8pcs)",
+        "itemPrice": 4
+      }
+    },
+    "stall_04": {
+      "item_01": {
+        "cuisines": {
+          "cui_02": "Malay/Local"
+        },
+        "discountPercent": 5,
+        "itemCategory": "Seafood",
+        "itemDesc": "Grilled stingray slathered in spicy sambal paste.",
+        "itemName": "Sambal Stingray",
+        "itemPrice": 18
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_02": "Malay/Local"
+        },
+        "itemCategory": "Seafood",
+        "itemDesc": "Smoky grilled tiger prawns with garlic butter.",
+        "itemName": "BBQ Tiger Prawns",
+        "itemPrice": 25
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_02": "Malay/Local"
+        },
+        "itemCategory": "Seafood",
+        "itemDesc": "Fresh squid stir-fried in aromatic spicy chili paste.",
+        "itemName": "Sambal Sotong",
+        "itemPrice": 15
+      }
+    },
+    "stall_05": {
+      "item_01": {
+        "cuisines": {
+          "cui_04": "Western"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Juicy chicken chop served with fries and coleslaw.",
+        "itemName": "Grilled Chicken Chop",
+        "itemPrice": 8.5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_04": "Western"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Crispy battered dory fish with tartar sauce.",
+        "itemName": "Fish and Chips",
+        "itemPrice": 9
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_04": "Western"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Mains",
+        "itemDesc": "200g New Zealand beef served with black pepper sauce.",
+        "itemName": "Sirloin Steak",
+        "itemPrice": 14.5
+      }
+    },
+    "stall_06": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Seafood",
+        "itemDesc": "Mud crab cooked in a sweet, savory, and spicy tomato gravy.",
+        "itemName": "Chilli Crab Set",
+        "itemPrice": 45
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Seafood",
+        "itemDesc": "Whole prawns coated in crispy, buttery cereal flakes.",
+        "itemName": "Cereal Prawns",
+        "itemPrice": 22
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Wok-fried rice with crab meat, prawns, and squid.",
+        "itemName": "Seafood Fried Rice",
+        "itemPrice": 8
+      }
+    },
+    "stall_07": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Mains",
+        "itemDesc": "Wok-fried flat noodles with cockles, sausage, and egg.",
+        "itemName": "Fried Kway Teow (Small)",
+        "itemPrice": 5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "A larger portion of the classic dish with extra cockles.",
+        "itemName": "Fried Kway Teow (Medium)",
+        "itemPrice": 6
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Family-sized platter of savory, smoky fried noodles.",
+        "itemName": "Fried Kway Teow (Large)",
+        "itemPrice": 8
+      }
+    },
+    "stall_08": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Sweet and savory caramelized BBQ pork served over rice.",
+        "itemName": "Char Siew Rice",
+        "itemPrice": 5.5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Crispy skin pork belly slices served with fragrant rice.",
+        "itemName": "Roast Pork Rice",
+        "itemPrice": 5.5
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 15,
+        "itemCategory": "Sharing",
+        "itemDesc": "A combination platter of Char Siew and Roast Pork.",
+        "itemName": "Duo Roast Meat Platter",
+        "itemPrice": 12
+      }
+    },
+    "stall_09": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Yellow noodles served in a rich, umami prawn broth.",
+        "itemName": "Prawn Noodle Soup",
+        "itemPrice": 6.5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 5,
+        "itemCategory": "Mains",
+        "itemDesc": "Prawn noodles topped with tender braised pork ribs.",
+        "itemName": "Pork Rib Prawn Noodle",
+        "itemPrice": 7.5
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Sides",
+        "itemDesc": "Assorted traditional fried fritters and meat rolls.",
+        "itemName": "Ngoh Hiang Platter",
+        "itemPrice": 8
+      }
+    },
+    "stall_10": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Mains",
+        "itemDesc": "Stir-fried noodles simmered in aromatic prawn stock.",
+        "itemName": "Hokkien Mee (Small)",
+        "itemPrice": 5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Medium serving with generous fresh prawns and squid.",
+        "itemName": "Hokkien Mee (Medium)",
+        "itemPrice": 8
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Large serving of wet-style noodles, perfect for sharing.",
+        "itemName": "Hokkien Mee (Large)",
+        "itemPrice": 10
       }
     }
   },
   "orders": {
     "ord_001": {
-      "orderDate": "2026-02-01T12:00:00Z",
-      "pmtType": "PayLah",
       "customerId": "CUST_001",
-      "items": {
-        "1": {
-          "stallId": "stall_01",
+      "items": [
+        null,
+        {
           "itemCode": "item_02",
           "quantity": 2,
-          "unitPrice": 5.0
+          "stallId": "stall_01",
+          "unitPrice": 5
         }
-      }
-    }
-  },
-  "feedback": {
-    "fbk_01": {
-      "fbkComment": "Best chicken rice in town!",
-      "fbkDateTime": "2026-02-01T13:00:00Z",
-      "fbkRating": 5,
-      "customerId": "CUST_001",
-      "stallId": "stall_01",
-      "complaints": {}
+      ],
+      "orderDate": "2026-02-01T12:00:00Z",
+      "pmtType": "PayLah"
     }
   },
   "promotions": {
     "pro_01": {
       "promoDesc": "Lunch Special: 10% off",
-      "promoStartDate": "2026-02-01",
       "promoEndDate": "2026-02-28",
+      "promoStartDate": "2026-02-01",
       "stallId": "stall_01"
     }
   },
   "rentalAgreements": {
     "agr_01": {
-      "agrStartDate": "2025-01-01",
       "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
       "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
-      "rentalPrice": 2600,
       "ownerUid": "OWNER_001",
-      "stallId": "stall_01"
+      "rentalPrice": 2600,
+      "stallId": "stall_01",
+      "status": "Active"
     },
     "agr_02": {
-      "agrStartDate": "2025-01-01",
       "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
       "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
-      "rentalPrice": 2700,
       "ownerUid": "OWNER_002",
-      "stallId": "stall_02"
+      "rentalPrice": 2700,
+      "stallId": "stall_02",
+      "status": "Renewed"
     },
     "agr_03": {
-      "agrStartDate": "2025-01-01",
       "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
       "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
-      "rentalPrice": 2800,
       "ownerUid": "OWNER_003",
-      "stallId": "stall_03"
+      "rentalPrice": 2800,
+      "stallId": "stall_03",
+      "status": "Active"
     },
     "agr_04": {
-      "agrStartDate": "2025-01-01",
       "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
       "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
-      "rentalPrice": 2900,
       "ownerUid": "OWNER_004",
-      "stallId": "stall_04"
+      "rentalPrice": 2900,
+      "stallId": "stall_04",
+      "status": "Renewed"
     },
     "agr_05": {
-      "agrStartDate": "2025-01-01",
       "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
       "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
-      "rentalPrice": 3000,
       "ownerUid": "OWNER_001",
-      "stallId": "stall_05"
+      "rentalPrice": 3000,
+      "stallId": "stall_05",
+      "status": "Active"
     },
     "agr_06": {
-      "agrStartDate": "2025-01-01",
       "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
       "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
-      "rentalPrice": 3100,
       "ownerUid": "OWNER_002",
-      "stallId": "stall_06"
+      "rentalPrice": 3100,
+      "stallId": "stall_06",
+      "status": "Renewed"
     },
     "agr_07": {
-      "agrStartDate": "2025-01-01",
       "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
       "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
-      "rentalPrice": 3200,
       "ownerUid": "OWNER_003",
-      "stallId": "stall_07"
+      "rentalPrice": 3200,
+      "stallId": "stall_07",
+      "status": "Active"
     },
     "agr_08": {
-      "agrStartDate": "2025-01-01",
       "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
       "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
-      "rentalPrice": 3300,
       "ownerUid": "OWNER_004",
-      "stallId": "stall_08"
+      "rentalPrice": 3300,
+      "stallId": "stall_08",
+      "status": "Renewed"
     },
     "agr_09": {
-      "agrStartDate": "2025-01-01",
       "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
       "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
-      "rentalPrice": 3400,
       "ownerUid": "OWNER_001",
-      "stallId": "stall_09"
+      "rentalPrice": 3400,
+      "stallId": "stall_09",
+      "status": "Active"
     },
     "agr_10": {
-      "agrStartDate": "2025-01-01",
       "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
       "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
-      "rentalPrice": 3500,
       "ownerUid": "OWNER_002",
-      "stallId": "stall_10"
+      "rentalPrice": 3500,
+      "stallId": "stall_10",
+      "status": "Renewed"
+    }
+  },
+  "stalls": {
+    "stall_01": {
+      "avgRating": 4.2,
+      "feedbacks": {
+        "-Okn-ox2HbvZGnoEB3YV": {
+          "comment": "I HIGHKEY LOVE WOK HEY please bring back the truffle rice it is SOOO GOOODDDD",
+          "createdAt": 1770382380084,
+          "rating": 4,
+          "stallName": "Wok Hey",
+          "userName": "Test User 2"
+        }
+      },
+      "hawkerCentreId": "hc_01",
+      "image": "/assets/Images/customerImages/wok-hey-chickenramen.svg",
+      "ownerUid": "N5yobDeOFLWW8tK1Akg15MCa0UM2",
+      "reviewCount": 45,
+      "stallDesc": "Stir fried delicacies in a cup",
+      "stallName": "Wok Hey",
+      "stallUnitNo": "01-10",
+      "tags": ["Chinese", "Stir-fry"],
+      "visitCount": "27"
+    },
+    "stall_02": {
+      "avgRating": 4.5,
+      "feedbacks": {
+        "-Okn-hrs5wzqoVQ0jeeY": {
+          "comment": "Curry was great!",
+          "createdAt": 1770382351080,
+          "rating": 5,
+          "stallName": "Monster Curry",
+          "userName": "Test User 2"
+        }
+      },
+      "hawkerCentreId": "hc_01",
+      "image": "/assets/Images/customerImages/MonstercurryDemiGlace.svg",
+      "ownerUid": "DhUUNZuRqqf4OZidlJHNwdeMCIE3",
+      "reviewCount": 38,
+      "stallDesc": "Authentic Japanese curry rice",
+      "stallName": "Monster Curry",
+      "stallUnitNo": "01-05",
+      "tags": ["Japanese", "Curry", "Halal"],
+      "visitCount": "25"
+    },
+    "stall_03": {
+      "avgRating": 4,
+      "hawkerCentreId": "hc_01",
+      "image": "/assets/Images/customerImages/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
+      "ownerUid": "OWNER_003",
+      "reviewCount": 32,
+      "stallDesc": "Traditional wok hei filled dishes",
+      "stallName": "Yah Fu Miniwok",
+      "stallUnitNo": "01-15",
+      "tags": ["Chinese", "Wok Hei", "Zi Char"],
+      "visitCount": "20"
+    },
+    "stall_04": {
+      "avgRating": 4.7,
+      "hawkerCentreId": "hc_02",
+      "image": "https://placeholder.com/newtonbbq.jpg",
+      "ownerUid": "OWNER_004",
+      "reviewCount": 55,
+      "stallDesc": "Famous sambal stingray and prawns.",
+      "stallName": "Newton BBQ Seafood",
+      "stallUnitNo": "01-01",
+      "tags": ["Seafood", "BBQ", "Spicy"],
+      "visitCount": "16"
+    },
+    "stall_05": {
+      "avgRating": 3.9,
+      "hawkerCentreId": "hc_02",
+      "image": "https://placeholder.com/western.jpg",
+      "ownerUid": "OWNER_001",
+      "reviewCount": 28,
+      "stallDesc": "Affordable western food and grills.",
+      "stallName": "Western Grill",
+      "stallUnitNo": "01-20",
+      "tags": ["Western", "Grill", "Steak"],
+      "visitCount": "14"
+    },
+    "stall_06": {
+      "avgRating": 4.6,
+      "hawkerCentreId": "hc_02",
+      "image": "https://placeholder.com/alliance.jpg",
+      "ownerUid": "OWNER_002",
+      "reviewCount": 42,
+      "stallDesc": "Chilli crab and seafood delights.",
+      "stallName": "Alliance Seafood",
+      "stallUnitNo": "01-30",
+      "tags": ["Seafood", "Crab", "Chinese"],
+      "visitCount": "13"
+    },
+    "stall_07": {
+      "avgRating": 4.8,
+      "hawkerCentreId": "hc_03",
+      "image": "https://placeholder.com/laofuzi.jpg",
+      "ownerUid": "OWNER_003",
+      "reviewCount": 60,
+      "stallDesc": "Old school fried kway teow.",
+      "stallName": "Lao Fu Zi Fried Kway Teow",
+      "stallUnitNo": "01-40",
+      "tags": ["Local", "Fried Noodles", "Chinese"],
+      "visitCount": "11"
+    },
+    "stall_08": {
+      "avgRating": 4.3,
+      "hawkerCentreId": "hc_03",
+      "image": "https://placeholder.com/roastparadise.jpg",
+      "ownerUid": "OWNER_004",
+      "reviewCount": 35,
+      "stallDesc": "Premium char siew and roast pork.",
+      "stallName": "Roast Paradise",
+      "stallUnitNo": "01-50",
+      "tags": ["Roast Meat", "Pork", "Chinese"],
+      "visitCount": "9"
+    },
+    "stall_09": {
+      "avgRating": 4.1,
+      "hawkerCentreId": "hc_03",
+      "image": "https://placeholder.com/blanco.jpg",
+      "ownerUid": "OWNER_001",
+      "reviewCount": 22,
+      "stallDesc": "Rich and savory prawn noodle soup.",
+      "stallName": "Blanco Court Prawn Mee",
+      "stallUnitNo": "01-60",
+      "tags": ["Soup", "Prawns", "Noodles"],
+      "visitCount": "5"
+    },
+    "stall_10": {
+      "avgRating": 3.9,
+      "hawkerCentreId": "hc_03",
+      "image": "https://placeholder.com/namsing.jpg",
+      "ownerUid": "OWNER_002",
+      "reviewCount": 18,
+      "stallDesc": "Traditional dry-style Hokkien Mee.",
+      "stallName": "Nam Sing Hokkien Mee",
+      "stallUnitNo": "01-70",
+      "tags": ["Noodles", "Traditional", "Seafood"],
+      "visitCount": "3"
+    }
+  },
+  "users": {
+    "0Eoh1NZVjpZwcPScVzPg30cc9Zf1": {
+      "name": "Food Republic",
+      "role": "operator"
+    },
+    "CUST_001": {
+      "custContactNo": "98765432",
+      "custEmail": "alice@example.com",
+      "custName": "Alice Tan",
+      "custNric": "S1234567A",
+      "role": "customer"
+    },
+    "CUST_002": {
+      "custContactNo": "81234567",
+      "custEmail": "bob@example.com",
+      "custName": "Bob Lim",
+      "custNric": "S2345678B",
+      "role": "customer"
+    },
+    "CUST_003": {
+      "custContactNo": "92345678",
+      "custEmail": "charlie@example.com",
+      "custName": "Charlie Ang",
+      "custNric": "S3456789C",
+      "role": "customer"
+    },
+    "DhUUNZuRqqf4OZidlJHNwdeMCIE3": {
+      "ownerName": "Siti Aminah",
+      "role": "stallOwner",
+      "stallId": "stall_02"
+    },
+    "N5yobDeOFLWW8tK1Akg15MCa0UM2": {
+      "ownerName": "John Doe",
+      "role": "stallOwner",
+      "stallId": "stall_01"
+    },
+    "Os18BEltTkfVJjCpcTpkF9XG6092": {
+      "officerName": "Daniel Tan",
+      "role": "neaOfficer"
+    },
+    "OFFICER_002": {
+      "officerContactNo": "64443333",
+      "officerName": "Officer Wong",
+      "role": "neaOfficer"
+    },
+    "OWNER_003": {
+      "ownerContactNo": "87776666",
+      "ownerName": "Raj Kumar",
+      "ownerNric": "S9876543D",
+      "role": "stallOwner"
+    },
+    "OWNER_004": {
+      "ownerContactNo": "96665555",
+      "ownerName": "Tan Wei",
+      "ownerNric": "S1122334E",
+      "role": "stallOwner"
+    },
+    "or4tWVzXaNT6NfpJ7JGv3xcyJyM2": {
+      "custName": "Test User 2",
+      "role": "customer"
+    },
+    "OPERATOR_002": {
+      "contactPerson": "Ms. Tan",
+      "operatorName": "Prime Hawker Management",
+      "role": "operator"
     }
   }
 }
