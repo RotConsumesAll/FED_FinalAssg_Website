@@ -54,6 +54,9 @@ export async function getStall(stallId){
   return fetchData(`stalls/${stallId}`); 
 }
 
+export async function getAllStalls(){
+  return fetchData(`stalls`);
+}
 export async function getFeedbackByStallId(stallId) {
   return getObjectsByAttribute("feedback", "stallId", stallId);
 }

@@ -1,12 +1,137 @@
 //DOM
 import { getStallMenu } from "../database/meaningful-helpers.js";
+import {getStall} from "../database/meaningful-helpers.js";
+import { getHawkerCentres } from "../database/meaningful-helpers.js";
+import {
+  db,
+  ref,
+  query,
+  orderByChild,
+  limitToLast,
+  onValue,
+  equalTo,
+  get,
+  push,
+} from "../firebase/database.js";
 
-async function asyncGetStallMenu(wantedStallId){
-  let stallMenu = await getStallMenu(wantedStallId);
+let stallMenu;
+let stallDetails;
+let hawkerCentres;
+async function loadPage(wantedStallId){
+  //Get data from database
+  stallMenu = await getStallMenu(wantedStallId);
   console.log(stallMenu);
-}
+  stallDetails = await getStall(wantedStallId);
+  console.log(stallDetails);  
+  let currentHawkerCentreId = stallDetails.hawkerCentreId;
+  hawkerCentres = await getHawkerCentres();
+  console.log(hawkerCentres);
 
-asyncGetStallMenu("stall_01");
+  let arrayHawkercentres = [];
+  let keyValuePair = Object.entries(hawkerCentres)
+  for(let[id, data] of keyValuePair) {
+      arrayHawkercentres.push({
+          id: id,                  // Extracts id
+          name: data.hcName,       // Extracts name
+          address: data.hcAddress, // Extracts address
+          image: data.image,       // Extracts URL
+          openingTime: data.openingTime,
+          closingTime: data.closingTime
+      });
+  };
+  console.log(arrayHawkercentres);
+
+  //Matching hawkercentre id and loading info 
+  arrayHawkercentres.forEach(hawker => {
+    if (hawker.id===currentHawkerCentreId){
+      let stallModel = document.querySelector("#stall-info-modal");           //container
+      let stallModalImage = stallModel.querySelector(".modal-info-image");    //image
+      let stallModalTitle = stallModel.querySelector(".item-title");          //title
+      let stallModalTimeRange = stallModel.querySelector(".time-range");      //time range
+      let stallModalAddr = stallModel.querySelector(".address");         //Address
+
+      stallModalImage.style.backgroundImage = `url("${hawker.image}")`;
+      stallModalTitle.innerText = hawker.name;
+      stallModalTimeRange.innerText ="Open "+ hawker.openingTime + " to " + hawker.closingTime;
+      stallModalAddr.innerText = hawker.address;
+    }
+  }); 
+
+  let modalItemImage = document.querySelectorAll(".modal-item-image"); //Target overlay+cart image
+  modalItemImage.forEach(elementItemImage =>{
+    elementItemImage.style.backgroundImage = `url("${stallDetails.image}")`;
+  });
+
+  let thumbnailImage = document.querySelectorAll(".stall-thumbnail");   //Target stall thumbnail
+  thumbnailImage.forEach(elementItemImage =>{
+    elementItemImage.style.backgroundImage = `url("${stallDetails.image}")`;
+  });
+
+  let stallRating = document.querySelector(".review-rating"); //Stall review rating
+  let numOfReviews = document.querySelector(".review-qty");   //Stall number of reviews
+  stallRating.innerText = parseFloat(stallDetails.avgRating).toFixed(1);
+  numOfReviews.innerText = stallDetails.reviewCount + " reviews";
+
+  let stallName = document.querySelector(".stall-name"); //Stall name
+  let dirStallName = document.querySelector(".directory-link .dir-stallname-txt"); //Stall name in directory container
+  stallName.textContent=stallDetails.stallName;
+  dirStallName.textContent = stallDetails.stallName;
+
+  let cards = document.querySelectorAll(".item-card");
+  let arrayStallMenu = Object.entries(stallMenu);
+  
+  // Check if item has attribute called discountPercent, if yes, remove item from array and add back to start of array
+  let promoExists = arrayStallMenu.findIndex(([id,data]) => data.discountPercent !==undefined);
+  if (promoExists!=-1){
+    let [promoItem] = arrayStallMenu.splice(promoExists,1);
+    arrayStallMenu.unshift(promoItem);
+    let elementDiscount = document.querySelector(".promotions-container .discount-amt");
+    elementDiscount.innerText=promoItem[1].discountPercent + "%";
+  }  
+
+  //Loop through all menu cards. cards[0] is always promo card.
+  let i=0;
+  while (i!=arrayStallMenu.length){
+    let currentCard = cards[i];
+    let [itemCode,currentMenuItem] = arrayStallMenu[i];
+
+    let itemTitle = currentCard.querySelector(".item-title");
+    let itemDesc = currentCard.querySelector(".item-body")      
+    let itemCost = currentCard.querySelector(".item-cost");
+    let itemImage = currentCard.querySelector(".item-image");
+
+    itemTitle.textContent = currentMenuItem.itemName;
+    itemDesc.textContent = currentMenuItem.itemDesc;
+    itemCost.textContent = "$"+parseFloat(currentMenuItem.itemPrice).toFixed(2);
+
+    currentCard.addEventListener("click", function(){
+      let modal = document.querySelector("#menu-item-modal");
+      let modalTitle = modal.querySelector(".item-title");
+      let modalDesc = modal.querySelector(".item-body");
+      let modalCost = modal.querySelector(".item-cost"); 
+
+      modalTitle.textContent = currentMenuItem.itemName;
+      modalDesc.textContent = currentMenuItem.itemDesc;
+      modalCost.textContent = "$"+parseFloat(currentMenuItem.itemPrice).toFixed(2);
+
+      let addToCartBtn = document.querySelector("#menu-item-modal .modal-footer .btn");
+      addToCartBtn.dataset.itemCode = itemCode;
+      addToCartBtn.dataset.stallId = wantedStallId;
+
+      resetModalQty();
+    });
+
+    itemImage.style.backgroundImage = `url("${stallDetails.image}")`
+    i++;
+  }
+}
+loadPage("stall_02");
+
+
+function resetModalQty(){
+  let modalQtyText = document.querySelector("#menu-item-modal .quantity-container .quantity");
+  modalQtyText.innerText = "1";
+}
 
 
 //+ or - function, used in menu item overlay and cart container.
@@ -34,16 +159,14 @@ function incOrDecQty(userInput){
     let elementQty = qtyContainer.querySelector(".quantity");
     let calcQty = parseInt(elementQty.innerText);
     elementQty.innerText = calcQty + 1;   
-    if (isModal !==null){
-      updateCart("add",titleOfItem);
-    }
+    updateCart("add",titleOfItem);
+    
   }
 
   else if (subQtyBtn !== null){
     let qtyContainer = subQtyBtn.closest(".quantity-container");
     let elementQty = qtyContainer.querySelector(".quantity");
     let calcQty = parseInt(elementQty.innerText); 
-    // let isModal = subQtyBtn.closest("#menu-item-modal");  
 
     //Does not allow qty to be 0 in menu item overlay, 
     if (isModal !== null){
@@ -113,11 +236,14 @@ function updateCart(choice, wantedNameOfitem){
 };
 
 
+
 //Creates a constant itemHTML which will be added to "cart-item-list" container
 function addItemToHTMLCart(itemName, itemPrice, itemImageURL){
   let qtyContainer = document.querySelector("#menu-item-modal .quantity-container"); 
   let modalQuantity = qtyContainer.querySelector(".quantity")
   let currentQty = parseInt(modalQuantity.innerText);
+  let itemCode = addToCartBtn.dataset.itemCode;
+  let stallId = addToCartBtn.dataset.stallId;
     const itemHTML = `
     <section class="item-card">
       <div class="item-image" style="background-image: url('${itemImageURL}')"></div>
@@ -131,23 +257,22 @@ function addItemToHTMLCart(itemName, itemPrice, itemImageURL){
             <p class="quantity">${currentQty}</p>
             <button class="btn btn-increase" type="button">+</button>
           </div>
-          <div class="price-text">$${itemPrice}</div>                                       
+          <div class="price-text">${itemPrice}</div>                                       
         </div>            
       </div>        
     </section>
   `;
   cartList.insertAdjacentHTML("beforeend",itemHTML); //Reference: https://www.w3schools.com/jsref/met_node_insertadjacenthtml.asp
-  addItemToCartArray(itemName,itemPrice,currentQty);
+  addItemToCartArray(itemName,itemPrice,currentQty,itemCode,stallId);
   updateCost();
 }
-
 
 let addToCartBtn = document.querySelector("#menu-item-modal .modal-footer .btn");
 addToCartBtn.addEventListener("click",function(){
   let itemName = document.querySelector("#menu-item-modal .item-title").innerText;
   let itemPrice = document.querySelector("#menu-item-modal .item-cost").innerText;
   let imageStyle = document.querySelector("#menu-item-modal .modal-item-image"); 
-  let itemImageURL = window.getComputedStyle(imageStyle).backgroundImage.slice(26,-2).replace("/","../");  
+  let itemImageURL = window.getComputedStyle(imageStyle).backgroundImage.slice(26,-2).replace("/","../../");  
   addItemToHTMLCart(itemName, itemPrice, itemImageURL);
 });
 
@@ -164,11 +289,15 @@ modalPage.addEventListener("click", function(event){
 
 
 
-
 //Calculate subtotal in cart
 let cartArray = []
-function addItemToCartArray(itemName,itemPrice,quantity){
-  let newCartItem = {"itemName":itemName, "itemPrice":itemPrice, "quantity":quantity};
+function addItemToCartArray(itemName,itemPrice,quantity,itemCode,stallId){
+  let newCartItem = {
+    "itemName":itemName, 
+    "itemPrice":itemPrice, 
+    "quantity":quantity, 
+    "itemCode": itemCode, 
+    "stallId": stallId};
   cartArray.push(newCartItem);
 }
 
@@ -181,4 +310,59 @@ function rmvItemFromCartArray(wantedItemName){
   });
 }
 
+
+
+//Searchbar
+let searchbar = document.querySelector(".menu-nav .searchbar");
+let menuItems = document.querySelectorAll(".item-card");
+searchbar.addEventListener("input", (e) => {
+  let textInput = e.target.value.toLowerCase();
+  menuItems.forEach(item => {
+    let menuTitle = item.querySelector(".item-title").textContent.toLowerCase();
+    if (menuTitle.includes(textInput)){
+      item.style.display = "";
+    }
+    else {
+      item.style.display = "none";
+    }
+  })
+})
+
+//Checkout button
+let checkoutBtn = document.querySelector(".btn-checkout");
+checkoutBtn.addEventListener("click", function() {
+  if (cartArray.length === 0) {
+    alert("Your cart is empty.");
+  }
+
+  else {
+    //create orders object to add to firebase
+    let newOrder = {
+      orderDate: new Date().toISOString(),
+      items:{}
+    }
+    //add elements to items object
+    cartArray.forEach((item,index)=>{
+      newOrder.items[index + 1] = {
+      stallId: item.stallId,
+      itemCode: item.itemCode,
+      quantity: item.quantity,
+      unitPrice: parseFloat(item.itemPrice.replace("$", ""))
+      };
+    })
+    let ordersRef = ref(db, "orders");
+    push(ordersRef,newOrder)
+      .then (()=>{
+        alert("Checkout successful! Thank you for your order.");  
+        cartArray = []; //clear cart
+        let cartListContainer = document.querySelector(".cart-item-list");
+        cartListContainer.innerHTML = ""; //remove item cards
+        updateCost();       
+      })
+      .catch((error) => {
+        console.error("Error placing order: ", error);
+        alert("Failed to place order. Please try again.");
+      });
+  }
+});
 

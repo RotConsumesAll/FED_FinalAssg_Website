@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="..\..\styles\customer.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- top nav bar, please insert the following HTML to the top of your <body>-->  
+    <header class="top-nav-bar">
+      <h1 class="default-text nav-left">HawkPortal</h1>
+      <nav class="nav-center" aria-label="Main navigation">
+        <a href="customer_home.html" class="default-text bold-focus" aria-current="page">Home</a>
+        <a href="customer_stalls.html" class="default-text">Stall</a>
+        <a href="customer_feedback.html" class="default-text">Feedback</a>
+        <a href="customer_complaints.html" class="default-text">Complaints</a>
+      </nav>
+
+      <div class="nav-right log-out-button">
+        <button type="button" class="button-shape-1" aria-label="Log out">
+          <span class="text-logout">Log out</span>
+        </button>
+      </div>
+    </header>    
+    <!-- Carousel Ref: https://www.youtube.com/watch?v=ku_97a6Bgkg -->
+    <div id="promocarousel" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-bs-target = "#promocarousel" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target = "#promocarousel" data-bs-slide-to="1"></li>
+        <li data-bs-target = "#promocarousel" data-bs-slide-to="2"></li>
+      </ol> 
+
+      <div class="carousel-inner">
+        <!-- Promo slide 1  -->
+        <div class="carousel-item active">
+          <div class = "container">
+            <!-- wokhey -->
+            <section >
+                <img class = "background-photo" src = "../../assets/Images/CustomerImages/wok-hey-chickenramen.svg" alt="Wok Hey Chicken Ramen" height = "auto"  width="1512">
+                <div id = "bookmark-wokhey">
+                  <p class = "title">Lunch Time 10% Off!</p> 
+                  <p class = "body">Enjoy 10% off while you savour your<br>favourite stir-fried meals<br>from Wok Hey! </p>                  
+                  <div class = "logo"></div> 
+                  <div class = "triangle-left"></div>
+                  <div class ="triangle-right"></div>
+                  <a href="customer_stalls.html" class="btn btn-lg btn-light promo-btn">Order Now!</a>
+                </div>
+            </section>
+          </div>
+      </div> 
+
+        <!-- Promo slide 2 -->
+          <div class="carousel-item">
+            <div class = "container">
+              <!-- Insert Store name -->
+              <section >
+                  <img class = "background-photo" src = "../../assets/Images/CustomerImages/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg" alt="Ya Fu Salted Egg Chicken" height = "auto"  width="1512">
+                  <div id = "bookmark-yahfu">
+                    <p class = "title">$2 Off $8 Min. Spend!</p> 
+                    <p class = "body">Mini wok flavours accompanied<br>with cheap prices from<br>yahfu Miniwok! </p>
+                    <div class = "logo"></div> 
+                    <div class = "triangle-left"></div>
+                    <div class ="triangle-right"></div>
+                    <a href="customer_stalls.html" class="btn btn-lg btn-light promo-btn">Order Now!</a>
+                  </div>
+            </section>
+          </div>
+        </div> 
+
+        <!-- Promo slide 3 -->
+          <div class="carousel-item">
+            <div class = "container">
+              <!-- Insert Store name -->
+              <section >
+                  <img class = "background-photo" src = "../../assets/Images/CustomerImages/monstercurryBestofbothworlds.svg" alt="Monster Curry Best Of Both Worlds" height = "auto"  width="1512">
+                  <div id = "bookmark-monstercurry">
+                    <p class = "title">Dine-In 5% Cashback!</p> 
+                    <p class = "body">Flaming hot rewards while<br>enduring the Level 5 heat<br>from Monster Curry! </p>
+                    <div class = "logo"></div> 
+                    <div class = "triangle-left"></div>
+                    <div class ="triangle-right"></div>
+                    <a href="customer_stalls.html" class="btn btn-lg btn-light promo-btn">Order Now!</a>
+                  </div>
+            </section>
+          </div>
+        </div> 
+      </div>
+
+      <!-- Carousel arrow buttons -->
+      <a href = "#promocarousel" class = "carousel-control-prev" role = "button" data-bs-slide="prev">
+        <span class = "visually-hidden">Previous</span>
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>      
+      <a href = "#promocarousel" class = "carousel-control-next" role = "button" data-bs-slide="next">
+        <span class = "visually-hidden">Next</span>
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <!-- Top 5 most visited -->
+    <section id = "freq-visited">
+      <p class = "title">Frequently Visited</p>
+      <section class = "podium">
+        <section class="third-rec">
+          <div class = "logo"></div>
+          <p class = "body">3</p>
+          <p class = "num-times-visited"> </p>          
+        </section>        
+        <section class="first-rec">
+          <div class = "logo"></div>
+          <p class = "body">1</p>
+          <p class = "num-times-visited"> </p>
+        </section>
+        <section class="second-rec">
+          <div class = "logo"></div>
+          <p class = "body">2</p>
+          <p class = "num-times-visited"> </p>          
+        </section>
+      </section>
+    </section>
+
+    <!-- Discover More -->
+    <section id = "discover-more">
+      <p class = "title">Discover More</p>
+
+      <!-- js will replace href and class to dynamically update css -->
+      <section class = "Top-Row">
+        <div class = "recommendation recommendation-1" >
+          <a href="" alt="stallname link" class = "rec-1-body">
+            <div class = "preview-photo"></div>
+            <p class = "stallname">StallName</p>
+          </a>            
+        </div>
+        <div class = "recommendation recommendation-2" >
+          <a href="" alt="stallname link" class = "rec-2-body">
+            <div class = "preview-photo"></div>
+            <p class = "stallname">StallName</p>
+          </a>            
+        </div>
+        <div class = "recommendation recommendation-3" >
+          <a href="" alt="stallname link" class = "rec-3-body">
+            <div class = "preview-photo"></div>
+            <p class = "stallname">StallName</p>
+          </a>            
+        </div>                                    
+      </section>
+
+      <section class = "Bottom-Row">
+        <div class = "recommendation recommendation-4" >
+          <a href="" alt="stallname link" class = "rec-4-body">
+            <div class = "preview-photo"></div>
+            <p class = "stallname">StallName</p>
+          </a>            
+        </div>
+        <div class = "recommendation recommendation-5" >
+          <a href="" alt="stallname link" class = "rec-5-body">
+            <div class = "preview-photo"></div>
+            <p class = "stallname">StallName</p>
+          </a>            
+        </div>
+        <div class = "recommendation recommendation-6" >
+          <a href="" alt="stallname link" class = "rec-6-body">
+            <div class = "preview-photo"></div>
+            <p class = "stallname">StallName</p>
+          </a>            
+        </div>       
+      </section>
+    </section>
+    
+
+    <!-- Footer -->
+    <section id = "footer">
+      <section class = "contact-us-container">
+        <section class="hotline-container">
+          <img class = "hotline-icon" src = "../../assets/Icons/Phone icon.svg" alt="Hotline icon" height = "auto"  width="50">
+          <p class="hotline-body">1800-HawkPortal-Hotline</p>
+        </section>
+        
+        <section class="email-container">
+          <img class = "email-icon" src = "../../assets/Icons/Letter icon.svg" alt="Letter icon" height = "auto"  width="50">
+          <p class="email-body">HawkerPortal@gmail.com</p>
+        </section>
+
+        <section class = "credits-container">
+          <img class = "sources-icon" src = "../../assets/Icons/Link.svg" alt="sources icon" height = "auto"  width="50"> 
+          <a href = "sources.html" class = "credits">Credits and references</a> 
+        </section>
+      </section>
+
+      <section class = "about-us-container">
+        <p class = "about-us-title">About Us</p>
+        <p class = "about-us-body">HawkerPortal is a one stop platform for all your needs, developed by our team at NEA. Our goal is to increase convenince when it comes to ordering food items at a hawker centre. We are dedicated to streamlining the ordering process, infusing your meals with a touch of technology.</p>
+        <section class = "social-media-icons">
+          <img class = "facebook" src = "../../assets/Icons/Facebook.svg" alt="Facebook icon" height = "auto"  width="50"> 
+          <img class = "twitter" src = "../../assets/Icons/Twitter.svg" alt="Twitter icon" height = "auto"  width="50"> 
+          <img class = "instagram" src = "../../assets/Icons/Instagram.svg" alt="Instagram icon" height = "auto"  width="50"> 
+          <img class = "linkedin" src = "../../assets/Icons/Linkedin.svg" alt="Linkedin icon" height = "auto"  width="50"> 
+          <img class = "google" src = "../../assets/Icons/Google.svg" alt="Google icon" height = "auto"  width="50"> 
+          <img class = "youtube" src = "../../assets/Icons/Youtube.svg" alt="Youtube icon" height = "auto"  width="50">         
+        </section>
+      </section>          
+    </section>
+    
+
+  </div>
+  <script type = "module" src="../../scripts/customer/customer_home.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
