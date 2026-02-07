@@ -47,3 +47,7 @@ export async function getStallMenu(stallId){
 export async function getStall(stallId){
   return fetchData(`stalls/${stallId}`); 
 }
+
+export async function getAllStalls(){
+  return fetchData(`stalls`);
+}
