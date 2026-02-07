@@ -623,8 +623,13 @@ body{
   /* justify-self: left ; */
 }
 
-#discover-more p{
-  margin:0;
+#discover-more .stallname {
+    color: #FAF9F6;
+    font-family: "Inter", Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-top: 10px; 
 }
 
 /* Top Row */
@@ -635,14 +640,6 @@ body{
   justify-content: center;    
   column-gap: 6.875rem;
   margin-bottom: 5.688rem;
-}
-
-.recommendation-1{
-  display: flex;
-  flex-direction: column;  
-  align-items: center;  
-  padding:0.625rem;
-  border-radius: 5%;
 }
 
 .recommendation{

@@ -13,6 +13,8 @@ import {
   get,
   push,
 } from "../firebase/database.js";
+let urlParams = new URLSearchParams(window.location.search);
+let wantedStallId = urlParams.get("id"); // This gets "stall_01"
 
 let stallMenu;
 let stallDetails;
@@ -125,7 +127,7 @@ async function loadPage(wantedStallId){
     i++;
   }
 }
-loadPage("stall_02");
+loadPage(wantedStallId);
 
 
 function resetModalQty(){
