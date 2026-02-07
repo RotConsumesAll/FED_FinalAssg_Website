@@ -50,10 +50,18 @@ async function loadMenu() {
       // Category headers
       const headerSection = document.createElement("section");
       headerSection.className = "frame-7";
+      const editLink = document.createElement("a");
+      editLink.href = "./stallowner_additem.html";
+      editLink.className = "edit-button";
+      editLink.textContent = "Edit";
+      editLink.addEventListener("click", () => {
+        localStorage.setItem("selectedCategory", categoryName);
+      });
+
       headerSection.innerHTML = `
         <h2 class="text-signatures">${categoryName}</h2>
-        <a href="./stallowner_edititem.html" class="edit-button">Edit</a>
       `;
+      headerSection.appendChild(editLink);
 
       // Items container
       const itemsSection = document.createElement("section");

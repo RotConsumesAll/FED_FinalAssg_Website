@@ -152,7 +152,6 @@ a{
   width: 100%;
   padding: 20px 30px;
   box-sizing: border-box;
-  flex-wrap: wrap;
 }
 
 .stall-owner .frame-3{
@@ -217,6 +216,32 @@ a{
   background-color: #666;
   border-radius: 50%;
   border: none;
+}
+
+.button-shape-2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  min-width: 120px;
+  height: auto;
+  min-height: 48px;
+  padding: 0 20px;
+  align-self: center;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 80px;
+  background-color: #5BCDB6;
+  margin-top: 30px;
+}
+
+.button-shape-2:hover{
+  background-color:#2dab92;
+}
+
+.white-text{
+  color: #fff;
 }
 
 .frame-7 a{
