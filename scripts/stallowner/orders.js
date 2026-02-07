@@ -158,7 +158,7 @@ function createOrderElement(order, section) {
       <span class="order-price">$${order.totalPrice}</span>
       <div class="rectangle-4"></div>
       <div class="vector-wrapper" aria-hidden="true">
-        <img class="vector-2" src="../assets/Icons/takeaway.svg" alt="" />
+        <img class="vector-2" src="../../assets/Icons/takeaway.svg" alt="" />
       </div>
     </div>
   `;
