@@ -95,7 +95,7 @@ onValue(feedbackRef, (snapshot) => {
       renderFeedback(snapshot);
     } 
     else {
-      renderFeedback();
+      renderFeedback(snapshot);
     }
 
 })
