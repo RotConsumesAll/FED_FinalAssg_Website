@@ -5,6 +5,7 @@ import {
   getObjectsByAttribute,
   writeDataToPath,
   pushDataToPath,
+  updateDataAtPath,
 } from "./helpers.js";
 
 export async function getHawkerCentres() {
@@ -122,4 +123,10 @@ export async function createNewRentalAgreement(stallId, rentalAgreementData) {
 export async function createNewMenuItems(stallId) {
   const emptyMenuItems = {};
   await writeDataToPath(`menuItems/${stallId}`, emptyMenuItems);
+}
+
+export async function updateRentalAgreementPrice(agreementId, newPrice) {
+  await updateDataAtPath(`rentalAgreements/${agreementId}`, {
+    rentalPrice: newPrice,
+  });
 }

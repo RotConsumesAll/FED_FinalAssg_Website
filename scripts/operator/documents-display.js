@@ -8,6 +8,7 @@ import {
   createNewRentalAgreement,
   createNewMenuItems,
   getRentalAgreementById,
+  updateRentalAgreementPrice,
 } from "../database/meaningful-helpers.js";
 import { SGDollar } from "./general-helper.js";
 import { removeObjectByPath } from "../database/helpers.js";
@@ -223,8 +224,21 @@ export function assignDeleteHandler() {
 export function assignEditHandler() {
   const buttons = document.getElementsByClassName("edit-button");
   for (const button of buttons) {
-    button.addEventListener("click", function (e) {
+    button.addEventListener("click", async function (e) {
+      e.preventDefault();
       saveRecordId(e);
+      
+      // Get and show name of stall being edited
+      const agreementId = sessionStorage.getItem("recordIdInFocus");
+      if (agreementId) {
+        try {
+          const agreement = await getRentalAgreementById(agreementId);
+          const stall = await getStallByStallId(agreement.stallId);
+          document.getElementById("stallNameBeingEdited").textContent = stall.stallName;
+        } catch (error) {
+          console.error("Error fetching stall name:", error);
+        }
+      }
     });
   }
 }
@@ -316,11 +330,6 @@ export function assignCreateStallHandler() {
       // Create empty menu items for stall
       await createNewMenuItems(stallId);
 
-      console.log("Stall created successfully!", {
-        stallId,
-        agreementId,
-      });
-
       alert("Stall and rental agreement created successfully!");
 
       form.reset();
@@ -343,7 +352,7 @@ export async function populateHawkerCentreDropdown(uid) {
     select.remove(1);
   }
 
-  // Add options from Firebase data
+  // Add options from database
   for (const [centreId, centreData] of Object.entries(hawkerCentres)) {
     if (centreData.operatorId !== uid) {
       continue;
@@ -353,4 +362,51 @@ export async function populateHawkerCentreDropdown(uid) {
     option.textContent = centreData.hcName;
     select.appendChild(option);
   }
+}
+
+export function assignEditRentalPriceHandler() {
+  const form = document.getElementById("editRentalPriceForm");
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const newRentalPrice = document.getElementById("editRentalPrice").value;
+
+    // Validation of input value
+    if (!newRentalPrice || newRentalPrice.trim() === "") {
+      alert("Please enter a new rental price");
+      return;
+    }
+
+    const priceAsNumber = parseFloat(newRentalPrice);
+    if (isNaN(priceAsNumber) || priceAsNumber <= 0) {
+      alert("Please enter a valid rental price (must be greater than 0)");
+      return;
+    }
+
+    try {
+      const agreementId = sessionStorage.getItem("recordIdInFocus");
+
+      if (!agreementId) {
+        alert("Error: No rental agreement selected.");
+        return;
+      }
+
+      await updateRentalAgreementPrice(agreementId, priceAsNumber);
+
+      alert("Rental price updated successfully!");
+
+      form.reset();
+
+      const modal = document.getElementById("edit-rental-price-modal");
+      const bootstrapModal = bootstrap.Modal.getInstance(modal);
+      if (bootstrapModal) {
+        bootstrapModal.hide();
+      }
+
+      await renderRentalAgreements();
+    } catch (error) {
+      console.error("Error updating rental price:", error);
+      alert("An error occurred while updating the rental price. Please try again.");
+    }
+  });
 }

@@ -10,6 +10,7 @@ import {
   set,
   push,
   remove,
+  update,
 } from "../firebase/database.js";
 
 // General functions to interact with the database
@@ -74,6 +75,15 @@ export async function pushDataToPath(path, data) {
     return newRef.key;
   } catch (error) {
     console.error(`Unable to push data to path ${path}:`, error);
+    throw error;
+  }
+}
+
+export async function updateDataAtPath(path, data) {
+  try {
+    await update(ref(db, path), data);
+  } catch (error) {
+    console.error(`Unable to update data at path ${path}:`, error);
     throw error;
   }
 }
