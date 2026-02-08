@@ -1,5 +1,6 @@
 import * as database from "../database/meaningful-helpers.js";
 import {
+  SGDollar,
   findValidRecord,
   isValid,
   formateDateToLocal,
@@ -17,10 +18,6 @@ const feedbackTable = document.getElementById("feedback-table");
 const gradeCard = document.querySelector(".hygiene-grade-card");
 
 // Configurations
-const SGDollar = new Intl.NumberFormat("en-SG", {
-  style: "currency",
-  currency: "SGD",
-});
 
 const scoreChartConfig = {
   type: "line",
@@ -117,16 +114,51 @@ function selectLatestAgreement(agreements) {
   return latestAgreement;
 }
 
+function createUnavailableRecordNotice() {
+  const subtitle = document.createElement("p");
+  const subtitleText = document.createTextNode(
+    "No rental agreements available.",
+  );
+  subtitle.append(subtitleText);
+
+  const button = document.createElement("button");
+  button.addEventListener("click", function (e) {
+    window.location.href = "./documents.html";
+  });
+  const text = document.createTextNode("Go to ");
+
+  const span = document.createElement("span");
+  span.classList.add("semi-bold");
+  span.textContent = "Documents";
+
+  const tailText = document.createTextNode(" to create one");
+
+  button.append(text, span, tailText);
+
+  rentalAgreementCard.append(subtitle, button);
+}
+
 export async function renderRentalAgreement(stallId) {
-  const rentalAgreements = await database.getRentalAgreementsByStallId(stallId);
   rentalAgreementCard.innerHTML = "";
+  const title = document.createElement("h2");
+  title.textContent = "Rental Agreement Status";
+  rentalAgreementCard.append(title);
+
+  const rentalAgreements = await database.getRentalAgreementsByStallId(stallId);
+  if (!rentalAgreements) {
+    createUnavailableRecordNotice();
+    return;
+  }
 
   const latestAgreement = selectLatestAgreement(rentalAgreements);
+
+  if (!latestAgreement) {
+    createUnavailableRecordNotice();
+    return;
+  }
   const startDate = new Date(latestAgreement.agrStartDate);
   const endDate = new Date(latestAgreement.agrEndDate);
 
-  const title = document.createElement("h2");
-  title.textContent = "Rental Agreement Status";
   const amount = document.createElement("p");
   amount.classList.add("rental__amount");
   amount.textContent = SGDollar.format(latestAgreement.rentalPrice);
@@ -147,14 +179,7 @@ export async function renderRentalAgreement(stallId) {
     `rental__status--${latestAgreement.status.toLowerCase()}`,
   );
 
-  rentalAgreementCard.append(
-    title,
-    amount,
-    subtitle,
-    validityRange,
-    duration,
-    status,
-  );
+  rentalAgreementCard.append(amount, subtitle, validityRange, duration, status);
 }
 
 // Inspection records
@@ -325,7 +350,10 @@ function createFeedbackRow(date, rating, comment) {
 }
 
 async function renderThisWeekFeedback(feedbacks) {
-  const feedbacksThisWeek = findRatingsOrFeedbackThisWeek(feedbacks, "feedback");
+  const feedbacksThisWeek = findRatingsOrFeedbackThisWeek(
+    feedbacks,
+    "feedback",
+  );
   feedbackTable.innerHTML = "";
   if (!feedbacksThisWeek) {
     feedbackTable.append(createFeedbackRow("-", "-", "-"));
@@ -333,7 +361,11 @@ async function renderThisWeekFeedback(feedbacks) {
   }
 
   for (const feedback of Object.values(feedbacksThisWeek)) {
-    const row = createFeedbackRow(new Date(feedback.createdAt), feedback.rating, feedback.comment);
+    const row = createFeedbackRow(
+      new Date(feedback.createdAt),
+      feedback.rating,
+      feedback.comment,
+    );
     feedbackTable.appendChild(row);
   }
 }
