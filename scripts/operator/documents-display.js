@@ -97,6 +97,8 @@ async function createRentalAgreementRecord(id, recordInfo) {
   editLink.classList.add("dropdown-item", "edit-button");
   editLink.href = "#";
   editLink.textContent = "Edit";
+  editLink.setAttribute("data-bs-toggle", "modal");
+  editLink.setAttribute("data-bs-target", "#edit-rental-price-modal");
   editItem.appendChild(editLink);
 
   const deleteItem = document.createElement("li");
@@ -106,7 +108,6 @@ async function createRentalAgreementRecord(id, recordInfo) {
   deleteLink.textContent = "Delete";
   deleteLink.setAttribute("data-bs-toggle", "modal");
   deleteLink.setAttribute("data-bs-target", "#delete-record");
-
   deleteItem.appendChild(deleteLink);
 
   dropdownMenu.append(editItem, deleteItem);

@@ -35,7 +35,7 @@
         </div>
     </header>
     <main class="main--documents-page">
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createStallModal">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create-stall-modal">
             Add Stall
         </button>
 
@@ -119,7 +119,7 @@
         </div>
 
         <!-- Delete Modal -->
-        <div class="modal fade" id="delete-record" tabindex="-1" aria-labelledby="delete record" aria-hidden="true">
+        <div class="modal fade" id="delete-record" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -139,13 +139,12 @@
         </div>
 
         <!--Create Modal -->
-        <div class="modal fade" id="createStallModal" tabindex="-1" aria-labelledby="createStallModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="create-stall-modal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
 
                     <div class="modal-header">
-                        <h5 class="modal-title" id="createStallModalLabel">Create Stall</h5>
+                        <h1 class="modal-title" id="create-stall-modal-label">Create Stall</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
@@ -212,13 +211,12 @@
         </div>
 
         <!-- Edit Rental Price Modal -->
-        <div class="modal fade" id="editRentalPriceModal" tabindex="-1" aria-labelledby="editRentalPriceModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="edit-rental-price-modal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
 
                     <div class="modal-header">
-                        <h5 class="modal-title" id="editRentalPriceModalLabel">Edit Rental Price</h5>
+                        <h1 class="modal-title" id="editRentalPriceModalLabel">Edit Rental Price</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
@@ -226,8 +224,9 @@
                         <form id="editRentalPriceForm">
                             <!-- Rental Price -->
                             <div class="mb-3">
-                                <label for="rentalPrice" class="form-label">New Rental Price (SGD)</label>
-                                <input type="number" class="form-control" id="rentalPrice" min="0" step="1" required>
+                                <label for="editRentalPrice" class="form-label">New Rental Price (SGD)</label>
+                                <input type="number" class="form-control" id="editRentalPrice" min="0" step="1"
+                                    required>
                             </div>
 
                         </form>
