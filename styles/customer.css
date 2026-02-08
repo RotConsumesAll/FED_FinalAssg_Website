@@ -364,148 +364,53 @@ body{
   font-family: "Inter", Helvetica, sans-serif;
   font-weight: bold;
   font-size: 2.813rem;
-  position:absolute;
+  position:relative;
   z-index: 3;
   text-align: center;
   color: #000000;
   margin-top: 5.313rem;
   align-self: center;
+  width:90%;
 }
 
 .body{
   font-family: "Inter", Helvetica, sans-serif;
   font-weight: 500;
   font-size: 1.5rem;
-  position:absolute;
+  position:relative;
   z-index: 3;
   text-align: center;
   color: #000000;
   line-height: normal;
   align-self: center;
+  width:80%;
 }
 
 .promo-btn{
   background-color: #FAF9F6;
   font-weight: 550;
   font-size:1.25rem;
-  position:absolute;
+  position:relative;
   z-index: 3;
   color: #000000;
   box-shadow: 0 0.25rem 0.25rem #808080;
   margin-top: 16.563rem;
   align-self: center;
+  margin-top: 2rem; 
 }
 
 .logo{
-  width: 5.625rem; height: 5.625rem;border-radius: 50%;
+  width: 4.375rem; height: 4.375em;border-radius: 50%;
   position:absolute;
   z-index:2;
-  background-image: url("../assets/Icons/WokHeyLogo.svg");
+  /* background-image: url("../assets/Icons/WokHeyLogo.svg"); */
   background-size: cover;
   background-position: center;
 }
 
-
-
-/* wokhey */
-#bookmark-wokhey{
-  width:31.875rem;
-  height: 21.875rem;
-  background-color:#FDC741;
-  position: relative ;
-  left: 1.875rem;
-  border-radius: 1%;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-}
-
-#bookmark-wokhey .triangle-left{
-  border-bottom: 16.25rem solid #FDC741;
-}
-
-#bookmark-wokhey .triangle-right{
-  border-bottom: 16.25rem solid #FDC741;
-}
-
-#bookmark-wokhey .logo{
-  background-image: url("../assets/Icons/WokHeyLogo.svg");
-}
-
-#bookmark-wokhey .body {
-  margin-top: 9.688rem;
-}
-
-
-
-
-/* yahfu */
-#bookmark-yahfu{
-  width:31.875rem;
-  height: 21.875rem;
-  background-color:#EB1B2B;
-  position: relative ;
-  left: 1.875rem;
-  border-radius: 1%;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-}
-
-#bookmark-yahfu .triangle-left{
-  border-bottom: 16.25rem solid #EB1B2B;
-}
-
-#bookmark-yahfu .triangle-right{
-  border-bottom: 16.25rem solid #EB1B2B;
-}
-
-#bookmark-yahfu .logo{
-  background-image: url("../assets/Icons/YahFuKitchenlogo.svg");
-}
-
-#bookmark-yahfu .title{
-  color: #FAF9F6;
-}
-
-#bookmark-yahfu .body{
-  color: #FAF9F6;  margin-top: 9.688rem;
-}
-
-
-
-/* monstercurry */
-#bookmark-monstercurry{
-  width:31.875rem;
-  height: 21.875rem;
-  background-color: #FFCB70;  
-  position: relative ;
-  left: 1.875rem;
-  border-radius: 1%;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;  
-}
-#bookmark-monstercurry .triangle-left{
-  border-bottom: 16.25rem solid #FFCB70;
-}
-
-#bookmark-monstercurry .triangle-right{
-  border-bottom: 16.25rem solid #FFCB70;
-}
-
-#bookmark-monstercurry .logo{
-  background-image: url("../assets/Icons/Monstercurrylogo.svg");
-}
-
-#bookmark-monstercurry .body{
-  margin-top: 9.688rem;  
-}
-
-
 /* Frequently visited */
 #freq-visited{
-  padding-bottom: 6.125rem;
+  /* padding-bottom: 6.125rem; */
   display: flex;
   flex-direction: column; 
 }
@@ -514,6 +419,14 @@ body{
   color: rgba(0,0, 0, 0.65);
   font-size: 3.125rem;
   margin: 0  1.75rem;
+}
+
+#freq-visited .stallname{
+  color:#000000;
+}
+
+#freq-visited .logo{
+  top:-1rem;
 }
 
 .podium{
@@ -527,70 +440,73 @@ body{
 
 .first-rec{
   display: flex;
-  height: 15.625rem; width: 9.375rem;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center;
+  height: 15.625rem; width: 10.625rem;
   background-color:#F0D52D;
   border-top-left-radius: 0.625rem;
   border-top-right-radius: 0.625rem;
-  justify-content: center;
+  position:relative;
 }
 
 .first-rec .logo {
   width: 7.5rem; height: 7.5rem;border-radius: 50%;
   justify-self: center;
   margin-top:-8.75rem;
-  background-image: url("../assets/Icons/WokHeyLogo.svg");
   background-image: cover;
 }
 
 .first-rec .body{
   margin-top: 0.313rem;
-  align-self: flex-start;
   color:#1c1c1e; font-size: 2.5rem;
 }
 
 .second-rec{
   display: flex;
+  flex-direction: column; 
+  align-items: center;    
   justify-content: center;
-  height: 12.5rem; width: 9.375rem;
+  height: 12.5rem; width: 10.625rem;
   background-color:#C4C4C4;
   border-top-right-radius: 0.625rem;
   border-bottom-right-radius: 0.625rem;
+  position:relative;
 }
 
 .second-rec .logo {
   width: 7.5rem; height: 7.5rem;border-radius: 50%;
   justify-self: center;
   margin-top:-8.75rem;
-  background-image: url("../assets/Icons/Monstercurrylogo.svg");  
   background-image: cover;
 }
 
 .second-rec .body{
   margin-top: 0.313rem;
-  align-self: flex-start;
   color:#1c1c1e; font-size: 2.5rem;
 }
 
 .third-rec{
   display: flex;
+  flex-direction: column; 
+  align-items: center;    
   justify-content: center;  
-  height: 9.375rem; width: 9.375rem;
+  height: 10.625rem; width: 10.625rem;
   background-color:#CE8946;
   border-top-left-radius: 0.625rem;
   border-bottom-left-radius: 0.625rem;  
+  position:relative;
 }
 
 .third-rec .logo {
   width: 7.5rem; height: 7.5rem;border-radius: 50%;
   justify-self: center;
   margin-top:-8.75rem;
-  background-image: url("../assets/Icons/YahFuKitchenlogo.svg");
   background-image: cover;    
 }
 
 .third-rec .body{
   margin-top: 0.313rem;
-  align-self: flex-start;
   color:#1c1c1e; font-size: 2.5rem;
 }
 
@@ -601,8 +517,6 @@ body{
 }
 
 .num-times-visited {
-  margin-top: 3.438rem;
-  align-self: flex-start;
   color:#1c1c1e; font-size: 1.875rem;
   font-weight: 500;
 }
@@ -613,23 +527,21 @@ body{
   display: flex;
   flex-direction: column;
   height:auto; width:94.5rem;
-  margin: 7.5rem 0;   
 }
 
 #discover-more .title{
   color: rgba(0,0, 0, 0.65);
   font-size: 3.125rem;
-  margin: -6.25rem  1.75rem;
-  /* justify-self: left ; */
+  margin: 1rem  0;
 }
 
-#discover-more .stallname {
+.stallname {
     color: #FAF9F6;
     font-family: "Inter", Helvetica, sans-serif;
     font-weight: 600;
     font-size: 1.25rem;
     text-align: center;
-    margin-top: 10px; 
+    margin: 0.625rem 0; 
 }
 
 /* Top Row */

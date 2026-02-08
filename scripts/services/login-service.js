@@ -9,7 +9,7 @@ import { getUserRole } from "../database/meaningful-helpers.js";
 async function redirectToPageWithRole(role) {
   switch (role) {
     case "customer":
-      window.location.href = "./pages/customer_home.html";
+      window.location.href = "./pages/customer/customer_home.html";
       break;
     case "stallOwner":
       window.location.href = "./pages/stallowner_menu.html";
