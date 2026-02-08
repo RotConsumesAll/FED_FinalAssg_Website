@@ -36,7 +36,7 @@ function createFilterChip(filterPreText, filterKey, filterValue) {
   chip.appendChild(outerSpan);
 
   let img = document.createElement("img");
-  img.setAttribute("src", "../assets/icons/x.svg");
+  img.setAttribute("src", "../../assets/icons/x.svg");
   img.setAttribute("alt", "Filter icon");
   img.setAttribute("height", 16);
   img.setAttribute("width", 16);
