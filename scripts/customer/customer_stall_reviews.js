@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
             
             if (reviewQty && stall.reviewCount) {
-                reviewQty.textContent = `${stall.reviewCount} reviews`;
+                reviewQty.textContent = `${feedbacks.length} reviews`;
             }
         }
 
