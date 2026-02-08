@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       try {
         await signOut(auth);
         
-        window.location.href = "../index.html";
+        window.location.href = "../../index.html";
         
       } catch (error) {
         console.error("Error signing out:", error);
