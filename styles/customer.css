@@ -284,7 +284,9 @@ body{
   position: absolute;
   left:0;
   z-index: 1;
-  width: 95.625rem;
+  width: 100%;height:100%;
+  object-fit: cover;
+  display: block;
 }
 
 .carousel-item{
@@ -627,8 +629,9 @@ body{
 
 #stall-container .directory-link .body{
   position:static;
-  margin:0;
+  margin:0;padding: 0;
   align-self: auto;
+  width: auto; 
 }
 
 #stall-container .directory-link .a{
@@ -1047,7 +1050,7 @@ body{
 
 /* Info modal */
 #stall-info-modal .modal-content{
-  height:28rem;
+  height:30rem;
 }
 
 .modal-info-image{
@@ -1550,7 +1553,7 @@ body{
   vertical-align: text-top;
 }
 
-/* Tablets (Max width 1200px)*/
+/* Tablets and smaller desktop max width 1200px */
 @media screen and (max-width: 1200px) {
   #discover-more, 
   #footer, 
@@ -1563,32 +1566,71 @@ body{
     box-sizing: border-box;
   }
 
-  /* Adjust margins for smaller screens */
   .promotions-container,
   .stall-info,
-  .menu-nav {
+  .menu-nav,
+  .directory-link {
     margin-left: 1.5rem; 
     margin-right: 1.5rem;
   }
-}
 
-#stall-container .directory-link .body {
-  width: auto;
-  margin: 0;
-  align-self: center;
+  .stall-info {
+    flex-wrap: wrap; 
+  }
 }
 
 /* Mobile (max width 768px)*/
 @media screen and (max-width: 768px) {
+  .title, .promotions-title, .stall-name {
+    font-size: 2rem !important; 
+    margin-top: 1.5rem !important; 
+  }
 
-  /* Stack menu and cart vertically */
+  .body, .default-text, .tag-desc, .item-title, .num-times-visited {
+    font-size: 1rem !important; 
+  }
+
+  .stallname, #discover-more a {
+    font-size: 1.2rem !important;
+  }
+
+  /* discover more */
+  .Top-Row, .Bottom-Row {
+    flex-direction: column; 
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    column-gap: 0;
+    row-gap: 2rem; 
+  }
+
+  /* stack cart and menu */
   .menu-list-container {
     flex-direction: column;
     margin: 0 1rem;
     column-gap: 0;
   }
 
-  /* Cart*/
+  /*stall info */
+  .stall-info {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem 2rem 1rem;
+  }
+
+  .stall-details {
+    margin-left: 0;
+    margin-top: 1.5rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .stall-name-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* cart container */
   .cart-container {
     width: 100%;
     height: auto;
@@ -1598,7 +1640,7 @@ body{
     border-top: 2px solid #1c1c1e;
   }
 
-  /* Item Cards */
+  /* item cards*/
   .item-card {
     width: 100%; 
     height: auto;
@@ -1620,16 +1662,15 @@ body{
     box-sizing: border-box;
   }
 
-  /* Nav Bar */
+  /* nav and footer */
   .nav-center {
     display: none; 
   }
 
   .nav-left {
-    font-size: 1.2rem; 
+    font-size: 1.5rem; 
   }
 
-  /*Footer */
   #footer {
     height: auto;
     padding-bottom: 2rem;
@@ -1640,9 +1681,11 @@ body{
     position: static; 
     margin: 2rem 1.5rem;
     width: auto;
+    align-items: center;
+    text-align: center;
   }
-  
-  /* 6. Hide triangles */
+
+  /* Hide triangles */
   .triangle-left, 
   .triangle-right {
     display: none; 

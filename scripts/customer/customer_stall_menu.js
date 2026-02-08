@@ -50,17 +50,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         let keyValuePair = Object.entries(hawkerCentres)
         for(let[id, data] of keyValuePair) {
             arrayHawkercentres.push({
-                id: id,                  // Extracts id
-                name: data.hcName,       // Extracts name
-                address: data.hcAddress, // Extracts address
-                image: data.image,       // Extracts URL
+                id: id,                  //extracts id
+                name: data.hcName,       //extracts name
+                address: data.hcAddress, //extracts address
+                image: data.image,       //extracts URL
                 openingTime: data.openingTime,
                 closingTime: data.closingTime
             });
         };
         console.log(arrayHawkercentres);
 
-        //Matching hawkercentre id and loading info 
+        //matching hawkercentre id and loading info 
         arrayHawkercentres.forEach(hawker => {
           if (hawker.id===currentHawkerCentreId){
             let stallModel = document.querySelector("#stall-info-modal");           //container
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if ((elementSubtotal && elementGrandtotal)!==null){
           elementSubtotal.innerText="$" + totalCost.toFixed(2);
-          elementGrandtotal.innerText="$" + (totalCost*1.07).toFixed(2);
+          elementGrandtotal.innerText="$" + (totalCost*1.09).toFixed(2);
         }
       }
 
