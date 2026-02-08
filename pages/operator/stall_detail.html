@@ -25,7 +25,6 @@
             <a href="./dashboard.html" class="default-text">Dashboard</a>
             <a href="./centres.html" class="default-text bold-focus" aria-current="page">Centres</a>
             <a href="./documents.html" class="default-text">Documents</a>
-            <a href="./settings.html" class="default-text">Settings</a>
         </nav>
 
         <div class="nav-right log-out-button">
@@ -38,71 +37,57 @@
 
         <div class="stall-detai-container">
             <aside class="sidebar">
+                <!-- Stall selection -->
                 <ul class="sidebar__menu">
-                    <li class="sidebar__menu__item sidebar__menu__item--selected"><a href="#">Ayam Penyet GO!</a>
+                    <li class="sidebar__menu__item sidebar__menu__item--selected"><a href="#"></a>
                     </li>
-                    <li class="sidebar__menu__item"><a href="#">Mr Lee Chicken Noodles</a></li>
-                    <li class="sidebar__menu__item"><a href="#">Chicken Rice Goodness</a></li>
+                    <li class="sidebar__menu__item"><a href="#"></a></li>
+                    <li class="sidebar__menu__item"><a href="#"></a></li>
                 </ul>
-                <button class="sidebar__button" id="sidebar__button">Return <span id="sidebar__button__centre">Bukit
-                        Batok Hawker Centre</span></button>
+                <button class="sidebar__button" id="sidebar__button">Return <span id="sidebar__button__centre"></span></button>
             </aside>
             <div
                 class="flex-container flex-container--column flex-container--justify-content-default flex-container--flex-1-1-auto">
                 <article class="stall-info">
                     <div
                         class="flex-container flex-container--column flex-container--flex-1-1-auto flex-container--gap-0">
-                        <h2 id="stall-info__name">Ayam Penyet GO!</h2>
-                        <p id="stall-info__ownerName">Mr Ayam Penyet himself</p>
-                        <p id="stall-info__stall-unitNumber">#01-02</p>
+                        <h2 id="stall-info__name"></h2>
+                        <p id="stall-info__ownerName"></p>
+                        <p id="stall-info__stall-unitNumber"></p>
                     </div>
-                    <img src="https://www.solemateadventures.com/wp-content/uploads/2024/02/The-1950s-Coffee-Hawker-Stall.jpg"
+                    <img src=""
                         alt="Stall image" class="stall-image">
 
                 </article>
                 <div class="flex-container">
+                    <!-- Rental Agreement status -->
                     <article class="figure-card" id="rental-agreement-card">
                         <h2>Rental Agreement Status</h2>
-                        <p class="rental__amount">$1230</p>
+                        <p class="rental__amount"></p>
                         <p class="rental__subtitle">monthly rent</p>
-                        <p class="rental__dates">20 Jan 2025 → 20 Jan 2026</p>
-                        <p class="rental__duration">(12 months)</p>
-                        <p class="rental__status">Renewed</p>
+                        <p class="rental__dates"></p>
+                        <p class="rental__duration"></p>
+                        <p class="rental__status"></p>
                     </article>
+
+                    <!-- Licence status -->
                     <article class="figure-card">
                         <h2>Licences Filled</h2>
                         <table class="table table-bordered table-sm">
                             <tbody id="licence-table">
-                                <tr>
-                                    <td>Food Stall License</td>
-                                    <td>Valid</td>
-                                </tr>
-                                <tr>
-                                    <td>Halal Certification</td>
-                                    <td>Expired</td>
-                                </tr>
                             </tbody>
                         </table>
                     </article>
                 </div>
                 <div class="flex-container">
-                    <article class="figure-card">
-                        <h2>Total sales this Week</h2>
-                        <div class="figure-card__change--increase-highlight">+6.5%</div>
-                        <p class="figure-card__single-statistics">NOT DONE</p>
-                    </article>
-                    <figure class="figure-card">
-                        <h2>Total Sales over Time</h2>
-                        <div>NOT DONE</div>
+                    <!-- Hygiene Grade -->
+                    <figure class="figure-card figure-card--stand-alone hygiene-grade-card">
+                        <p class="hygiene-grade-card__grade" id="hygiene-grade"></p>
+                        <p id="grade-subtitle">Current Hygiene Grade</p>
+                        <p id="grade-expiry-p">Expires <span id="grade-expiry"></span></p>
                     </figure>
 
-                </div>
-                <div class="flex-container">
-                    <figure class="figure-card figure-card--stand-alone hygiene-grade-card">
-                        <p class="hygiene-grade-card__grade" id="hygiene-grade">A</p>
-                        <p id="grade-subtitle">Current Hygiene Grade</p>
-                        <p id="grade-expiry-p">Expires <span id="grade-expiry">2 Feb 2025</span></p>
-                    </figure>
+                    <!-- Inspection scores chart -->
                     <figure class="figure-card" id="average-score-chart-chart">
                         <h2>Average Inspection Scores over Time</h2>
                         <!-- <canvas id="average-score-chart">No scores are available</canvas> -->
@@ -115,14 +100,19 @@
                         </div>
                     </figure>
                 </div>
+
+                <!-- Feedback data -->
                 <div class="flex-container">
+                    <!-- Average customer ratings -->
                     <article class="figure-card figure-card--stand-alone">
-                        <h2>Average Customer Rating this week</h2>
+                        <h2>Average Customer Rating in last 3 months</h2>
                         <!-- <div class="figure-card__change--increase-highlight">+6.5%</div> -->
-                        <p class="figure-card__single-statistics" id="average-rating">4.5</p>
+                        <p class="figure-card__single-statistics" id="average-rating"></p>
                     </article>
+
+                    <!-- Feedback received recently -->
                     <figure class="figure-card">
-                        <h2>Feedback Received</h2>
+                        <h2>Recent Feedback Received</h2>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -132,21 +122,6 @@
                                 </tr>
                             </thead>
                             <tbody id="feedback-table">
-                                <tr>
-                                    <td>12/12/25</td>
-                                    <td>4</td>
-                                    <td>This store’s food is good!</td>
-                                </tr>
-                                <tr>
-                                    <td>12/12/25</td>
-                                    <td>4</td>
-                                    <td>This store’s food is good!</td>
-                                </tr>
-                                <tr>
-                                    <td>12/12/25</td>
-                                    <td>4</td>
-                                    <td>This store’s food is good!</td>
-                                </tr>
                             </tbody>
                         </table>
                     </figure>
