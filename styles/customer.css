@@ -575,9 +575,7 @@ body{
   border-radius: 5%;
 }
 
-.recommendation-1 .preview-photo{
-  background-image: url("../assets/Images/CustomerImages/MonstercurryDemiGlace.svg");
-}
+
 
 #discover-more a {
   display: flex;
@@ -589,12 +587,19 @@ body{
   font-size: 1.5rem;
 }
 
+.rec-container{
+  display: flex;
+  flex-direction: column;
+}
+
 .preview-photo{
   width:12.5rem; min-height: 12.5rem;
   position: relative;
   background-size: cover;
   border-radius: 5%;  
   margin-bottom: 0.313rem;
+  align-self: center;
+  justify-self: center;
 }
 
 /* Bottom row */
