@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspection Database</title>
+
+  <link href="../../styles/officer.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-home">
+  <div>
+    <header class="top-nav-bar">
+      <h1 class="default-text nav-left">HawkPortal</h1>
+      <nav class="nav-center">
+        <a href="./officer_home.html" class="default-text">Home</a>
+        <a href="./officer_scheduling.html" class="default-text">Scheduling</a>
+        <a href="./officer_submission.html" class="default-text">Submission</a>
+        <a href="./officer_database.html" class="default-text bold-focus">Database</a>
+      </nav>
+      <div class="nav-right log-out-button">
+        <button class="button-shape-1">
+          <span class="text-logout">Log out</span>
+        </button>
+      </div>
+    </header>
+    <h1 id="section-title" class="h1-home">Inspection Database</h1>
+    <div class="db-bg">
+      <button class="db-filter-btn">
+        Filter
+      </button>
+      <div class="db-filter-panel" id="dbFilterPanel">
+        <div class="db-filter-row">
+          <div class="db-filter-field">
+            <label for="filterHawker">Hawker Centre</label>
+            <select id="filterHawker">
+              <option value="">All Hawker Centres</option>
+            </select>
+          </div>
+          <div class="db-filter-field">
+            <label for="filterScoreMin">Min Avg Score</label>
+            <input
+              id="filterScoreMin"
+              type="number"
+              step="0.1"
+              min="0"
+              max="5"
+              placeholder="e.g. 3.5"
+            >
+          </div>
+          <div class="db-filter-field">
+            <label for="filterFrom">From</label>
+            <input id="filterFrom" type="date">
+          </div>
+          <div class="db-filter-field">
+            <label for="filterTo">To</label>
+            <input id="filterTo" type="date">
+          </div>
+          <div class="db-filter-field">
+            <label for="sortField">Order By</label>
+            <select id="sortField">
+              <option value="">None</option>
+              <option value="id">Inspection ID</option>
+              <option value="score">Average Score</option>
+              <option value="date">Date</option>
+            </select>
+          </div>
+          <div class="db-filter-field">
+            <label for="sortDir">Direction</label>
+            <select id="sortDir">
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          </div>
+          <button id="filterApply" class="pager-btn">Apply</button>
+          <button id="filterReset" class="pager-btn">Reset</button>
+        </div>
+      </div>
+      <table class="db-table" id="dbTable">
+        <tr>
+          <th>Inspection ID</th>
+          <th>Hawker Centre Name</th>
+          <th>Stall ID</th>
+          <th>Average Score (/5)</th>
+          <th>Date of Inspection (DD/MM/YY)</th>
+        </tr>
+      </table>
+      <div class="db-pager">
+        <button class="pager-btn" id="dbPrev">Previous</button>
+        <span class="pager-label" id="dbPageLabel">1 / 1</span>
+        <button class="pager-btn" id="dbNext">Next</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="../../scripts/officer/datas.js"></script>
+  <script type="module" src="../../scripts/officer/verif.js"></script>
+</body>
+</html>

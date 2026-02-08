@@ -2631,6 +2631,11 @@
   },
   "menuItems": {
     "stall_01": {
+      "-Okr7he-M9nzjTjpS0_g": {
+        "itemCategory": "Mains",
+        "itemName": "Beef stew",
+        "itemPrice": 10
+      },
       "item_01": {
         "cuisines": {
           "cui_03": "Japanese"
@@ -2818,7 +2823,7 @@
         "discountPercent": 10,
         "itemCategory": "Mains",
         "itemDesc": "Wok-fried flat noodles with cockles, sausage, and egg.",
-        "itemName": "Fried Kway Teow (Small)",
+        "itemName": "Fried Kway Teow (S)",
         "itemPrice": 5
       },
       "item_02": {
@@ -2827,7 +2832,7 @@
         },
         "itemCategory": "Mains",
         "itemDesc": "A larger portion of the classic dish with extra cockles.",
-        "itemName": "Fried Kway Teow (Medium)",
+        "itemName": "Fried Kway Teow (M)",
         "itemPrice": 6
       },
       "item_03": {
@@ -2836,7 +2841,7 @@
         },
         "itemCategory": "Mains",
         "itemDesc": "Family-sized platter of savory, smoky fried noodles.",
-        "itemName": "Fried Kway Teow (Large)",
+        "itemName": "Fried Kway Teow (L)",
         "itemPrice": 8
       }
     },
@@ -2932,62 +2937,84 @@
     }
   },
   "orders": {
-    "ord_001": {
-      "customerId": "CUST_001",
+    "-OkwFNVNxv7G98vBEEqj": {
       "items": [
         null,
         {
-          "itemCode": "item_02",
+          "itemCode": "item_03",
           "quantity": 2,
           "stallId": "stall_01",
-          "unitPrice": 5
+          "unitPrice": 7.9
         }
       ],
-      "orderDate": "2026-02-01T12:00:00Z",
-      "pmtType": "PayLah"
+      "orderDate": "2026-02-08T07:57:33.824Z"
+    },
+    "-OkwFkLShHSNqxpRkMvd": {
+      "items": [
+        null,
+        {
+          "itemCode": "item_03",
+          "quantity": 4,
+          "stallId": "stall_01",
+          "unitPrice": 7.9
+        }
+      ],
+      "orderDate": "2026-02-08T07:59:11.492Z"
+    },
+    "-OkwGkMGBBjv18R93Rpp": {
+      "items": [
+        null,
+        {
+          "itemCode": "item_03",
+          "quantity": 2,
+          "stallId": "stall_01",
+          "unitPrice": 7.9
+        }
+      ],
+      "orderDate": "2026-02-08T08:03:33.702Z"
     }
   },
-"promotions": {
+  "promotions": {
     "pro_01": {
-      "promoTitle": "10% Off Lunch Set",
       "promoDesc": "Lunch Special: 10% off all main courses between 11 AM and 2 PM.",
       "promoEndDate": "2026-02-28",
       "promoStartDate": "2026-02-01",
+      "promoTitle": "10% Off Lunch Set",
       "stallId": "stall_01"
     },
     "pro_02": {
-      "promoTitle": "Student Curry Deal",
       "promoDesc": "Get $2 off any Katsu Curry Rice when you flash your student ID.",
       "promoEndDate": "2026-03-15",
       "promoStartDate": "2026-02-10",
+      "promoTitle": "Student Curry Deal",
       "stallId": "stall_02"
     },
     "pro_03": {
-      "promoTitle": "Free Drink w/ Meal",
       "promoDesc": "Complimentary homemade iced lemon tea with every Mini Wok set purchased.",
       "promoEndDate": "2026-02-20",
       "promoStartDate": "2026-02-08",
+      "promoTitle": "Free Drink w/ Meal",
       "stallId": "stall_03"
     },
     "pro_04": {
-      "promoTitle": "Family Feast",
       "promoDesc": "15% discount on total bill for groups of 4 or more dining in.",
       "promoEndDate": "2026-04-01",
       "promoStartDate": "2026-02-15",
+      "promoTitle": "Family Feast",
       "stallId": "stall_04"
     },
     "pro_05": {
-      "promoTitle": "Steak Night Special",
       "promoDesc": "Sirloin Steak going for only $12.90 (U.P. $14.50) after 6 PM.",
       "promoEndDate": "2026-03-31",
       "promoStartDate": "2026-02-01",
+      "promoTitle": "Steak Night Special",
       "stallId": "stall_05"
     },
     "pro_06": {
-      "promoTitle": "Crab Combo Promo",
       "promoDesc": "Order any Chilli Crab Set and receive a free plate of fried mantou buns.",
       "promoEndDate": "2026-03-10",
       "promoStartDate": "2026-02-12",
+      "promoTitle": "Crab Combo Promo",
       "stallId": "stall_06"
     }
   },
@@ -3087,13 +3114,6 @@
     "stall_01": {
       "avgRating": 4.2,
       "feedbacks": {
-        "-Okn-ox2HbvZGnoEB3YV": {
-          "comment": "I HIGHKEY LOVE WOK HEY please bring back the truffle rice it is SOOO GOOODDDD",
-          "createdAt": 1770382380084,
-          "rating": 4,
-          "stallName": "Wok Hey",
-          "userName": "Test User 2"
-        },
         "-Okn-a1B2C3D4": {
           "comment": "Portion is decent and food is always served hot. Slightly oily though.",
           "createdAt": 1770385400000,
@@ -3101,83 +3121,110 @@
           "stallName": "Wok Hey",
           "userName": "Jamie"
         },
-        "-Okn-x9Y8Z7": {
-          "comment": "Taste is okay but queue is very long during lunch.",
-          "createdAt": 1770388400000,
-          "rating": 3,
-          "stallName": "Wok Hey",
-          "userName": "Aaron"
-        },
         "-Okn-kLmN01": {
           "comment": "Staff are friendly and food is consistent every time I come.",
           "createdAt": 1770391400000,
           "rating": 5,
           "stallName": "Wok Hey",
           "userName": "Siti"
+        },
+        "-Okn-ox2HbvZGnoEB3YV": {
+          "comment": "I HIGHKEY LOVE WOK HEY please bring back the truffle rice it is SOOO GOOODDDD",
+          "createdAt": 1770382380084,
+          "rating": 4,
+          "stallName": "Wok Hey",
+          "userName": "Test User 2"
+        },
+        "-Okn-x9Y8Z7": {
+          "comment": "Taste is okay but queue is very long during lunch.",
+          "createdAt": 1770388400000,
+          "rating": 3,
+          "stallName": "Wok Hey",
+          "userName": "Aaron"
         }
       },
       "hawkerCentreId": "hc_01",
-      "image": "/assets/Images/customerImages/wok-hey-chickenramen.svg",
+      "image": "../../assets/Images/customerImages/wok-hey-chickenramen.svg",
       "ownerUid": "N5yobDeOFLWW8tK1Akg15MCa0UM2",
       "reviewCount": 45,
       "stallDesc": "Stir fried delicacies in a cup",
       "stallName": "Wok Hey",
       "stallUnitNo": "01-10",
-      "tags": ["Chinese", "Stir-fry"],
+      "tags": [
+        "Chinese",
+        "Stir-fry"
+      ],
       "visitCount": "27"
     },
     "stall_02": {
       "avgRating": 4.5,
       "feedbacks": {
-        "-F1": {
-          "comment": "Curry was great!",
-          "createdAt": 1770382351080,
-          "rating": 5,
-          "stallName": "Monster Curry",
-          "userName": "Test User 2"
-        },
-        "-F2": {
-          "comment": "Portion is huge, worth the price. Can share with two people.",
-          "createdAt": 1770390000000,
-          "rating": 5,
-          "stallName": "Monster Curry",
-          "userName": "Ben"
-        },
-        "-F3": {
+        "-Okn-hrs5wzqoVQ0jee10": {
           "comment": "A bit too salty for my taste but the chicken katsu is crispy.",
           "createdAt": 1770392000000,
           "rating": 4,
           "stallName": "Monster Curry",
           "userName": "Lina"
         },
-        "-F4": {
+        "-Okn-hrs5wzqoVQ0jee23": {
+          "comment": "Portion is huge, worth the price. Can share with two people.",
+          "createdAt": 1770390000000,
+          "rating": 5,
+          "stallName": "Monster Curry",
+          "userName": "Ben"
+        },
+        "-Okn-hrs5wzqoVQ0jee72": {
           "comment": "Waiting time is quite long during peak hours.",
           "createdAt": 1770395000000,
           "rating": 3,
           "stallName": "Monster Curry",
           "userName": "Daniel"
+        },
+        "-Okn-hrs5wzqoVQ0jeeY": {
+          "comment": "Curry was great!",
+          "createdAt": 1770382351080,
+          "rating": 5,
+          "stallName": "Monster Curry",
+          "userName": "Test User 2"
         }
       },
       "hawkerCentreId": "hc_01",
-      "image": "/assets/Images/customerImages/MonstercurryDemiGlace.svg",
+      "image": "../../assets/Images/customerImages/MonstercurryDemiGlace.svg",
       "ownerUid": "DhUUNZuRqqf4OZidlJHNwdeMCIE3",
       "reviewCount": 38,
       "stallDesc": "Authentic Japanese curry rice",
       "stallName": "Monster Curry",
       "stallUnitNo": "01-05",
-      "tags": ["Japanese", "Curry", "Halal"],
+      "tags": [
+        "Japanese",
+        "Curry",
+        "Halal"
+      ],
       "visitCount": "25"
     },
     "stall_03": {
       "avgRating": 4,
+      "feedbacks": {
+        "-OkvkzhiF9PZL0vTnpZ8": {
+          "comment": "where is the images",
+          "createdAt": 1770529225837,
+          "rating": 1,
+          "stallName": "Yah Fu Miniwok",
+          "userName": "Test User 2"
+        }
+      },
       "hawkerCentreId": "hc_01",
-      "image": "/assets/Images/customerImages/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
+      "image": "../../assets/Images/customerImages/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
       "ownerUid": "OWNER_003",
       "reviewCount": 32,
       "stallDesc": "Traditional wok hei filled dishes",
       "stallName": "Yah Fu Miniwok",
       "stallUnitNo": "01-15",
-      "tags": ["Chinese", "Wok Hei", "Zi Char"],
+      "tags": [
+        "Chinese",
+        "Wok Hei",
+        "Zi Char"
+      ],
       "visitCount": "20"
     },
     "stall_04": {
@@ -3212,7 +3259,11 @@
       "stallDesc": "Famous sambal stingray and prawns.",
       "stallName": "Newton BBQ Seafood",
       "stallUnitNo": "01-01",
-      "tags": ["Seafood", "BBQ", "Spicy"],
+      "tags": [
+        "Seafood",
+        "BBQ",
+        "Spicy"
+      ],
       "visitCount": "16"
     },
     "stall_05": {
@@ -3224,7 +3275,11 @@
       "stallDesc": "Affordable western food and grills.",
       "stallName": "Western Grill",
       "stallUnitNo": "01-20",
-      "tags": ["Western", "Grill", "Steak"],
+      "tags": [
+        "Western",
+        "Grill",
+        "Steak"
+      ],
       "visitCount": "14"
     },
     "stall_06": {
@@ -3236,7 +3291,11 @@
       "stallDesc": "Chilli crab and seafood delights.",
       "stallName": "Alliance Seafood",
       "stallUnitNo": "01-30",
-      "tags": ["Seafood", "Crab", "Chinese"],
+      "tags": [
+        "Seafood",
+        "Crab",
+        "Chinese"
+      ],
       "visitCount": "13"
     },
     "stall_07": {
@@ -3271,7 +3330,11 @@
       "stallDesc": "Old school fried kway teow.",
       "stallName": "Lao Fu Zi Fried Kway Teow",
       "stallUnitNo": "01-40",
-      "tags": ["Local", "Fried Noodles", "Chinese"],
+      "tags": [
+        "Local",
+        "Fried Noodles",
+        "Chinese"
+      ],
       "visitCount": "11"
     },
     "stall_08": {
@@ -3283,7 +3346,11 @@
       "stallDesc": "Premium char siew and roast pork.",
       "stallName": "Roast Paradise",
       "stallUnitNo": "01-50",
-      "tags": ["Roast Meat", "Pork", "Chinese"],
+      "tags": [
+        "Roast Meat",
+        "Pork",
+        "Chinese"
+      ],
       "visitCount": "9"
     },
     "stall_09": {
@@ -3295,7 +3362,11 @@
       "stallDesc": "Rich and savory prawn noodle soup.",
       "stallName": "Blanco Court Prawn Mee",
       "stallUnitNo": "01-60",
-      "tags": ["Soup", "Prawns", "Noodles"],
+      "tags": [
+        "Soup",
+        "Prawns",
+        "Noodles"
+      ],
       "visitCount": "5"
     },
     "stall_10": {
@@ -3307,7 +3378,11 @@
       "stallDesc": "Traditional dry-style Hokkien Mee.",
       "stallName": "Nam Sing Hokkien Mee",
       "stallUnitNo": "01-70",
-      "tags": ["Noodles", "Traditional", "Seafood"],
+      "tags": [
+        "Noodles",
+        "Traditional",
+        "Seafood"
+      ],
       "visitCount": "3"
     }
   },
@@ -3347,14 +3422,15 @@
       "role": "stallOwner",
       "stallId": "stall_01"
     },
-    "Os18BEltTkfVJjCpcTpkF9XG6092": {
-      "officerName": "Daniel Tan",
-      "role": "neaOfficer"
-    },
     "OFFICER_002": {
       "officerContactNo": "64443333",
       "officerName": "Officer Wong",
       "role": "neaOfficer"
+    },
+    "OPERATOR_002": {
+      "contactPerson": "Ms. Tan",
+      "operatorName": "Prime Hawker Management",
+      "role": "operator"
     },
     "OWNER_001": {
       "ownerContactNo": "38473928",
@@ -3380,14 +3456,13 @@
       "ownerNric": "S1122334E",
       "role": "stallOwner"
     },
+    "Os18BEltTkfVJjCpcTpkF9XG6092": {
+      "officerName": "Daniel Tan",
+      "role": "neaOfficer"
+    },
     "or4tWVzXaNT6NfpJ7JGv3xcyJyM2": {
       "custName": "Test User 2",
       "role": "customer"
-    },
-    "OPERATOR_002": {
-      "contactPerson": "Ms. Tan",
-      "operatorName": "Prime Hawker Management",
-      "role": "operator"
     }
   }
 }

@@ -410,7 +410,7 @@ a {
   top: 18px;
   right: 18px;
 
-  width: 42px;
+  width: 50px;
   height: 42px;
   border-radius: 10px;
 
@@ -426,7 +426,8 @@ a {
 
 .db-table {
   width: 100%;
-  border-spacing: 0px 18px;
+  border-collapse: separate;   /* IMPORTANT: allows spacing */
+  border-spacing: 0px 18px;    /* vertical gap between rows */
 }
 
 .db-table th {
@@ -478,8 +479,10 @@ a {
 
 .pending-table {
   width: 100%;
-  border-spacing: 0px 18px;
+  border-collapse: separate;   /* IMPORTANT: allows spacing */
+  border-spacing: 0px 18px;    /* vertical gap between rows */
 }
+
 
 .pending-table th {
   text-align: left;
@@ -571,4 +574,149 @@ a {
   border-radius: 24px;
 
   box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.db-filter-panel {
+  display: none;
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.85);
+}
+
+.db-filter-panel.is-open {
+  display: block;
+}
+
+.db-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.db-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 160px;
+}
+
+.db-filter-field label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.db-pager,
+.pending-pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.pager-btn {
+  width: 80px;
+  height: 34px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.pager-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pager-label {
+  font-weight: 600;
+}
+
+.pending-edit-wrap{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.pending-edit-date,
+.pending-edit-time{
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+  font-family: "Inter", sans-serif;
+}
+
+/* --- Pending filter bar (same style as Database top strip) --- */
+.pending-filter-bar{
+  display: none;               /* hidden until toggled */
+  width: 100%;
+  margin: 4px 0 18px 0;
+  padding: 14px 16px;
+
+  border-radius: 16px;
+  background: rgba(255,255,255,0.65);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.pending-filter-bar.is-open{
+  display: flex;
+}
+
+/* each filter block */
+.pending-filter-item{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 160px;
+  flex: 1 1 160px; /* allow wrapping nicely */
+}
+
+.pending-filter-item label{
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.pending-filter-control{
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  padding: 8px 10px;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 14px;
+  background: rgba(255,255,255,0.9);
+}
+
+/* apply/reset area */
+.pending-filter-actions{
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex: 0 0 auto;
+}
+
+.pending-filter-apply,
+.pending-filter-reset{
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  padding: 0 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pending-filter-apply{
+  background: rgba(255,255,255,0.9);
+}
+
+.pending-filter-reset{
+  background: rgba(255,255,255,0.9);
 }

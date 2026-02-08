@@ -72,3 +72,4 @@ the selected role to provide a tailored user experience.
 | Stall Owner 2 (Monster Curry) | monstercurry@stallowners.com | monstercurry |
 | NEA Officer                   | daniel_tan@nea.sg            | daniel12     |
 | Operator                      | food_republic@hawkportal.com | 123456       |
+| NEA Officer 2                 | john_tan@nea.sg              | 676767       |
