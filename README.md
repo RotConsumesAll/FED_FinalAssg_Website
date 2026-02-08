@@ -10,7 +10,6 @@ Operators.
 
 ### Customers
 - Browse stalls and menu items
-- Rate menu items
 - Submit ratings and feedback
 - Submit complaints related to hygiene or service
 
