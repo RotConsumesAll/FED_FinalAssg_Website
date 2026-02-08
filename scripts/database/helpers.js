@@ -45,3 +45,12 @@ export async function getObjectsByAttribute(path, key, value) {
     return;
   }
 }
+
+export async function removeObjectByPath(path) {
+  try {
+    await remove(ref(db, path));
+  } catch (error) {
+    console.error(`Unable to remove object at path ${path}`, error);
+    return;
+  }
+}
