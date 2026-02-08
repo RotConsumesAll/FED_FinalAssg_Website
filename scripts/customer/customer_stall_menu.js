@@ -91,6 +91,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         stallRating.innerText = parseFloat(stallDetails.avgRating).toFixed(1);
         numOfReviews.innerText = stallDetails.reviewCount + " reviews";
 
+        let seeReviewsBtn = document.querySelector(".stall-reviews button");
+        if (seeReviewsBtn) {
+          seeReviewsBtn.addEventListener("click", () => {
+            window.location.href = `./customer_stall_reviews.html?id=${wantedStallId}`;
+          });
+        }
+
         let stallName = document.querySelector(".stall-name"); //Stall name
         let dirStallName = document.querySelector(".directory-link .dir-stallname-txt"); //Stall name in directory container
         let tagsContainer = document.querySelector(".stall-tags-container");
