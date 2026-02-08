@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <title>HawkPortal - Stall Owner Stall</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../../styles/stallowner.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <div class="stall-owner">
+       <div class="stall-owner">
+      <header class="top-nav-bar">
+        <h1 class="text-wrapper nav-left">HawkPortal</h1>
+        <nav class="nav-center" aria-label="Main navigation">
+          <a href="stallowner_orders.html" class="text-wrapper">Orders</a>
+          <a href="stallowner_stall.html" class="text-wrapper text-bold text-blue" aria-current="page">Stall</a>
+          <a href="stallowner_menu.html" class="text-wrapper">Menu</a>
+          <a href="stallowner_feedback.html" class="text-wrapper">Feedback</a>
+        </nav>
+
+        <div class="nav-right log-out-button">
+          <button type="button" class="rectangle" aria-label="Log out">
+            <span class="text-wrapper">Log out</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="frame-2">
+        <h1 class="text-menu">Stall</h1>
+          <form class="frame-6" id="stallForm">
+            <div class="rectangle-7">
+              <div class="mb-3">
+                <label for="stallName" class="form-label">Stall name</label>
+                <input type="text" class="form-control" id="stallName" value="" placeholder= "Stall name">
+              </div>
+
+              <div class="mb-3">
+                <label for="stallDescription" class="form-label">Stall Description</label>
+                <input type="text" class="form-control" id="stallDescription" value="" placeholder="Stall desc">
+              </div>
+              
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="hawkerCentreId" class="form-label">Hawker Centre Id</label>
+                  <input type="text" class="form-control" id="hawkerCentreId" value="" placeholder="Hawker centre Id">
+                </div>
+                <div class="col">
+                  <label for="hawkerCentreId" class="form-label">Unit No</label>
+                  <input type="text" class="form-control" id="UnitNo" value="" placeholder="Unit no">
+                </div>
+              </div>
+
+              <button type="submit" class="button-shape-2">Done</button>
+            </div>
+          </form>
+        </main>
+      </div>
+      <script type="module" src="../../scripts/stallowner/stall.js"></script>
+      <script type="module" src="../../scripts/stallowner/sidebar.js"></script>
+      <script type="module" src="../../scripts/logout.js"></script>
+    </body>
+</html>

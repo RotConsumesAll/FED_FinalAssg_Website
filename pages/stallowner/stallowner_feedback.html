@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>HawkPortal - Stall Owner Menu</title>
+    <link rel="stylesheet" href="../../styles/stallowner.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="stall-owner">
+        <header class="top-nav-bar">
+            <h1 class="text-wrapper nav-left">HawkPortal</h1>
+
+            <nav class="nav-center" aria-label="Main navigation">
+                <a href="stallowner_orders.html" class="text-wrapper">Orders</a>
+                <a href="stallowner_stall.html" class="text-wrapper">Stall</a>
+                <a href="stallowner_menu.html" class="text-wrapper">Menu</a>
+                <a href="stallowner_feedback.html" class="text-wrapper text-bold text-blue" aria-current="page">Feedback</a>
+            </nav>
+          
+            <div class="nav-right log-out-button">
+                <button type="button" class="rectangle" aria-label="Log out">
+                    <span class="text-wrapper">Log out</span>
+                </button>
+            </div>
+        </header>
+        <main class="frame-2">
+            <h1 class="text-menu">Loading feedback...</h1>
+            <section class="frame-4" id="feedbackList">
+                
+            </section>
+            
+        </main>
+    </div>
+    <script type="module" src="../../scripts/stallowner/feedback.js"></script>
+    <script type="module" src="../../scripts/stallowner/sidebar.js"></script>
+    <script type="module" src="../../scripts/logout.js"></script>
+  </body>
+</html>   
