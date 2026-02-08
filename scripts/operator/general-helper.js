@@ -4,6 +4,11 @@ const dateFormatOptions = {
   day: "numeric",
 };
 
+export const SGDollar = new Intl.NumberFormat("en-SG", {
+  style: "currency",
+  currency: "SGD",
+});
+
 export function getCurrentDate() {
   // see https://www.freecodecamp.org/news/javascript-get-current-date-todays-date-in-js/
   const date = new Date();
