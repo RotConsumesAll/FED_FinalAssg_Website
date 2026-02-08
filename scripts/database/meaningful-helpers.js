@@ -63,7 +63,7 @@ export async function getPromoStalls(){
 }
 
 export async function getFeedbackByStallId(stallId) {
-  return getObjectsByAttribute("feedback", "stallId", stallId);
+  return fetchData(`stalls/${stallId}/feedbacks`);
 }
 
 export async function getAllRentalAgreements() {
