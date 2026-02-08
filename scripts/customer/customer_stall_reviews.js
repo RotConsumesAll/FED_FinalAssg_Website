@@ -28,9 +28,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (await getUserRole(uid) !== "customer") {
         window.location.href = "../../index.html";
       }
+        const stallID = getStallIdFromURL();
+        console.log("Stall ID from URL:", stallID);
         async function loadPage(wantedStallId) {
             try {
                 stallDetails = await getStall(wantedStallId);
+                updateBreadcrumb(stallDetails);
                 console.log("details:", stallDetails);
                 
                 hawkerCentres = await getHawkerCentres();
@@ -92,8 +95,18 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
             
             if (reviewQty && stall.reviewCount) {
-                reviewQty.textContent = `${stall.reviewCount} reviews`;
+                reviewQty.textContent = `${feedbacks.length} reviews`;
             }
+        }
+
+        function updateBreadcrumb(stall) {
+            const breadcrumbLinks = document.querySelectorAll(".directory-link a");
+            breadcrumbLinks.forEach(link => {
+                if (link.textContent === "StallName") {
+                    link.textContent = stall.stallName;
+                    link.href = `./customer_stall_menu.html?id=${stallID}`;
+                }
+            });
         }
 
         function loadHawkerCentreInfo(hawkerCentreId) {
@@ -164,7 +177,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         }
 
-        function loadReviewCards(filter = "top") {
+        function loadReviewCards(filter = "new") {
             let reviewsContainer = document.querySelector(".reviews-section");
             
             if (!reviewsContainer || feedbacks.length === 0) {
@@ -179,21 +192,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             
             switch(filter) {
                 case "new":
-                sortedFeedbacks.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-                break;
-                case "highest":
-                sortedFeedbacks.sort((a, b) => b.rating - a.rating);
-                break;
-                case "lowest":
-                sortedFeedbacks.sort((a, b) => a.rating - b.rating);
-                break;
-                case "top":
                 default:
-                sortedFeedbacks.sort((a, b) => {
-                    let aHelpful = (a.helpfulVotes || 0) - (a.unhelpfulVotes || 0);
-                    let bHelpful = (b.helpfulVotes || 0) - (b.unhelpfulVotes || 0);
-                    return bHelpful - aHelpful || b.rating - a.rating;
-                });
+                    sortedFeedbacks.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+                    break;
+                case "highest":
+                    sortedFeedbacks.sort((a, b) => b.rating - a.rating);
+                    break;
+                case "lowest":
+                    sortedFeedbacks.sort((a, b) => a.rating - b.rating);
+                    break;
             }
             
             sortedFeedbacks.forEach(feedback => {
@@ -202,8 +209,23 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
             }
 
+            function formatTimeAgo(timestamp) {
+                if (!timestamp) return "";
+
+                const now = new Date();
+                const created = new Date(timestamp);
+                const diffMs = now - created;
+                const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                const hours = created.getHours().toString().padStart(2, '0');
+                const minutes = created.getMinutes().toString().padStart(2, '0');
+
+                let daysText = diffDays === 0 ? "Today" : `${diffDays} day${diffDays > 1 ? "s" : ""} ago`;
+                return `${daysText}, ${hours}:${minutes}`;
+            }
+
             function createReviewCard(feedback) {
             let card = document.createElement("div");
+            let reviewDate = feedback.createdAt ? formatTimeAgo(feedback.createdAt) : "";
             card.className = "review-card";
             
             let starsHTML = "";
@@ -211,23 +233,17 @@ document.addEventListener("DOMContentLoaded", async () => {
                 starsHTML += `<img src="../../assets/Icons/star.svg" class="star" alt="★">`;
             }
             
-            let helpfulVotes = feedback.helpfulVotes || 0;
-            let unhelpfulVotes = feedback.unhelpfulVotes || 0;
-            
             card.innerHTML = `
                 <div class="review-header">
                 <p class="review-user">${feedback.userName || "Anonymous"}</p>
+                <p class="review-time">${reviewDate}</p>
                 <p class="review-stars">
                     ${starsHTML}
                 </p>
-                </div>
+                </div>      
                 <p class="review-text">
                 ${feedback.comment || "No comment provided."}
                 </p>
-                <div class="review-actions">
-                <span><img src="../../assets/Icons/thumbs_up.svg"> ${helpfulVotes}</span>
-                <span><img src="../../assets/Icons/thumbs_down.svg"> ${unhelpfulVotes}</span>
-                </div>
             `;
             
             let stars = card.querySelectorAll(".review-stars .star");
@@ -250,7 +266,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 this.classList.add("active");
                 
                 let filterText = this.textContent.toLowerCase();
-                let filterType = "top";
+                let filterType = "new";
                 
                 if (filterText.includes("new")) filterType = "new";
                 else if (filterText.includes("highest")) filterType = "highest";

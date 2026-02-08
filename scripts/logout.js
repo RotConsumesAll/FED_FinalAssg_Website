@@ -1,5 +1,4 @@
-import { auth } from "./firebase/index.js";
-import { signOut } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+import { auth, signOut } from "./firebase/index.js";
 
 document.addEventListener('DOMContentLoaded', function() {
   const logoutButton = document.querySelector('.log-out-button');
@@ -9,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       try {
         await signOut(auth);
         
-        window.location.href = "../index.html";
+        window.location.href = "../../index.html";
         
       } catch (error) {
         console.error("Error signing out:", error);
