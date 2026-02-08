@@ -3093,6 +3093,27 @@
           "rating": 4,
           "stallName": "Wok Hey",
           "userName": "Test User 2"
+        },
+        "-Okn-a1B2C3D4": {
+          "comment": "Portion is decent and food is always served hot. Slightly oily though.",
+          "createdAt": 1770385400000,
+          "rating": 4,
+          "stallName": "Wok Hey",
+          "userName": "Jamie"
+        },
+        "-Okn-x9Y8Z7": {
+          "comment": "Taste is okay but queue is very long during lunch.",
+          "createdAt": 1770388400000,
+          "rating": 3,
+          "stallName": "Wok Hey",
+          "userName": "Aaron"
+        },
+        "-Okn-kLmN01": {
+          "comment": "Staff are friendly and food is consistent every time I come.",
+          "createdAt": 1770391400000,
+          "rating": 5,
+          "stallName": "Wok Hey",
+          "userName": "Siti"
         }
       },
       "hawkerCentreId": "hc_01",
@@ -3108,12 +3129,33 @@
     "stall_02": {
       "avgRating": 4.5,
       "feedbacks": {
-        "-Okn-hrs5wzqoVQ0jeeY": {
+        "-F1": {
           "comment": "Curry was great!",
           "createdAt": 1770382351080,
           "rating": 5,
           "stallName": "Monster Curry",
           "userName": "Test User 2"
+        },
+        "-F2": {
+          "comment": "Portion is huge, worth the price. Can share with two people.",
+          "createdAt": 1770390000000,
+          "rating": 5,
+          "stallName": "Monster Curry",
+          "userName": "Ben"
+        },
+        "-F3": {
+          "comment": "A bit too salty for my taste but the chicken katsu is crispy.",
+          "createdAt": 1770392000000,
+          "rating": 4,
+          "stallName": "Monster Curry",
+          "userName": "Lina"
+        },
+        "-F4": {
+          "comment": "Waiting time is quite long during peak hours.",
+          "createdAt": 1770395000000,
+          "rating": 3,
+          "stallName": "Monster Curry",
+          "userName": "Daniel"
         }
       },
       "hawkerCentreId": "hc_01",
@@ -3140,6 +3182,29 @@
     },
     "stall_04": {
       "avgRating": 4.7,
+      "feedbacks": {
+        "-N1": {
+          "comment": "Sambal stingray is amazing, very smoky flavour.",
+          "createdAt": 1770398000000,
+          "rating": 5,
+          "stallName": "Newton BBQ Seafood",
+          "userName": "Michelle"
+        },
+        "-N2": {
+          "comment": "Fresh seafood but quite expensive.",
+          "createdAt": 1770401000000,
+          "rating": 4,
+          "stallName": "Newton BBQ Seafood",
+          "userName": "Ryan"
+        },
+        "-N3": {
+          "comment": "Chilli crab sauce is good but crab was a bit small.",
+          "createdAt": 1770404000000,
+          "rating": 3,
+          "stallName": "Newton BBQ Seafood",
+          "userName": "Farah"
+        }
+      },
       "hawkerCentreId": "hc_02",
       "image": "https://placeholder.com/newtonbbq.jpg",
       "ownerUid": "OWNER_004",
@@ -3176,6 +3241,29 @@
     },
     "stall_07": {
       "avgRating": 4.8,
+      "feedbacks": {
+        "-L1": {
+          "comment": "Wok hei is strong, tastes very traditional.",
+          "createdAt": 1770407000000,
+          "rating": 5,
+          "stallName": "Lao Fu Zi Fried Kway Teow",
+          "userName": "Kelvin"
+        },
+        "-L2": {
+          "comment": "Not bad but slightly oily.",
+          "createdAt": 1770410000000,
+          "rating": 4,
+          "stallName": "Lao Fu Zi Fried Kway Teow",
+          "userName": "Aisyah"
+        },
+        "-L3": {
+          "comment": "Portion is small for the price.",
+          "createdAt": 1770413000000,
+          "rating": 3,
+          "stallName": "Lao Fu Zi Fried Kway Teow",
+          "userName": "Marcus"
+        }
+      },
       "hawkerCentreId": "hc_03",
       "image": "https://placeholder.com/laofuzi.jpg",
       "ownerUid": "OWNER_003",

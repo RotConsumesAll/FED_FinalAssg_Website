@@ -56,19 +56,12 @@ export function roundTo2DecimalPlaces(number) {
   return Math.round(number * 10) / 10;
 }
 
-// from https://stackoverflow.com/questions/36787908/how-to-check-if-date-is-in-this-week-in-javascript
-export function isDateInThisWeek(date) {
-  const todayObj = new Date();
-  const todayDate = todayObj.getDate();
-  const todayDay = todayObj.getDay();
+// created with AI assistance (see credits.html)
+export function isWithinLastThreeMonths(dateInput) {
+  const now = new Date();
 
-  // get first date of week
-  const firstDayOfWeek = new Date(todayObj.setDate(todayDate - todayDay));
+  // start of the month, 2 months ago (inclusive)
+  const startDate = new Date(now.getFullYear(), now.getMonth() - 2, 1);
 
-  // get last date of week
-  const lastDayOfWeek = new Date(firstDayOfWeek);
-  lastDayOfWeek.setDate(lastDayOfWeek.getDate() + 6);
-
-  // if date is equal or within the first and last dates of the week
-  return date >= firstDayOfWeek && date <= lastDayOfWeek;
+  return dateInput >= startDate && dateInput <= now;
 }

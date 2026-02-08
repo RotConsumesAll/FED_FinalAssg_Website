@@ -12,10 +12,9 @@
     <header class="top-nav-bar">
         <h1 class="default-text nav-left">HawkPortal</h1>
         <nav class="nav-center" aria-label="Main navigation">
-          <a href="customer_home.html" class="default-text">Home</a>
-          <a href="customer_stalls.html" class="default-text bold-focus" aria-current="page">Stall</a>
-          <a href="customer_feedback.html" class="default-text">Feedback</a>
-          <a href="customer_complaints.html" class="default-text">Complaints</a>
+          <a href="./customer_home.html" class="default-text">Home</a>
+          <a href="./customer_stalls.html" class="default-text bold-focus" aria-current="page">Stall</a>
+          <a href="./customer_feedback.html" class="default-text">Feedback</a>
         </nav>
 
         <div class="nav-right log-out-button">
@@ -31,13 +30,13 @@
 
     <!-- Directory link container -->
     <section class = "directory-link">
-      <a href = "customer_home.html" class = "Body">Home</a>
+      <a href = "./customer_home.html" class = "Body">Home</a>
       <p class="Body">></p>
-      <a href = "customer_stalls.html" class = "Body">Stalls</a>
+      <a href = "./customer_stalls.html" class = "Body">Stalls</a>
       <p class="Body">></p>
-      <a href = "customer_stall_menu.html" class = "Body">StallName</a>
+      <a href = "./customer_stall_menu.html" class = "Body">StallName</a>
       <p class="Body">></p>
-      <a href = "customer_stall_reviews.html" class = "Body">Reviews</a>             
+      <a href = "./customer_stall_reviews.html" class = "Body">Reviews</a>             
     </section>
 
     <!-- Stall info container-->
@@ -50,14 +49,7 @@
           <p class = "stall-name">StallName</p>
           <!-- Info overlay button -->
           <div class = "info-icon" alt = "Info icon" data-bs-toggle="modal" data-bs-target="#stall-info-modal"></div>                                         
-        </div>                
-
-        <!-- Consider creating stall tags using js when needed -->
-        <!-- Stall tag container -->
-        <div class = "stall-tags-container">
-          <div class = "stall-tag"><p class = "tag-desc">Chinese</p></div>
-          <div class = "stall-tag"><p class = "tag-desc">Seafood</p></div>     
-        </div>           
+        </div>                          
 
         <!-- Reviews master container -->
         <div class = "master-stall-reviews">
@@ -152,6 +144,7 @@
     </div>
 
   </section>
-
+  <script type = "module" src="../../scripts/customer/customer_stall_reviews.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

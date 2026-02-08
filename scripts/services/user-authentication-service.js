@@ -19,7 +19,6 @@ export function checkUserAndGetUid(role) {
         return;
       }
 
-      console.log("UID inside:", uid);
       resolve(uid);
     });
   });
