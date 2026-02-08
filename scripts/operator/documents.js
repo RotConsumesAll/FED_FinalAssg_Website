@@ -1,9 +1,8 @@
 import { renderRentalAgreements } from "./documents-display.js";
 import { checkUserAndGetUid } from "../services/user-authentication-service.js";
 import {
-  assignDeleteConfirmationHandler,
-  assignDeleteHandler,
-  assignEditHandler,
+  assignCreateStallHandler,
+  populateHawkerCentreDropdown,
 } from "./documents-display.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -11,10 +10,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const uid = await checkUserAndGetUid("operator");
     sessionStorage.clear();
     await renderRentalAgreements();
-
-    assignDeleteHandler();
-    assignEditHandler();
-    assignDeleteConfirmationHandler();
+    await populateHawkerCentreDropdown(uid);
+    assignCreateStallHandler();
   } catch (error) {
     window.location.href = "../../index.html";
     return;

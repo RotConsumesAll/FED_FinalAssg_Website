@@ -3,6 +3,10 @@ import {
   getHawkerCentreByCentreId,
   getStallByStallId,
   getUserDetails,
+  getHawkerCentres,
+  createNewStall,
+  createNewRentalAgreement,
+  createNewMenuItems,
 } from "../database/meaningful-helpers.js";
 import { SGDollar } from "./general-helper.js";
 import { removeObjectByPath } from "../database/helpers.js";
@@ -28,11 +32,11 @@ async function createRentalAgreementRecord(id, recordInfo) {
 
   // Owner name
   const h2 = document.createElement("h2");
-  h2.append("With ");
+  // h2.append("With ");
 
   const ownerName = document.createElement("span");
   ownerName.classList.add("semi-bold");
-  ownerName.textContent = ownerDetails.ownerName;
+  ownerName.textContent = `${centre.hcName}, ${stall.stallName}`; // switched
 
   h2.appendChild(ownerName);
 
@@ -42,7 +46,7 @@ async function createRentalAgreementRecord(id, recordInfo) {
     "record-container__record__minor-info",
     "record-container__record__minor-info--centre",
   );
-  centreInfo.textContent = `${centre.hcName} #${stall.stallUnitNo}`;
+  centreInfo.textContent = ownerDetails.ownerName; // switched
 
   // Rental price
   const rent = document.createElement("p");
@@ -164,6 +168,10 @@ export async function renderRentalAgreements() {
       await createRentalAgreementRecord(id, documents[id]),
     );
   }
+
+  assignDeleteHandler();
+  assignEditHandler();
+  assignDeleteConfirmationHandler();
 }
 
 function getRecordIdFromListItem(item) {
@@ -195,7 +203,6 @@ export function assignDeleteHandler() {
   const buttons = document.getElementsByClassName("delete-button");
 
   for (const button of buttons) {
-
     button.addEventListener("click", function (e) {
       deleteRecord(e);
     });
@@ -217,4 +224,122 @@ export function assignDeleteConfirmationHandler() {
     .addEventListener("click", function (e) {
       handleDeleteConfirmation(e);
     });
+}
+
+export function assignCreateStallHandler() {
+  const form = document.getElementById("createStallForm");
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const hawkerCentreName = document.getElementById("hawkerCentreName").value;
+    const stallName = document.getElementById("stallName").value;
+    const rentalPrice = document.getElementById("rentalPrice").value;
+    const agrStartDate = document.getElementById("agrStartDate").value;
+    const agrEndDate = document.getElementById("agrEndDate").value;
+    const agrTermCondition = document.getElementById("agrTermCondition").value;
+
+    // Validation of input values
+    if (!hawkerCentreName) {
+      alert("Please select a hawker centre");
+      return;
+    }
+
+    if (!stallName || stallName.trim() === "") {
+      alert("Please enter a stall name");
+      return;
+    }
+
+    if (!rentalPrice || parseFloat(rentalPrice) <= 0) {
+      alert("Please enter a valid rental price");
+      return;
+    }
+
+    if (!agrStartDate) {
+      alert("Please enter an agreement start date");
+      return;
+    }
+
+    if (!agrEndDate) {
+      alert("Please enter an agreement end date");
+      return;
+    }
+
+    const startDate = new Date(agrStartDate);
+    const endDate = new Date(agrEndDate);
+
+    if (isNaN(startDate.getTime())) {
+      alert("Please enter a valid start date");
+      return;
+    }
+
+    if (isNaN(endDate.getTime())) {
+      alert("Please enter a valid end date");
+      return;
+    }
+
+    if (startDate >= endDate) {
+      alert("Agreement end date must be after the start date");
+      return;
+    }
+
+    if (!agrTermCondition || agrTermCondition.trim() === "") {
+      alert("Please enter agreement terms and conditions");
+      return;
+    }
+
+    try {
+      // Create new stall
+      const stallId = await createNewStall({
+        stallName: stallName,
+        hawkerCentreId: hawkerCentreName,
+      });
+
+      // Create rental agreement for stall
+      const agreementId = await createNewRentalAgreement(stallId, {
+        rentalPrice: parseFloat(rentalPrice),
+        agrStartDate: agrStartDate,
+        agrEndDate: agrEndDate,
+        agrTermCondition: agrTermCondition,
+      });
+
+      // Create empty menu items for stall
+      await createNewMenuItems(stallId);
+
+      console.log("Stall created successfully!", {
+        stallId,
+        agreementId,
+      });
+
+      alert("Stall and rental agreement created successfully!");
+
+      form.reset();
+
+      document.getElementById("close-create").click();
+      await renderRentalAgreements();
+    } catch (error) {
+      console.error("Error creating stall:", error);
+      alert("An error occurred while creating the stall. Please try again.");
+    }
+  });
+}
+
+export async function populateHawkerCentreDropdown(uid) {
+  const select = document.getElementById("hawkerCentreName");
+  const hawkerCentres = await getHawkerCentres();
+
+  // Clear existing options except the default one
+  while (select.options.length > 1) {
+    select.remove(1);
+  }
+
+  // Add options from Firebase data
+  for (const [centreId, centreData] of Object.entries(hawkerCentres)) {
+    if (centreData.operatorId !== uid) {
+      continue;
+    }
+    const option = document.createElement("option");
+    option.value = centreId;
+    option.textContent = centreData.hcName;
+    select.appendChild(option);
+  }
 }

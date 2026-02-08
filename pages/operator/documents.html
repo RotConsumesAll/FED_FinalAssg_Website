@@ -152,10 +152,15 @@
                     <div class="modal-body">
                         <form id="createStallForm">
 
-                            <!-- Hawker Centre Name -->
+                            <!-- Hawker Centre Name (Dropdown) -->
                             <div class="mb-3">
                                 <label for="hawkerCentreName" class="form-label">Hawker Centre Name</label>
-                                <input type="text" class="form-control" id="hawkerCentreName" required>
+                                <select class="form-select" id="hawkerCentreName" required>
+                                    <option value="" disabled selected>Select a hawker centre</option>
+                                    <option value="maxwell">Maxwell Food Centre</option>
+                                    <option value="chinatown">Chinatown Complex</option>
+                                    <option value="old_airport_road">Old Airport Road Food Centre</option>
+                                </select>
                             </div>
 
                             <!-- Stall Name -->
@@ -194,7 +199,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-create">
                             Close
                         </button>
                         <button type="submit" form="createStallForm" class="btn btn-primary">
