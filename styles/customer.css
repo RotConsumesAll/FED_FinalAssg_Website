@@ -1267,6 +1267,11 @@ body{
   white-space: nowrap;
 }
 
+.ratings span.active {
+    background-color: #000;
+    color: #fff;
+}
+
 .ratings {
   grid-template-columns: repeat(5, 180px);
 }
@@ -1419,6 +1424,15 @@ body{
   color: #333;
   line-height: 1.5;
 }
+
+  .review-time {
+  font-size: 0.85rem;        
+  color: #6b6b6b;            
+  margin: 2px 0 0 0;        
+  font-style: italic;      
+  display: block;    
+  }
+
 
 .review-actions {
   display: flex;
