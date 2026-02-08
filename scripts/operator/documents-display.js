@@ -15,9 +15,7 @@ const recordContainer = document.querySelector(".record-container");
 
 async function createRentalAgreementRecord(id, recordInfo) {
   const ownerDetails = await getUserDetails(recordInfo.ownerUid);
-  if (!ownerDetails) {
-    return "";
-  }
+
   const stall = await getStallByStallId(recordInfo.stallId);
   const centre = await getHawkerCentreByCentreId(stall.hawkerCentreId);
 
@@ -30,23 +28,27 @@ async function createRentalAgreementRecord(id, recordInfo) {
   article.classList.add("record-container__record");
   article.dataset.recordid = id;
 
-  // Owner name
-  const h2 = document.createElement("h2");
-  // h2.append("With ");
+  // Stall name
+  const stallName = document.createElement("h2");
+  stallName.textContent = `${stall.stallName}`;
 
-  const ownerName = document.createElement("span");
-  ownerName.classList.add("semi-bold");
-  ownerName.textContent = `${centre.hcName}, ${stall.stallName}`; // switched
-
-  h2.appendChild(ownerName);
-
-  // Centre & stall
+  // Centre
   const centreInfo = document.createElement("p");
   centreInfo.classList.add(
     "record-container__record__minor-info",
     "record-container__record__minor-info--centre",
   );
-  centreInfo.textContent = ownerDetails.ownerName; // switched
+  centreInfo.textContent = centre.hcName;
+
+  // Owner name
+  const ownerName = document.createElement("p");
+  ownerName.classList.add("record-container__record__minor-info");
+
+  if (ownerDetails.ownerName) {
+    ownerName.append(document.createTextNode(ownerDetails.ownerName));
+  } else {
+    ownerName.append(document.createTextNode("Owner not assigned"));
+  }
 
   // Rental price
   const rent = document.createElement("p");
@@ -110,7 +112,15 @@ async function createRentalAgreementRecord(id, recordInfo) {
   dropdown.append(dropdownBtn, dropdownMenu);
 
   // all info
-  article.append(h2, centreInfo, rent, dates, status, dropdown);
+  article.append(
+    stallName,
+    centreInfo,
+    ownerName,
+    rent,
+    dates,
+    status,
+    dropdown,
+  );
 
   return article;
 }
