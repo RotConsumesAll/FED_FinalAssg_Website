@@ -443,7 +443,8 @@ button:hover {
   border-radius: var(--border-radius);
   padding: 1rem;
   gap: 1rem;
-  flex: 0 0 20%;
+  flex: 1 1 20%;
+  max-width: 25%;
 }
 
 .record-container__record > * {
@@ -549,4 +550,37 @@ button:hover {
   background-color: var(--white);
   border-color: var(--light-blue);
   color: var(--light-blue);
+}
+
+/* Media queries */
+@media screen and (max-width: 1300px) {
+  .hawker-centre-container,.stall-detai-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .statistics-container {
+    flex-direction: column;
+  }
+  .flex-container {
+    flex-wrap: nowrap;
+  }
+  .record-container__record {
+    max-width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 430px) {
+  .centre-info {
+    flex-direction: column;
+  }
+
+  #stall-container {
+    flex-direction: column;
+  }
+  .stall-card {
+    max-width: 100%;
+  }
 }
