@@ -535,6 +535,16 @@ body{
   margin: 1rem  0;
 }
 
+
+#discover-more a{
+  margin: 3rem 0 0;
+}
+
+#discover-more .btn{
+  background-color: #74B84B;
+  color:#FAF9F6;
+}
+
 .stallname {
     color: #FAF9F6;
     font-family: "Inter", Helvetica, sans-serif;
@@ -1546,6 +1556,12 @@ body{
     margin-left: 1.5rem; 
     margin-right: 1.5rem;
   }
+}
+
+#stall-container .directory-link .body {
+  width: auto;
+  margin: 0;
+  align-self: center;
 }
 
 /* Mobile (max width 768px)*/
