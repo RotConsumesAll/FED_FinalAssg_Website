@@ -50,17 +50,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         let keyValuePair = Object.entries(hawkerCentres)
         for(let[id, data] of keyValuePair) {
             arrayHawkercentres.push({
-                id: id,                  // Extracts id
-                name: data.hcName,       // Extracts name
-                address: data.hcAddress, // Extracts address
-                image: data.image,       // Extracts URL
+                id: id,                  //extracts id
+                name: data.hcName,       //extracts name
+                address: data.hcAddress, //extracts address
+                image: data.image,       //extracts URL
                 openingTime: data.openingTime,
                 closingTime: data.closingTime
             });
         };
         console.log(arrayHawkercentres);
 
-        //Matching hawkercentre id and loading info 
+        //matching hawkercentre id and loading info 
         arrayHawkercentres.forEach(hawker => {
           if (hawker.id===currentHawkerCentreId){
             let stallModel = document.querySelector("#stall-info-modal");           //container
@@ -91,8 +91,26 @@ document.addEventListener("DOMContentLoaded", async () => {
         stallRating.innerText = parseFloat(stallDetails.avgRating).toFixed(1);
         numOfReviews.innerText = stallDetails.reviewCount + " reviews";
 
+        let seeReviewsBtn = document.querySelector(".stall-reviews button");
+        if (seeReviewsBtn) {
+          seeReviewsBtn.addEventListener("click", () => {
+            window.location.href = `./customer_stall_reviews.html?id=${wantedStallId}`;
+          });
+        }
+
         let stallName = document.querySelector(".stall-name"); //Stall name
         let dirStallName = document.querySelector(".directory-link .dir-stallname-txt"); //Stall name in directory container
+        let tagsContainer = document.querySelector(".stall-tags-container");
+        tagsContainer.innerHTML = "";
+        stallDetails.tags.forEach(tagText => {
+          let tagHTML = `
+              <div class="stall-tag">
+                  <p class="tag-desc">${tagText}</p>
+              </div>
+          `;
+          tagsContainer.insertAdjacentHTML("beforeend", tagHTML);
+        });
+
         stallName.textContent=stallDetails.stallName;
         dirStallName.textContent = stallDetails.stallName;
 
@@ -226,7 +244,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if ((elementSubtotal && elementGrandtotal)!==null){
           elementSubtotal.innerText="$" + totalCost.toFixed(2);
-          elementGrandtotal.innerText="$" + (totalCost*1.07).toFixed(2);
+          elementGrandtotal.innerText="$" + (totalCost*1.09).toFixed(2);
         }
       }
 

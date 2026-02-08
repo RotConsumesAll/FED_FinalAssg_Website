@@ -7,6 +7,10 @@ import {
   onValue,
   equalTo,
   get,
+  set,
+  push,
+  remove,
+  update,
 } from "../firebase/database.js";
 
 // General functions to interact with the database
@@ -43,5 +47,43 @@ export async function getObjectsByAttribute(path, key, value) {
   } catch (error) {
     console.error(`Error fetching ${path} .onIndex ${key} = ${value}:`, error);
     return;
+  }
+}
+
+export async function removeObjectByPath(path) {
+  try {
+    await remove(ref(db, path));
+  } catch (error) {
+    console.error(`Unable to remove object at path ${path}`, error);
+    return;
+  }
+}
+
+export async function writeDataToPath(path, data) {
+  try {
+    await set(ref(db, path), data);
+  } catch (error) {
+    console.error(`Unable to write data to path ${path}:`, error);
+    throw error;
+  }
+}
+
+export async function pushDataToPath(path, data) {
+  try {
+    const newRef = push(ref(db, path));
+    await set(newRef, data);
+    return newRef.key;
+  } catch (error) {
+    console.error(`Unable to push data to path ${path}:`, error);
+    throw error;
+  }
+}
+
+export async function updateDataAtPath(path, data) {
+  try {
+    await update(ref(db, path), data);
+  } catch (error) {
+    console.error(`Unable to update data at path ${path}:`, error);
+    throw error;
   }
 }
