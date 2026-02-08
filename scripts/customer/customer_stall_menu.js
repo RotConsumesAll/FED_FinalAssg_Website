@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       let itemName = document.querySelector("#menu-item-modal .item-title").innerText;
       let itemPrice = document.querySelector("#menu-item-modal .item-cost").innerText;
       let imageStyle = document.querySelector("#menu-item-modal .modal-item-image"); 
-      let itemImageURL = stallDetails.image;  
+      let itemImageURL = window.getComputedStyle(imageStyle).backgroundImage.slice(37,-2).replace("/","../../");  
       addItemToHTMLCart(itemName, itemPrice, itemImageURL);
     });
 
