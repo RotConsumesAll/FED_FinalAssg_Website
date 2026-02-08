@@ -2947,12 +2947,48 @@
       "pmtType": "PayLah"
     }
   },
-  "promotions": {
+"promotions": {
     "pro_01": {
-      "promoDesc": "Lunch Special: 10% off",
+      "promoTitle": "10% Off Lunch Set",
+      "promoDesc": "Lunch Special: 10% off all main courses between 11 AM and 2 PM.",
       "promoEndDate": "2026-02-28",
       "promoStartDate": "2026-02-01",
       "stallId": "stall_01"
+    },
+    "pro_02": {
+      "promoTitle": "Student Curry Deal",
+      "promoDesc": "Get $2 off any Katsu Curry Rice when you flash your student ID.",
+      "promoEndDate": "2026-03-15",
+      "promoStartDate": "2026-02-10",
+      "stallId": "stall_02"
+    },
+    "pro_03": {
+      "promoTitle": "Free Drink w/ Meal",
+      "promoDesc": "Complimentary homemade iced lemon tea with every Mini Wok set purchased.",
+      "promoEndDate": "2026-02-20",
+      "promoStartDate": "2026-02-08",
+      "stallId": "stall_03"
+    },
+    "pro_04": {
+      "promoTitle": "Family Feast",
+      "promoDesc": "15% discount on total bill for groups of 4 or more dining in.",
+      "promoEndDate": "2026-04-01",
+      "promoStartDate": "2026-02-15",
+      "stallId": "stall_04"
+    },
+    "pro_05": {
+      "promoTitle": "Steak Night Special",
+      "promoDesc": "Sirloin Steak going for only $12.90 (U.P. $14.50) after 6 PM.",
+      "promoEndDate": "2026-03-31",
+      "promoStartDate": "2026-02-01",
+      "stallId": "stall_05"
+    },
+    "pro_06": {
+      "promoTitle": "Crab Combo Promo",
+      "promoDesc": "Order any Chilli Crab Set and receive a free plate of fried mantou buns.",
+      "promoEndDate": "2026-03-10",
+      "promoStartDate": "2026-02-12",
+      "stallId": "stall_06"
     }
   },
   "rentalAgreements": {

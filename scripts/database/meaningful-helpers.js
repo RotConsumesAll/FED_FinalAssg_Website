@@ -40,23 +40,32 @@ export async function getRentalAgreementsByStallId(stallId) {
 }
 
 export async function getUserRole(uid) {
-    const role = await fetchData(`users/${uid}/role`);
-    if (!role) console.warn("Role not found for user:", uid);
-    return role ?? null;
+  const role = await fetchData(`users/${uid}/role`);
+  if (!role) console.warn("Role not found for user:", uid);
+  return role ?? null;
 }
 
 // BS
-export async function getStallMenu(stallId){
+export async function getStallMenu(stallId) {
   return fetchData(`menuItems/${stallId}`);
 }
 
-export async function getStall(stallId){
-  return fetchData(`stalls/${stallId}`); 
+export async function getStall(stallId) {
+  return fetchData(`stalls/${stallId}`);
 }
 
 export async function getAllStalls(){
   return fetchData(`stalls`);
 }
+
+export async function getPromoStalls(){
+  return fetchData(`promotions`);
+}
+
 export async function getFeedbackByStallId(stallId) {
   return getObjectsByAttribute("feedback", "stallId", stallId);
+}
+
+export async function getAllRentalAgreements() {
+  return await fetchData("rentalAgreements/");
 }
