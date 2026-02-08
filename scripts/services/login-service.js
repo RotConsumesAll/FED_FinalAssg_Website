@@ -15,7 +15,7 @@ async function redirectToPageWithRole(role) {
       window.location.href = "./pages/stallowner/stallowner_menu.html";
       break;
     case "neaOfficer":
-      window.location.href = "./pages/officer_home.html";
+      window.location.href = "./pages/officer/officer_home.html";
       break;
     case "operator":
       window.location.href = "./pages/operator/dashboard.html";

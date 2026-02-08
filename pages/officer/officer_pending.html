@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="view-transition" content="same-origin">
+
+  <title>Pending Inspections</title>
+
+  <link href="../../styles/officer.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-home" id="bg-pending">
+  <div>
+    <header class="top-nav-bar">
+      <h1 class="default-text nav-left">HawkPortal</h1>
+      <nav class="nav-center" aria-label="Main navigation">
+        <a href="./officer_home.html" class="default-text">Home</a>
+        <a href="./officer_scheduling.html" class="default-text">Scheduling</a>
+        <a href="./officer_submission.html" class="default-text">Submission</a>
+        <a href="./officer_database.html" class="default-text">Database</a>
+      </nav>
+      <div class="nav-right log-out-button">
+        <button type="button" class="button-shape-1" aria-label="Log out">
+          <span class="text-logout">Log out</span>
+        </button>
+      </div>
+    </header>
+    <h1 id="section-title" class="h1-home">Pending Inspections</h1>
+    <div class="db-bg">
+      <div class="db-head">
+        <button type="button" class="db-filter-btn" id="pendingFilterBtn" aria-label="Filter">
+          Filter
+        </button>
+        <div id="pendingFilterPanel" class="pending-filter-bar">
+          <div class="pending-filter-item">
+            <label for="pendingFilterHawker">Hawker Centre</label>
+            <select id="pendingFilterHawker" class="pending-filter-control">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="pending-filter-item">
+            <label for="pendingFilterStall">Stall</label>
+            <input id="pendingFilterStall" class="pending-filter-control" placeholder="e.g. 01-10">
+          </div>
+          <div class="pending-filter-item">
+            <label for="pendingFromDate">From</label>
+            <input id="pendingFromDate" type="date" class="pending-filter-control">
+          </div>
+          <div class="pending-filter-item">
+            <label for="pendingToDate">To</label>
+            <input id="pendingToDate" type="date" class="pending-filter-control">
+          </div>
+          <div class="pending-filter-item">
+            <label for="pendingFromTime">Time From</label>
+            <input id="pendingFromTime" type="time" class="pending-filter-control">
+          </div>
+          <div class="pending-filter-item">
+            <label for="pendingToTime">Time To</label>
+            <input id="pendingToTime" type="time" class="pending-filter-control">
+          </div>
+          <div class="pending-filter-item">
+            <label for="pendingSortField">Order By</label>
+            <select id="pendingSortField" class="pending-filter-control">
+              <option value="date">Date</option>
+              <option value="time">Time</option>
+              <option value="stall">Stall</option>
+            </select>
+          </div>
+          <div class="pending-filter-item">
+            <label for="pendingSortDir">Direction</label>
+            <select id="pendingSortDir" class="pending-filter-control">
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          </div>
+          <div class="pending-filter-actions">
+            <button type="button" id="pendingFilterApply" class="pending-filter-apply">Apply</button>
+            <button type="button" id="pendingFilterReset" class="pending-filter-reset">Reset</button>
+          </div>
+        </div>
+      </div>
+      <table class="db-table" id="pendingTable">
+        <tr>
+          <th>Hawker Centre Name</th>
+          <th>Stall ID</th>
+          <th>Date of Inspection (DD/MM/YY)</th>
+          <th>Time</th>
+          <th></th>
+        </tr>
+      </table>
+      <div class="db-pager">
+        <button id="pendingPrev" class="db-page-btn" type="button" aria-label="Previous page">Previous</button>
+        <div id="pendingPageLabel" class="db-page-label">1 / 1</div>
+        <button id="pendingNext" class="db-page-btn" type="button" aria-label="Next page">Next</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+          crossorigin="anonymous"></script>
+  <script type="module" src="../../scripts/officer/verif.js"></script>
+  <script type="module" src="../../scripts/officer/pending.js"></script>
+</body>
+</html>

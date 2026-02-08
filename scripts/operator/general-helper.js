@@ -61,7 +61,6 @@ export function roundTo2DecimalPlaces(number) {
   return Math.round(number * 10) / 10;
 }
 
-// created with AI assistance (see credits.html)
 export function isWithinLastThreeMonths(dateInput) {
   const now = new Date();
 

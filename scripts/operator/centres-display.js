@@ -7,29 +7,29 @@ function createMenuItem(centreId, centreName) {
 }
 
 function createStallCard(stall, ownerName, grade) {
-  let article = document.createElement("article");
+  const article = document.createElement("article");
   article.classList.add("stall-card");
 
-  let nameAndOwner = document.createElement("div");
+  const nameAndOwner = document.createElement("div");
   nameAndOwner.classList.add("stall-card__name-and-owner");
 
-  let h2 = document.createElement("h2");
+  const h2 = document.createElement("h2");
   h2.textContent = stall.stallName;
 
-  let owner = document.createElement("p");
+  const owner = document.createElement("p");
   owner.classList.add("stall-card__name-and-owner__name");
   owner.textContent = ownerName;
 
   nameAndOwner.append(h2, owner);
 
-  let extraInfo = document.createElement("div");
+  const extraInfo = document.createElement("div");
   extraInfo.classList.add("stall-card__extra-info");
 
-  let unitNumber = document.createElement("p");
+  const unitNumber = document.createElement("p");
   unitNumber.classList.add("stall-card__extra-info__element");
   unitNumber.textContent = `#${stall.stallUnitNo}`;
 
-  let gradeElement = document.createElement("p");
+  const gradeElement = document.createElement("p");
   gradeElement.classList.add(
     "stall-card__extra-info__element",
     "stall-card__extra-info__grade",
@@ -58,11 +58,6 @@ export async function renderSidebar(uid) {
   }
 }
 
-function updateSidebarButton(centreName) {
-  const centreSpan = document.getElementById("sidebar__button__centre");
-  centreSpan.textContent = centreName;
-}
-
 async function renderCentreInfo(centreId) {
   const hawkerCentre = await database.getHawkerCentreByCentreId(centreId);
 
@@ -83,9 +78,7 @@ export async function assignCentreSelectHandlers() {
 async function handleCentreSelect(e) {
   const li = e.currentTarget;
   const centreId = li.getAttribute("data-centreid");
-  const centreName = li.textContent;
 
-  updateSidebarButton(centreName);
   await renderCentreInfo(centreId);
 
   const allListitems = document.querySelector("ul.sidebar__menu").children;
@@ -111,6 +104,7 @@ async function renderStalls(centreId) {
   let stallCount = 0;
   container.innerHTML = "";
 
+  // Create cards for stalls
   for (const stallId in stalls) {
     const stall = stalls[stallId];
 
@@ -139,6 +133,7 @@ async function renderStalls(centreId) {
     stallCount;
 }
 
+// Renders the page for a certain centre
 export function activateEventForSelectedCentreItem(centreId) {
   const listItems = document.querySelector("ul.sidebar__menu").children;
   for (const item of listItems) {
