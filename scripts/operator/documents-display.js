@@ -128,50 +128,6 @@ async function createRentalAgreementRecord(id, recordInfo) {
   return article;
 }
 
-// https://blog.logrocket.com/creating-custom-select-dropdown-css/
-// export function assignDropDownHandler() {
-//   const customSelects = document.querySelectorAll(".select");
-//   customSelects.forEach((customSelect) => {
-//     const selectButton = customSelect.querySelector(".select__button");
-//     const dropdown = customSelect.querySelector(".select__dropdown");
-//     const options = dropdown.querySelectorAll("li");
-//     const selectedValue = selectButton.querySelector(
-//       ".select__button__selected-value",
-//     );
-
-//     const toggleDropdown = (expand = null) => {
-//       const isOpen =
-//         expand !== null ? expand : dropdown.classList.contains("hidden");
-//       dropdown.classList.toggle("hidden", !isOpen);
-//       selectButton.setAttribute("aria-expanded", isOpen);
-//     };
-//     selectButton.addEventListener("click", () => {
-//       toggleDropdown();
-//     });
-
-//     const handleOptionSelect = (option) => {
-//       options.forEach((opt) => opt.classList.remove("selected"));
-//       option.classList.add("selected");
-//       selectedValue.textContent = option.textContent.trim(); // Update selected value
-//     };
-//     options.forEach((option) => {
-//       option.addEventListener("click", (e) => {
-//         handleOptionSelect(option);
-//         // renderDocuments(e.currentTarget.textContent);
-//         renderRentalAgreements();
-//         toggleDropdown(false);
-//       });
-//     });
-
-//     document.addEventListener("click", (event) => {
-//       const isOutsideClick = !customSelect.contains(event.target);
-//       if (isOutsideClick) {
-//         toggleDropdown(false);
-//       }
-//     });
-//   });
-// }
-
 export async function renderRentalAgreements() {
   recordContainer.innerHTML = "";
   const documents = await getAllRentalAgreements();
