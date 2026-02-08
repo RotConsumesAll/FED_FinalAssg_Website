@@ -1647,4 +1647,45 @@ body{
   .triangle-right {
     display: none; 
   }
+
+  body.customer-stalls-page .page-container {
+    padding: 10px;
+  }
+
+  body.customer-stalls-page .stall-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  }
+
+  body.customer-stalls-page .stall-card {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  body.customer-stalls-page .stall-overlay .stall-title {
+    font-size: 1rem;
+  }
+
+  body.customer-stalls-page .stall-overlay .stall-rating {
+    font-size: 0.85rem;
+  }
+
+  body.customer-stalls-page .search-bar input[type="text"] {
+    width: 70%;
+    font-size: 0.9rem;
+  }
+
+  body.customer-stalls-page .search-btn {
+    width: 28%;
+    font-size: 0.9rem;
+  }
+
+  body.customer-stalls-page .modal-dialog {
+    max-width: 90%;
+  }
+
+  body.customer-stalls-page .section-title {
+    font-size: 1.2rem;
+  }
 }
