@@ -40,23 +40,35 @@ the selected role to provide a tailored user experience.
 - HTML5
 - CSS3
 - JavaScript
-- Firebase 
+- APIs
+    - Firebase
+    - Chart.js
 - GitHub
 
 ## Firebase Usage
-
-Firebase Firestore is used to store and retrieve:
+### Realtime Database
+*Firebase Realtime Database* is used to store and retrieve:
 - Customer feedback and ratings
 - Customer complaints
 - Menu item ratings
 - Hygiene inspection records
 - Stall details like number of visits and promotions
 
+### Authentication
+*Firebase Authentication* is used to manage users on the platform.
+
 ## How to Use
 
-1. Open the application homepage
-2. Sign in and select a user role
-3. Access features relevant to the selected role
-4. Log out to return to guest view
+1. Open the application homepage.
+2. Log in as one of the roles (see this [table](#user-credentials)) OR signup as a Customer (remember to note down the password you chose).
+3. Access features relevant to the selected role.
+4. Log out to return to guest view.
 
-
+## User credentials
+| Role                          | Email                        | Password     |
+|-------------------------------|------------------------------|--------------|
+| Customer                      | testuser2@gmail.com          | testuser2    |
+| Stall Owner 1 (Wok Hey)       | wokhey@stallowners.com       | wokhey       |
+| Stall Owner 2 (Monster Curry) | monstercurry@stallowners.com | monstercurry |
+| NEA Officer                   | daniel_tan@nea.sg            | daniel12     |
+| Operator                      | food_republic@hawkportal.com | 123456       |
