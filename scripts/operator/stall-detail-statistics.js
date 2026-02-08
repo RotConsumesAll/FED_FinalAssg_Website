@@ -184,24 +184,38 @@ export async function renderRentalAgreement(stallId) {
 
 // Inspection records
 async function renderHygieneGrade(inspectionRecords) {
-  const record = findValidRecord(inspectionRecords);
-  const grade = record.hygieneGrade;
-
   gradeCard.classList = "";
-  gradeCard.classList.add(
-    `hygiene-grade-card--${grade}`,
-    "figure-card",
-    "figure-card--stand-alone",
-  );
+  gradeCard.classList.add("figure-card", "figure-card--stand-alone");
 
-  document.getElementById("hygiene-grade").textContent = record.hygieneGrade;
-  const expiryDate = new Date(record.gradeExpiry);
-  document.getElementById("grade-expiry").textContent =
-    formateDateToLocal(expiryDate);
+  const record = findValidRecord(inspectionRecords);
+
+  const grade = document.getElementById("hygiene-grade");
+  const subtitle = document.getElementById("grade-subtitle");
+  const expiryDateParagraph = document.getElementById("grade-expiry-p");
+  const expiryDate = document.getElementById("grade-expiry");
+
+  if (!record) {
+    subtitle.textContent = "Hygiene Grade unavailable";
+    grade.style.display = "none";
+    expiryDateParagraph.style.display = "none";
+    return;
+  } else {
+    const gradeLetter = record.hygieneGrade;
+    gradeCard.classList.add(`hygiene-grade-card--${gradeLetter}`);
+    const expiryDate = new Date(record.gradeExpiry);
+    grade.textContent = gradeLetter;
+    grade.style.display = "flex";
+    subtitle.textContent = "Current Hygiene Grade";
+    expiryDateParagraph.style.display = "flex";
+    expiryDate.textContent = formateDateToLocal(expiryDate);
+  }
 }
 
 // Score line graphs
 function extractScores(inspectionRecords) {
+  if (!inspectionRecords) {
+    return {};
+  }
   let extractedScoresByDate = {};
   for (const record of Object.values(inspectionRecords)) {
     extractedScoresByDate[record.inspectionDate] = record.scores;
@@ -216,6 +230,9 @@ function createScoreAxes(scores) {
   let housekeepingScoreAxis = [];
 
   for (const score of Object.values(scores)) {
+    if (!score) {
+      continue;
+    }
     const scoreList = [score.hygiene, score.cleanliness, score.housekeeping];
     averageScoreAxis.push(calculateAverage(scoreList));
     hygieneScoreAxis.push(score.hygiene);
@@ -239,8 +256,9 @@ function createScoreChartConfig(dateAxis, axesData) {
   return config;
 }
 
-function resetChartCardHTML() {
-  chartCard.innerHTML = `<h2>Average Inspection Scores over Time</h2>
+function resetChartCardHTML(show) {
+  if (show) {
+    chartCard.innerHTML = `<h2>Average Inspection Scores over Time</h2>
                         <canvas id="average-score-chart"></canvas>
                         <div class="btn-group" role="group" aria-label="scoreSelector" id="score-selector">
                             <button type="button" class="btn btn-primary" id="average-button">Average</button>
@@ -248,33 +266,31 @@ function resetChartCardHTML() {
                             <button type="button" class="btn btn-primary" id="cleanliness-button">Cleanliness</button>
                             <button type="button" class="btn btn-primary" id="housekeeping-button">Housekeeping</button>
                         </div>`;
-}
-
-function showScoreSelectButtons(show) {
-  const scoreSelectButtons = document.getElementById("score-selector").children;
-  for (const button of scoreSelectButtons) {
-    button.style.display = show ? "flex" : "none";
+  } else {
+    chartCard.innerHTML = `<h2>Average Inspection Scores over Time</h2>
+                        <p>No scores are available</p>`;
   }
 }
 
 async function renderAverageScoreGraph(inspectionRecords) {
   const scoresWithDate = extractScores(inspectionRecords);
-  if (Object.keys(scoresWithDate).length === 0) {
-    showScoreSelectButtons(false);
+
+  const show = Object.keys(scoresWithDate).length !== 0;
+
+  resetChartCardHTML(show);
+  if (!show) {
     return;
-  } else {
-    showScoreSelectButtons(true);
   }
 
   const dateAxis = Object.keys(scoresWithDate);
   const axesData = createScoreAxes(scoresWithDate);
 
-  resetChartCardHTML();
-
   const canvas = document.getElementById("average-score-chart");
   const chart = new Chart(canvas, createScoreChartConfig(dateAxis, axesData));
 
-  const scoreSelectButtons = document.getElementById("score-selector").children;
+  const scoreSelectButtons = document.querySelectorAll(
+    "#score-selector button",
+  );
   for (const button of scoreSelectButtons) {
     button.addEventListener("click", function (e) {
       handleScoreSelector(e, chart);
@@ -341,7 +357,12 @@ function createFeedbackRow(date, rating, comment) {
   const ratingData = document.createElement("td");
   const commentData = document.createElement("td");
 
-  dateData.textContent = formateDateToLocal(date);
+  if (date !== "-") {
+    dateData.textContent = formateDateToLocal(date);
+  } else {
+    dateData.textContent = "-";
+  }
+
   ratingData.textContent = rating;
   commentData.textContent = comment;
 
@@ -355,7 +376,7 @@ async function renderThisWeekFeedback(feedbacks) {
     "feedback",
   );
   feedbackTable.innerHTML = "";
-  if (!feedbacksThisWeek) {
+  if (feedbacksThisWeek.length === 0) {
     feedbackTable.append(createFeedbackRow("-", "-", "-"));
     return;
   }
