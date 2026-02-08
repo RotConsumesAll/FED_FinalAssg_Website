@@ -26,12 +26,13 @@ async function asyncGetAllStalls(){
     let stallData = stallsFromHawker[promo.stallId];
     let activeClass;
     if (index === 0) {
-      activeClass = "active";
+      activeClass = "active"; //currently displayed slide
     } 
     else {
       activeClass = "";
     }
 
+    //set color scheme
     let currentColor = cardColorPalette[index%cardColorPalette.length];
     let textColor;
     if (currentColor === "#EB1B2B") {
@@ -119,6 +120,7 @@ async function asyncGetAllStalls(){
       tempChosen6Stalls[selectedKey] = stallsFromHawker[selectedKey];
   }
   console.log(tempChosen6Stalls);
+  //removes non selected
   stallsFromHawker = tempChosen6Stalls;
   console.log(stallsFromHawker);
 
@@ -128,15 +130,18 @@ async function asyncGetAllStalls(){
   arrayRecommendations.forEach((elementRec, index) => {
       let [stallId,stallData] = chosen6Stalls[index];
 
+      //get
       let recImage = elementRec.querySelector(".preview-photo");
       let recStallName = elementRec.querySelector(".stallname");
       console.log(stallData.image);
 
+      //set
       recImage.style.backgroundImage = `url("${stallData.image}")`;
       recStallName.innerText = stallData.stallName;
 
       console.log(stallData.stallName);
 
+      //store stall id in browser searchbar
       elementRec.addEventListener("click",function(){
           window.location.href = `./customer_stall_menu.html?id=${stallId}`;          
       })
