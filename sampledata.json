@@ -3110,7 +3110,7 @@
       "status": "Renewed"
     }
   },
-  "stalls": {
+"stalls": {
     "stall_01": {
       "avgRating": 4.2,
       "feedbacks": {
@@ -3253,7 +3253,7 @@
         }
       },
       "hawkerCentreId": "hc_02",
-      "image": "https://placeholder.com/newtonbbq.jpg",
+      "image": "../../assets/Images/customerImages/maxwellchickenrice1.svg",
       "ownerUid": "OWNER_004",
       "reviewCount": 55,
       "stallDesc": "Famous sambal stingray and prawns.",
@@ -3269,7 +3269,7 @@
     "stall_05": {
       "avgRating": 3.9,
       "hawkerCentreId": "hc_02",
-      "image": "https://placeholder.com/western.jpg",
+      "image": "../../assets/Images/customerImages/maxwellchickenrice1.svg",
       "ownerUid": "OWNER_001",
       "reviewCount": 28,
       "stallDesc": "Affordable western food and grills.",
@@ -3285,7 +3285,7 @@
     "stall_06": {
       "avgRating": 4.6,
       "hawkerCentreId": "hc_02",
-      "image": "https://placeholder.com/alliance.jpg",
+      "image": "../../assets/Images/customerImages/maxwellchickenrice1.svg",
       "ownerUid": "OWNER_002",
       "reviewCount": 42,
       "stallDesc": "Chilli crab and seafood delights.",
@@ -3324,7 +3324,7 @@
         }
       },
       "hawkerCentreId": "hc_03",
-      "image": "https://placeholder.com/laofuzi.jpg",
+      "image": "../../assets/Images/customerImages/maxwellchickenrice1.svg",
       "ownerUid": "OWNER_003",
       "reviewCount": 60,
       "stallDesc": "Old school fried kway teow.",
@@ -3340,7 +3340,7 @@
     "stall_08": {
       "avgRating": 4.3,
       "hawkerCentreId": "hc_03",
-      "image": "https://placeholder.com/roastparadise.jpg",
+      "image": "../../assets/Images/customerImages/maxwellchickenrice1.svg",
       "ownerUid": "OWNER_004",
       "reviewCount": 35,
       "stallDesc": "Premium char siew and roast pork.",
@@ -3356,7 +3356,7 @@
     "stall_09": {
       "avgRating": 4.1,
       "hawkerCentreId": "hc_03",
-      "image": "https://placeholder.com/blanco.jpg",
+      "image": "../../assets/Images/customerImages/maxwellchickenrice1.svg",
       "ownerUid": "OWNER_001",
       "reviewCount": 22,
       "stallDesc": "Rich and savory prawn noodle soup.",
@@ -3372,7 +3372,7 @@
     "stall_10": {
       "avgRating": 3.9,
       "hawkerCentreId": "hc_03",
-      "image": "https://placeholder.com/namsing.jpg",
+      "image": "../../assets/Images/customerImages/maxwellchickenrice1.svg",
       "ownerUid": "OWNER_002",
       "reviewCount": 18,
       "stallDesc": "Traditional dry-style Hokkien Mee.",
