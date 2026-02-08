@@ -1,6 +1,11 @@
 import { db, get, ref } from "../firebase/index.js";
 
-import { fetchData, getObjectsByAttribute } from "./helpers.js";
+import {
+  fetchData,
+  getObjectsByAttribute,
+  writeDataToPath,
+  pushDataToPath,
+} from "./helpers.js";
 
 export async function getHawkerCentres() {
   return fetchData("/hawkerCentres");
@@ -54,11 +59,11 @@ export async function getStall(stallId) {
   return fetchData(`stalls/${stallId}`);
 }
 
-export async function getAllStalls(){
+export async function getAllStalls() {
   return fetchData(`stalls`);
 }
 
-export async function getPromoStalls(){
+export async function getPromoStalls() {
   return fetchData(`promotions`);
 }
 
@@ -68,4 +73,49 @@ export async function getFeedbackByStallId(stallId) {
 
 export async function getAllRentalAgreements() {
   return await fetchData("rentalAgreements/");
+}
+
+// For operator use. Placeholder values are used where applicable
+export async function createNewStall(stallData) {
+  const newStallData = {
+    stallName: stallData.stallName,
+    hawkerCentreId: stallData.hawkerCentreId,
+    stallUnitNo: "",
+    ownerUid: "",
+    image: "",
+    stallDesc: "",
+    tags: [],
+    avgRating: 0,
+    reviewCount: 0,
+    visitCount: 0,
+    feedbacks: {},
+  };
+
+  const stallId = await pushDataToPath("stalls", newStallData);
+  return stallId;
+}
+
+// For operator use. Placeholder values are used where applicable
+export async function createNewRentalAgreement(stallId, rentalAgreementData) {
+  const newAgreementData = {
+    stallId: stallId,
+    ownerUid: "",
+    rentalPrice: rentalAgreementData.rentalPrice,
+    agrStartDate: rentalAgreementData.agrStartDate,
+    agrEndDate: rentalAgreementData.agrEndDate,
+    agrTermCondition: rentalAgreementData.agrTermCondition,
+    status: "Active",
+  };
+
+  const agreementId = await pushDataToPath(
+    "rentalAgreements",
+    newAgreementData,
+  );
+  return agreementId;
+}
+
+// For operator use. Placeholder values are used where applicable
+export async function createNewMenuItems(stallId) {
+  const emptyMenuItems = {};
+  await writeDataToPath(`menuItems/${stallId}`, emptyMenuItems);
 }
