@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/operator.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- https://cdnjs.com/libraries/normalize CSS RESET normalize.css -->
     <!-- I chose to use this because it helps to normalise styles for many html elements. -->
@@ -33,6 +35,10 @@
         </div>
     </header>
     <main class="main--documents-page">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createStallModal">
+            Add Stall
+        </button>
+
         <div class="select-container">
             <div class="select">
                 <button class="select__button">
@@ -47,7 +53,7 @@
         </div>
 
         <div class="filter-row">
-            <button class="filter-row__filter-button">
+            <button class="filter-row__item filter-row__filter-button">
                 <img src="../../assets/icons/filter.svg" alt="Filter icon" height="16" width="16">
             </button>
             <button class="filter-row__item">
@@ -80,6 +86,16 @@
                 <p><span class="semi-bold">12 Jan 2025</span> to <span class="semi-bold">12 Jan 2026</span></p>
                 <p class="record-container__record__validity record-container__record__validity--expired">Expired
                 </p>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Select an action
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                    </ul>
+                </div>
             </article>
 
             <article class="record-container__record">
@@ -89,10 +105,111 @@
                 <p><span class="semi-bold">$1002</span> monthly rent</p>
                 <p><span class="semi-bold">12 Jan 2025</span> to <span class="semi-bold">12 Jan 2026</span></p>
                 <p class="record-container__record__validity record-container__record__validity--valid">Valid</p>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Select an action
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item edit-button" href="#">Edit</a></li>
+                        <li><a class="dropdown-item delete-button" href="#">Delete</a></li>
+                    </ul>
+                </div>
             </article>
         </div>
 
+        <!-- Delete Modal -->
+        <div class="modal fade" id="delete-record" tabindex="-1" aria-labelledby="delete record" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this record?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="confirm-delete"
+                            data-bs-dismiss="modal">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Create Modal -->
+        <div class="modal fade" id="createStallModal" tabindex="-1" aria-labelledby="createStallModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createStallModalLabel">Create Stall</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="createStallForm">
+
+                            <!-- Hawker Centre Name -->
+                            <div class="mb-3">
+                                <label for="hawkerCentreName" class="form-label">Hawker Centre Name</label>
+                                <input type="text" class="form-control" id="hawkerCentreName" required>
+                            </div>
+
+                            <!-- Stall Name -->
+                            <div class="mb-3">
+                                <label for="stallName" class="form-label">Stall Name</label>
+                                <input type="text" class="form-control" id="stallName" required>
+                            </div>
+
+                            <!-- Rental Price -->
+                            <div class="mb-3">
+                                <label for="rentalPrice" class="form-label">Rental Price (SGD)</label>
+                                <input type="number" class="form-control" id="rentalPrice" min="0" required>
+                            </div>
+
+                            <div class="row">
+                                <!-- Agreement Start Date -->
+                                <div class="col-md-6 mb-3">
+                                    <label for="agrStartDate" class="form-label">Agreement Start Date</label>
+                                    <input type="date" class="form-control" id="agrStartDate" required>
+                                </div>
+
+                                <!-- Agreement End Date -->
+                                <div class="col-md-6 mb-3">
+                                    <label for="agrEndDate" class="form-label">Agreement End Date</label>
+                                    <input type="date" class="form-control" id="agrEndDate" required>
+                                </div>
+                            </div>
+
+                            <!-- Agreement Terms -->
+                            <div class="mb-3">
+                                <label for="agrTermCondition" class="form-label">Agreement Terms & Conditions</label>
+                                <textarea class="form-control" id="agrTermCondition" rows="3" required></textarea>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="submit" form="createStallForm" class="btn btn-primary">
+                            Create
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="../../scripts/operator/documents.js" type="module"></script>
     <script type="module" src="../../scripts/logout.js"></script>
 </body>
