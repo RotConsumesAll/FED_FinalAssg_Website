@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     await assignEventHandlers();
     sessionStorage.clear();
 
+    // Render page based on centreId
     if (centreId) {
       activateEventForSelectedCentreItem(centreId);
     } else {

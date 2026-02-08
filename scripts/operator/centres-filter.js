@@ -12,7 +12,6 @@ const suffixInput = document.querySelector("#stallNumberSuffix");
 const hygieneGradeOptions = document.querySelectorAll(
   "#inputHygieneGradeA,#inputHygieneGradeB,#inputHygieneGradeC,#inputHygieneGradeD",
 );
-const halalOption = document.querySelector("#checkHalal");
 
 // - Others
 const feedback = document.querySelector(".invalid-feedback");
@@ -20,22 +19,22 @@ const applyButton = document.querySelector("#apply-button");
 
 
 function createFilterChip(filterPreText, filterKey, filterValue) {
-  let chip = document.createElement("button");
+  const chip = document.createElement("button");
   chip.classList.add("filter-row__item");
   chip.setAttribute("data-key", filterKey);
   chip.setAttribute("data-value", filterValue);
 
-  let outerSpan = document.createElement("span");
+  const outerSpan = document.createElement("span");
   outerSpan.appendChild(document.createTextNode(filterPreText));
 
-  let innerSpan = document.createElement("span");
+  const innerSpan = document.createElement("span");
   innerSpan.classList.add("filter-row__item__filter-value");
   innerSpan.textContent = filterValue;
 
   outerSpan.appendChild(innerSpan);
   chip.appendChild(outerSpan);
 
-  let img = document.createElement("img");
+  const img = document.createElement("img");
   img.setAttribute("src", "../../assets/icons/x.svg");
   img.setAttribute("alt", "Filter icon");
   img.setAttribute("height", 16);
@@ -71,16 +70,14 @@ function getFilterinfo() {
     stallNumber = `${prefixInput.value}-${suffixInput.value}`;
   }
 
-  const isHalal = halalOption.checked;
   setFilterInfo({
     stallName,
     ownerName,
     hygieneGradesChosen,
     stallNumber,
-    isHalal,
   });
 
-  return { stallName, ownerName, hygieneGradesChosen, stallNumber, isHalal };
+  return { stallName, ownerName, hygieneGradesChosen, stallNumber };
 }
 
 function setFilterInfo(filters) {
@@ -112,8 +109,7 @@ function checkIfAllFiltersEmpty(filterResults) {
     filterResults.stallName === null &&
     filterResults.ownerName === null &&
     filterResults.hygieneGradesChosen.length === 0 &&
-    filterResults.stallNumber === null &&
-    filterResults.isHalal === false
+    filterResults.stallNumber === null
   );
 }
 
@@ -150,25 +146,18 @@ function stallFilterMatches(stall, filterResults) {
   const actualStallNumber = stall.querySelector(
     ".stall-card__extra-info__element",
   ).textContent;
-  const actualIsHalalStatus =
-    stall.querySelector(".stall-card__extra-info__element__faded") === null;
 
   const containsStallName = actualStallName.includes(filterResults.stallName);
   const containsOwnerName = actualOwnerName.includes(filterResults.ownerName);
   const containsHygieneGrade =
     filterResults.hygieneGradesChosen.includes(actualGrade);
   const matchesStallNumber = actualStallNumber === filterResults.stallNumber;
-  const matchesIsHalal =
-    actualIsHalalStatus === filterResults.isHalal &&
-    filterResults.isHalal === true;
-  // only show filter if halal status is true
 
   return (
     containsStallName ||
     containsOwnerName ||
     containsHygieneGrade ||
-    matchesStallNumber ||
-    matchesIsHalal
+    matchesStallNumber
   );
 }
 
@@ -217,9 +206,6 @@ function renderFilterChips(filterResults) {
       ),
     );
   }
-  if (filterResults.isHalal) {
-    chipContainer.appendChild(createFilterChip("", "isHalal", "Halal"));
-  }
 }
 
 function removeFilterChipHandler(e) {
@@ -235,9 +221,7 @@ function removeFilterChipHandler(e) {
 function getNewFilterAfterRemoval(filters, key, value) {
   let newFilters = filters;
 
-  if (key === "isHalal") {
-    newFilters[key] = false;
-  } else if (key === "grade") {
+  if (key === "grade") {
     newFilters["hygieneGradesChosen"].pop(value);
   } else {
     newFilters[key] = null;
