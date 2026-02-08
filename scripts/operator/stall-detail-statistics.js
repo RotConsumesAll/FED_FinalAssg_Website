@@ -5,8 +5,8 @@ import {
   formateDateToLocal,
   calculateAverage,
   calcualteDifferenceInMonths,
-  isDateInThisWeek,
   roundTo2DecimalPlaces,
+  isWithinLastThreeMonths,
 } from "./general-helper.js";
 
 // Elements
@@ -142,7 +142,10 @@ export async function renderRentalAgreement(stallId) {
   duration.classList.add("rental__duration");
   const status = document.createElement("p");
   status.textContent = latestAgreement.status;
-  status.classList.add("rental__status", `rental__status--${latestAgreement.status.toLowerCase()}`);
+  status.classList.add(
+    "rental__status",
+    `rental__status--${latestAgreement.status.toLowerCase()}`,
+  );
 
   rentalAgreementCard.append(
     title,
@@ -160,7 +163,11 @@ async function renderHygieneGrade(inspectionRecords) {
   const grade = record.hygieneGrade;
 
   gradeCard.classList = "";
-  gradeCard.classList.add(`hygiene-grade-card--${grade}`, "figure-card", "figure-card--stand-alone");
+  gradeCard.classList.add(
+    `hygiene-grade-card--${grade}`,
+    "figure-card",
+    "figure-card--stand-alone",
+  );
 
   document.getElementById("hygiene-grade").textContent = record.hygieneGrade;
   const expiryDate = new Date(record.gradeExpiry);
@@ -273,13 +280,13 @@ function findRatingsOrFeedbackThisWeek(feedbacks, type) {
   let result = [];
   if (feedbacks) {
     for (const feedback of Object.values(feedbacks)) {
-      if (isDateInThisWeek(feedback.fbkDate)) {
+      if (isWithinLastThreeMonths(new Date(feedback.createdAt))) {
         switch (type) {
           case "feedback":
             result.push(feedback);
             break;
           case "rating":
-            result.push(feedback.fbkRating);
+            result.push(feedback.rating);
             break;
           default:
             continue;
@@ -303,22 +310,22 @@ async function renderAverageCustomerRating(feedbacks) {
 }
 
 // Feedback received
-function createFeedbackRow(rating, comment, complaints) {
+function createFeedbackRow(date, rating, comment) {
   const row = document.createElement("tr");
+  const dateData = document.createElement("td");
   const ratingData = document.createElement("td");
   const commentData = document.createElement("td");
-  const complaintData = document.createElement("td");
 
+  dateData.textContent = formateDateToLocal(date);
   ratingData.textContent = rating;
   commentData.textContent = comment;
-  complaintData.textContent = complaints; // handle complaints
 
-  row.append(ratingData, commentData, complaintData);
+  row.append(dateData, ratingData, commentData);
   return row;
 }
 
 async function renderThisWeekFeedback(feedbacks) {
-  const feedbacksThisWeek = findRatingsOrFeedbackThisWeek(feedbacks, "rating");
+  const feedbacksThisWeek = findRatingsOrFeedbackThisWeek(feedbacks, "feedback");
   feedbackTable.innerHTML = "";
   if (!feedbacksThisWeek) {
     feedbackTable.append(createFeedbackRow("-", "-", "-"));
@@ -326,12 +333,8 @@ async function renderThisWeekFeedback(feedbacks) {
   }
 
   for (const feedback of Object.values(feedbacksThisWeek)) {
-    const row = createFeedbackRow(
-      feedback.fbkRating,
-      feedback.fbkComment,
-      feedback.complaints,
-    );
-    licenceTable.appendChild(row);
+    const row = createFeedbackRow(new Date(feedback.createdAt), feedback.rating, feedback.comment);
+    feedbackTable.appendChild(row);
   }
 }
 
