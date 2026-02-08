@@ -82,6 +82,20 @@ button:hover {
   background-color: var(--light-blue);
 }
 
+/* To override Bootstrap default styles */
+.button-override {
+  border-radius: var(--border-radius) !important;
+  color: var(--light-blue) !important;
+  background-color: var(--white) !important;
+  border: 1px solid var(--light-blue) !important;
+  padding: 10px;
+}
+
+.button-override:hover {
+  color: var(--white) !important;
+  background-color: var(--light-blue) !important;
+}
+
 .semi-bold {
   font-weight: 600;
 }
