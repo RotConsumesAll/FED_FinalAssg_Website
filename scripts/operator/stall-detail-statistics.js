@@ -123,7 +123,7 @@ function createUnavailableRecordNotice() {
 
   const button = document.createElement("button");
   button.addEventListener("click", function (e) {
-    window.location.href = "./documents.html";
+    window.location.href = "./rental-agreements.html";
   });
   const text = document.createTextNode("Go to ");
 
