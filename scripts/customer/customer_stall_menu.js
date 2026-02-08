@@ -93,6 +93,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         let stallName = document.querySelector(".stall-name"); //Stall name
         let dirStallName = document.querySelector(".directory-link .dir-stallname-txt"); //Stall name in directory container
+        let tagsContainer = document.querySelector(".stall-tags-container");
+        tagsContainer.innerHTML = "";
+        stallDetails.tags.forEach(tagText => {
+          let tagHTML = `
+              <div class="stall-tag">
+                  <p class="tag-desc">${tagText}</p>
+              </div>
+          `;
+          tagsContainer.insertAdjacentHTML("beforeend", tagHTML);
+        });
+
         stallName.textContent=stallDetails.stallName;
         dirStallName.textContent = stallDetails.stallName;
 
