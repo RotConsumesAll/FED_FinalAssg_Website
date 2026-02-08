@@ -50,6 +50,7 @@ Firebase Firestore is used to store and retrieve:
 - Customer complaints
 - Menu item ratings
 - Hygiene inspection records
+- Stall details like number of visits and promotions
 
 ## How to Use
 
