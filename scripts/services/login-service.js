@@ -18,7 +18,7 @@ async function redirectToPageWithRole(role) {
       window.location.href = "./pages/officer/officer_home.html";
       break;
     case "operator":
-      window.location.href = "./pages/operator/dashboard.html";
+      window.location.href = "./pages/operator/centres.html";
       break;
     default:
       alert("Unknown user role. Cannot redirect.");
