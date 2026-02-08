@@ -3356,6 +3356,18 @@
       "officerName": "Officer Wong",
       "role": "neaOfficer"
     },
+    "OWNER_001": {
+      "ownerContactNo": "38473928",
+      "ownerName": "Jimmie Tan",
+      "ownerNric": "S2345620Z",
+      "role": "stallOwner"
+    },
+    "OWNER_002": {
+      "ownerContactNo": "20938212",
+      "ownerName": "Ranjit Singh",
+      "ownerNric": "S8293741A",
+      "role": "stallOwner"
+    },
     "OWNER_003": {
       "ownerContactNo": "87776666",
       "ownerName": "Raj Kumar",
