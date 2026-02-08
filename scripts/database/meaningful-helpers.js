@@ -75,6 +75,10 @@ export async function getAllRentalAgreements() {
   return await fetchData("rentalAgreements/");
 }
 
+export async function getRentalAgreementById(id) {
+  return await fetchData(`rentalAgreements/${id}`);
+}
+
 // For operator use. Placeholder values are used where applicable
 export async function createNewStall(stallData) {
   const newStallData = {

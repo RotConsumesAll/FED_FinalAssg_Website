@@ -7,6 +7,7 @@ import {
   createNewStall,
   createNewRentalAgreement,
   createNewMenuItems,
+  getRentalAgreementById,
 } from "../database/meaningful-helpers.js";
 import { SGDollar } from "./general-helper.js";
 import { removeObjectByPath } from "../database/helpers.js";
@@ -191,13 +192,7 @@ function getRecordIdFromListItem(item) {
   return recordCard.getAttribute("data-recordid");
 }
 
-function deleteRecord(e) {
-  const item = e.target.parentElement;
-  const recordId = getRecordIdFromListItem(item);
-  sessionStorage.setItem("recordIdInFocus", recordId);
-}
-
-function editRecord(e) {
+function saveRecordId(e) {
   const item = e.target.parentElement;
   const recordId = getRecordIdFromListItem(item);
   sessionStorage.setItem("recordIdInFocus", recordId);
@@ -205,8 +200,13 @@ function editRecord(e) {
 
 async function handleDeleteConfirmation() {
   const recordId = sessionStorage.getItem("recordIdInFocus");
-  console.log("DELETING THIS RECORD WITH ID: ", recordId);
-  // removeObjectByPath(`rentalAgreements/${recordId}`);
+  const recordDetail = await getRentalAgreementById(recordId);
+  const stallId = recordDetail.stallId;
+  removeObjectByPath(`rentalAgreements/${recordId}`);
+  removeObjectByPath(`menuItems/${stallId}`);
+  removeObjectByPath(`stalls/${stallId}`);
+  alert("Deleted rental agreement and stall associated.");
+  await renderRentalAgreements();
 }
 
 export function assignDeleteHandler() {
@@ -214,7 +214,7 @@ export function assignDeleteHandler() {
 
   for (const button of buttons) {
     button.addEventListener("click", function (e) {
-      deleteRecord(e);
+      saveRecordId(e);
     });
   }
 }
@@ -223,7 +223,7 @@ export function assignEditHandler() {
   const buttons = document.getElementsByClassName("edit-button");
   for (const button of buttons) {
     button.addEventListener("click", function (e) {
-      editRecord(e);
+      saveRecordId(e);
     });
   }
 }

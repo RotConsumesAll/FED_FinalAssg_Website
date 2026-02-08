@@ -1,0 +1,782 @@
+{
+  "hawkerCentres": {
+    "hc_01": {
+      "closingTime": "22:00",
+      "hcAddress": "1 Kadayanallur St, Singapore 069184",
+      "hcName": "Maxwell Food Centre",
+      "image": "https://feastoftravel.com/wp-content/uploads/2022/10/943E9846-53A6-4A3B-92CB-0E8DE039696B-scaled.jpg",
+      "openingTime": "08:00",
+      "operatorId": "0Eoh1NZVjpZwcPScVzPg30cc9Zf1"
+    },
+    "hc_02": {
+      "closingTime": "06:00",
+      "hcAddress": "500 Clemenceau Ave N, Singapore 229495",
+      "hcName": "Newton Food Centre",
+      "image": "https://newtonfoodcentre.com/wp-content/uploads/2024/01/newton-food-centre-photos.jpg",
+      "openingTime": "00:00",
+      "operatorId": "0Eoh1NZVjpZwcPScVzPg30cc9Zf1"
+    },
+    "hc_03": {
+      "closingTime": "23:00",
+      "hcAddress": "51 Old Airport Rd, Singapore 390051",
+      "hcName": "Old Airport Road Food Centre",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEoJOvpCI0wLVm3GZnC1xNFpGBzjfhQWxysg&s",
+      "openingTime": "07:00",
+      "operatorId": "OPERATOR_002"
+    }
+  },
+  "menuItems": {
+    "stall_01": {
+      "-Okr7he-M9nzjTjpS0_g": {
+        "itemCategory": "Mains",
+        "itemName": "Beef stew",
+        "itemPrice": 10
+      },
+      "item_01": {
+        "cuisines": {
+          "cui_03": "Japanese"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Mains",
+        "itemDesc": "Stir fried chicken cubes with signature ramen.",
+        "itemName": "Chicken Ramen",
+        "itemPrice": 7.9
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Wok-tossed rice with golden egg and scallions.",
+        "itemName": "Egg Fried Rice",
+        "itemPrice": 7
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_03": "Japanese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Thick udon noodles in savory soup with fresh prawns.",
+        "itemName": "Prawn Udon",
+        "itemPrice": 7.9
+      }
+    },
+    "stall_02": {
+      "item_01": {
+        "cuisines": {
+          "cui_03": "Japanese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Crispy fried pork cutlet with savory Japanese curry.",
+        "itemName": "Katsu Curry Rice",
+        "itemPrice": 12.5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_03": "Japanese"
+        },
+        "discountPercent": 15,
+        "itemCategory": "Mains",
+        "itemDesc": "Breaded deep-fried prawns served with rich curry sauce.",
+        "itemName": "Ebi Fry Curry",
+        "itemPrice": 13.5
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_03": "Japanese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Fluffy omelette rice topped with melted cheese and curry.",
+        "itemName": "Cheese Curry Omurice",
+        "itemPrice": 14.5
+      }
+    },
+    "stall_03": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Springy noodles tossed in dark sauce with dumplings.",
+        "itemName": "Wonton Noodle Dry",
+        "itemPrice": 4.5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Mains",
+        "itemDesc": "Classic Bak Chor Mee with vinegar and minced pork.",
+        "itemName": "Minced Meat Noodle",
+        "itemPrice": 5
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Sides",
+        "itemDesc": "Crispy golden dumplings with savory meat filling.",
+        "itemName": "Fried Wonton (8pcs)",
+        "itemPrice": 4
+      }
+    },
+    "stall_04": {
+      "item_01": {
+        "cuisines": {
+          "cui_02": "Malay/Local"
+        },
+        "discountPercent": 5,
+        "itemCategory": "Seafood",
+        "itemDesc": "Grilled stingray slathered in spicy sambal paste.",
+        "itemName": "Sambal Stingray",
+        "itemPrice": 18
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_02": "Malay/Local"
+        },
+        "itemCategory": "Seafood",
+        "itemDesc": "Smoky grilled tiger prawns with garlic butter.",
+        "itemName": "BBQ Tiger Prawns",
+        "itemPrice": 25
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_02": "Malay/Local"
+        },
+        "itemCategory": "Seafood",
+        "itemDesc": "Fresh squid stir-fried in aromatic spicy chili paste.",
+        "itemName": "Sambal Sotong",
+        "itemPrice": 15
+      }
+    },
+    "stall_05": {
+      "item_01": {
+        "cuisines": {
+          "cui_04": "Western"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Juicy chicken chop served with fries and coleslaw.",
+        "itemName": "Grilled Chicken Chop",
+        "itemPrice": 8.5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_04": "Western"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Crispy battered dory fish with tartar sauce.",
+        "itemName": "Fish and Chips",
+        "itemPrice": 9
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_04": "Western"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Mains",
+        "itemDesc": "200g New Zealand beef served with black pepper sauce.",
+        "itemName": "Sirloin Steak",
+        "itemPrice": 14.5
+      }
+    },
+    "stall_06": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Seafood",
+        "itemDesc": "Mud crab cooked in a sweet, savory, and spicy tomato gravy.",
+        "itemName": "Chilli Crab Set",
+        "itemPrice": 45
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Seafood",
+        "itemDesc": "Whole prawns coated in crispy, buttery cereal flakes.",
+        "itemName": "Cereal Prawns",
+        "itemPrice": 22
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Wok-fried rice with crab meat, prawns, and squid.",
+        "itemName": "Seafood Fried Rice",
+        "itemPrice": 8
+      }
+    },
+    "stall_07": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Mains",
+        "itemDesc": "Wok-fried flat noodles with cockles, sausage, and egg.",
+        "itemName": "Fried Kway Teow (S)",
+        "itemPrice": 5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "A larger portion of the classic dish with extra cockles.",
+        "itemName": "Fried Kway Teow (M)",
+        "itemPrice": 6
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Family-sized platter of savory, smoky fried noodles.",
+        "itemName": "Fried Kway Teow (L)",
+        "itemPrice": 8
+      }
+    },
+    "stall_08": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Sweet and savory caramelized BBQ pork served over rice.",
+        "itemName": "Char Siew Rice",
+        "itemPrice": 5.5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Crispy skin pork belly slices served with fragrant rice.",
+        "itemName": "Roast Pork Rice",
+        "itemPrice": 5.5
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 15,
+        "itemCategory": "Sharing",
+        "itemDesc": "A combination platter of Char Siew and Roast Pork.",
+        "itemName": "Duo Roast Meat Platter",
+        "itemPrice": 12
+      }
+    },
+    "stall_09": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Yellow noodles served in a rich, umami prawn broth.",
+        "itemName": "Prawn Noodle Soup",
+        "itemPrice": 6.5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 5,
+        "itemCategory": "Mains",
+        "itemDesc": "Prawn noodles topped with tender braised pork ribs.",
+        "itemName": "Pork Rib Prawn Noodle",
+        "itemPrice": 7.5
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Sides",
+        "itemDesc": "Assorted traditional fried fritters and meat rolls.",
+        "itemName": "Ngoh Hiang Platter",
+        "itemPrice": 8
+      }
+    },
+    "stall_10": {
+      "item_01": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "discountPercent": 10,
+        "itemCategory": "Mains",
+        "itemDesc": "Stir-fried noodles simmered in aromatic prawn stock.",
+        "itemName": "Hokkien Mee (Small)",
+        "itemPrice": 5
+      },
+      "item_02": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Medium serving with generous fresh prawns and squid.",
+        "itemName": "Hokkien Mee (Medium)",
+        "itemPrice": 8
+      },
+      "item_03": {
+        "cuisines": {
+          "cui_01": "Chinese"
+        },
+        "itemCategory": "Mains",
+        "itemDesc": "Large serving of wet-style noodles, perfect for sharing.",
+        "itemName": "Hokkien Mee (Large)",
+        "itemPrice": 10
+      }
+    }
+  },
+  "rentalAgreements": {
+    "agr_01": {
+      "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "ownerUid": "OWNER_001",
+      "rentalPrice": 2600,
+      "stallId": "stall_01",
+      "status": "Active"
+    },
+    "agr_02": {
+      "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "ownerUid": "OWNER_002",
+      "rentalPrice": 2700,
+      "stallId": "stall_02",
+      "status": "Renewed"
+    },
+    "agr_03": {
+      "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "ownerUid": "OWNER_003",
+      "rentalPrice": 2800,
+      "stallId": "stall_03",
+      "status": "Active"
+    },
+    "agr_04": {
+      "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "ownerUid": "OWNER_004",
+      "rentalPrice": 2900,
+      "stallId": "stall_04",
+      "status": "Renewed"
+    },
+    "agr_05": {
+      "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "ownerUid": "OWNER_001",
+      "rentalPrice": 3000,
+      "stallId": "stall_05",
+      "status": "Active"
+    },
+    "agr_06": {
+      "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "ownerUid": "OWNER_002",
+      "rentalPrice": 3100,
+      "stallId": "stall_06",
+      "status": "Renewed"
+    },
+    "agr_07": {
+      "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "ownerUid": "OWNER_003",
+      "rentalPrice": 3200,
+      "stallId": "stall_07",
+      "status": "Active"
+    },
+    "agr_08": {
+      "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "ownerUid": "OWNER_004",
+      "rentalPrice": 3300,
+      "stallId": "stall_08",
+      "status": "Renewed"
+    },
+    "agr_09": {
+      "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "ownerUid": "OWNER_001",
+      "rentalPrice": 3400,
+      "stallId": "stall_09",
+      "status": "Active"
+    },
+    "agr_10": {
+      "agrEndDate": "2027-01-01",
+      "agrStartDate": "2025-01-01",
+      "agrTermCondition": "Standard commercial rental terms apply. Monthly maintenance fees included.",
+      "ownerUid": "OWNER_002",
+      "rentalPrice": 3500,
+      "stallId": "stall_10",
+      "status": "Renewed"
+    }
+  },
+  "stalls": {
+    "stall_01": {
+      "avgRating": 4.2,
+      "feedbacks": {
+        "-Okn-a1B2C3D4": {
+          "comment": "Portion is decent and food is always served hot. Slightly oily though.",
+          "createdAt": 1770385400000,
+          "rating": 4,
+          "stallName": "Wok Hey",
+          "userName": "Jamie"
+        },
+        "-Okn-kLmN01": {
+          "comment": "Staff are friendly and food is consistent every time I come.",
+          "createdAt": 1770391400000,
+          "rating": 5,
+          "stallName": "Wok Hey",
+          "userName": "Siti"
+        },
+        "-Okn-ox2HbvZGnoEB3YV": {
+          "comment": "I HIGHKEY LOVE WOK HEY please bring back the truffle rice it is SOOO GOOODDDD",
+          "createdAt": 1770382380084,
+          "rating": 4,
+          "stallName": "Wok Hey",
+          "userName": "Test User 2"
+        },
+        "-Okn-x9Y8Z7": {
+          "comment": "Taste is okay but queue is very long during lunch.",
+          "createdAt": 1770388400000,
+          "rating": 3,
+          "stallName": "Wok Hey",
+          "userName": "Aaron"
+        }
+      },
+      "hawkerCentreId": "hc_01",
+      "image": "../../assets/Images/customerImages/wok-hey-chickenramen.svg",
+      "ownerUid": "N5yobDeOFLWW8tK1Akg15MCa0UM2",
+      "reviewCount": 45,
+      "stallDesc": "Stir fried delicacies in a cup",
+      "stallName": "Wok Hey",
+      "stallUnitNo": "01-10",
+      "tags": [
+        "Chinese",
+        "Stir-fry"
+      ],
+      "visitCount": "27"
+    },
+    "stall_02": {
+      "avgRating": 4.5,
+      "feedbacks": {
+        "-Okn-hrs5wzqoVQ0jee10": {
+          "comment": "A bit too salty for my taste but the chicken katsu is crispy.",
+          "createdAt": 1770392000000,
+          "rating": 4,
+          "stallName": "Monster Curry",
+          "userName": "Lina"
+        },
+        "-Okn-hrs5wzqoVQ0jee23": {
+          "comment": "Portion is huge, worth the price. Can share with two people.",
+          "createdAt": 1770390000000,
+          "rating": 5,
+          "stallName": "Monster Curry",
+          "userName": "Ben"
+        },
+        "-Okn-hrs5wzqoVQ0jee72": {
+          "comment": "Waiting time is quite long during peak hours.",
+          "createdAt": 1770395000000,
+          "rating": 3,
+          "stallName": "Monster Curry",
+          "userName": "Daniel"
+        },
+        "-Okn-hrs5wzqoVQ0jeeY": {
+          "comment": "Curry was great!",
+          "createdAt": 1770382351080,
+          "rating": 5,
+          "stallName": "Monster Curry",
+          "userName": "Test User 2"
+        }
+      },
+      "hawkerCentreId": "hc_01",
+      "image": "../../assets/Images/customerImages/MonstercurryDemiGlace.svg",
+      "ownerUid": "DhUUNZuRqqf4OZidlJHNwdeMCIE3",
+      "reviewCount": 38,
+      "stallDesc": "Authentic Japanese curry rice",
+      "stallName": "Monster Curry",
+      "stallUnitNo": "01-05",
+      "tags": [
+        "Japanese",
+        "Curry",
+        "Halal"
+      ],
+      "visitCount": "25"
+    },
+    "stall_03": {
+      "avgRating": 4,
+      "feedbacks": {
+        "-OkvkzhiF9PZL0vTnpZ8": {
+          "comment": "where is the images",
+          "createdAt": 1770529225837,
+          "rating": 1,
+          "stallName": "Yah Fu Miniwok",
+          "userName": "Test User 2"
+        }
+      },
+      "hawkerCentreId": "hc_01",
+      "image": "../../assets/Images/customerImages/Ya-fu-mini-wok-salted-egg-curry-chicken-rice-dish.svg",
+      "ownerUid": "OWNER_003",
+      "reviewCount": 32,
+      "stallDesc": "Traditional wok hei filled dishes",
+      "stallName": "Yah Fu Miniwok",
+      "stallUnitNo": "01-15",
+      "tags": [
+        "Chinese",
+        "Wok Hei",
+        "Zi Char"
+      ],
+      "visitCount": "20"
+    },
+    "stall_04": {
+      "avgRating": 4.7,
+      "feedbacks": {
+        "-N1": {
+          "comment": "Sambal stingray is amazing, very smoky flavour.",
+          "createdAt": 1770398000000,
+          "rating": 5,
+          "stallName": "Newton BBQ Seafood",
+          "userName": "Michelle"
+        },
+        "-N2": {
+          "comment": "Fresh seafood but quite expensive.",
+          "createdAt": 1770401000000,
+          "rating": 4,
+          "stallName": "Newton BBQ Seafood",
+          "userName": "Ryan"
+        },
+        "-N3": {
+          "comment": "Chilli crab sauce is good but crab was a bit small.",
+          "createdAt": 1770404000000,
+          "rating": 3,
+          "stallName": "Newton BBQ Seafood",
+          "userName": "Farah"
+        }
+      },
+      "hawkerCentreId": "hc_02",
+      "image": "https://placeholder.com/newtonbbq.jpg",
+      "ownerUid": "OWNER_004",
+      "reviewCount": 55,
+      "stallDesc": "Famous sambal stingray and prawns.",
+      "stallName": "Newton BBQ Seafood",
+      "stallUnitNo": "01-01",
+      "tags": [
+        "Seafood",
+        "BBQ",
+        "Spicy"
+      ],
+      "visitCount": "16"
+    },
+    "stall_05": {
+      "avgRating": 3.9,
+      "hawkerCentreId": "hc_02",
+      "image": "https://placeholder.com/western.jpg",
+      "ownerUid": "OWNER_001",
+      "reviewCount": 28,
+      "stallDesc": "Affordable western food and grills.",
+      "stallName": "Western Grill",
+      "stallUnitNo": "01-20",
+      "tags": [
+        "Western",
+        "Grill",
+        "Steak"
+      ],
+      "visitCount": "14"
+    },
+    "stall_06": {
+      "avgRating": 4.6,
+      "hawkerCentreId": "hc_02",
+      "image": "https://placeholder.com/alliance.jpg",
+      "ownerUid": "OWNER_002",
+      "reviewCount": 42,
+      "stallDesc": "Chilli crab and seafood delights.",
+      "stallName": "Alliance Seafood",
+      "stallUnitNo": "01-30",
+      "tags": [
+        "Seafood",
+        "Crab",
+        "Chinese"
+      ],
+      "visitCount": "13"
+    },
+    "stall_07": {
+      "avgRating": 4.8,
+      "feedbacks": {
+        "-L1": {
+          "comment": "Wok hei is strong, tastes very traditional.",
+          "createdAt": 1770407000000,
+          "rating": 5,
+          "stallName": "Lao Fu Zi Fried Kway Teow",
+          "userName": "Kelvin"
+        },
+        "-L2": {
+          "comment": "Not bad but slightly oily.",
+          "createdAt": 1770410000000,
+          "rating": 4,
+          "stallName": "Lao Fu Zi Fried Kway Teow",
+          "userName": "Aisyah"
+        },
+        "-L3": {
+          "comment": "Portion is small for the price.",
+          "createdAt": 1770413000000,
+          "rating": 3,
+          "stallName": "Lao Fu Zi Fried Kway Teow",
+          "userName": "Marcus"
+        }
+      },
+      "hawkerCentreId": "hc_03",
+      "image": "https://placeholder.com/laofuzi.jpg",
+      "ownerUid": "OWNER_003",
+      "reviewCount": 60,
+      "stallDesc": "Old school fried kway teow.",
+      "stallName": "Lao Fu Zi Fried Kway Teow",
+      "stallUnitNo": "01-40",
+      "tags": [
+        "Local",
+        "Fried Noodles",
+        "Chinese"
+      ],
+      "visitCount": "11"
+    },
+    "stall_08": {
+      "avgRating": 4.3,
+      "hawkerCentreId": "hc_03",
+      "image": "https://placeholder.com/roastparadise.jpg",
+      "ownerUid": "OWNER_004",
+      "reviewCount": 35,
+      "stallDesc": "Premium char siew and roast pork.",
+      "stallName": "Roast Paradise",
+      "stallUnitNo": "01-50",
+      "tags": [
+        "Roast Meat",
+        "Pork",
+        "Chinese"
+      ],
+      "visitCount": "9"
+    },
+    "stall_09": {
+      "avgRating": 4.1,
+      "hawkerCentreId": "hc_03",
+      "image": "https://placeholder.com/blanco.jpg",
+      "ownerUid": "OWNER_001",
+      "reviewCount": 22,
+      "stallDesc": "Rich and savory prawn noodle soup.",
+      "stallName": "Blanco Court Prawn Mee",
+      "stallUnitNo": "01-60",
+      "tags": [
+        "Soup",
+        "Prawns",
+        "Noodles"
+      ],
+      "visitCount": "5"
+    },
+    "stall_10": {
+      "avgRating": 3.9,
+      "hawkerCentreId": "hc_03",
+      "image": "https://placeholder.com/namsing.jpg",
+      "ownerUid": "OWNER_002",
+      "reviewCount": 18,
+      "stallDesc": "Traditional dry-style Hokkien Mee.",
+      "stallName": "Nam Sing Hokkien Mee",
+      "stallUnitNo": "01-70",
+      "tags": [
+        "Noodles",
+        "Traditional",
+        "Seafood"
+      ],
+      "visitCount": "3"
+    }
+  },
+  "users": {
+    "0Eoh1NZVjpZwcPScVzPg30cc9Zf1": {
+      "name": "Food Republic",
+      "role": "operator"
+    },
+    "CUST_001": {
+      "custContactNo": "98765432",
+      "custEmail": "alice@example.com",
+      "custName": "Alice Tan",
+      "custNric": "S1234567A",
+      "role": "customer"
+    },
+    "CUST_002": {
+      "custContactNo": "81234567",
+      "custEmail": "bob@example.com",
+      "custName": "Bob Lim",
+      "custNric": "S2345678B",
+      "role": "customer"
+    },
+    "CUST_003": {
+      "custContactNo": "92345678",
+      "custEmail": "charlie@example.com",
+      "custName": "Charlie Ang",
+      "custNric": "S3456789C",
+      "role": "customer"
+    },
+    "DhUUNZuRqqf4OZidlJHNwdeMCIE3": {
+      "ownerName": "Siti Aminah",
+      "role": "stallOwner",
+      "stallId": "stall_02"
+    },
+    "N5yobDeOFLWW8tK1Akg15MCa0UM2": {
+      "ownerName": "John Doe",
+      "role": "stallOwner",
+      "stallId": "stall_01"
+    },
+    "OFFICER_002": {
+      "officerContactNo": "64443333",
+      "officerName": "Officer Wong",
+      "role": "neaOfficer"
+    },
+    "OPERATOR_002": {
+      "contactPerson": "Ms. Tan",
+      "operatorName": "Prime Hawker Management",
+      "role": "operator"
+    },
+    "OWNER_001": {
+      "ownerContactNo": "38473928",
+      "ownerName": "Jimmie Tan",
+      "ownerNric": "S2345620Z",
+      "role": "stallOwner"
+    },
+    "OWNER_002": {
+      "ownerContactNo": "20938212",
+      "ownerName": "Ranjit Singh",
+      "ownerNric": "S8293741A",
+      "role": "stallOwner"
+    },
+    "OWNER_003": {
+      "ownerContactNo": "87776666",
+      "ownerName": "Raj Kumar",
+      "ownerNric": "S9876543D",
+      "role": "stallOwner"
+    },
+    "OWNER_004": {
+      "ownerContactNo": "96665555",
+      "ownerName": "Tan Wei",
+      "ownerNric": "S1122334E",
+      "role": "stallOwner"
+    },
+    "Os18BEltTkfVJjCpcTpkF9XG6092": {
+      "officerName": "Daniel Tan",
+      "role": "neaOfficer"
+    },
+    "or4tWVzXaNT6NfpJ7JGv3xcyJyM2": {
+      "custName": "Test User 2",
+      "role": "customer"
+    }
+  }
+}
