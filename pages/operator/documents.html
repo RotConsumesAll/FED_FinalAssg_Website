@@ -56,66 +56,10 @@
             <button class="filter-row__item filter-row__filter-button">
                 <img src="../../assets/icons/filter.svg" alt="Filter icon" height="16" width="16">
             </button>
-            <button class="filter-row__item">
-                <span><span class="filter-row__item__filter-value">Halal</span></span>
-                <img src="../../assets/icons/x.svg" alt="Filter icon" height="16" width="16">
-            </button>
-
-            <button class="filter-row__item">
-                <span>Owner <span class="filter-row__item__filter-value">Ms lee</span></span>
-                <img src="../../assets/icons/x.svg" alt="Filter icon" height="16" width="16">
-            </button>
-            <button class="filter-row__item">
-                <span>Hygiene Grade <span class="filter-row__item__filter-value">A</span></span>
-                <img src="../../assets/icons/x.svg" alt="Filter icon" height="16" width="16">
-            </button>
-            <button class="filter-row__item">
-                <span>Name contains <span class="filter-row__item__filter-value">Mei</span></span>
-                <img src="../../assets/icons/x.svg" alt="Filter icon" height="16" width="16">
-            </button>
-
         </div>
 
 
         <div class="record-container">
-            <article class="record-container__record">
-                <h2>With <span class="semi-bold">Mr Johnosn</span></h2>
-                <p class="record-container__record__minor-info record-container__record__minor-info--centre">Maxwell
-                    Food Centre #01-02</p>
-                <p><span class="semi-bold">$1002</span> monthly rent</p>
-                <p><span class="semi-bold">12 Jan 2025</span> to <span class="semi-bold">12 Jan 2026</span></p>
-                <p class="record-container__record__validity record-container__record__validity--expired">Expired
-                </p>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Select an action
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                        <li><a class="dropdown-item" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </article>
-
-            <article class="record-container__record">
-                <h2>With <span class="semi-bold">Mr Johnosn</span></h2>
-                <p class="record-container__record__minor-info record-container__record__minor-info--centre">Maxwell
-                    Food Centre #01-02</p>
-                <p><span class="semi-bold">$1002</span> monthly rent</p>
-                <p><span class="semi-bold">12 Jan 2025</span> to <span class="semi-bold">12 Jan 2026</span></p>
-                <p class="record-container__record__validity record-container__record__validity--valid">Valid</p>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Select an action
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item edit-button" href="#">Edit</a></li>
-                        <li><a class="dropdown-item delete-button" href="#">Delete</a></li>
-                    </ul>
-                </div>
-            </article>
         </div>
 
         <!-- Delete Modal -->
@@ -151,7 +95,7 @@
                     <div class="modal-body">
                         <form id="createStallForm">
 
-                            <!-- Hawker Centre Name (Dropdown) -->
+                            <!-- Hawker Centre name -->
                             <div class="mb-3">
                                 <label for="hawkerCentreName" class="form-label">Hawker Centre Name</label>
                                 <select class="form-select" id="hawkerCentreName" required>
@@ -216,7 +160,8 @@
                 <div class="modal-content">
 
                     <div class="modal-header">
-                        <h1 class="modal-title" id="editRentalPriceModalLabel">Edit Rental Price</h1>
+                        <h1 class="modal-title" id="editRentalPriceModalLabel">Edit Rental Price for <span
+                                id="stallNameBeingEdited"></span></h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
